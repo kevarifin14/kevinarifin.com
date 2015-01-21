@@ -1,11 +1,30 @@
+p{
+	font-family: 'PT Sans', sans-serif;
+	font-size: 110%;
+}
+
 
 h1,h2,h3,li{
-	font-family: 'PT Sans', sans-serif;	
+	font-family: 'PT Sans', sans-serif;		
+	color: #0B0B61;
+	font-size: 150%;
+}
+
+li{
+	font-size: 120%;
 }
 
 h1{
 	font-size: 225%;
 	text-align: left;
+	color: #0B0B61;
+}
+
+#about{
+	font-size: 175%;
+}
+
+#bio{
 	color: #0B0B61;
 }
 
@@ -47,3 +66,8 @@ nav ul li{
 nav ul li:hover{
 	color:#81BEF7;
 }
+
+img{
+	padding: 10px;
+}
+
