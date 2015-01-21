@@ -1,0 +1,49 @@
+
+h1,h2,h3,li{
+	font-family: 'PT Sans', sans-serif;	
+}
+
+h1{
+	font-size: 225%;
+	text-align: left;
+	color: #0B0B61;
+}
+
+header{
+	background: #F2F2F2;
+}
+
+body{
+	background: #F2F2F2;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:visited{
+	text-decoration: none;
+}
+
+nav{
+	display: block;
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+	border-color: #BDBDBD;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li{
+	display: inline-block;
+	padding: 10px 10px;
+}
+
+nav ul li:hover{
+	color:#81BEF7;
+}
