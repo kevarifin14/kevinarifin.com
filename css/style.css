@@ -2,7 +2,9 @@ p{
 	font-family: 'PT Sans', sans-serif;
 	font-size: 110%;
 }
-
+html{
+	width: 100%;
+}
 
 h1,h2,h3,li{
 	font-family: 'PT Sans', sans-serif;		
@@ -83,4 +85,7 @@ img{
 	color: white;
 }
 
+#fixed ul li{
+	color: white;
+}
 
