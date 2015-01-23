@@ -73,6 +73,12 @@ img{
 	padding: 10px;
 }
 
+#blog.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* fixed navbar */
 
 #fixed{
