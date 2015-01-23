@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#top a, #fixed a').on('click', funct e.preventDefault();});
-	$(window.on('scroll',function(){
+	$('#top a, #fixed a').on('click', function(e){
+		e.preventDefault();
+	});
+
+	$(window).on('scroll',function() {
 		var scrolltop = $(this).scrollTop();
 
-		if (scrolltop >= 215){
+		if (scrolltop >= 150){
 			$('#fixed').fadeIn(250);
 		}
 
-		else if (scrolltop <= 210){
+		else if (scrolltop <= 160){
 			$('#fixed').fadeOut(250);
 		}
 	});
 });
 </script>
-
-<head>
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 <header>
 	<a href="/"><h1>Kevin Arifin</h1></a>
