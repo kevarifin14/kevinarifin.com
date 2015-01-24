@@ -9,6 +9,9 @@ html, body{
 }
 .content{
 	padding-left: 10;
+	width: 720px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 h1,h2,h3,li{
@@ -38,6 +41,10 @@ h1{
 header{
 	background: #F2F2F2;
 	width: 100%;
+	text-align: center;
+}
+header a h1{
+	text-align: center;
 }
 
 body{
@@ -61,6 +68,8 @@ nav{
 	border-bottom: solid 1px;
 	border-color: #BDBDBD;
 	width: 100%;
+	float: center;
+	text-align: center;
 }
 
 nav ul{
