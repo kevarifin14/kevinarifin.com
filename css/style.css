@@ -1,3 +1,7 @@
+h1{
+	padding-top: 10px;
+}
+
 p{
 	font-family: 'PT Sans', sans-serif;
 	font-size: 110%;
@@ -92,20 +96,29 @@ nav ul li:hover{
 }
 
 nav ul ul{
-	display: none;
+	display: inline-block;
+	visibility: hidden;
 	position: absolute;
 	z-index: 10;
-	top: 118px;
+	top: 127px;
 	left: 0px;
 	background: #F2F2F2;
-	opacity: 0.9;
+	opacity: 0;
+	width: 100%;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
 
+nav ul ul a{
+	font-size: 80%;
 }
 
 nav ul li:hover > ul{
-	display: inline-block;
-	height: 40px;
-	width: 100%;
+	visibility: visible;
+	opacity: 0.9;
 }
 
 nav ul ul li{
