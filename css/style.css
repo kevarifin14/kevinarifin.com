@@ -1,3 +1,8 @@
+#bloglist {
+	text-align: center;
+	background: #A4A4A4;
+	padding-bottom: 10px;
+}
 #quote {
 	position: absolute;
 	top: 20%;
@@ -19,6 +24,28 @@
 	height: 40px;
 	position: relative;
 	text-align: center;
+}
+
+#olderBlogs {
+	border-top: black;
+	display: inline-block;
+}
+
+#older, #newer {
+	width: 50%;
+	text-align: center;
+}
+
+#older:hover, #newer:hover{
+	background: #E6E6E6;
+}
+
+#older {
+	float: left;
+}
+
+#newer {
+	float: right;
 }
 
 html, body {
@@ -206,7 +233,16 @@ nav ul ul li{
 }
 
 img{
+	display: block;
 	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+iframe {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #blog.center{
