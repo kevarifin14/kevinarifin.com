@@ -1,3 +1,75 @@
+#quote {
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	width: 80%;
+}
+
+#quote h2 {
+	vertical-align: center;
+	font-size: 180%;
+	color: white;
+}
+
+#arrowdiv {
+	text-align: center;
+}
+#arrow {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	text-align: center;
+}
+
+html, body {
+	height: 100%;
+}
+
+div { 
+	width: 100%;
+}
+
+#aboutme {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/hk.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#sunset {
+	position: relative;
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/berkeley_sunset.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#blog {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/bigC_hike.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+#welcome {
+	color: white;
+	text-align: center;
+}
+
+.blog {
+	background: white;
+	background: cover;
+	min-height: 400px;
+}
+
 h1{
 	padding-top: 10px;
 }
@@ -11,6 +83,7 @@ html, body{
 	margin: 0;
 	padding: 0;
 }
+
 .content{
 	padding-left: 5;
 	width: 720px;
@@ -53,7 +126,6 @@ header a h1{
 }
 
 body{
-	background: #F2F2F2;
 	width: 100%;
 	padding: 0;
 }
@@ -67,14 +139,20 @@ a:visited{
 	text-decoration: none;
 }
 
+#footer {
+	background: black;
+}
+
+#footnav {
+	text-align: center;
+	font-size: 80%;
+}
+
 nav{
 	display: block;
-	border-top: solid 1px;
-	border-bottom: solid 1px;
-	border-color: #BDBDBD;
 	width: 100%;
 	float: center;
-	text-align: center;
+	text-align: right;
 }
 
 nav ul{
@@ -84,8 +162,9 @@ nav ul{
 }
 
 nav ul li{
+	color: white;
 	display: inline-block;
-	padding: 10px 10px;
+	padding: 30px 20px;
 	
 	
 }
@@ -161,14 +240,6 @@ img{
 	height: 250px;
 }
 
-#aboutme{
-	z-index: 0;
-	position: relative;
-	background-image: url(../public/bell.jpg);
-	background-position: 100% 80%;
-	width: 720px;
-	height: 250px;
-}
 
 .overlay{
 	z-index: 1;
