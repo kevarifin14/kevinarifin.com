@@ -1,3 +1,36 @@
+.slideout {
+	position: relative;
+	background: blue;
+	height: 150px;
+}
+
+#hidden:hover {
+	display: block;
+}
+
+.slideout:hover {
+	background: green;
+}
+
+#hidden {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: white;
+	display: none;
+}
+
+
+#passions {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/bell.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 #bloglist {
 	text-align: center;
 	background: #A4A4A4;
@@ -95,10 +128,6 @@ div {
 	background: white;
 	background: cover;
 	min-height: 400px;
-}
-
-h1{
-	padding-top: 10px;
 }
 
 p{
