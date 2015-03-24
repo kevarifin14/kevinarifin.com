@@ -1,6 +1,32 @@
+#pillar {
+	position: relative;
+	height: 100%;
+	background-attachment: fixed;
+	background: white; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#word {
+	position: absolute;
+	width: 50%;
+	top: 30%;
+	left: 35%;
+}
+#word h1 {
+	left:30px;
+	position: relative;
+	font-size: 300%;
+	color: black;
+}
+
+#word h3 {
+	color: black;
+}
 .slideout {
 	position: relative;
-	background: blue;
 	height: 150px;
 }
 
