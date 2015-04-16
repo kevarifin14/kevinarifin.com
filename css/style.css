@@ -1,3 +1,37 @@
+.text {
+	height: 400px;
+	display: table;
+	text-align: center;
+}
+
+.text span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#slider {
+	width: 720px;
+	height: 480px;
+	overflow: hidden;
+	background: no-repeat center center fixed;
+}
+
+#slider .slides {
+	display: block;
+	width: 400%;
+	height: 480px;
+	margin: 0;
+	padding: 0;	
+}
+
+#slider .slide {
+	display: block;
+	float: left;
+	list-style-type: none;
+	width: 720px;
+	height: 480px;
+}
+
 #pillar {
 	position: relative;
 	height: 100%;
@@ -9,6 +43,22 @@
 	background-size: cover;
 }
 
+#container_ss {
+	overflow: hidden;
+}
+
+#container_ss:hover {
+	background: #E6E6E6;
+	-webkit-transition: background 0.3s ease-in-out;
+	-moz-transition: background 0.3s ease-in-out;
+	-ms-transition: background 0.3s ease-in-out;
+	-o-transition: background 0.3s ease-in-out;
+	transition: background 0.3s ease-in-out;
+}
+
+#ss {
+	display: none;
+}
 #word {
 	position: absolute;
 	width: 50%;
@@ -62,16 +112,22 @@
 	background: #A4A4A4;
 	padding-bottom: 10px;
 }
-#quote {
+.quote {
 	position: absolute;
-	top: 20%;
+	top: 25%;
 	left: 10%;
 	width: 80%;
 }
 
-#quote h2 {
-	vertical-align: center;
-	font-size: 180%;
+.quote h2 {
+	text-align: center;
+	font-size: 200%;
+	color: white;
+}
+
+.quote h1 {
+	text-align: center;
+	font-size: 500%;
 	color: white;
 }
 
@@ -114,10 +170,22 @@
 
 html, body {
 	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 div { 
 	width: 100%;
+}
+
+/** 
+ * Cover background information
+ */
+
+#wrapper {
+	position: relative;
+	height: 100%;
 }
 
 #aboutme {
@@ -130,15 +198,61 @@ div {
 	background-size: cover;
 }
 
-#sunset {
-	position: relative;
+#blossoms {
+	position: absolute;
 	height: 100%;
 	background-attachment: fixed;
-	background: url(../public/berkeley_sunset.jpg) no-repeat center center fixed; 
+	background: url(../public/blossoms.JPG) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+#blossoms nav ul li {
+	color: #DF01A5;
+}
+
+#blossoms nav ul li:hover {
+	color: #FF00FF;
+}
+
+#plane {
+	position: absolute;
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/plane.JPG) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#plane nav ul li {
+	color: #FE9A2E;
+}
+
+#plane nav ul li:hover {
+	color: #FF8000;
+}
+
+#trees {
+	position: absolute;
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/trees.JPG) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#trees nav ul li {
+	color: #173B0B;
+}
+
+#trees nav ul li:hover {
+	color: #0B610B
 }
 
 #blog {
@@ -150,6 +264,7 @@ div {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
 #welcome {
 	color: white;
 	text-align: center;
@@ -165,12 +280,6 @@ p{
 	font-family: 'PT Sans', sans-serif;
 	font-size: 110%;
 }
-html, body{
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
 .content{
 	padding-left: 5;
 	width: 720px;
@@ -235,7 +344,9 @@ a:visited{
 	font-size: 80%;
 }
 
-nav{
+
+nav {
+	z-index: 10;
 	display: block;
 	width: 100%;
 	float: center;

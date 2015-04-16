@@ -1,13 +1,105 @@
 ---
 layout: home
 ---
-<div id="quote">
-	<h2>The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.</h2>
-	<h2 align="middle">-Steve Jobs</h2>
+
+<!--
+<div id="sunset">
+<div id="slider">
+	<ul class="slides">
+		<li class="slide"><img src="../public/berkeley_sunset.jpg" width="720" height="480"></li>
+		<li class="slide"><img src="../public/snow.jpg" width="720" height="480"></li>
+		<li class="slide"><img src="../public/neighborhood.jpg" width="720" height="480"></li>
+		<li class="slide"><img src="../public/berkeley_sunset.jpg" width="720" height="480"></li>
+	</ul>
 </div>
+</div> 	
+-->
 
 </div>
 
+
+
+<div class="text">
+		
+		<span><img src="../public/cal.png" height="120" width="150"></img><h2>Thoughts, Adventures, and Opinons</h2>
+		<h2>of a UC Berkeley Engineer</h2><span>
+	
+</div>
+
+
+
+<script>  
+	$(function() {
+
+		var images = new Array()
+		images[0] = "#blossoms"
+		images[1] = "#plane"
+		images[2] = "#trees"
+		var pause = 3000;
+
+
+		function fadeImages(images, i) {
+			setInterval(function() {
+				// i current frame to disappear
+				// i + 2 next frame to di
+				var curr = images[i];
+				$(curr).fadeToggle(500);
+				var next = images[i-1];
+				if (i == 0) {
+					var next = images[i+2];
+				}
+				$(next).fadeToggle(500);
+				if (i == images.length - 1) {
+					i = 0;
+				} else {
+					i = i + 1;
+				}
+			}, pause);
+		}
+
+		fadeImages(images, 0);
+		
+	});
+</script>
+
+
+<script>
+	$(function() {
+
+		var width = 720;
+		var animationSpeed = 1000;
+		var pause = 3000; 
+		var currentSlide = 1;
+
+		var $slider = $('#slider');
+		var $slideContainer = $slider.find('.slides');
+		var $slides = $slideContainer.find('.slide');
+
+		var interval;
+
+		function startSlider(){
+			interval = setInterval(function() {
+				$slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+					currentSlide++;
+					if (currentSlide == $slides.length) {
+						currentSlide = 1;
+						$slideContainer.css('margin-left', 0);
+					}
+				});
+			}, pause);
+		}
+
+		function stopSlider() {
+			clearInterval(interval);
+		}
+
+		$slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
+
+		startSlider();
+	});
+	
+
+</script>
 <!--
 <div id="pillar">
 	<div id="word">
@@ -16,6 +108,34 @@ layout: home
 		<br/>Persistence in the face of failure. Everything has a price.</h3>
 	</div>
 </div>
+-->
+<!--
+<script type="text/javascript">
+	var slideimages = new Array()
+	slideimages[0] = new Image()
+	slideimages[0].src = "../public/berkeley_sunset.jpg"
+	slideimages[1] = new Image()
+	slideimages[1].src = "../public/neighborhood.jpg"
+	slideimages[2] = new Image()
+	slideimages[2].src = "../public/snow.jpg"
+	
+	var index = 0;
+
+	function changeImage() {
+		if (index < 2) 
+			index++
+		else 
+			index = 0
+		$("#sunset").css("background-image", "url(" + slideimages[index].src + ")")
+	}
+
+	$(function() {
+		$("#sunset").on('click', function()
+		{
+			changeImage();
+		});
+	});
+</script>
 -->
 
 
