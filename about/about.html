@@ -5,14 +5,58 @@ permalink: /aboutme/
 
 <div class="quote">
 	<h2>Practice isn't the thing you do once you're good. It's the thing you do that makes you good.</h2>
-	<h2 align="middle">-Malcolm Gladwell</h2>
 </div>
 
+
 </div>
+
+<div id="statement">
+		<span id="I-am"><h2>I am a student.</h2></span>
+		<div id="moreAbout">More about me!</div>
+</div>
+
+
+<div id="bell_grad_fam">
+</div>
+
+<div id="statement">
+	<span id="I-am"><h2>I am an athlete.</h2></span>
+</div>
+
+<div id="basketball">
+</div>
+
+<div id="statement">
+	<span id="I-am"><h2>I am a programmer.</h2></span>
+</div>
+
+<div id="programmer">
+</div>
+
+<div id="statement">
+	<span id="I-am"><h2>I am Kevin.</h2></span>
+</div>
+
 <body>
 
-<div class="blog">
+<script type="text/javascript">
+	$(function() {
+		$("#moreAbout").hide();
 
+		$("#I-am").mouseover(function() {
+			$("#I-am").fadeOut(200);
+			$("#moreAbout").fadeIn(200);
+		});
+		$("#moreAbout").mouseout(function() {
+			$("#moreAbout").fadeOut(200);
+			$("#I-am").fadeIn(200);
+		});
+	});
+
+</script>
+
+<!-- <div class="blog">
+asd
 <img src="/public/me.jpg" height="400" width="300" align="left">
 
 <p>
@@ -23,8 +67,8 @@ permalink: /aboutme/
 </p>
 <p>
 	<i>Thank you for reading my posts! If you'd like to connect, add me on <b><a id='bio' href="https://www.facebook.com/kevarifin14">Facebook</a></b> or check out my <b><a id='bio' href="https://github.com/kevarifin14">Github</a></b>. Send any comments to kevarifin14@gmail.com!</i>
-</p>
+</p> -->
 
-</div>
+<!-- </div> -->
 
 

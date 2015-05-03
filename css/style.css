@@ -189,15 +189,6 @@ div {
 	height: 100%;
 }
 
-#aboutme {
-	height: 100%;
-	background-attachment: fixed;
-	background: url(../public/hk.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
 
 #blossoms {
 	position: absolute;
@@ -282,6 +273,88 @@ div {
 	text-align: center;
 }
 
+/* About page statements and images */
+
+#dimmed {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	z-index: 999;
+	top: 0;
+	left: 0;
+}
+
+#moreAbout {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	color: white;
+}
+
+#aboutme {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/hk.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#statement {
+	height: 100%;
+	position: relative;
+	display: table;
+	text-align: center;
+	background: #F2F2F2;	
+}
+
+#statement span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#statement span h2 {
+	font-size: 400%;
+	color: black;
+}
+
+#bell_grad_fam {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/bell_grad_fam.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#basketball {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/auxgym.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#programmer {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/warty-final-ubuntu.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 .blog {
 	background: white;
 	background: cover;
@@ -347,15 +420,6 @@ a:visited{
 	text-decoration: none;
 }
 
-#footer {
-	position: relative;
-	background: black;
-}
-
-#footnav {
-	text-align: center;
-	font-size: 80%;
-}
 
 
 nav {
@@ -382,7 +446,11 @@ nav ul li{
 
 nav ul li:hover{
 	color:#81BEF7;
-
+	-webkit-transition: color 0.3s ease-in-out;
+	-moz-transition: color 0.3s ease-in-out;
+	-ms-transition: color 0.3s ease-in-out;
+	-o-transition: color 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out;
 }
 
 nav ul ul{
@@ -492,6 +560,68 @@ iframe {
 	text-align: center;
 	color: white;
 	font-size: 400%;
+}
+
+/* Footer nav bar and social media links */
+
+#footer {
+	position: relative;
+	background: black;
+	height: 150px;
+}
+
+#footnav {
+	top: 40%;
+	position: absolute;
+	text-align: center;
+	font-size: 90%;
+}
+
+
+#social_media {
+	position: relative;
+}
+
+.tag {
+	position: absolute;
+}
+
+#fb {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	height: 40px;
+	width: 50px;
+	margin: 0px 0 0 40px;
+}
+
+#gh {
+	position: absolute;
+	top: 10px;
+	width: 40px;
+	height: 40px;
+	left: 50%;
+	margin: 0px 0 0 -80px;
+}
+
+#in {
+	position: absolute;
+	top: 10px;
+	width: 40px;
+	height: 40px;
+	left: 50%;
+	margin: 0px 0 0 -20px;
+}
+
+#copyright {
+	height: 20px;
+	position: relative;
+	text-align: center;
+}
+
+#copyright h3 {
+	font-size: 60%;
+	color: #848484;
 }
 
 
