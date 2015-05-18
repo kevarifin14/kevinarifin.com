@@ -3,12 +3,97 @@ layout: about
 permalink: /aboutme/
 ---
 
-<div class="quote">
-	<h2>Practice isn't the thing you do once you're good. It's the thing you do that makes you good.</h2>
+<div class="sideQuote">
+	<h1>About Me</h1>
+	<p>Welcome to my personal page on the web! I'm a first year EECS student at UC Berkeley. I'm originally from the South Bay Area and attended high school at Bellarmine College Preparatory. 
+	<br/>
+	<br/>I'll be sharing some of my thoughts and random insights as well as blogging about my exploits at Berkeley and elsewhere. Click on the arrow below to learn more about me!</p>
+</div>
+
+<div id="pointerContainer">
+	<img id="pointer" src="../public/blackDown.png" width="60" height="37.5">
+</div>
+
 </div>
 
 
+<div class="popup" id="bell">
+	<div class="pContainer"><p>Adding some memorable experiences from my time at Bellarmine</p></div>
 </div>
+
+<div class="popup" id="cal">
+	<div class="pContainer"><p>Adding some things I do at Berkeley</p></div>
+</div>
+
+<div class="popup" id="resume">
+	<img src="../public/resumeSp15.pdf">
+</div>
+
+<div class="popup" id="n/a">
+</div>
+
+<A NAME="codeword"></a>
+
+<div id="about">
+
+	<div id="pinBox"> 
+	<div id="pin"><img class="button" id="b" src="../public/bellSeal.png" width="160" height="160"></div>
+	<div id="pin"><img class="button" id="california" src="../public/berkeleySeal.jpg" width="160" height="160"></div>
+	<div id="pin"><img class="button" id="resumeButton" src="../public/resume.gif" width="160" height="160"></div>
+	</div>
+</div>
+
+
+<script>
+$(function() {
+	var currentPopup;
+
+	function showPopup(popupName) {
+		$(popupName).fadeIn(500);
+		$(".cover").fadeTo(500, 0.5);
+	}
+
+	function hidePopup(popupName) {
+		$(popupName).fadeOut(500);
+		$(".cover").fadeOut(500);
+	}
+
+	$("#b").click(function() {
+		currentPopup = "#bell.popup";
+		showPopup(currentPopup);
+	});
+
+	$("#california").click(function() {
+		currentPopup = "#cal.popup";
+		showPopup(currentPopup);
+	});
+
+	$("#resumeButton").click(function() {
+		currentPopup = "#resume.popup";
+		showPopup(currentPopup);
+	})
+
+	$(".cover").click(function() {
+		hidePopup(currentPopup);
+	});
+
+	$(".button").mouseover(function() {
+		$(this).animate({height: '+=10px', width: '+=10px'}, 300);
+	});
+
+	$(".button").mouseout(function() {
+		$(this).animate({height: '-=10px', width: '-=10px'}, 300);
+	});
+
+	$("#b").css({height: '+=10px', width: '+=10px'});
+	$("#b").css({height: '-=10px', width: '-=10px'});
+	
+
+});
+</script>
+
+
+<!-- 
 
 <div id="statement">
 		<span id="I-am"><h2>I am a student.</h2></span>
@@ -54,7 +139,7 @@ permalink: /aboutme/
 	});
 
 </script>
-
+ -->
 <!-- <div class="blog">
 asd
 <img src="/public/me.jpg" height="400" width="300" align="left">

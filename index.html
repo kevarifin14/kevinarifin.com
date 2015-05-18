@@ -5,9 +5,11 @@ layout: home
 
 <div class="text">
 	<span>
+		<br/>
 		<img src="../public/portrait.jpg" width="136" height="136">
-		<h2>Thoughts, Adventures, and Opinons</h2>
+		<h2>Thoughts, Adventures, and Opinions</h2>
 		<h2>of a UC Berkeley Engineer</h2><img src="../public/cal.png" height="120" width="150"></img>
+		<br/>
 	<span>
 </div>
 
@@ -51,43 +53,6 @@ layout: home
 </script>
 
 
-<script>
-	$(function() {
-
-		var width = 720;
-		var animationSpeed = 1000;
-		var pause = 3000; 
-		var currentSlide = 1;
-
-		var $slider = $('#slider');
-		var $slideContainer = $slider.find('.slides');
-		var $slides = $slideContainer.find('.slide');
-
-		var interval;
-
-		function startSlider(){
-			interval = setInterval(function() {
-				$slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
-					currentSlide++;
-					if (currentSlide == $slides.length) {
-						currentSlide = 1;
-						$slideContainer.css('margin-left', 0);
-					}
-				});
-			}, pause);
-		}
-
-		function stopSlider() {
-			clearInterval(interval);
-		}
-
-		$slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
-
-		startSlider();
-	});
-	
-
-</script>
 
 
 

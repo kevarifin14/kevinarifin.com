@@ -1,3 +1,216 @@
+/**
+ * General settings for stylin' webiste
+ * Works with basic text, body, 
+ * and html containers. */
+
+h1, h2, h3, li, p {
+	font-family: 'PT Sans', sans-serif;
+}
+
+p {
+	font-size: 110%;
+}
+
+.content{
+	padding-left: 5;
+	width: 720px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h1, h2, h3 {	
+	color: #0B0B61;
+	font-size: 150%;
+}
+
+li {
+	font-size: 120%;
+	list-style-type: none;
+}
+
+h1 {
+	font-size: 225%;
+	text-align: left;
+	color: #0B0B61;
+}
+
+header{
+	background: #F2F2F2;
+	width: 100%;
+	text-align: center;
+}
+
+header a h1{
+	text-align: center;
+}
+
+body{
+	width: 100%;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+.pContainer {
+	position: absolute;
+	width: 90%;
+	left: 5%;
+}
+
+nav {
+	z-index: 10;
+	display: block;
+	width: 100%;
+	float: center;
+	text-align: right;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li{
+	color: white;
+	display: inline-block;
+	padding: 30px 20px;	
+}
+
+nav ul li:hover{
+	color:#81BEF7;
+	-webkit-transition: color 0.3s ease-in-out;
+	-moz-transition: color 0.3s ease-in-out;
+	-ms-transition: color 0.3s ease-in-out;
+	-o-transition: color 0.3s ease-in-out;
+	transition: color 0.3s ease-in-out;
+}
+
+nav ul ul{
+	display: inline-block;
+	visibility: hidden;
+	position: absolute;
+	z-index: 10;
+	top: 127px;
+	left: 0px;
+	background: #F2F2F2;
+	opacity: 0;
+	width: 100%;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-ms-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+nav ul ul a{
+	font-size: 80%;
+}
+
+nav ul li:hover > ul{
+	visibility: visible;
+	opacity: 0.9;
+}
+
+nav ul ul li{
+	float: center;
+	position: relative;
+}
+
+img{
+	display: block;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+iframe {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/** 
+ * Main styling section for about page
+ * Darken page effect 
+ * Adjusts popputs and creates a darkeing
+ * effect that maeks the page darken behind div
+ * Also accounts for opening pdf in case of 
+ * the resume page */
+
+#aboutme {
+	height: 100%;
+	background-attachment: fixed;
+	background: url(../public/hk.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#about {
+	height: 100%;
+}
+
+#pinBox {
+	top: 10px;
+	height: 100%;
+	display: table;
+	position: relative;
+	width: 60%;
+	left: 20%;
+	right: 20%;
+}
+
+#pin {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	display: table-cell;
+}
+
+
+.cover {
+	background: black;
+	display: none;
+	z-index: 10;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	position: fixed;
+}
+
+#resume.popup {
+	width: 50%;
+	left: 25%;
+	overflow: auto;
+}
+
+.popup {
+	z-index: 15;
+	position: fixed;
+	left: 10%;
+	top: 10%;
+	background-color: white;
+	width: 80%;
+	height: 80%;
+	display: none;
+}
+
+.button {
+	position: relative;
+}
+
+/* Home page Introduction */
+
 .text {
 	position: relative;
 	height: 400px;
@@ -10,72 +223,26 @@
 	vertical-align: middle;
 }
 
-#slider {
-	width: 720px;
-	height: 480px;
-	overflow: hidden;
-	background: no-repeat center center fixed;
-}
+/* Pointer slide down effect */
 
-#slider .slides {
-	display: block;
-	width: 400%;
-	height: 480px;
-	margin: 0;
-	padding: 0;	
-}
-
-#slider .slide {
-	display: block;
-	float: left;
-	list-style-type: none;
-	width: 720px;
-	height: 480px;
-}
-
-#pillar {
-	position: relative;
-	height: 100%;
-	background-attachment: fixed;
-	background: white; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-#container_ss {
-	overflow: hidden;
-}
-
-#container_ss:hover {
-	background: #E6E6E6;
-	-webkit-transition: background 0.3s ease-in-out;
-	-moz-transition: background 0.3s ease-in-out;
-	-ms-transition: background 0.3s ease-in-out;
-	-o-transition: background 0.3s ease-in-out;
-	transition: background 0.3s ease-in-out;
-}
-
-#ss {
-	display: none;
-}
-#word {
+#pointerContainer {
 	position: absolute;
-	width: 50%;
-	top: 30%;
-	left: 35%;
-}
-#word h1 {
-	left:30px;
-	position: relative;
-	font-size: 300%;
-	color: black;
+	left: 48%;
+	bottom: 6%;
+	width: 30px;
+	height: 19px;
 }
 
-#word h3 {
-	color: black;
+#pointer {
+	position: absolute;
 }
+
+#bContainer{
+	width: 10%;
+	height: 10%;
+	background: blue;
+}
+
 .slideout {
 	position: relative;
 	height: 150px;
@@ -98,6 +265,8 @@
 }
 
 
+/* Page Home Images */ 
+
 #passions {
 	height: 100%;
 	background-attachment: fixed;
@@ -113,6 +282,23 @@
 	background: #A4A4A4;
 	padding-bottom: 10px;
 }
+
+.sideQuote {
+	position: absolute;
+	width: 40%;
+	left: 50%;
+}
+
+.sideQuote h1 {
+	color: white;
+	font-size: 300%;
+}
+
+.sideQuote p {
+	color: white;
+	font-size: 150%;
+}
+
 .quote {
 	position: absolute;
 	top: 25%;
@@ -275,16 +461,7 @@ div {
 
 /* About page statements and images */
 
-#dimmed {
-	display: none;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: #000;
-	z-index: 999;
-	top: 0;
-	left: 0;
-}
+
 
 #moreAbout {
 	position: absolute;
@@ -297,63 +474,6 @@ div {
 	color: white;
 }
 
-#aboutme {
-	height: 100%;
-	background-attachment: fixed;
-	background: url(../public/hk.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-#statement {
-	height: 100%;
-	position: relative;
-	display: table;
-	text-align: center;
-	background: #F2F2F2;	
-}
-
-#statement span {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-#statement span h2 {
-	font-size: 400%;
-	color: black;
-}
-
-#bell_grad_fam {
-	height: 100%;
-	background-attachment: fixed;
-	background: url(../public/bell_grad_fam.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-#basketball {
-	height: 100%;
-	background-attachment: fixed;
-	background: url(../public/auxgym.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-#programmer {
-	height: 100%;
-	background-attachment: fixed;
-	background: url(../public/warty-final-ubuntu.png) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
 
 .blog {
 	background: white;
@@ -361,208 +481,12 @@ div {
 	min-height: 400px;
 }
 
-p{
-	font-family: 'PT Sans', sans-serif;
-	font-size: 110%;
-}
-.content{
-	padding-left: 5;
-	width: 720px;
-	margin-right: auto;
-	margin-left: auto;
-}
 
-h1,h2,h3,li{
-	font-family: 'PT Sans', sans-serif;		
-	color: #0B0B61;
-	font-size: 150%;
-}
-
-li{
-	font-size: 120%;
-	list-style-type: none;
-}
-
-h1{
-	font-size: 225%;
-	text-align: left;
-	color: #0B0B61;
-}
-
-#about{
-	font-size: 175%;
-}
-
-#bio{
-	color: #0B0B61;
-}
-
-header{
-	background: #F2F2F2;
-	width: 100%;
-	text-align: center;
-}
-header a h1{
-	text-align: center;
-}
-
-body{
-	width: 100%;
-	padding: 0;
-}
-
-a{
-	text-decoration: none;
-	color: black;
-}
-
-a:visited{
-	text-decoration: none;
-}
-
-
-
-nav {
-	z-index: 10;
-	display: block;
-	width: 100%;
-	float: center;
-	text-align: right;
-}
-
-nav ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li{
-	color: white;
-	display: inline-block;
-	padding: 30px 20px;
-	
-	
-}
-
-nav ul li:hover{
-	color:#81BEF7;
-	-webkit-transition: color 0.3s ease-in-out;
-	-moz-transition: color 0.3s ease-in-out;
-	-ms-transition: color 0.3s ease-in-out;
-	-o-transition: color 0.3s ease-in-out;
-	transition: color 0.3s ease-in-out;
-}
-
-nav ul ul{
-	display: inline-block;
-	visibility: hidden;
-	position: absolute;
-	z-index: 10;
-	top: 127px;
-	left: 0px;
-	background: #F2F2F2;
-	opacity: 0;
-	width: 100%;
-	-webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	-ms-transition: opacity 0.3s ease-in-out;
-	-o-transition: opacity 0.3s ease-in-out;
-	transition: opacity 0.3s ease-in-out;
-}
-
-nav ul ul a{
-	font-size: 80%;
-}
-
-nav ul li:hover > ul{
-	visibility: visible;
-	opacity: 0.9;
-}
-
-nav ul ul li{
-	float: center;
-	position: relative;
-}
-
-img{
-	display: block;
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-iframe {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#blog.center{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/* fixed navbar */
-
-#fixed{
-	z-index: 4;
-	display: none;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 40px;
-	background: rgba(0,0,0,0.4);
-	color: white;
-}
-
-#fixed ul li{
-	color: white;
-}
-
-#books{
-	z-index: 0;
-	position: relative;
-	background-image: url(../public/books.jpg);
-	width: 720px;
-	height: 250px;
-}
-
-
-.overlay{
-	z-index: 1;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: rgba(0,0,0,0.5);
-	opacity: 0;
-	-webkit-transition: opacity 0.3s ease-in-out;
-	-moz-transition: opacity 0.3s ease-in-out;
-	-ms-transition: opacity 0.3s ease-in-out;
-	-o-transition: opacity 0.3s ease-in-out;
-	transition:opacity 0.3s ease-in-out; 
-	-webkit-backface-visibility:hidden;
-}
-
-.overlay:hover{
-	opacity: 1;
-}
-
-.txt-container{
-	position: absolute;
-	display: inline-block;
-	width: 100%;
-}
-
-#img_txt{
-	text-align: center;
-	color: white;
-	font-size: 400%;
-}
-
-/* Footer nav bar and social media links */
+/** 
+ * Footer nav bar and social media links 
+ * Styles the social media logos
+ * Fixes up the footer navigation bar
+ * Adds copyright mark at bottom */
 
 #footer {
 	position: relative;
@@ -584,6 +508,17 @@ iframe {
 
 .tag {
 	position: absolute;
+}
+
+#copyright {
+	height: 20px;
+	position: relative;
+	text-align: center;
+}
+
+#copyright h3 {
+	font-size: 60%;
+	color: #848484;
 }
 
 #fb {
@@ -612,17 +547,5 @@ iframe {
 	left: 50%;
 	margin: 0px 0 0 -20px;
 }
-
-#copyright {
-	height: 20px;
-	position: relative;
-	text-align: center;
-}
-
-#copyright h3 {
-	font-size: 60%;
-	color: #848484;
-}
-
 
 

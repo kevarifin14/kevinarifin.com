@@ -1,0 +1,12 @@
+<script>
+
+	function scrollToAnchor(dest) {
+		var anchor = $("a[name='" + dest + "']");
+		$('html,body').animate({scrollTop: anchor.offset().top}, 'slow');
+	}
+
+	$("#pointer").click(function() {
+		scrollToAnchor("codeword");
+	});
+
+</script>
