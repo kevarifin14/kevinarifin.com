@@ -1,56 +1,53 @@
 ---
-layout: home
+layout: default
 ---
+<div class="cover" id="me_on_a_rock">
+  <h1 id="indexIntroText">Kevin Arifin</h1>
 </div>
 
-<div class="text">
-	<span>
-		<br/>
-		<img src="../public/portrait.jpg" width="136" height="136">
-		<h2>Thoughts, Adventures, and Opinions</h2>
-		<h2>of a UC Berkeley Engineer</h2><img src="../public/cal.png" height="120" width="150"></img>
-		<br/>
-	<span>
+<div id="indexIntroDiv">
+    <img src="../public/portrait.jpg" width="136" height="136">
+    <h2>Thoughts, Adventures, and Opinions</h2>
+    <h2>of a UC Berkeley Engineer</h2>
+    <img src="../public/cal.png" height="120" width="150"></img>
 </div>
 
-<div id="berkeleyView">
+<div class="cover" id="berkeleyView">
 </div>
 
+<script>
+//   $(function() {
+
+//     var images = new Array()
+//     images[0] = "#blossoms"
+//     images[1] = "#plane"
+//     images[2] = "#trees"
+//     var pause = 3000;
 
 
-<script>  
-	$(function() {
+//     function fadeImages(images, i) {
+//       setInterval(function() {
+//         // i current frame to disappear
+//         // i + 2 next frame to di
+//         var curr = images[i];
+//         $(curr).fadeToggle(500);
+//         var next = images[i-1];
+//         if (i == 0) {
+//           var next = images[i+2];
+//         }
+//         $(next).fadeToggle(500);
+//         if (i == images.length - 1) {
+//           i = 0;
+//         } else {
+//           i = i + 1;
+//         }
+//       }, pause);
+//     }
 
-		var images = new Array()
-		images[0] = "#blossoms"
-		images[1] = "#plane"
-		images[2] = "#trees"
-		var pause = 3000;
+//     // fadeImages(images, 0);
 
-
-		function fadeImages(images, i) {
-			setInterval(function() {
-				// i current frame to disappear
-				// i + 2 next frame to di
-				var curr = images[i];
-				$(curr).fadeToggle(500);
-				var next = images[i-1];
-				if (i == 0) {
-					var next = images[i+2];
-				}
-				$(next).fadeToggle(500);
-				if (i == images.length - 1) {
-					i = 0;
-				} else {
-					i = i + 1;
-				}
-			}, pause);
-		}
-
-		fadeImages(images, 0);
-		
-	});
-</script>
+//   });
+// </script>
 
 
 

@@ -1,1 +1,5 @@
 title: Kevin Arifin
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     .
