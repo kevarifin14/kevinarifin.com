@@ -60,18 +60,15 @@ div {
   background: black;
 }
 
-/* Copyright
-
 /* Bootstrap mods */
 
-.btn-group .btn {
-  background: black;
+.btn.btn-default {
+  background-color: black;
+  border-color: black;
+  background-color: black;
 }
 
-.btn-group {
-
-}
-
-.btn:hover {
-  color: #585858;
+.btn.btn-default:hover {
+  background-color: #585858;
+  border-color: #585858;
 }
