@@ -37,6 +37,11 @@ div {
   background-size: cover;
 }
 
+#plane {
+  background: url(../public/plane.JPG) no-repeat center center fixed;
+  background-size: cover;
+}
+
 /* Index page styling */
 
 #indexIntroText {
@@ -58,6 +63,25 @@ div {
   padding-top: 10px;
   padding-bottom: 10px;
   background: black;
+}
+
+/* About page styling */
+
+.sideQuote {
+  position: absolute;
+  width: 40%;
+  left: 50%;
+  top: 15%;
+}
+
+.sideQuote h1 {
+  color: white;
+  font-size: 300%;
+}
+
+.sideQuote p {
+  color: white;
+  font-size: 150%;
 }
 
 /* Bootstrap mods */
