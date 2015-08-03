@@ -15,6 +15,11 @@ div {
   position: relative;
 }
 
+.relative.col-md-8{
+  position: relative;
+  float: center;
+}
+
 .shroud {
   background: black;
   display: none;
