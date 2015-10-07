@@ -70,6 +70,12 @@ div {
   background-size: cover;
 }
 
+#me_and_campinille {
+  width: 302.4px;
+  height: 403.4px;
+  position: relative;
+}
+
 #berkeleyView {
   background: url(../public/berkeleyView.JPG) no-repeat center center fixed;
   background-size: cover;
@@ -123,17 +129,6 @@ div {
 }
 
 /* Bootstrap mods */
-
-.btn.btn-default {
-  background-color: black;
-  border-color: black;
-  background-color: black;
-}
-
-.btn.btn-default:hover {
-  background-color: #585858;
-  border-color: #585858;
-}
 
 .thumbnail {
    display: inline-block;
