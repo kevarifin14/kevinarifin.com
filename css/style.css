@@ -3,6 +3,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -19,122 +20,14 @@ div {
   position: relative;
 }
 
-.thumbnail {
-  min-height: 200px;
-  max-height: 200px;
-  overflow: hidden;
-}
-
-.relative.col-md-8{
-  position: relative;
-  float: center;
-}
-
-.shroud {
-  background: black;
-  display: none;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  position: fixed;
-}
-
-.popup {
-  z-index: 15;
-  position: fixed;
-  left: 10%;
-  top: 10%;
-  background-color: white;
-  width: 80%;
-  height: 80%;
-  display: none;
-  overflow: auto;
-}
-
-.post {
-  padding: 10px;
-}
-
-
-/* Full page image covers */
-
-.cover {
-  position: relative;
-  height: 100%;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+.circle-image {
   background-size: cover;
-}
-
-#me_on_a_rock {
-  background: url(../public/me_on_a_rock.jpg) no-repeat right bottom fixed;
-  background-size: cover;
-}
-
-#me_and_campinille {
-  width: 302.4px;
-  height: 403.4px;
-  position: relative;
-}
-
-#berkeleyView {
-  background: url(../public/berkeleyView.JPG) no-repeat center center fixed;
-  background-size: cover;
-}
-
-#plane {
-  background: url(../public/plane.JPG) no-repeat center center fixed;
-  background-size: cover;
-}
-
-/* Index page styling */
-
-#indexIntroText {
-  position: relative;
-  top: 40%;
-  transform: translateY(-50%);
-  text-align: center;
-  font-size: 500%;
-  color: white;
-}
-
-#indexIntroDiv {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#black {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background: black;
-}
-
-/* About page styling */
-
-.sideQuote {
-  position: absolute;
-  width: 40%;
-  left: 50%;
-  top: 15%;
-}
-
-.sideQuote h1 {
-  color: white;
-  font-size: 300%;
-}
-
-.sideQuote p {
-  color: white;
-  font-size: 150%;
-}
-
-/* Bootstrap mods */
-
-.thumbnail {
-   display: inline-block;
-   background-color: blue;
+  background-position: center;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  border-radius:50%;
+  background-image: url(../public/me.jpg);
+  display: block;
+  background-position-x: 65%;
 }
