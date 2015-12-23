@@ -1,24 +1,20 @@
-<div class="text-center" id="black">
-  <button type="button" class="btn btn-default">
-    <a href="https://www.facebook.com/kevarifin14" target="_blank">
-      <img src="../public/facebook3.png" height="40" width="40"></img>
-    </a>
-  </button>
-  <button type="button" class="btn btn-default">
-    <a href="https://github.com/kevarifin14" target="_blank">
-      <img src="../public/github10.png" height="40" width="40"></img>
-    </a>
-  </button>
-  <button type="button" class="btn btn-default">
-    <a href="https://www.linkedin.com/in/kevinarifin" target="_blank">
-      <img src="../public/linkedin1.png" height="40" width="40"></img>
-    </a>
-  </button>
-</div>
+  <script>
+    $(".button-collapse").sideNav();
+    $(document).ready(function(){
+      $('.modal-trigger').leanModal();
+      $('.parallax').parallax();
+    });
 
-<div >
-  <p align="center">Copyright Kevin Arifin 2015</p>
-</div>
+    function hover(element) {
+    element.setAttribute('src', 'public/fail.jpg');
+    }
+    function unhover(element) {
+        element.setAttribute('src', 'public/juggle.jpg');
+    }
+  </script>
+</main>
 </body>
 </html>
+
+
 

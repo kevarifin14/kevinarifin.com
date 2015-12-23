@@ -1,1 +1,4 @@
 title: Kevin Arifin
+sass:
+    sass_dir: node_modules
+markdown: redcarpet

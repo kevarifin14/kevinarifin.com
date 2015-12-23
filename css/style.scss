@@ -1,0 +1,55 @@
+---
+---
+@import "materialize-css/sass/ghpages-materialize";
+@import "materialize-css/sass/materialize";
+@import "materialize-css/sass/style";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#copyright {
+  color: black;
+}
+#copyright-box {
+  float: bottom;
+  bottom: 50px;
+  right: 0px;
+  width: 100%;
+  position: absolute;
+}
+main {
+  flex: 1 0 auto;
+}
+
+body {
+  background-color: #FBFBEF;
+}
+
+.circle-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: url(../public/me.jpg);
+  display: block;
+  background-position-x: 65%;
+}
+
+
+

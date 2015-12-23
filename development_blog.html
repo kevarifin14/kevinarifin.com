@@ -1,0 +1,41 @@
+---
+layout: default
+permalink: /development_blog
+---
+
+<div class="row">
+  <div class="col s9">
+    <h1>Development Blog</h1>
+
+    <p>
+      Check out some of my insights and opinions from my experiences as a
+      software engineer.
+    </p>
+    <ul>
+    {% for post in site.posts %}
+      {% if post.category contains "development" %}
+        <li>
+          <a class="modal-trigger" href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  </div>
+</div>
+
+{% for post in site.posts %}
+  <div id="{{ post.slug }}" class="modal col s9">
+    <div class="modal-content">
+      {{ post.content }}
+    </div>
+  </div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
