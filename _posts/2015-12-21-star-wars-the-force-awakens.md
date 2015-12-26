@@ -4,7 +4,7 @@ category: movie
 ---
 
 ### Star Wars Episode VII: The Force Awakens
-<img align="right" src="https://upload.wikimedia.org/wikipedia/en/a/a2/Star_Wars_The_Force_Awakens_Theatrical_Poster.jpg">
+<img align="right" class="blog" src="https://upload.wikimedia.org/wikipedia/en/a/a2/Star_Wars_The_Force_Awakens_Theatrical_Poster.jpg">
 
 *WARNING: May contain spoilers about how I reacted to the movie.*
 

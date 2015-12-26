@@ -4,7 +4,7 @@ category: movie
 ---
 
 ### Star Wars Episode V: The Empire Strikes Back
-<img align="right" src="https://upload.wikimedia.org/wikipedia/en/3/3c/SW_-_Empire_Strikes_Back.jpg">
+<img align="right" class="blog" src="https://upload.wikimedia.org/wikipedia/en/3/3c/SW_-_Empire_Strikes_Back.jpg">
 
 Hours before watching the new Star Wars, I spent some time continuing my rewatching
 of the Star Wars trilogy. Episode V was quite the treat since I had not watched it

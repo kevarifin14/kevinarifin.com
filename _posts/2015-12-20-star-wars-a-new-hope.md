@@ -4,7 +4,7 @@ category: movie
 ---
 
 ### Star Wars Episode IV: A New Hope
-<img align="right" src="https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg">
+<img align="right" class="blog" src="https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg">
 
 Watching a Star Wars movie for the first time in two years was definitely an
 extremely nostalgic experience. Many of my strongest thoughts I had from watching
