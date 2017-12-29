@@ -1,0 +1,11 @@
+p, h2, h3, h5 {
+  text-shadow: none;
+  color: black;
+  padding-left: 6px;
+}
+p {
+  text-align: left;
+}
+a:hover {
+  text-decoration: none;
+}

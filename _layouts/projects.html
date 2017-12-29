@@ -1,0 +1,100 @@
+{% include header.html %}
+<link rel="stylesheet" href="/css/about.css">
+
+<body>
+
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <header class="masthead clearfix" style="position: relative">
+        <div class="inner">
+          <nav class="nav nav-masthead" >
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link active" href="/projects">Projects</a>
+            <a class="nav-link" href="/about">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <div class="col-xs-12 jumbotron">
+          <p>
+            Here is a collection of some of the things that I've been working on.
+          </p>
+          <a href="#comp-photo"><h5>Computational Photography</h5></a>
+          <a href="#class-notes"><h5>Class Notes</h5></a>
+        </div>
+        <a name="comp-photo">
+        <h1 class="cover-heading">Computational Photography</h1>
+        <div class="col-xs-12 jumbotron">
+          <div class="col-xs-4" style="padding-bottom: 10pt;">
+            <p style="padding-top: 10px">
+              I took a computational photography class at Berkeley (CS 194-26). Here
+              are a couple of the projects I worked on.
+            </p>
+            <h2>Frequency and Gradient Blending</h2>
+            <a href='https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj3/cs194-26-abc/'>
+              <img src='/images/deathstar_at_craterlake.jpg' class="img-rounded img-responsive" style="width: 75%">
+            </a>
+            <p>
+              Using frequency analysis and gradient blending, I made some realistic
+              images of impossible scenes, like the Death Star over Crater Lake.
+            </p>
+            <h2>Face Morphing</h2>
+            <a href='https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj4/cs194-26-abc/'>
+              <img src='/images/obama_george.gif' class="img-rounded img-responsive" style="width: 50%">
+            </a>
+            <p>
+              This was my favorite project in the class. Face morphing is the process of
+              creating a triangulation on two face, then slowly transforming the triangles into
+              each other using inverse warping.
+            </p>
+            <h2>Depth Refocusing</h2>
+            <a href='https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj5/cs194-26-abc/'>
+              <img src='/images/depth.gif' class="img-rounded img-responsive" style="width: 70%">
+            </a>
+            <p>
+              Using a set of images from slightly different perspectives, you can average together
+              these images to create effects such as depth refocusing and apeture adjustment.
+            </p>
+
+            <h2>Image Stitching</h2>
+            <a href='https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj6B/cs194-26-abc/'>
+              <img src='/images/cropped_sf.jpg' class="img-rounded img-responsive" style="width: 100%">
+            </a>
+            <p>
+              I implemented automatic image stitching to create some pretty cool panoramas.
+              I first used Harris corner detection and then adaptive non-maximal suppression
+              to pick well-spaced points. Then I used the RANSAC algorithm to select the feature
+              points used to rectify and then blended the images together.
+            </p>
+          </div>
+        </div>
+
+        <a name="class-notes">
+        <h1 class="cover-heading">Class Notes</h1>
+        <p>
+
+        </p>
+        <div class="col-xs-12 jumbotron">
+          <p><b>CS 189: Introduction to Machine Learning</b> <a style='color: #3366BB' href='/notes/cs189.pdf' target='_blank'>PDF</a> <b>|</b> <a style='color: #3366BB' href='/notes/cs189.zip'>LaTeX</a></p>
+          <p><b>EE 127: Optimization Models In Engineering</b> <a style='color: #3366BB' href='/notes/ee127.pdf' target='_blank'>PDF</a> <b>|</b> <a style='color: #3366BB' href='/notes/ee127.zip'>LaTeX</a></p>
+          <p><b>Stat 153: Introduction to Time Series</b> <a style='color: #3366BB' href='/notes/stat153.pdf' target='_blank'>PDF</a> <b>|</b> <a style='color: #3366BB' href='/notes/stat153.zip'>LaTeX</a></p>
+        </div>
+
+        <!-- <a name="cross-domain">
+        <h1 class="cover-heading">Cross Domain Image Generation</h1>
+        <div class="col-xs-12 jumbotron">
+        </div> -->
+      </main>
+
+      <footer class="mastfoot">
+      </footer>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
