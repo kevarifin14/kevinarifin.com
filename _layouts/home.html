@@ -1,52 +1,18 @@
 {% include header.html %}
+
 <body>
-
-<div class="site-wrapper">
-  <div class="site-wrapper-inner">
-    <div class="cover-container">
-      <header class="masthead clearfix">
-        <div class="inner">
-          <nav class="nav nav-masthead">
-            <a class="nav-link active" href="/">Home</a>
-            <a class="nav-link" href="/projects">Projects</a>
-            <a class="nav-link" href="/about">About</a>
-          </nav>
-        </div>
-      </header>
-
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Hi, I'm Kevin</h1>
-          <p class="lead">
-            I'm a student at UC Berkeley studying Electrical Engineering and Computer Science.
-            My academic interests include the intersection of machine learning, data,
-            and finance, and I am excited to be starting full-time as a Software Engineer
-            at Citadel July 2018. If you would like to learn more about me, here is a copy of
-            my latest <a style='color: #3366BB' href='/resume.pdf'>resume</a>.
-          </p>
-        <div class="col-md-12">
-              <a style="text-decoration: none;" href="https://www.linkedin.com/in/kevinarifin/" target="_blank">
-                <img height='50px' src="images/logos/linkedin.png" class="img-responsive"/>
-              </a>
-              <a style="text-decoration: none;" href="https://www.facebook.com/kevarifin14" target="_blank">
-                <img height='50px' src="images/logos/facebook.png" class="img-responsive"/>
-              </a>
-              <a style="text-decoration: none;" href="https://github.com/kevarifin14" target="_blank">
-                <img height='50px' src="images/logos/github.png" class="img-responsive"/>
-              </a>
-          </div>
-
-        <!-- <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-        </p> -->
-      </main>
-
-      <footer class="mastfoot">
-      </footer>
-
+  <div class='row'>
+    <div class='col-md-7 centered'>
+      <a href='/a-personal-perspective' class='blog-title-link'><h2 class='blog-title'>A Personal Perspective</h2></a>
+      <h6 class='blog-subtitle'>March 11, 2019</h6>
+      <p class='home-blog-des'>
+        Since graduating in May 2018, I’ve lived and worked in Berkeley, San Francisco,
+        South Bay, Chicago, and New York. I’ve driven across the country and back, visiting Yellowstone,
+        the Grand Tetons, and other national wonders, flying the same route across the country another five times...
+        <a href='/a-personal-perspective' class='read-more'>Read More</a>
+      </p>
     </div>
-
+    {% include sidebar.html %}
   </div>
 
-</div>
-
-</body>
+{% include footer.html %}

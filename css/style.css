@@ -1,1 +1,67 @@
+body {
+    background-color: rgb(240, 234, 214);
+    height: 100%;
+    width: 100%;
+}
 
+h1, h2, h3, h4, h5, h6, p {
+    color: rgb(30, 30, 30);
+}
+
+.blog-title-link:hover {
+    color: rgb(37, 71, 146);
+    text-decoration: none;
+}
+
+a, a:hover, a:visited {
+    color: rgb(37, 71, 146);
+    text-decoration: none;
+}
+
+hr {
+    background-color: rgb(37, 71, 146);
+}
+
+.title {
+    text-align: center;
+}
+
+.row {
+}
+.centered {
+    margin: auto;
+}
+
+blockquote {
+    background: rgb(44, 45, 47);
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.banner {
+    text-align: left;
+    line-height: 1;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    padding-top: 3em;
+    padding-bottom: 1em;
+}
+
+a.blog-title {
+}
+
+.blog-subtitle {
+    color: rgb(142, 142, 142);
+}
+
+.img-container {
+    padding-left: 10px;
+    width: 50%;
+}
+
+.blog-content {
+    text-align: left;
+}
+
+.no-underline-link:hover {
+    text-decoration: none;
+}
