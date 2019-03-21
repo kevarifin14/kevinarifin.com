@@ -1,19 +1,23 @@
 {% include header.html %}
-<body>
-  <div class='row'>
-    <div class='col-md-7 centered'>
-      <h2>{{ page.title }}</h2>
-      <h6 class='blog-subtitle'>{{ page.date | date: "%B %d, %Y" }}</h6>
 
-      <p>
-        {{ content }}
-      </p>
-      <p>
-        <i>
-          If you'd like to share your thoughts about my post, feel free to email me at <a href='mailto:kevarifin14@gmail.com'>kevarifin14@gmail.com</a>.
-          I don't get very many emails from real people anymore so I would be happy to bounce ideas with you over email!
-        </i>
-      </p>
+<body>
+  <div class='cover-photo' style='background-image: url({{page.image}})'>
+        <h1 class='post-title'>A Personal Perspective</h1>
+        <h3 class='post-subtitle'>{{ page.date | date: "%B %d, %Y" }}</h3>
+      </div>
     </div>
-    {% include sidebar.html %}
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-8 centered'>
+        {{ content }}
+        <p>
+          <i>
+            If you'd like to share your thoughts about my post, feel free to email me at <a href='mailto:kevarifin14@gmail.com'>kevarifin14@gmail.com</a>.
+            I don't get very many emails from real people anymore so I would be happy to bounce ideas with you over email!
+          </i>
+        </p>
+      </div>
+    </div>
+  </div>
 {% include footer.html %}

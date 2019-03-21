@@ -1,5 +1,6 @@
 ---
 layout: post
+image: '../images/chicago.jpg'
 title:  'A Personal Perspective'
 permalink: /a-personal-perspective
 ---
