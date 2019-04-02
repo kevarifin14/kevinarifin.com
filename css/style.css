@@ -40,6 +40,12 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: left;
 }
 
+blockquote {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: rgb(230, 230, 230);
+}
+
 .blog-title-link:hover {
     color: rgb(37, 71, 146);
     text-decoration: none;
@@ -128,12 +134,6 @@ hr {
     margin: auto;
 }
 
-blockquote {
-    background: rgb(44, 45, 47);
-    padding: 1em;
-    border-radius: 5px;
-}
-
 .banner {
     text-align: left;
     line-height: 1;
@@ -148,7 +148,8 @@ blockquote {
 
 .img-container {
     padding-left: 10px;
-    width: 50%;
+    padding-bottom: 10px;
+    width: 40%;
 }
 
 .blog-content {

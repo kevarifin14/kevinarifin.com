@@ -1,5 +1,0 @@
----
-title: Projects
-permalink: /projects/
-layout: projects
----
