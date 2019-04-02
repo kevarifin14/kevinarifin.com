@@ -5,7 +5,7 @@ title:  'Books I Like, Part 1'
 permalink: /books-i-like-part-1
 ---
 
-*Welcome to the first installment of Books I Like. This will be an ongoing series of posts of some of my favorite books I’ve read and key takeaways I got from reading the book. I’ll try to keep the spoilers to the minimum and focus more on why you should check these books out and some things to think about while reading them. You can find my full reading list [here](/reading-list#books). As always, I’m open to new recommendations to add to my reading list!*
+*Welcome to the first installment of Books I Like. This will be an ongoing series about some of my favorite books and key takeaways from the book. I’ll try to keep the spoilers to the minimum and focus more on why you should check these books out and some things to think about while reading them. You can find my full reading list [here](/reading-list#books). As always, I’m open to new recommendations to add to my reading list!*
 
 ## *Enders Game*
 ![](/images/endersgame.jpg){:class="img-responsive float-right img-container"}
