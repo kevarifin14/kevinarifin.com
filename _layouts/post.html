@@ -2,12 +2,12 @@
 
 <body>
   <div class='cover-photo' style='background-image: url({{page.image}})'>
-        <h1 class='post-title'>{{ page.title }}</h1>
-        <h3 class='post-subtitle'>{{ page.date | date: "%B %-d, %Y" }}</h3>
-      </div>
+    <div style='text-align: center'>
+      <h1 class='post-title'>{{ page.title }}</h1>
     </div>
+    <h3 class='post-subtitle'>{{ page.date | date: "%B %-d, %Y" }}</h3>
   </div>
-  <div class='container'>
+  <div class='container' id='blog'>
     <div class='row'>
       <div class='col-md-8 centered'>
         {{ content }}
