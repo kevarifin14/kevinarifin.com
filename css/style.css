@@ -16,6 +16,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 10px;
 }
 
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary {
+    background-color: rgb(37, 71, 146);
+    border-color: rgb(37, 71, 146);
+}
+
 .navcontainer {
     background-color: rgba(10, 10, 10, 0.5);
     position: fixed;
