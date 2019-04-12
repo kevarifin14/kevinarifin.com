@@ -158,6 +158,12 @@ hr {
     padding-left: 10px;
     padding-bottom: 10px;
     width: 40%;
+
+}
+
+.img-container-center {
+    width: 100%;
+    margin: 0 auto;
 }
 
 .blog-content {
