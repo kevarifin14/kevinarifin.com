@@ -24,7 +24,7 @@ body {
 
 h1, h2, h3, li, h4, h5, h6, a, p, button, input {
     font-family: 'Open Sans';
-    color: rgb(30, 30, 30);
+    /* color: rgb(30, 30, 30); */
 }
 
 .nav-item {
@@ -82,6 +82,9 @@ blockquote {
     background-color: rgb(230, 230, 230);
 }
 
+.blog-title-link {
+    color: rgb(37, 71, 146);
+}
 .blog-title-link:hover {
     color: rgb(37, 71, 146);
     text-decoration: none;
