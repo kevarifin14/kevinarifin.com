@@ -1,68 +1,33 @@
 {% include header.html %}
 {% include nav.html %}
 <!-- {% include title.html %} -->
-<div class='container'>
-  <div class='row'>
+<!-- <div class='container'> -->
+  <!-- <div class='row'>
     <div class='col-md-8 centered'>
       Welcome to Life In Bytes! If you want to learn more about the purpose of the blog, check out the
-      <a href='/a-personal-perspective'>pilot post</a>.
+      <a href='/a-personal-perspective'>pilot post</a>. I also send out an occasional newsletter called
+      Thought Bytes!
     </div>
   </div>
 </div>
-<hr />
+<hr /> -->
 
 </header>
 <body>
   <div class='container'>
     <div class='row'>
       <div class='col-md-8 centered'>
-        <a href='/why-im-voting-for-andrew-yang' class='blog-title-link'><h2>Why I'm Voting for Andrew Yang</h2></a>
-        <h6 class='blog-subtitle'>April 16, 2019</h6>
-        <p class='home-blog-des'>
-        I first seriously thought about the idea of universal basic income last spring while taking Robert Reich’s Wealth and Poverty
-        class my final semester at Berkeley. The class mainly focused on the growing socioeconomic inequality in the country and social
-        policies that could fix the problem. While I agreed the problem was real, the solutions discussed seemed to be antiquated (labor unions),
-        overly complex (earned income tax credit), or had misaligned incentives (disability and welfare programs). This is how I began to
-        formalize the idea of universal basic income in my mind. It appeared to be a simple solution to solve the multitude of problems we
-        face in today’s economy. While I’m no expert in social policy, my continued research of UBI showed it’s not only feasible, but
-        something 2020 democratic presidential candidate Andrew Yang wants to make a reality. I discovered Andrew Yang through an interview
-        he did on Sam Harris’s podcast Waking Up (now titled Making Sense). While Andrew Yang has many other policies, his most important
-        platform is the Freedom Dividend, which will pay every citizen over the age of 18 $1,000 every month. There’s a lot to understand in
-        terms of implementation and consequences so let’s explore his freedom dividend platform, and see how it makes him the most compelling
-        candidate for president... <a href='/why-im-voting-for-andrew-yang' class='read-more'>Read More</a>
-        </p>
+        {% for post in site.posts %}
+          <a href='{{ post.permalink }}' class='blog-title-link'><h2>{{ post.title }}</h2></a>
+          <h6 class='blog-subtitle'>{{ post.date | date: "%B %-d, %Y" }}</h6>
+          <p class='home-blog-des'>
+          {{post.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}<b><a href='{{post.permalink}}' class='read-more'>Read More</a></b>
+          </p>
 
-
-        <a href='/42-things' class='blog-title-link'><h2>42 Things</h2></a>
-        <h6 class='blog-subtitle'>April 11, 2019</h6>
-        <p class='home-blog-des'>
-          When I first moved to college, I printed out Ben Jones's 50 Things article and pinned it up by my bedside. I would
-          occasionally reread the article and reflect on how I was living my college life. To this day, I still do
-          some of the things on the list like make a playlist for a chapter of my life (number 3). Inspired by
-          his article, I decided to create my own list of things to do and think about while in college based on
-          my experiences in undergrad...
-          <a href='/42-things' class='read-more'>Read More</a>
-        </p>
-
-        <a href='/books-i-like-part-1' class='blog-title-link'><h2>Books I Like, Part 1</h2></a>
-        <h6 class='blog-subtitle'>April 1, 2019</h6>
-        <p class='home-blog-des'>
-            Welcome to the first installment of Books I Like. This will be an ongoing series about some of my favorite books and key
-            takeaways from the book. I’ll try to keep the spoilers to the minimum and focus more on why you should check these books
-            out and some things to think about while reading them...
-          <a href='/books-i-like-part-1' class='read-more'>Read More</a>
-        </p>
-
-        <a href='/a-personal-perspective' class='blog-title-link'><h2>A Personal Perspective</h2></a>
-        <h6 class='blog-subtitle'>March 11, 2019</h6>
-        <p class='home-blog-des'>
-          Since graduating in May 2018, I’ve lived and worked in Berkeley, San Francisco,
-          South Bay, Chicago, and New York. I’ve driven across the country and back, visiting Yellowstone,
-          the Grand Tetons, and other national wonders, flying the same route across the country another five times...
-          <a href='/a-personal-perspective' class='read-more'>Read More</a>
-        </p>
+        {% endfor %}
       </div>
     </div>
   </div>
+<!-- </div> -->
 
 {% include footer.html %}
