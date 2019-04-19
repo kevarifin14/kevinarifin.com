@@ -23,12 +23,12 @@ body {
 }
 
 h1, h2, h3, li, h4, h5, h6, a, p, button, input {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Helvetica;
   /* color: rgb(30, 30, 30); */
 }
 
 .nav-item {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Helvetica;
 }
 
 #blog {
