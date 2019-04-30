@@ -13,6 +13,6 @@ permalink: /archive
 
 {% assign emails = site.thought_bytes | sort: 'date' | reverse %}
 {% for email in emails %}
-[{{ email.title }}]({{ email.permalink }})
+[{{ email.title }}]({{ email.url }})
 {% endfor %}
 
