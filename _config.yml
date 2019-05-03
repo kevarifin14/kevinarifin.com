@@ -39,4 +39,5 @@ port: 5000
 
 # custom collections
 collections:
-  - thought_bytes
+  thought_bytes:
+    output: true
