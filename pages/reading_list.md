@@ -48,3 +48,5 @@ Podcasts are one of my favorite forms of media consumption. They are great ways 
 [Recode Decode - Elon Musk on Tesla's crazy year, dying on Mars and taking Saudi money](https://www.recode.net/2018/11/2/18053424/elon-musk-tesla-spacex-boring-company-self-driving-cars-saudi-twitter-kara-swisher-decode-podcast){:target='_blank'}
 
 [a16z Podcast - How the Internet Happened](https://a16z.com/2018/12/24/how-internet-happened-evolution-of-tech/){:target='_blank'}
+
+[North Star Podcast - Alex Danco: Amazon, Cities, and Disruption](https://www.perell.com/podcast/alex-danco){:target='_blank'}
