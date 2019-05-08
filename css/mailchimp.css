@@ -15,7 +15,7 @@ img,a img{
   border:0;
   height:auto;
   outline:none;
-  text-decoration:none;
+  text-decoration: none;
 }
 body,#bodyTable,#bodyCell{
   height:100%;
@@ -184,15 +184,6 @@ h4{
   text-align:left;
 }
 /*
-@tab Preheader
-@section Preheader Link
-*/
-#templatePreheader a,#templatePreheader p a{
-  color:#656565;
-  font-weight:normal;
-  text-decoration:underline;
-}
-/*
 @tab Header
 @section Header Style
 */
@@ -225,7 +216,6 @@ padding-bottom:0;
 #templateHeader a,#templateHeader p a{
   color:#237A91;
   font-weight:normal;
-  text-decoration:underline;
 }
 /*
 @tab Body
@@ -258,9 +248,8 @@ padding-bottom:0;
 @section Body Link
 */
 #templateBody a,#templateBody p a{
-  color:#237A91;
+  color: rgb(37, 71, 146);
   font-weight:normal;
-  text-decoration:underline;
 }
 /*
 @tab Footer
