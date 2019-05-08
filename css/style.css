@@ -187,6 +187,10 @@ hr {
   margin: 0 auto;
 }
 
+.img-container-book {
+  width: 30%;
+  margin: auto;
+}
 .blog-content {
   text-align: left;
 }
