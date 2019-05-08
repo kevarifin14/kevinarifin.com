@@ -4,7 +4,7 @@ title: 'Books I Like, Made Possible by the Internet'
 image: '../images/bookshelf.jpg'
 permalink: /books-i-like-made-possible-by-the-internet
 ---
-I recently finished two books while on vacation: [*Loonshots*](https://www.amazon.com/Loonshots-Nurture-Diseases-Transform-Industries/dp/1250185963/ref=sr_1_2?keywords=loonshots&qid=1556856545&s=gateway&sr=8-2) by Safi Bahcall and [*How the Internet Happened*](https://www.amazon.com/s?k=how+the+internet+happened+by+brian+mccullough&crid=2VMKK73BEFR7I&sprefix=how+the+internet%2Caps%2C135&ref=nb_sb_ss_i_1_16) by Brian McCullough. I highly recommend reading the two books in tandem, starting with *Loonshots*. *Loonshots* gives the framework to analyze the rise and fall of internet companies, as franchise projects like the PC failed to see the rise of the internet and initial internet companies failed to cultivate the appropriate S-type loonshots to make successful businesses (more on what that means later). I'll cover some key takeaways and how the two books are interconnected in this post.
+I recently finished two books while on vacation: [*Loonshots*](https://www.amazon.com/Loonshots-Nurture-Diseases-Transform-Industries/dp/1250185963/ref=sr_1_2?keywords=loonshots&qid=1556856545&s=gateway&sr=8-2){:target='_blank'} by Safi Bahcall and [*How the Internet Happened*](https://www.amazon.com/s?k=how+the+internet+happened+by+brian+mccullough&crid=2VMKK73BEFR7I&sprefix=how+the+internet%2Caps%2C135&ref=nb_sb_ss_i_1_16){:target='_blank'} by Brian McCullough. I highly recommend reading the two books in tandem, starting with *Loonshots*. *Loonshots* gives the framework to analyze the rise and fall of internet companies, as franchise projects like the PC failed to see the rise of the internet and initial internet companies failed to cultivate the appropriate S-type loonshots to make successful businesses (more on what that means later). I'll cover some key takeaways and how the two books are interconnected in this post.
 
 ## *Loonshots*
 > **Moonshot:** (1) The launching of a spacecraft to the moon; (2) an ambitious and expensive goal, widely expected to have great significance.
@@ -42,7 +42,7 @@ If I had to boil down the book to one four word quotation, it would be: "Unlimit
 
 > When computers were first developed in the 1940s and ’50s, it was never imagined that the common man or woman would ever need, much less have use for, them. Computers were designed for big problems: calculating missile trajectories; putting a man on the moon. Thomas J. Watson, once remarked, “I think there is a world market for maybe five computers."
 
-No one expected the internet to change the world the way it has, and we weren’t ready for it. I recently read David Perell’s blog post [What the Hell is Going On](https://www.perell.com/blog/what-the-hell-is-going-on){:target='blank'} and it does an amazing job of tying together the consequences of the internet. The abundance of information on the consumer side has transformed commerce, education, and politics in particular. It all goes back to unlimted selection and instant gratification. The internet has given us reviews and opinions from a multitude of perspectives on any product we purchase, any school we want to attend, and any politician or piece of legislation we are interested in. One part of the article really stuck with me:
+No one expected the internet to change the world the way it has, and we weren’t ready for it. I recently read David Perell’s blog post [What the Hell is Going On](https://www.perell.com/blog/what-the-hell-is-going-on){:target='_blank'} and it does an amazing job of tying together the consequences of the internet. The abundance of information on the consumer side has transformed commerce, education, and politics in particular. It all goes back to unlimted selection and instant gratification. The internet has given us reviews and opinions from a multitude of perspectives on any product we purchase, any school we want to attend, and any politician or piece of legislation we are interested in. One part of the article really stuck with me:
 
 > Narrative control is no longer monopolized. The arbiters of truth have fragmented. Millions of people, historically constrained by the reach and spread of their ideas, can theoretically reach anybody in the world with an internet connection. The truth has always existed, but until recently, we haven’t had the means to uncover and distribute it.
 
@@ -61,8 +61,8 @@ The internet made impossible strategies possible. Make every song streammable fo
 
 ## References
 
-[*Loonshots*](https://www.amazon.com/Loonshots-Nurture-Diseases-Transform-Industries/dp/1250185963/ref=sr_1_2?keywords=loonshots&qid=1556856545&s=gateway&sr=8-2){:target='blank'}
+[*Loonshots*](https://www.amazon.com/Loonshots-Nurture-Diseases-Transform-Industries/dp/1250185963/ref=sr_1_2?keywords=loonshots&qid=1556856545&s=gateway&sr=8-2){:target='_blank'}
 
-[*How the Internet Happened*](https://www.amazon.com/s?k=how+the+internet+happened+by+brian+mccullough&crid=2VMKK73BEFR7I&sprefix=how+the+internet%2Caps%2C135&ref=nb_sb_ss_i_1_16){:target='blank'}
+[*How the Internet Happened*](https://www.amazon.com/s?k=how+the+internet+happened+by+brian+mccullough&crid=2VMKK73BEFR7I&sprefix=how+the+internet%2Caps%2C135&ref=nb_sb_ss_i_1_16){:target='_blank'}
 
-[What the Hell is Going On](https://www.perell.com/blog/what-the-hell-is-going-on){:target='blank'}
+[What the Hell is Going On](https://www.perell.com/blog/what-the-hell-is-going-on){:target='_blank'}
