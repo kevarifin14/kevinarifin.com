@@ -34,7 +34,7 @@ These words sound ominously close to the mindsets of many politicians in today's
 
 Reading *How the Internet Happened* felt like living through a huge event in a movie like Thanos snapping his fingers or the Death Star blowing up, not realizing anything important was going on, and finally learning what happened. As someone born in the mid '90s I was barely cognizant for the rise and fall of the dot-com bubble. By the time I was old enough to appreciate technology, things like smart phones and social media had become ubiquitous. The internet has changed every part of our lives, and it is essential to understand the historical context of that change.
 
-The key takeaways of the book revolve around two central ideas: why the internet has changed society the way it has and why internet companies have become the prototypical examples for the dynamic between looshots and franchise projects.
+The key takeaways of the book revolve around two central ideas: why the internet has changed society the way it has and why internet companies have become the prototypical examples for the dynamic between loonshots and franchise projects.
 
 ***Why has the internet changed society the way it has?***
 
