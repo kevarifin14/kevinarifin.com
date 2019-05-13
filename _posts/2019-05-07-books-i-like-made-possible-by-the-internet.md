@@ -27,7 +27,7 @@ These are important things to think about as we take a look at the state of our 
 
 > When the British approached China to expand trade in the eighteenth century, the Qianlong emperor wrote to King George III, "There is nothing we lack. We have never set much store on strange or ingenious objects, nor do we need any more of your country's manufactures."
 
-These words sound ominously close to the mindsets of many politicians in today's United States. A growing anit-immigrant sentiment, an America-first approach to trade, and a backlash against the multicultural society we have created endanger the very loonshot nursery the United States has cultivated. If the country wishes to remain at the forefront of technology, we need to learn from the predecessing Islamic and Chinese empires of the 10th century, and reflect on the structure we have created in this country.
+These words sound ominously close to the mindsets of many politicians in today's United States. A growing anti-immigrant sentiment, an America-first approach to trade, and a backlash against the multicultural society we have created endanger the very loonshot nursery the United States has cultivated. If the country wishes to remain at the forefront of technology, we need to learn from the predecessing Islamic and Chinese empires of the 10th century, and reflect on the structure we have created in this country.
 
 ## *How The Internet Happened*
 ![](/images/how_the_internet_happened.jpg){:class="img-responsive float-right img-container"}
