@@ -3,8 +3,7 @@ title: Subscribe
 permalink: /subscribe
 layout: page
 ---
-If you'd like to stay in touch, subscribe here! You'll get the
-occasional Thought Bytes newsletter, containing updates about new posts,
-interesting podcasts and articles I've consumed, and a collection of my random musings.
-<!-- <div class='col-md-9 centered'> -->
-    {% include mailchimp.html %}
+Every Thursday, I send out my Thought Bytes newsletter, a collection of the most thought-provoking content I consumed
+in the past week as well updates on new posts on Life in Bytes. If you'd like to check out the latest issue, you can find it [here]({{ site.thought_bytes[-1].url}}){:target='_blank'}. Subscribe below!
+
+{% include mailchimp.html %}
