@@ -15,7 +15,15 @@ To form this identity, you need evidence. Habits are the building blocks to form
 
 > The effect of one-off experiences tends to fade away while the effect of habits gets reinforced with time, which means your habits contribute most of the evidence that shapes your identity. In this way, the process of building habits is actually the process of becoming yourself.
 
-In today's post, I challenge my own identity, defining who I am, who I aspire to be, and who I don't want to be. **Who I am** defines the parts of my identity I am happy about, backed by years of good habits. **Who I want to be** defines new parts of my identity I am developing, with habits I am building up so it slowly becomes part of who I am. **Who I don't want to be** defines the parts of me shaped by years of bad habits, and identitying the process that will change my behavior. I challenge you to do the same, either in private or shared publicly, in the hope that it motivates you to develop the habits of the person you want to be.
+In today's post, I challenge my own identity, defining who I am, who I aspire to be, and who I don't want to be.
+
+**Who I am** defines the parts of my identity I am happy about, backed by years of good habits.
+
+**Who I want to be** defines new parts of my identity I am developing, with habits I am building up so it slowly becomes part of who I am.
+
+**Who I don't want to be** defines the parts of me shaped by years of bad habits, and identitying the process that will change my behavior.
+
+I challenge you to do the same, either in private or shared publicly, in the hope that it motivates you to develop the habits of the person you want to be.
 
 
 <hr class='post-hr'/>
