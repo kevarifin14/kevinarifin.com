@@ -9,18 +9,20 @@
 
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb' crossorigin='anonymous'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-    <link rel='stylesheet' href='/css/style.css'>
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://kevinarifin.com/css/style.css'>
     <link rel='stylesheet' href='/css/style.css'>
-    <link rel='stylesheet' href='https://lifeinbyt.es/css/mailchimp.css' integrity='sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y' crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://kevinarifin.com/css/mailchimp.css' integrity='sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y' crossorigin='anonymous'>
     <link rel='stylesheet' href='/css/mailchimp.css'>
   </head>
+  <!-- START NAV -->
   {% include post-nav.html %}
+  <!-- END NAV -->
   <body>
     <center>
       <table align='center' border='0' cellpadding='0' cellspacing='0' width='100%' id='bodyTable' style='height:100%;'>
@@ -69,22 +71,22 @@
               <td valign='top' id='templateBody'>
                 <div mc:edit='body_content'>
                   {{content}}
+                  <hr class='email-footer-hr'/>
+                    <div mc:edit='footer_content' class='email-footer'>
+                      <div class='footer-text'>
+                        <a href='https://kevinarifin.com/subscribe' target='_blank'>Subscribe</a> |
+                        <a href='https://kevinarifin.com' target='_blank'>Blog</a> |
+                        <a href='https://kevinarifin.com/about' target='_blank'>About</a>
+                      </div>
+                      <div class='footer-text'>
+                        <em>Copyright © 2019 Kevin Arifin, All rights reserved.</em>
+                      </div>
+                    </div>
+                    <div mc:edit='monkeyrewards'></div>
+                  </center>
                 </div>
               </td>
             </tr>
-          <tr>
-            <td valign='top' id='templateFooter'>
-              <table border='0' cellpadding='0' cellspacing='0' width='100%'>
-                <tr>
-                  <td valign='top' id='footerContent'>
-                    <div mc:edit='footer_content'>
-                      <em>Copyright © 2019 Kevin Arifin, All rights reserved.</em>
-                    </div>
-                    <div mc:edit='monkeyrewards'></div>
-                  </td>
-                </tr>
-              </table>
-            </td>
           </tr>
         </table>
       </td>
