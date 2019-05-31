@@ -31,7 +31,13 @@ body {
 .home-hr {
   background-color: rgb(221, 221, 221);
   margin-top: 1.5em;
-  margin-bottom: 1.5  em;
+  margin-bottom: 1.5em;
+}
+
+.email-footer-hr {
+  background-color: rgb(221, 221, 221);
+  margin-top: 1.5em;
+  margin-bottom: .5em;
 }
 
 h1, h2, h3, li, h4, h5, h6, a, p, button, input {
