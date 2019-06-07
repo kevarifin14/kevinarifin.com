@@ -355,6 +355,9 @@ padding-bottom:0;
   text-decoration:underline;
 }
 @media only screen and (max-width: 480px){
+  .bodyContent{font-size:16px !important;}
+}
+@media only screen and (max-width: 480px){
   body,table,td,p,a,li,blockquote{
     -webkit-text-size-adjust:none !important;
   }
