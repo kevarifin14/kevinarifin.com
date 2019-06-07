@@ -93,6 +93,8 @@ a[x-apple-data-detectors]{
   padding-bottom:18px;
 }
 #templateHeader,#templateBody,#templateFooter{
+  padding-left: 18px;
+  padding-right: 18px;
 }
 /*
 @tab Page
