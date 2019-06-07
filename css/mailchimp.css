@@ -71,9 +71,9 @@ a[x-apple-data-detectors]{
   font-weight:inherit !important;
   line-height:inherit !important;
 }
-#bodyCell{
+/* #bodyCell{
   padding:9px;
-}
+}*/
 .templateImage{
   height:auto;
   max-width:564px;
