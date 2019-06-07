@@ -355,40 +355,40 @@ padding-bottom:0;
   text-decoration:underline;
 }
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 550px){
   body,table,td,p,a,li,blockquote{
     -webkit-text-size-adjust:none !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
   body{
     width:100% !important;
     min-width:100% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
   .templateImage{
     width:100% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
   .columnContainer{
     max-width:100% !important;
     width:100% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
   .mobileHide{
     display:none;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
   .utilityLink{
     display:block;
     padding:9px 0;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Heading 1
@@ -398,7 +398,7 @@ padding-bottom:0;
     line-height:175% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Heading 2
@@ -408,7 +408,7 @@ padding-bottom:0;
     line-height:175% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Heading 3
@@ -418,7 +418,7 @@ padding-bottom:0;
     line-height:175% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Heading 4
@@ -428,7 +428,7 @@ padding-bottom:0;
     line-height:175% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Preheader Visibility
@@ -437,7 +437,7 @@ padding-bottom:0;
     display:block !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Preheader Text
@@ -447,7 +447,7 @@ padding-bottom:0;
     line-height:150% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Header Text
@@ -457,7 +457,7 @@ padding-bottom:0;
     line-height:150% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Body Text
@@ -467,7 +467,7 @@ padding-bottom:0;
     line-height:150% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Footer Text
@@ -477,7 +477,7 @@ padding-bottom:0;
     line-height:150% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Social Bar Text
@@ -487,7 +487,7 @@ padding-bottom:0;
     line-height:150% !important;
   }
 
-}	@media only screen and (max-width: 480px){
+}	@media only screen and (max-width: 550px){
 /*
 @tab Mobile Styles
 @section Utility Bar Text
@@ -497,6 +497,6 @@ padding-bottom:0;
     line-height:150% !important;
   }
 }
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 550px){
   p{font-size:18px !important;}
 }
