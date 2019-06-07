@@ -99,7 +99,7 @@ a[x-apple-data-detectors]{
 @section Background Style
 */
 body,#bodyTable{
-  background-color:#FAFAFA;
+  background-color:rgb(247, 247, 247);
 }
 /*
 @tab Page
