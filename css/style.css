@@ -16,28 +16,10 @@ body {
   font-size: 180%;
 }
 
-.after-post-hr {
-  background-color: rgb(221, 221, 221);
-  margin-top: 3em;
-  margin-bottom: 2em;
-}
-
-.post-hr {
-  background-color: rgb(221, 221, 221);
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-.home-hr {
-  background-color: rgb(221, 221, 221);
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-.email-footer-hr {
-  background-color: rgb(221, 221, 221);
-  margin-top: 1.5em;
-  margin-bottom: .5em;
+li {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-bottom: 5px;
 }
 
 h1, h2, h3, li, h4, h5, h6, a, p, button, input {
@@ -112,8 +94,35 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
+/*
+Horizontal Line Styles
+*/
 hr {
   background-color: rgb(37, 71, 146);
+}
+
+.after-post-hr {
+  background-color: rgb(221, 221, 221);
+  margin-top: 3em;
+  margin-bottom: 2em;
+}
+
+.post-hr {
+  background-color: rgb(221, 221, 221);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.home-hr {
+  background-color: rgb(221, 221, 221);
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.email-footer-hr {
+  background-color: rgb(221, 221, 221);
+  margin-top: 1.5em;
+  margin-bottom: .5em;
 }
 
 .title {
