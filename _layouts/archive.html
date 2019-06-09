@@ -13,7 +13,8 @@
               <h5>{{ group.name }}</h5>
             </a>
             <div class="collapse bytes" id="{{ group.name | remove: ' '}}">
-              {% for thought_byte in group.items %}
+              {% assign items = group.items | reverse %}
+              {% for thought_byte in items %}
                 <li id='archive'>
                   <a href='{{ thought_byte.permalink }}'>{{ thought_byte.date | date: '%B %-d, %Y' }} - {{ thought_byte.title }}</a>
                 </li>
