@@ -14,7 +14,7 @@
             </a>
             <div class="collapse bytes" id="{{ group.name | remove: ' '}}">
               {% for thought_byte in group.items %}
-                <li>
+                <li id='archive'>
                   <a href='{{ thought_byte.permalink }}'>{{ thought_byte.date | date: '%B %-d, %Y' }} - {{ thought_byte.title }}</a>
                 </li>
               {% endfor %}
