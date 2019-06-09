@@ -16,11 +16,8 @@ body {
   font-size: 180%;
 }
 
-li {
-  list-style-type: none;
-}
-
 #archive {
+  list-style-type: none;
   padding-left: 5px;
   padding-bottom: 5px;
 }
