@@ -185,9 +185,7 @@ h4{
 @section Preheader Text
 */
 #templatePreheader,#templatePreheader p{
-  color:#656565;
   font-family:'Open Sans', Helvetica;
-  /* font-size:12px; */
   line-height:150%;
   text-align:left;
 }
