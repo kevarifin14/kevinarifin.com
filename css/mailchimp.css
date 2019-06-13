@@ -246,7 +246,7 @@ padding-bottom:0;
 #templateBody,#templateBody p{
   color:#606060;
   font-family:'Open Sans', Helvetica;
-  font-size:16px;
+  font-size:16px !important;
   line-height:150%;
   text-align:left;
 }
