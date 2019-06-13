@@ -82,6 +82,7 @@ a[x-apple-data-detectors]{
   max-width:600px !important;
 }
 #templatePreheader{
+  background-color:#FFFFFF;
   padding-right:9px;
   padding-left:9px;
 }
