@@ -4,7 +4,7 @@ permalink: /naval
 image: ../images/yellow-canyon.jpg
 layout: post
 ---
-Naval, a prominent internet entrepreneur and founder of Angellist, was recently interview on the Joe Rogan Experience. Joe Rogan brings out the best in his interviewees with his humor and authenticity and there are many thought-provoking ideas disussed in this podcast. It's one of the most interesting conversations I've ever listened to and immediately gave it a second listen.
+[Naval](https://nav.al){:target='_blank'}, a prominent internet entrepreneur and founder of Angellist, was recently interview on the Joe Rogan Experience. Joe Rogan brings out the best in his interviewees with his humor and authenticity and there are many thought-provoking ideas disussed in this [podcast](http://podcasts.joerogan.net/podcasts/naval-ravikant){:target='_blank'}. It's one of the most interesting conversations I've ever listened to and immediately gave it a second listen.
 
 During my second listen, every time I heard something that made me think or question something about my life, I wrote it down. It's a dense, 2 hour podcast and there were 14 moments like that, so, on average, my mind was blown every 8.5 minutes. I've aggregated my favorite Naval quotations from the podcast with my own commentary. I've added the timestamp for the snippets if you'd like to hear his words in the context of the podcast.
 
