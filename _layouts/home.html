@@ -13,7 +13,7 @@
           the latest issue <a href='{{site.thought_bytes[-1].url}}'>here!</a>
         </p>
 
-        {% for post in site.posts %}
+        {% for post in paginator.posts %}
           <hr class='home-hr'/>
           <a href='{{ post.permalink }}' class='blog-title-link'><h2>{{ post.title }}</h2></a>
           <a href='{{ post.permalink }}'>
@@ -27,8 +27,21 @@
           {{post.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}<b><a href='{{post.permalink}}' class='read-more'>Read More</a></b>
           </p>
         {% endfor %}
+        <hr class='post-hr'/>
+        <!-- Pagination links -->
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="previous">
+            &larr; Older Posts
+          </a>
+        {% endif %}
+        {% if paginator.previous_page %}
+          <a style='float: right' href="{{ paginator.previous_page_path }}" class="next">Newer Posts &rarr;</a>
+        {% endif %}
       </div>
     </div>
   </div>
 
+
+
 {% include footer.html %}
+

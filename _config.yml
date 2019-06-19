@@ -41,3 +41,5 @@ port: 5000
 collections:
   thought_bytes:
     output: true
+
+paginate: 5
