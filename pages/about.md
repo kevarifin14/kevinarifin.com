@@ -3,7 +3,7 @@ title: About
 permalink: /about/
 layout: page
 ---
-[About Me](#about-me) \| [Teaching](#teaching) \| [Interests](#interests) \| [Resume](/resume.pdf){:target='_blank'}
+[About Me](#about-me) \| [Teaching](#teaching) \| [Interests](#interests) \| [Resume](/resume.pdf){:target='_blank'} \| [Acknowledgments](#acknowledgments)
 
 [](){:name='about-me'}
 ## About Me
@@ -23,3 +23,7 @@ I am passionate about educational opportunity and teaching. While at UC Berkeley
 [](){:name='interests'}
 ## Interests
 Besides my professional interests, I am a frequenter of reddit, a die-hard Star Wars fan, and an avid reader. I am passionate about fitness and health, and also spend time cooking, playing guitar, and eating fruits. I am oddly knowledgeable about the NBA (my friend challenged me to name at least five players from every team and I was able to) and spend brain downtime listening to various NBA podcasts like [The Lowe Post](http://www.espn.com/espnradio/podcast/archive/_/id/10528553){:target='_blank'} and [The Bill Simmons Podcast](https://www.theringer.com/the-bill-simmons-podcast).
+
+[](){:name='acknowledgments'}
+## Acknowledgments
+This blog would not be possible without the help of my friends and family. The logo an idea from my brother [Andrew](https://www.instagram.com/arifinphotography/){:target='_blank'}, and designed by my aspiring med student friend Tiffany. I have countless discussions with my housemate [Nick](https://nickchua.me){:target='_blank'}, who started a blog in parallel with me, that help both of us refine our ideas and challenge our beliefs. My girlfriend Sarah is my unpaid product manager who critiques all my posts. And of course, big thank you to my friends and family who were many of my first supporters of Thought Bytes.
