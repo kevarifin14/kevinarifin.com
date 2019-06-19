@@ -77,8 +77,8 @@ h1, h2, h3, li, h4, h5, h6, a, p, button, input {
 
 blockquote {
   padding: 1em;
-  border-radius: 5px;
   background-color: rgb(230, 230, 230);
+  border-left: solid  rgb(37, 71, 146);
 }
 
 .blog-title-link {
