@@ -65,7 +65,7 @@ If you find "work" where you can feel this kind of flow, no one can compete with
 Your last day of work will be the day you find something you're so passionate about that it feels like play. These are the people that change the world.
 
 <hr class='post-hr'/>
-#### 4. Syntheisize ideas from different fields.
+#### 4. Synthesize ideas from different fields.
 
 > Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while. That’s because they were able to connect experiences they’ve had and synthesize new things. And the reason they were able to do that was that they’ve had more experiences or they have thought more about their experiences than other people. Unfortunately, that’s too rare a commodity. A lot of people in our industry haven’t had very diverse experiences. So they don’t have enough dots to connect, and they end up with very linear solutions without a broad perspective on the problem. The broader one’s understanding of the human experience, the better design we will have.
 >
