@@ -2,7 +2,15 @@
 {% include post-nav.html %}
 
 <body>
-  <div class='cover-photo' style='background-image: url({{page.image}})'>
+  <div
+    class='cover-photo'
+    style='
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url({{ page.image }});
+      background-position: center;
+      background-size: cover;'
+  >
     <div style='text-align: center'>
       <h1 class='post-title'>{{ page.title }}</h1>
     </div>

@@ -17,10 +17,7 @@
           <hr class='home-hr'/>
           <a href='{{ post.permalink }}' class='blog-title-link'><h2>{{ post.title }}</h2></a>
           <a href='{{ post.permalink }}'>
-            {% assign path = post.image | split: '/' %}
-            {% assign lightimage = path[-1] | replace: ".", "-light." %}
-            {% assign lightimage = path|slice: 0, 2|join:'/'|append: '/' | append: lightimage %}
-            <div class='img-responsive img-container-center img-home' style='background-image: url({{lightimage}})'></div>
+            <div class='img-responsive img-container-center img-home' style='background-image: url({{ post.image }})'></div>
           </a>
           <h6 class='blog-subtitle'>{{ post.date | date: "%B %-d, %Y" }}</h6>
           <p class='home-blog-des'>
