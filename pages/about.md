@@ -3,7 +3,7 @@ title: About
 permalink: /about/
 layout: page
 ---
-[About Me](#about-me) \| [Teaching](#teaching) \| [Interests](#interests) \| [Resume](/resume.pdf){:target='_blank'} \| [Acknowledgments](#acknowledgments)
+[About Me](#about-me) \| [Teaching](#teaching) \| [Interests](#interests) \| [Acknowledgments](#acknowledgments) \| [Resume](/resume.pdf){:target='_blank'}
 
 [](){:name='about-me'}
 ## About Me
