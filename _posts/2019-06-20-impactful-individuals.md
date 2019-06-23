@@ -10,7 +10,7 @@ Fulfillment felt better, but it's hard to judge fulfillment in another person. O
 
 The idea I settled with is being an impactful individual. Let’s start by defining impactful. From the Oxford dictionary, impactful means "having a major impact or effect". Let's dig one level deeper and define impact: "the effect or influence of one person, thing, or action on another".
 
-**Being an impactful individual means you are somone who has a major effect on other people, things, or actions.**
+**Being an impactful individual means you are someone who has a major effect on other people, things, or actions.**
 
 This is both broad yet specific at the same time. My parents are both impactful individuals, providing me with strong role models and an environment where I could thrive as I grew up. Many teachers and mentors have impacted my life by fostering my interest in math and science and sparking new interests in other domains. Everyone has the ability to become an impactful individual.
 
@@ -54,7 +54,7 @@ Anyone can write. We all have a unique perspective to share with the world. You 
 <hr class='post-hr'/>
 #### 3. Do work that is not work.
 
-> I’m always working. But it looks like work to them but it feels like play to me. And that’s how know no one can compete with me on it. Because I’m just playing 16 hours a day. And if they want to compete with me and they’re going to work, they’re going to lose because they’re not going to do it 16 hours a day 7 days a week.
+> I’m always working. But it looks like work to them but it feels like play to me. And that’s how I know no one can compete with me on it. Because I’m just playing 16 hours a day. And if they want to compete with me and they’re going to work, they’re going to lose because they’re not going to do it 16 hours a day 7 days a week.
 >
 > -*Naval Ravikant*
 

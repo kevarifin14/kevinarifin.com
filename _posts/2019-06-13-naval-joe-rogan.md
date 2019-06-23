@@ -118,7 +118,7 @@ That's how I feel negative thoughts are. Those moments attached with strong nega
 
 <hr class='post-hr'/>
 
-***[2:17:00]*** **I’m always working. But it looks like work to them but it feels like play to me. And that’s how know no one can compete with me on it. Because I’m just playing 16 hours a day. And if they want to compete with me and they’re going to work, they’re going to lose because they’re not going to do it 16 hours a day 7 days a week.**
+***[2:17:00]*** **I’m always working. But it looks like work to them but it feels like play to me. And that’s how I know no one can compete with me on it. Because I’m just playing 16 hours a day. And if they want to compete with me and they’re going to work, they’re going to lose because they’re not going to do it 16 hours a day 7 days a week.**
 
 Through all my readings, there are several overarching trends of successful individuals that I admire. One of the common trends: feeling like work isn't work. It's about finding something that's authentically you and running with it.
 
