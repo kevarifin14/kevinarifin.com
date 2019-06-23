@@ -13,11 +13,20 @@ ways to solve problems. I'll keep a running list of some of my favorite media I'
 [](){:name='books'}
 ## Books
 
-This is a collection of all the books I've written about in my <i>Books I Like</i> series. If you want a more in-depth look at my thoughts on each book, follow the link to my post.
+This is a collection of all the books I've written about. If you want a more in-depth look at my thoughts on each book, follow the link to my post.
 
 [*Ender's Game* by Orson Scott Card](/books-i-like-part-1)
 
 [*Quiet* by Susan Cain](/books-i-like-part-1)
+
+[*Loonshots* by Safi Bahcall](/books-i-like-made-possible-by-the-internet)
+
+[*How the Internet Happened* by Brian McCullough](/books-i-like-made-possible-by-the-internet)
+
+[*Atomic Habits* by James Clear](/identity-challenge)
+
+[*Guns, Germs, and Steel* by Jared Diamond](/guns-germs-and-steel)
+
 
 
 [](){:name='articles'}
