@@ -25,7 +25,7 @@ Throughout my life, I've noticed several trends in people that I admire. I'll de
 >
 > -*Charlie Munger*
 
-Of the four trends I will highlight, reading is the most important. Knowledge is the foundation of becoming an impactful individual, and reading is the most efficient way to attain it. It allows us to tap into the collection of human knowledge built up over thousands of years. It opens us to new perspectives and possiblities. It rids us of our ignorance and creates a world possibility.
+Of the four trends I will highlight, reading is the most important. Knowledge is the foundation of becoming an impactful individual, and reading is the most efficient way to attain it. It allows us to tap into the collection of human knowledge built up over thousands of years. It opens us to new perspectives and possibilities. It rids us of our ignorance and creates a world possibility.
 
 Many highly impactful individuals are known to be voracious readers. Charlie Munger falls asleep reading every night. Before Elon Musk started SpaceX, he read a rocket science textbook. Mark Zuckerberg's New Year's Resolution in 2015 was to read a new book every two weeks.
 
@@ -71,7 +71,7 @@ Your last day of work will be the day you find something you're so passionate ab
 >
 > -*Steve Jobs*
 
-A lot of us attend our local elementary, middle, and high school and then go off to a college. We graduate and then aspire to do a career in finance, consulting, law, technology, medicine, or academia in New York, San Francisco, Boston, Chicago, Los Angeles, or Washington DC. In a world of infinite possibilites, we've become laser focused on thirty-six paths.
+A lot of us attend our local elementary, middle, and high school and then go off to a college. We graduate and then aspire to do a career in finance, consulting, law, technology, medicine, or academia in New York, San Francisco, Boston, Chicago, Los Angeles, or Washington DC. In a world of infinite possibilities, we've become laser focused on thirty-six paths.
 
 Even though everyone's life experience is different, the variance in these paths is small. If creativity is a result of our experiences, being overly focused on these paths to success leave our minds reading from a playbook.
 
