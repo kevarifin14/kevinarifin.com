@@ -27,6 +27,8 @@ This is a collection of all the books I've written about. If you want a more in-
 
 [*Guns, Germs, and Steel* by Jared Diamond](/guns-germs-and-steel)
 
+[*A Brief History of Time* by Stephen Hawking](/spacetime)
+
 
 
 [](){:name='articles'}
