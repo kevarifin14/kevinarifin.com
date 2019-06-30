@@ -18,7 +18,7 @@ The details are fascinating, but the big ideas in this book provide an interesti
 
 #### Big Idea #1: Agriculture is the linchpin invention.
 
-No matter if you invented agriculture or adopted it from another civilization, transitioning from hunters and gathers to an agricultural society was essential to freeing up
+No matter if you invented agriculture or adopted it from another civilization, transitioning from hunters and gatherers to an agricultural society was essential to freeing up
 
 An interesting perspective was that the idea to switch from hunters and gatherers to agriculture was not that obvious. To us it seems obvious that agriculture is way better than being hunters and gatherers, but in reality, you gave up a lot by switching.
 
@@ -47,7 +47,7 @@ Agricultural ideas spread from Southwest Asia to Europe, Egypt, and the Indus Va
 
 East-west continents had the advantage of having more consistent temperature along their main axis than north-south continents. Portugal, Iran, and Japan are located at the same latitude 4,000 miles apart but share more similar climate cycles than a location 1,000 miles south. Crops and animals adaptable to that climate would not succeed in a climate 1,000 miles south.
 
-This did not just impact agriculture, but also the spread of ideas between civilizations as well. Writing became an important invention after the transition to agriculture, and a particularly difficult one to develop. There is presumably only two independent inventions of writing: in Sumerian Mesoamerica and Mexican Indians. Other civilizations borrowed ideas from these two civilizations. Lack of land and see barriers, preestablished trade routes, and proximity to other civilizations fostered the transfer of writing as an invention, as well as many other inventions.
+This did not just impact agriculture, but also the spread of ideas between civilizations as well. Writing became an important invention after the transition to agriculture, and a particularly difficult one to develop. There is presumably only two independent inventions of writing: in Sumerian Mesoamerica and Mexican Indians. Other civilizations borrowed ideas from these two civilizations. Lack of land and sea barriers, preestablished trade routes, and proximity to other civilizations fostered the transfer of writing as an invention, as well as many other inventions.
 
 We've discussed a lot about the ease in which ideas could be transferred, but it is important to consider the converse as well: is it bad if ideas are too easily to be transferred? The case study that Jared Diamond uses is his comparison of Europe to China.
 
