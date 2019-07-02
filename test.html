@@ -127,6 +127,9 @@ function mapDraw(geojson){
           .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px')
           .html(d.properties.name);
       }
+    })
+    .on('mouseout', (d) => {
+      tooltip.classed('hidden', true);
     });
 
     //path
