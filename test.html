@@ -115,6 +115,7 @@ function mapDraw(geojson){
         return 'white';
       }
     })
+    .attr('stroke-width', 2)
     .attr('fill', (d) => {
       return d.geometry.type == 'LineString' ? 'none' : 'rgb(107, 81, 240)';
     })
