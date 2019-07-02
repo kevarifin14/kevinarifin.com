@@ -29,6 +29,17 @@ svg {
 .hidden {
   display: none;
 }
+div.tooltip {
+  color: #222;
+  background-color: #fff;
+  padding: .5em;
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 0;
+  opacity: 0.9;
+  position: absolute;
+  font: normal 14px/1.3 Arial;
+}
+
 </style>
 </head>
 
@@ -68,17 +79,14 @@ function mapDraw(geojson){
   var maxLon = -8.6405 + 1;
   var minLat = 115.1920 - 1;
   var maxLat = 115.1920 + 1;
-  var startDate = new Date('April 22, 2019')
-  var endDate = new Date('April 27, 2019')
+  var tooltip = d3.select('body')
+    .append('div')
+    .attr('class', 'hidden tooltip');
   var featureElement = svg.selectAll("path")
     .data(geojson.features)
     .enter()
     .filter(function(d) {
-      var date = new Date(d.properties.time);
-      if (!(date > startDate && date < endDate)) {
-        return false;
-      }
-      if (d.geometry.type == 'Point') {
+     if (d.geometry.type == 'Point') {
         var coordinates = d.geometry.coordinates;
         if (!(coordinates[1] < maxLon && coordinates[1] > minLon && coordinates[0] < maxLat && coordinates[0] > minLat)) {
           return false;
@@ -94,8 +102,32 @@ function mapDraw(geojson){
       return true
     })
     .append("path")
-    .attr("stroke", "green")
-    .attr('fill', 'none');
+    .attr("stroke", function(d) {
+      if (d.geometry.type == 'LineString') {
+        if (d.properties.type == 'walking') {
+          return 'rgb(54, 187, 138)';
+        } else if (d.properties.type == 'car') {
+          return 'rgb(231, 72, 56)';
+        } else if (d.properties.type == 'tram') {
+          return 'rgb(169, 143, 53)';
+        }
+      } else {
+        return 'white';
+      }
+    })
+    .attr('fill', (d) => {
+      return d.geometry.type == 'LineString' ? 'none' : 'rgb(107, 81, 240)';
+    })
+    .on('mouseover', (d) => {
+      if (d.geometry.type == 'Point') {
+        var mouse = d3.mouse(svg.node()).map(function(d) {
+          return parseInt(d);
+        });
+        tooltip.classed('hidden', false)
+          .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px')
+          .html(d.properties.name);
+      }
+    });
 
     //path
     function update() {
@@ -120,10 +152,6 @@ function mapDraw(geojson){
         var point = map.project(new mapboxgl.LngLat(lon, lat));
     this.stream.point(point.x, point.y);
   }
-
-
 }
-
-
-  </script>
+</script>
 </body>
