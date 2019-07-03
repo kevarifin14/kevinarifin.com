@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -8,7 +7,7 @@
 
 html, body, #wrapper {
   width: 100%;
-  height: 100%;
+  height: 600px;
   padding: 0px;
   margin: 0px;
 }
@@ -58,11 +57,10 @@ function mapDraw(geojson){
   //mapboxgs トークン
   mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpbWl6dSIsImEiOiJjam95MDBhamYxMjA1M2tyemk2aHMwenp5In0.i2kMIJulhyPLwp3jiLlpsA';
 
-  //Setup mapbox-gl map
   var map = new mapboxgl.Map({
-    container: 'map', // container id
+    container: 'map',
     style: 'mapbox://styles/mapbox/streets-v8',
-    center: [115.1920, -8.6405],
+    center: [115.1920, -8.623],
     zoom: 10,
   });
 
@@ -121,11 +119,8 @@ function mapDraw(geojson){
     })
     .on('mouseover', (d) => {
       if (d.geometry.type == 'Point') {
-        var mouse = d3.mouse(svg.node()).map(function(d) {
-          return parseInt(d);
-        });
         tooltip.classed('hidden', false)
-          .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px')
+          .attr('style', 'left:' + (d3.event.pageX + 15) + 'px; top:' + (d3.event.pageY - 35) + 'px')
           .html(d.properties.name);
       }
     })
@@ -141,9 +136,11 @@ function mapDraw(geojson){
   map.on("viewreset", update);
   map.on("movestart", function(){
     svg.classed("hidden", true);
+    tooltip.classed('hidden', true);
   });
     map.on("rotate", function(){
     svg.classed("hidden", true);
+    tooltip.classed('hidden', true);
   });
     map.on("moveend", function(){
     update()
