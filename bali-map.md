@@ -1,5 +1,5 @@
 ---
-permalink: /bali-map
+permalink: /map
 ---
 {% include charts/bali.html %}
 <style>
