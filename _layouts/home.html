@@ -12,7 +12,37 @@
           collection of my favorite thought-provoking content and updates on my new posts. You can view
           the latest issue <a href='{{site.thought_bytes[-1].url}}'>here!</a>
         </p>
+        {% if page.url == "/" %}
+        <hr class='home-hr'/>
+        <h1>Favorites</h1>
+         <div class='row'>
+        <div class='col-md-4'>
+          {% assign post=site.posts[4] %}
+          <a href='{{ post.permalink }}'>
+            <div class='img-responsive img-container-center img-home' style='background-image: url({{ post.image }})'></div>
+          </a>
 
+          {{post.title }}
+        </div>
+        <div class='col-md-4'>
+          {% assign post=site.posts[9] %}
+          <a href='{{ post.permalink }}'>
+            <div class='img-responsive img-container-center img-home' style='background-image: url({{ post.image }})'></div>
+          </a>
+
+          {{post.title }}
+        </div>
+        <div class='col-md-4'>
+         {% assign post=site.posts[8] %}
+          <a href='{{ post.permalink }}'>
+            <div class='img-responsive img-container-center img-home' style='background-image: url({{ post.image }})'></div>
+          </a>
+
+          {{post.title }}
+        </div>
+
+        </div>
+        {% endif %}
         {% for post in paginator.posts %}
           <hr class='home-hr'/>
           <a href='{{ post.permalink }}' class='blog-title-link'><h2>{{ post.title }}</h2></a>
