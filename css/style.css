@@ -218,6 +218,9 @@ hr {
   width: 100%;
   margin: 0 auto;
 }
+.img-half {
+  width:49%;
+}
 
 .img-container-book {
   width: 30%;
