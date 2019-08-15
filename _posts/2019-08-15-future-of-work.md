@@ -4,7 +4,7 @@ permalink: /unbundle
 layout: post
 image: /images/lakechi.jpg
 ---
-When we talk about unbundling, we all think of the unbundling of the cable package. Instead of paying one cable company one fee for all the channels, we subscribe to different streaming video on demand services like Netflix and Hulu and watch what we want, when we want.
+When we talk about unbundling, we all think of unbundling the cable package. Instead of paying one cable company one fee for all the channels, we subscribe to different streaming video on demand services like Netflix and Hulu and watch what we want, when we want.
 
 But the more interesting unbundling is happening in business. In the past, companies had to handle everything: customer relations, documents and contractual agreements, internal communications, single sign on. Now there's a company that does each of these: Zendesk, Docusign, Slack, and Okta, among many others.
 
