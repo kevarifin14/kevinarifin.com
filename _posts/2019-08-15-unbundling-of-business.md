@@ -3,6 +3,7 @@ title: The Unbundling of Business
 permalink: /unbundle
 layout: post
 image: /images/lakechi.jpg
+excerpt: "How service companies are slowly breaking up the idea of a business. Introducing the idea of a bifurcated company distribution: a few monolithic companies built on powerful ecosystems and a long tail of smaller companies focused on their core competency."
 ---
 When we talk about unbundling, we all think of unbundling the cable package. Instead of paying one cable company one fee for all the channels, we subscribe to different streaming video on demand services like Netflix and Hulu and watch what we want, when we want.
 

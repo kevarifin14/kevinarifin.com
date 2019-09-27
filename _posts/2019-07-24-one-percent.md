@@ -3,7 +3,7 @@ title: 'One Percent Every Day'
 image: '../images/reflection.jpg'
 permalink: /one-percent
 layout: post
-excerpt: As a chubby fourth grader, I had the profound realization that I couldn’t be overweight and play basketball. Inspired by the star players of the time from Kobe Bryant to Dirk Nowitzki, I had dreams of playing in the NBA just like every kid that picks up basketball. Unfortunately that fell short, but the work ethic that came with working toward my dream has stuck with me.
+excerpt: How one percent improvements compound into meaningful change. Thinking about one percent activities that you can do on a daily basis.
 ---
 #### Let's start with a story.
 

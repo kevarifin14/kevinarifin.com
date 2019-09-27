@@ -33,7 +33,7 @@
               <a href='{{ up_next_1.permalink }}'>
                 <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ up_next_1.image }})'></div>
               </a>
-              <h6 class='blog-subtitle'>{{ site.posts[1].date | date: "%B %-d, %Y" }}</h6>
+              <h6 class='blog-subtitle'>{{ up_next_1.date | date: "%B %-d, %Y" }}</h6>
               <p>
                 {{ up_next_1.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
                 <b><a href='{{up_next_2.permalink}}' class='read-more'>Read More</a></b>

@@ -15,7 +15,7 @@
                 <a href='{{ post.permalink }}'>
                   <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ post.image }})'></div>
                 </a>
-                <h6 class='blog-subtitle'>{{ site.posts[1].date | date: "%B %-d, %Y" }}</h6>
+                <h6 class='blog-subtitle'>{{ post.date | date: "%B %-d, %Y" }}</h6>
                 <p>
                   {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
                   <b><a href='{{post.permalink}}' class='read-more'>Read More</a></b>
