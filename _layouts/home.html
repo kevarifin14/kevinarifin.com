@@ -6,36 +6,63 @@
   <div class='container'>
     <div class='row'>
       <div class='col-md-8 centered'>
-        <p class='home-blog-des'>
-          Welcome to <i>Life in Bytes</i>.  If you want to learn more about the purpose of the blog, check out the
-          <a href='/a-personal-perspective'>pilot post</a>. I also send out my Thought Bytes newsletter every Thursday, a
-          collection of my favorite thought-provoking content and updates on my new posts.
-          Check out the <a href='{{site.thought_bytes[-1].url}}'>latest issue</a> and subscribe <a href='/subscribe'>here</a>!
-        </p>
+        <a href='{{ site.posts[0].permalink }}' class='blog-title-link'><h2>{{ site.posts[0].title }}</h2></a>
+        <a href='{{ site.posts[0].permalink }}'>
+          <div class='img-responsive img-container-center img-home' style='background-image: url({{ site.posts[0].image }})'></div>
+        </a>
+        <h6 class='blog-subtitle'>{{ site.posts[0].date | date: "%B %-d, %Y" }}</h6>
 
-        {% for post in paginator.posts %}
-          <hr class='home-hr'/>
-          <a href='{{ post.permalink }}' class='blog-title-link'><h2>{{ post.title }}</h2></a>
-          <a href='{{ post.permalink }}'>
-            <div class='img-responsive img-container-center img-home' style='background-image: url({{ post.image }})'></div>
-          </a>
-          <h6 class='blog-subtitle'>{{ post.date | date: "%B %-d, %Y" }}</h6>
-          <p class='home-blog-des'>
-          {{post.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}<b><a href='{{post.permalink}}' class='read-more'>Read More</a></b>
-          </p>
-        {% endfor %}
-        <hr class='post-hr'/>
-        <!-- Pagination links -->
-        {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path }}" class="previous">
-            &larr; Older Posts
-          </a>
-        {% endif %}
-        {% if paginator.previous_page %}
-          <a style='float: right' href="{{ paginator.previous_page_path }}" class="next">Newer Posts &rarr;</a>
-        {% endif %}
+
+        {{ site.posts[0].content }}
+
+
       </div>
     </div>
+
+    <div class='row'>
+      <div class='col-md-8 centered'>
+
+        <hr class='home-hr' />
+        <h4>Up Next</h4>
+
+        <div class='container' style='padding: 0'>
+          <div class='row'>
+            <div class='col-md-6'>
+              {% assign up_next_1 = site.posts[1] %}
+              <a href='{{ up_next_1.permalink }}' class='blog-title-link'><h5>{{ up_next_1.title }}</h5></a>
+              <a href='{{ up_next_1.permalink }}'>
+                <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ up_next_1.image }})'></div>
+              </a>
+              <h6 class='blog-subtitle'>{{ site.posts[1].date | date: "%B %-d, %Y" }}</h6>
+              <p>
+                {{ up_next_1.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
+                <b><a href='{{up_next_2.permalink}}' class='read-more'>Read More</a></b>
+              </p>
+            </div>
+
+            <div class='col-md-6'>
+              {% assign up_next_2 = site.posts[2] %}
+              <a href='{{ up_next_2.permalink }}' class='blog-title-link'><h5>{{ up_next_2.title }}</h5></a>
+              <a href='{{ up_next_2.permalink }}'>
+                <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ up_next_2.image }})'></div>
+              </a>
+              <h6 class='blog-subtitle'>{{ up_next_2.date | date: "%B %-d, %Y" }}</h6>
+              <p>
+                {{ up_next_2.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
+                <b><a href='{{up_next_2.permalink}}' class='read-more'>Read More</a></b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-8 centered'>
+        <a style='float: right' href='/archive' class="next">Check out the rest of my posts &rarr;</a>
+      </div>
+    </div>
+
   </div>
 
 

@@ -2,26 +2,44 @@
     {% include analytics.html %}
   {% endif %}
 </body>
-<hr style='margin-top: 2em' />
-<!-- <div class='container' id='footer'>
+<hr style='margin-bottom: 0em'>
+<div style='padding-top: 2em; padding-left: 1em; padding-right: 1em; width: 100%;'>
   <div class='row'>
-    <div class='col-md-3 offset-3'>
-      <li><a href='/'>Blog</a></li>
-      <li><a href='/about'>About</a></li>
-      <li><a href='/reading-list'>Reading List</a></li>
-      <li><a href='/archive'>Archive</a></li>
-      <li><a href='/subscribe'>Subscribe</a></li>
 
+    <div class='col-md-8'>
+      <center><h5>Subscribe to my weekly Thought Bytes newsletter!</h5></center>
+      {% include mailchimp.html %}
     </div>
-    <div class='col-md-3'>
+
+    <div class='col-md-4'>
+      <nav class='navbar-light'>
+        <ul class='navbar-nav ml-auto'>
+          <li class='nav-item'>
+            <a class='nav-link' href='/'>Blog</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/about'>About</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/reading-list'>Reading List</a>
+          </li>
+          <li>
+            <a class='nav-link' href='/archive'>Archive</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/subscribe'>Subscribe</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
- -->
+
   <div class='row'>
-    <div class='col-md-8 centered'>
+    <div class='col-md-12'>
       <center>
-        <p>Copyright © 2019 Kevin Arifin</p>
+        <p class='blog-subtitle'>Copyright © 2019 Kevin Arifin</p>
       </center>
     </div>
   </div>
+
 </div>

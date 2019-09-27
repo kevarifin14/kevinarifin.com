@@ -39,6 +39,7 @@ h1, h2, h3, li, h4, h5, h6, a, p, button, input {
 
 #footer {
   margin-bottom: 10px;
+  background-color: rgb(37, 71, 146);
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary {
@@ -58,24 +59,6 @@ h1, h2, h3, li, h4, h5, h6, a, p, button, input {
   padding-right: 10px;
   z-index: 999;
   border-radius: 3px;
-}
-
-.navitems {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  padding: 8px;
-  width: 200px;
-  background-color: rgba(10, 10, 10, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 999;
-  border-radius: 3px;
-}
-
-.navitem {
-  color: rgb(247, 247, 247);
-  text-align: left;
 }
 
 blockquote {
@@ -205,6 +188,14 @@ hr {
 .img-home {
   max-height: 400px;
   min-height: 250px;
+  display:block;
+  background-position: center;
+  background-size: cover;
+}
+
+.img-home-preview {
+  max-height: 200px;
+  min-height: 200px;
   display:block;
   background-position: center;
   background-size: cover;
