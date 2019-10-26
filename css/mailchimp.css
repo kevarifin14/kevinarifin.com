@@ -260,6 +260,7 @@ padding-bottom:0;
 #templateBody a,#templateBody p a{
   color: rgb(37, 71, 146);
   font-weight:normal;
+  text-decoration: underline;
 }
 /*
 @tab Footer
