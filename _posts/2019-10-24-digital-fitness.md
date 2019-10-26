@@ -5,13 +5,13 @@ layout: post
 image: /images/nycentral.jpeg
 ---
 
-Imagine a world where streaming services were fragmented by genre. You would only find animated children's movies on Disney+, Netflix had all the horror movies, HBO was the king of comedy, and so on. But no one watches just one genre of movie. You’d have to juggle multiple subscription services. Funnily enough, this is kind of what's happening as everyone gets into the streaming video on demand game, but at least a Netflix subscription can satisfy most of your digital entertainment needs.
+Imagine a world where streaming services were fragmented by genre. You could only find animated children's movies on Disney+, Netflix had all the horror movies, HBO was the king of comedy, and so on. But no one watches just one genre of movie - you’d have to juggle multiple subscription services. Coincidentally enough, this is kind of what's happening as everyone gets into the streaming video on demand game, but at least a Netflix subscription can satisfy most of your digital entertainment needs.
 
-This thought experiment describes the current state of digital fitness. Each company offers a specific “genre” of exercise - Peloton for spin classes, Glo and Gaia specializing in yoga, Tonal with cable-based strength workouts, and independent trainers offering workout videos and programs for their own niche.
+This thought experiment describes the current state of digital fitness. Each company offers a specific “genre” of exercise - [Peloton](https://www.onepeloton.com){:target='_blank'} for spin classes, [Glo](https://www.glo.com){:target='_blank'} and [Gaia](https://www.gaia.com/yoga/practices){:target='_blank'} specializing in yoga, [Tonal](https://www.tonal.com){:target='_blank'} with cable-based strength workouts, and independent trainers offering workout videos and programs for their own niche.
 
 Fitness isn't a result of just doing one kind of workout. A common complaint about working out is how boring doing the same types of exercises is week after week. Not only is doing a different type of exercise more fun, studies have shown that cross-training (doing different types of exercise) reduces the chances of injury.
 
-Another aspect of digital fitness is having access to a large library of trainers. Every individual can find the best trainer for them for any type of exercise. After trying out several instructors for Glo, I found an instructor I liked and have only done yoga classes with him. When watching workout videos online, I generally stick with athletes I trust like Kevin D Lo and ThenX. Personal training is personal because each individual has a different set of fitness goals, so individuals gravitate towards the trainers they trust to help them achieve their respective goals.
+Another aspect of digital fitness is having access to a large library of trainers. Every individual can find the best trainer for them for any type of exercise. After trying out several instructors for Glo, I found an instructor I liked and have only done yoga classes with him. When watching workout videos online, I generally stick with athletes I trust like [Kevin D Lo](https://www.instagram.com/kevindlo/?hl=en){:target='_blank'} and [ThenX](https://www.thenx.com){:target='_blank'}. Personal training is personal because each individual has a different set of fitness goals, so individuals gravitate towards the trainers they trust to help them achieve their respective goals.
 
 With these insights into the digital fitness space, these are the problems with the existing ecosystem:
 
@@ -20,7 +20,7 @@ With these insights into the digital fitness space, these are the problems with 
 
 #### The Marketplace for Digital Fitness
 
-Enter a marketplace for digital fitness. Instead of a subscription to a company like Peloton or Tonal, you can subscribe to individual coaches. Think the Substack of digital fitness. (For those unfamiliar with Substack, they provide a platform for writers to create blogs and newsletters and monetize them through subscriptions.)
+Enter a marketplace for digital fitness. Instead of a subscription to a company like Peloton or Tonal, you can subscribe to individual coaches. Think the [Substack](https://substack.com){:target='_blank'} of digital fitness. (For those unfamiliar with Substack, they provide a platform for writers to create blogs and newsletters and monetize them through subscriptions.)
 
 One side of the digital fitness marketplace is the people creating digital fitness content. Let's call them trainers. The other side of the marketplace is individuals interested in working out. Let's call them athletes. This is how I envision the marketplace for digital fitness:
 
@@ -40,7 +40,7 @@ The best trainers would bring along their loyal following to the platform, who c
 
 This makes monetizing a passion for fitness possible for everyone. Just as Substack allows anyone to monetize a newsletter, this marketplace allows anyone to monetize their fitness passion. ThenX can upload their workouts to the marketplace instead of building out their on app, which is missing the network effects of the marketplace. Someone who recently underwent a body transformation and lost a lot of weight can share their workouts and exercises to the niche of people interested in weight loss and body transformation.
 
-The marketplace for digital fitness is also a highly scalable and protiable business as well. Let's evaluate a digital fitness marketplace as a tech company using the criteria from Stratechery's Ben Thompson.
+The marketplace for digital fitness is also a highly scalable and protiable business as well. Let's evaluate a digital fitness marketplace as a tech company using the criteria from [Stratechery's Ben Thompson](https://stratechery.com/2019/what-is-a-tech-company/){:target='_blank'}.
 
 * **Software creates ecosystems:** A software marketplace creates an ecosystem of athletes and trainers.
 
