@@ -40,7 +40,7 @@ The best trainers would bring along their loyal following to the platform, who c
 
 This makes monetizing a passion for fitness possible for everyone. Just as Substack allows anyone to monetize a newsletter, this marketplace allows anyone to monetize their fitness passion. ThenX can upload their workouts to the marketplace instead of building out their on app, which is missing the network effects of the marketplace. Someone who recently underwent a body transformation and lost a lot of weight can share their workouts and exercises to the niche of people interested in weight loss and body transformation.
 
-The marketplace for digital fitness is also a highly scalable and protiable business as well. Let's evaluate a digital fitness marketplace as a tech company using the criteria from [Stratechery's Ben Thompson](https://stratechery.com/2019/what-is-a-tech-company/){:target='_blank'}.
+The marketplace for digital fitness is also a highly scalable and profitable business as well. Let's evaluate a digital fitness marketplace as a tech company using the criteria from [Stratechery's Ben Thompson](https://stratechery.com/2019/what-is-a-tech-company/){:target='_blank'}.
 
 * **Software creates ecosystems:** A software marketplace creates an ecosystem of athletes and trainers.
 
