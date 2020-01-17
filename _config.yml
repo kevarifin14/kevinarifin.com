@@ -41,5 +41,7 @@ port: 5000
 collections:
   thought_bytes:
     output: true
+  reading_notes:
+    output: true
 
 paginate: 5
