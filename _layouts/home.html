@@ -20,7 +20,7 @@
       </div>
       <div class='col-md-4'>
         <h4>Reading Notes</h4>
-        {% for reading_note in site.reading_notes %}
+        {% for reading_note in site.reading_notes reversed %}
           <a href='{{ reading_note.permalink }}' class='blog-title-link'><h5>{{ reading_note.title }}</h5></a>
           <a href='{{ reading_note.permalink }}'>
             <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ reading_note.image }})'></div>
