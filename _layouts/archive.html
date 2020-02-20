@@ -24,22 +24,6 @@
           {% endfor %}
           </div>
         </div>
-
-        <!-- {{ content }}
-        {% assign thought_bytes = site.thought_bytes | group_by_exp: "thought_byte", "thought_byte.date | date: '%B %Y'" | reverse %}
-        {% for group in thought_bytes %}
-          <a data-toggle="collapse" href="#{{ group.name | remove: ' '}}">
-            <h5>{{ group.name }}</h5>
-          </a>
-          <div class="collapse bytes" id="{{ group.name | remove: ' '}}">
-            {% assign items = group.items | reverse %}
-            {% for thought_byte in items %}
-              <li id='archive'>
-                <a href='{{ thought_byte.permalink }}'>{{ thought_byte.date | date: '%B %-d, %Y' }} - {{ thought_byte.title }}</a>
-              </li>
-            {% endfor %}
-          </div>
-        {% endfor %} -->
       </div>
     </div>
   </div>

@@ -3,33 +3,32 @@ title: Reading List
 permalink: /reading-list
 layout: page
 ---
-[Books](#books)  \| [Articles](#articles)  \| [Podcasts](#podcasts)
+[Reading Notes](#reading-notes) \| [Articles](#articles)  \| [Podcasts](#podcasts)
 
 
 Books, podcasts, and articles have been a way for me to expand my perspective and inspirations to think of new ideas and
 ways to solve problems. I'll keep a running list of some of my favorite media I've consumed.
 
+[](){:name='reading-notes'}
+## Reading Notes
 
-[](){:name='books'}
-## Books
-
-This is a collection of all the books I've written about. If you want a more in-depth look at my thoughts on each book, follow the link to my post.
-
-[*Ender's Game* by Orson Scott Card](/books-i-like-part-1)
-
-[*Quiet* by Susan Cain](/books-i-like-part-1)
-
-[*Loonshots* by Safi Bahcall](/books-i-like-made-possible-by-the-internet)
-
-[*How the Internet Happened* by Brian McCullough](/books-i-like-made-possible-by-the-internet)
-
-[*Atomic Habits* by James Clear](/identity-challenge)
-
-[*Guns, Germs, and Steel* by Jared Diamond](/guns-germs-and-steel)
-
-[*A Brief History of Time* by Stephen Hawking](/spacetime)
-
-
+<div class='container' style='padding: 0'>
+    <div class='row'>
+        {% for post in site.reading_notes reversed %}
+            <div class='col-md-6'>
+                <a href='{{ post.permalink }}' class='blog-title-link'><h5>{{ post.title }}</h5></a>
+                <a href='{{ post.permalink }}'>
+                    <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ post.image }})'></div>
+                </a>
+                <h6 class='blog-subtitle'>{{ post.date | date: "%B %-d, %Y" }}</h6>
+                <p>
+                    {{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
+                    <b><a href='{{post.permalink}}' class='read-more'>Read More</a></b>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 
 [](){:name='articles'}
 ## Articles
