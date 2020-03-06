@@ -3,7 +3,7 @@ title: Good to Great
 permalink: /reading_notes/good-to-great
 image: /images/books/good-to-great.jpg
 layout: post
-excerpt: The story of Phil Knight finding his calling selling shoes, never stopping in the face of countless moments of adversity, and building one of the greatest companies ever in Nike.
+excerpt: Jim Collins's study of why some companies go from good to great, and some do not, and a framework for understanding the flywheel of greatness.
 ---
 
 ### 3 Ideas
@@ -49,4 +49,4 @@ Going from good to great is falling in love with the process. It’s the small, 
 
 It’s funny - I feel like many of the books I’m reading just keep repeating themselves. The message of Bo Eason’s in *There's No Plan B for Your A Game* is to make your declaration to be the best at something specific and just focus on achieving that. Phil Knight’s *Shoe Dog* is about finding your calling, pursuing it with an athlete’s determination, and just don’t stop.
 
-Good to Great is the same. Find your hedgehog concept and build the culture of discipline to focus on things that fall under that hedgehog concept and cut out everything that's not.
+*Good to Great* is the same. Find your hedgehog concept and build the culture of discipline to focus on things that fall under that hedgehog concept and cut out everything that's not.
