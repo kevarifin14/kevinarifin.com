@@ -33,7 +33,7 @@ excerpt: Jim Collins's study of why some companies go from good to great, and so
 ### 2 Quotes
 
 1.  On defining the three circles of the Hedgehog Concept:
-    > “To have a fully developed Hedgehog Concept, you need all three circles. If you make a lot of money doing things at which you could never be the best, you’ll only build a successful company, not a great one. If you become the best at something, you’ll never remain on top if you don’t have intrinsic passion for what you are doing. Finally, you can be passionate all you want, but if you can’t be the best at it or it doesn’t make economic sense, then you might have a lot of fun but you won’t produce great results￼￼￼.”
+    > To have a fully developed Hedgehog Concept, you need all three circles. If you make a lot of money doing things at which you could never be the best, you’ll only build a successful company, not a great one. If you become the best at something, you’ll never remain on top if you don’t have intrinsic passion for what you are doing. Finally, you can be passionate all you want, but if you can’t be the best at it or it doesn’t make economic sense, then you might have a lot of fun but you won’t produce great results￼￼￼.
 2.  On what differentiates normal leaders and Level 5 leaders who lead with strong will and humility, but also build enduring success:
     > For these people, work will always be first and foremost about what they get - game, fortune, adulation, power, whatever - not what they build, create, and contribute.
 
