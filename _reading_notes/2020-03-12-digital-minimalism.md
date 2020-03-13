@@ -11,7 +11,7 @@ excerpt: How our phones have replaced solitude and true leisure and strategies t
 
     Not in the conventional sense of being boring or poorly written. It’s hard to read because you know a lot of what Cal Newport is saying is true, and you should be making a lot of the changes he suggests to your life. I’d feel bad picking up this book sometimes because it really made me question some of the ways I use technology.
 
-    It felt very much like a Jim Collins’s idea of the Stockdale paradox (confront the facts of reality, but have faith in the big picture) from Good to Great. The facts of reality: my technology habits, both seemingly bad (constant texting, perusing Twitter, Reddit, or ESPN when I’m bored) or seemingly good (texting with old friends, listening to podcast, reading books), all probably have some detrimental consequences on my well-being, mental health, and productivity. The big picture: improvements to my relationship with technology will lead to drastic improvements in my creativity, mental state, and productivity.
+    It felt very much like a Jim Collins’s idea of the Stockdale paradox (confront the facts of reality, but have faith in the big picture) from Good to Great. The facts of reality: my technology habits, both seemingly bad (constant texting, perusing Twitter, Reddit, or ESPN when I’m bored) or seemingly good (texting with old friends, listening to podcasts, reading books), all probably have some detrimental consequences on my well-being, mental health, and productivity. The big picture: improvements to my relationship with technology will lead to drastic improvements in my creativity, mental state, and productivity.
 
     This book will challenge you to get there. Sometimes hearing that message is hard.
 
