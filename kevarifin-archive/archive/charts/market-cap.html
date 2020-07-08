@@ -1,0 +1,38 @@
+  <head>
+
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel='stylesheet' href='/css/style.css'/>
+    <script type="text/javascript">
+
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+      google.charts.setOnLoadCallback(drawMarketCapChart);
+
+      function drawMarketCapChart() {
+        d3.csv('/data/companies.csv').then((data) => {
+            data = data.slice(data.length-100, data.length);
+            var dataTable = new google.visualization.DataTable();
+
+            dataTable.addColumn('string', 'Symbol');
+            dataTable.addColumn('number', 'Market Cap');
+
+            data = data.map((d) => [d.Symbol, parseFloat(d.MarketCap)]);
+            dataTable.addRows(data);
+
+            var options = { legend: { position: "none" } };
+
+            var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+            materialChart.draw(dataTable, options);
+        });
+      }
+
+      $(window).resize(function(){
+        drawMarketCapChart();
+      });
+
+    </script>
+  </head>
+  <body>
+
+    <div id="chart_div" ></div>
+  </body>

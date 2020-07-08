@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Life In Bytes | Monetizing the Internet (Part 2)</title>
+</head>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+<meta property="og:title" content="Life in Bytes | Monetizing the Internet (Part 2)">
+<meta property="og:description" content="Kevin's blog of personal musings">
+<meta property="og:image" content="/images/banner-logo.png">
+<meta property="og:url" content="https://kevinarifin.com/">
+
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+<link rel='stylesheet' href='/css/style.css'>
+<link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<script src="/assets/popper.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<meta property="og:image" content="../images/ny.jpg">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class='collapse navbar-collapse col-md-12 col-lg-4 order-1' id='navbarNav'>
+  <ul class='navbar-nav ml-auto'>
+    <li class='nav-item'>
+      <a class='nav-link' href='/'>Blog</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/about'>About</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/reading-list'>Reading List</a>
+    </li>
+    <li>
+      <a class='nav-link' href='/archive'>Archive</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/subscribe'>Subscribe</a>
+    </li>
+  </ul>
+</div>
+
+    <div class='d-flex col-md-12 col-lg-8 order-0'>
+      <a href='/' class='w-100'>
+        <img
+          src="../images/favicon.png"
+          class='img-responsive img-container-center'
+          style='max-height: 40px; width: auto; max-width: 100%;'
+        />
+      </a>
+      <span class="w-100"></span>
+      <div class="d-flex order-0">
+        <button class="navbar-toggler" type="button" style='border: none' data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
+  </nav>
+<script src="//yihui.name/js/math-code.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<body>
+  <div
+    class='cover-photo'
+    style='
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url(../images/ny.jpg);
+      background-position: center;
+      background-size: cover;'
+  >
+    <div style='text-align: center'>
+      <h1 class='post-title'>Monetizing the Internet (Part 2)</h1>
+    </div>
+    <h3 class='post-subtitle'>June 12, 2019</h3>
+  </div>
+  <div class='container' id='blog'>
+    <div class='row'>
+      <div class='col-md-8 centered'>
+        <p><em>This is Part 2 of a three-part series on Monetizing the Internet. You can find Part 1 <a href="https://kevinarifin.com/monetizing-the-internet-1" target="_blank">here</a>. Pro tip: If you find a metric prefix like <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;3&lt;/sup&gt;">Kilo-</span> or  <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;9&lt;/sup&gt;">Giga-</span> whose value you forgot, hover over (or tap on mobile) the prefix for a reminder.</em></p>
+
+<hr class="post-hr" />
+
+<h4 id="how-powerful-is-your-phone">How powerful is your phone?</h4>
+
+<p>It’s more powerful than the computer that put two men on the moon in 1969. It’s 25,000 times faster than the ENIAC, the first general purpose computer, and that computer covered 1,800 square feet and weighed almost 100,000 tons. The iPhone is about 1.25 square feet and weighs a mere 0.38 pounds, and 5 billion humans over the age of 15 have a mobile phone right in their pocket.</p>
+
+<p><img src="/images/mobile.png" alt="" class="img-responsive img-container-center" />
+<a href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile" target="_blank">Benedict Evans</a></p>
+
+<p>The Earth is covered in not just mobile phones, but computers and tablets as well. Of the active devices in use today, most are at least several orders of magnitude more powerful than the first computers. These devices, starting with the phone in your pocket, are the backbone of a new way to monetize the internet.</p>
+
+<h4 id="so-how-can-your-phone-help-monetize-the-internet">So how can your phone help monetize the internet?</h4>
+
+<p>Consider Berkeley Open Infrastructure for Network Computing, or BOINC for short. BOINC’s mission is to utilize unused computing power to help perform cutting-edge research, like searching for <a href="https://setiathome.berkeley.edu">extra-terrestrial life</a> and studying <a href="https://einsteinathome.org" target="_blank">astrophysical signals from spinning neutron stars</a>. To put into context how much computing power there is, let’s take a look at this snippet from David P. Anderson’s research paper on BOINC:</p>
+
+<blockquote>
+  <p>There are more than 2 billion consumer desktop and laptop computers. Current models have a peak performance (including GPU) of over 3 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;12&lt;/sup&gt;">Tera</span>FLOPS, giving a total peak performance of 6,000 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;18&lt;/sup&gt;">Exa</span>FLOPS. The capacity of mobile devices will soon be similar: there are about 10 billion mobile devices, and current mobile processors have on-chip GPUs providing as much as 4 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;12&lt;/sup&gt;">Tera</span>FLOPS. Studies suggest that of people who learn about [volunteer computing], between 5% and 10% participate, and that desktop and mobile devices are available to compute for [volunteer computing] about 60% and 40% of the time respectively. Taking these factors into account, the near-term potential capacity of [volunteer computing] is on the order of hundreds of <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;18&lt;/sup&gt;">Exa</span>FLOPS.</p>
+</blockquote>
+
+<p>There’s a lot to unpack here. Let’s start with defining FLOPS. FLOPS stands for floating point operations per second. “Floating point operation” is just a fancy way of saying any operation like add, subtract, multiply, or divide on numbers with decimal places.</p>
+
+<p><span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;12&lt;/sup&gt;">Tera</span>FLOPS are one trillion floating point operations per second. To put that into context, one trillion pounds is approximately the weight in pounds of all humans combined. <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;18&lt;/sup&gt;">Exa</span>FLOPS are one quintillion floating point operations per second. That’s the number of cubic meters of water in all the Earth’s oceans.</p>
+
+<p>In other words, a fraction of the phones on Earth can do a hundred times the volume of Earth’s oceans in work in a second. BOINC is tapping into this fraction of unused computing power, but can we do more with this untapped resource?</p>
+
+<hr class="post-hr" />
+
+<h2 id="the-power-of-flops">The Power of FLOPS</h2>
+
+<p>We’re sitting on a network of billions of devices. BOINC has proven that these devices are useful on a volunteer basis, but there is even more value if we monetize compute power.</p>
+
+<p>The new currency of the internet is compute. Compute is defined as any task that a phone can do when idle.</p>
+
+<p>Let’s think about it as having a lot of unused FLOPS right in our pocket. When we browse Twitter, stream music through Spotify, or take a photo, we are using some of the FLOPS. But most of the time, our phone sits unused and the FLOPS are wasted.</p>
+
+<p>These FLOPS are valuable. BOINC needs these FLOPS to do scientific research. Companies could use FLOPS to train machine learning models or run complex algorithms. With advances in distributed computing, FLOPS will later be used for file storage or distributed hosting.</p>
+
+<p>These FLOPS are the medium of exchange in a new business model for the internet. Every time a user consumes content on the internet or uses a service, they pay in FLOPS, which act as promises to others allowing them to use their device for a computing task. These FLOPS are given directly to those that create content or provide the service. These promises to compute are valuable to people hosting web content online but also valuable to large corporations that have huge data storage needs or require many web servers to host their services. The exchange looks like this:</p>
+
+<p><img src="/images/compute.png" alt="" class="img-response img-container-center" /></p>
+
+<p>Instead of paying for services and content through attention, we pay through FLOPS, an unused, yet valuable, resource. Instead of an advertiser as the broker of value for attention, FLOPS are inherently valuable to content creators and companies.</p>
+
+<p>Understanding the value of compute as a business model starts with understanding the shortfalls with advertising. Here are the three points we discussed in <a href="https://kevinarifin.com/monetizing-the-internet-1" target="_blank">Part 1</a>:</p>
+
+<ol>
+  <li>Advertisements incentivize companies to direct our attention away from content we care about.</li>
+  <li>To direct attention to their platforms, companies need large amounts of data and will go to increasingly extreme measures to get it.</li>
+  <li>Advertising is hard, because it requires both scale and infrastructure, making it difficult for small, potentially innovative projects to generate revenue.</li>
+</ol>
+
+<p>Let’s explore how the transition from advertising to FLOPS addresses each issue.</p>
+
+<p><strong><em>FLOPS remove the incentive to game our attention.</em></strong></p>
+
+<p>Shifting from attention to FLOPS to monetize compute cuts out advertising as a middle man. While our attention is only valuable if it can be monetized through advertising, FLOPS are inherently valuable to both content creators and companies.</p>
+
+<p>Content creators can use FLOPS to freely host their content or store their content. Any excess FLOPS can be sold to companies, who would have an even higher demand for FLOPS.</p>
+
+<p>Companies can use FLOPS for running their own research, training machine learning models, and also storing and hosting their files. While a lot of the more complicated use cases will require overcoming some serious engineering challenges, BOINC has shown that at the very least, FLOPS are useful to run computation-heavy jobs.</p>
+
+<p><strong><em>Without the need for attention, there is no longer a reliance on data to monetize advertisements.</em></strong></p>
+
+<p>Data will always be important to personalize services to a user’s interest. But when there is a strong link between attention and advertising, data is used in an exploitative manner to game user attention.</p>
+
+<p>The best example of this is the difference between Apple and Facebook. Both attempt to predict what users want, but Facebook’s revenue is tied to attention while Apple’s is not. As a result, Apple is a pioneer in data privacy while Facebook says there’s a problem and does almost nothing about it.</p>
+
+<p>The key is removing the link between attention and monetization, decreasing the incentives to use data in malicious ways.</p>
+
+<p><strong><em>Compute democratizes innovation, as value can be created immediately and without scale.</em></strong></p>
+
+<p>Shared compute power is inherently valuable. When starting a project, every user instantly provides revenue potential, either harnessing the transferred FLOPS to host your project or monetizing the FLOPS by selling them to large companies.</p>
+
+<p>Advertising on the other hand requires enough scale for it to make sense monetarily. It’s also detracts from the user experience. For small projects, these first impressions are life or death. One ad in an otherwise great pilot podcast may break the flow, leading listeners to stop listening. Banner ads on a blog are unappealing and distract from the content.</p>
+
+<p>Compute reduces friction and capitalizes value immediately. The initial rewards grow linearly to start, allowing small projects to get off the ground and still have the potential to take off and grow exponentially. Reducing the barrier for entry will spark a new era of innovation on the internet.</p>
+
+<hr class="post-hr" />
+
+<h2 id="market-sizing-flops">Market Sizing FLOPS</h2>
+
+<p>We discussed how compute solves the problems behind advertising, but the reason advertising still exists is because there is a lot of money in the business model. To make compute the new currency, it has to have monetary value. Digging into the numbers, the potential market is insane. Let’s take a look at another snippet from the research paper on BOINC:</p>
+
+<blockquote>
+  <p>The best computing value [on Amazon Web Services] is a node type that costs $0.24 per hour and provides 50 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;9&lt;/sup&gt;">Giga</span>FLOPS. It would take 20,000 such instances to provide 1 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;15&lt;/sup&gt;">Peta</span>FLOPS. This would cost $42 million per year.</p>
+</blockquote>
+
+<p>It costs $42 million a year for 1 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;15&lt;/sup&gt;">Peta</span>FLOPS of compute power. We discussed how bringing just a fraction of devices to participate in shared compute we would have hundreds of <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;18&lt;/sup&gt;">Exa</span>FLOPS of compute power. Scaling the value of 1 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;15&lt;/sup&gt;">Peta</span>FLOPS to 100 <span data-toggle="tooltip" data-html="true" data-placement="top" title="10&lt;sup&gt;18&lt;/sup&gt;">Exa</span>FLOPS, it would be a $4.2 trillion value.</p>
+
+<p>To put that into perspective, the cloud computing market is $206 billion market. Even assuming that compute prices dropped to 10% of the current value, we are sitting on $420 billion dollars in compute power.</p>
+
+<p>These numbers only consider the market BOINC is evaluating: volunteers giving away their FLOPS for free. Once the system is monetized, the market is going to be flooded with FLOPS. With a one hundred times increase in available computer power and a one hundred times decrease in the cost of FLOPS, FLOPS would still have a $420 billion market.</p>
+
+<p>There is a lot of demand for compute. Some of the biggest companies like Netflix and Airbnb spend millions of dollars a year on AWS. Imagine cutting these costs by 90% in the near term, and 99.9% once shared computing takes off. The market is real and the only barriers are engineering challenges.</p>
+
+<hr class="post-hr" />
+
+<h2 id="so-where-do-we-go-from-here">So where do we go from here?</h2>
+
+<p>A lot of this essay discusses the business model on a high level. I start by showing that our phones and other internet connected devices are a valuable resource and BOINC is a case-study already taking advantage of it. We extend the impementation done by BOINC to a global compute network, monetized through a transaction of FLOPS, valuable now for computational heavy tasks but even more valuable as a resource for distributed servers and file sharing as we solve the engineering challenges to make that possible. This is a huge market, potentially cutting the cost of cloud computing by 99.9% and realigning the interests of content creators, companies, and internet users.</p>
+
+<p>This is a crazy idea. It completely changes the existing internet monetization paradigms. The engineering challenges are daunting but not insurmountable. The advertising model seems infallible, but compute is an alternative that will make it obsolete.</p>
+
+<p>In Part 3, I’ll discuss current technological advancements that are bringing FLOPS sharing into reality. I’ll address the questions of trust on a global compute network, the requirements for a distruted server and file storage network, and the implications on the end user. Creating a global shared compute network is extremely challenging, but we are taking concrete steps today to make it a reality.</p>
+
+<!-- The average price of electricty in the United States is $0.12 per kilowatt-hour (kWh). An iPhone X has an approximately 3000 milliamp-hour (mAh) battery at 3.7 volts (V). So one full charge of an iPhone X costs approximately $0.001332 per charge. Assuming we charge our phones every day, that's a yearly cost of $0.50. Even if we triple the amount of times we charge our phones because of compute, that's $1.50 a year, one tenth the price of one month of Netflix. -->
+
+<hr class="post-hr" />
+
+<h2 id="references">References</h2>
+
+<p><a href="https://arxiv.org/pdf/1903.01699.pdf" target="_blank">BOINC: A Platform for Volunteer Computing</a></p>
+
+<p><a href="https://www.ben-evans.com/benedictevans/2019/5/28/the-end-of-mobile" target="_blank">The End of Mobile</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/ENIAC" target="_blank">ENIAC</a></p>
+
+<p><a href="https://waitbutwhy.com/2014/11/1000000-grahams-number.html" target="_blank">From 1,000,000 to Graham’s Number</a></p>
+
+<!-- [Average Price of Electricity to Ultimate Customers by End-Use Sector](https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a){:target='_blank'} -->
+
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+<!--
+
+
+A lot of things seem too big to fall. Populous cities like New York and San Francisco seem to be the infallible epicenters of the economy and innovation. Big companies like Apple, Google, and Facebook appear to have a stranglehold over the industry. Even on a large scale, the United States' pole position as a global leader feels inevitable.
+
+But the words of Benedict Evans remind us to think otherwise. Throughout history, there are examples of giants falling to the backwater. AT&T, once the most powerful company in the country, is still around but is an afterthought. IBM, who once felt invincible as the sole distributor of computers, fell to the shift to software that Microsoft catalyzed. Microsoft fell as well as a result of its own inability to pivot to the web. The things that mattered stopped mattering.
+
+Even when the biggest companies today feel eternal, we can't be afraid to challenge them. The key is building a route that makes what matters now not matter anymore. Let's use this mindset as we build a new business model to monetize the internet.
+
+<hr class='post-hr'/>
+
+## First Principles
+
+Venice's decline did not mean that trade was no longer important; the fact that they had monopolized land trade routes slowly declined in importance with the discovery of the New World and the increasing ubiquity of sea trade routes. However, at its core, the problem was the same: we needed to trade and we'd take the easiest, most lucrative route to get there.
+
+When applying this mindset to internet monetization, the same principles apply. What is the problem we are trying to solve when we monetize the internet? Before we can solve the problem of internet monetization, we need to break the problem down to its first principles. In terms of monetizing the internet, the exchange needs to be dictated by two foundational principles:
+
+1. Companies need to generate revenue to fund the services they provide.
+2. Users are hesitant to spend money, and prefer a frictionless free service.
+3. The incentives of the user and the company are aligned.
+
+Let's refresh our memery and go back to the diagram in Part 1.
+![](ad-model.png){:class="img-responsive img-container-center"}
+The current advertising business model solves principles #1 and #2 quite well. We get free services and companies earn revenue by directing attention to their platform and to advertisements. However, the business model has diverged from principle #3. While at first, internet users wanted to direct their attention to things that people paid for, . This leads us to the three main things that are wrong with the advertising business model.
+
+1. Advertisements incentivize companies to direct our attention away from content we care about.
+2. To direct attention to their platforms, companies need large amounts of data and will go to increasingly extreme measure to get it.
+3. Advertising is hard, because it requires both scale and infrastructure, making it difficult for small, potentially innovative projects to generate revenue.
+
+Now that we are armed with the first principles of internet monetization and the problems that need to be fixed in the current business model, let's proceed to building a solution.
+
+<hr class='post-hr'/>
+
+## An Aside on Access
+
+The starting point for the new business model leverages the Alex Danco's idea of the [access economy](){:target='_blank'}. Before we dive too deep into a new business model, let's take a quick aside on the sharing economy. With recent IPOs by Uber and Lyft, this new business model has gotten a lot of attention. The revenue of the sharing economy is projected to grow to $335 billion by 2025, up from $15 billion in 2013. What makes the sharing economy so valuable?
+
+It allows us to make from things that before just sat around. It shifted the paradigm from owner
+So how do we remove advertising from the picture and keep free services free? First let’s pull some ideas from the sharing economy. Uber and Lyft have allowed you to make money on your car, and Airbnb monetizes your unused room or vacation home. Now let’s look at the cloud computing market. The projected market size is $206.2 billion. But the item in focus is your phone. We need to allow companies to tap into the unused compute power and storage space on your phone.
+
+<hr class='post-hr'/>
+
+## The Thing in Your Pocket
+
+It's time to pull the ideas together. In order to keep services free, we need to use  Just like the sharing economy allows us to monetize our idle cars and vacant rooms, the backbone of internet monetization is our phone.
+
+
+
+Content creators can then sell compute token to companies for cash to fund their operations, or use it themselves to host their content online.
+
+The solution is to monetize compute. Here’s how it addresses the three main issues with advertising.
+
+1. Encourages content to focus on things we want to consume.
+2. Removes incentive to do shady things with data.
+3. Allows small businesses and independent projects to immediately generate revenue.
+
+<hr class='post-hr'/>
+
+Making this type of buisness model a reality is extremely difficult. The engineering challenges are extreme and the buy-in from companies and consumers is essential. In Part 3, I discuss concrete steps that are being taken to make an implementation of this system a reality.
+
+If this idea sounds suspiciously like a blockchain idea, it's because it is.
+
+## References
+
+
+https://gridcoin.us/index.htm
+https://gridcoin.us/assets/img/whitepaper.pdf
+
+
+
+
+<!----
+1. your phone is powerful
+2. can it be harvested
+3. How do we make it useful
+4. Tie it back to advertising + business model
+--->
+
+
+        <hr class='after-post-hr'/>
+
+        <h3>I'd love to hear from you!</h3>
+        <p>
+        If you'd like to share your thoughts about my post, feel free to email me at <a href='mailto:lifeinbytes@kevinarifin.com'>lifeinbytes@kevinarifin.com</a>
+        or send me a DM on <a href='https://twitter.com/kevarifin' target='_blank'>Twitter</a>. I also send out my Thought Bytes newsletter
+        every Thursday if you want more content like this! You can subscribe <a href='/subscribe'>here.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+<hr style='margin-bottom: 0em'>
+<div style='padding-top: 2em; padding-left: 1em; padding-right: 1em; width: 100%;'>
+  <div class='row'>
+
+    <div class='col-md-8'>
+      <center><h5>Subscribe to my weekly Thought Bytes newsletter!</h5></center>
+      <!-- Begin Mailchimp Signup Form -->
+<!-- <link href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css' rel='stylesheet' type='text/css'> -->
+
+<div id='mc_embed_signup'>
+  <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
+  <form
+    action='https://gmail.us20.list-manage.com/subscribe/post?u=a2debc4038d4991265518595d&amp;id=fecb817a57'
+    method='post'
+    id='mc-embedded-subscribe-form'
+    name='mc-embedded-subscribe-form'
+    class='validate'
+    target='_blank'
+  >
+
+    <div id='mc_embed_signup_scroll'></div>
+
+    <div class='row'>
+      <div class='input-group mb-3 col-md-6 centered'>
+        <input type='email' value='' name='EMAIL' class='form-control' id='mce-EMAIL' placeholder='Email'>
+      </div>
+    </div>
+
+    <div id='mce-responses' class='clear'>
+      <div class='response' id='mce-error-response' style='display:none'></div>
+      <div class='response' id='mce-success-response' style='display:none'></div>
+    </div>
+
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style='position: absolute; left: -5000px;' aria-hidden='true'><input type='text' name='b_a2debc4038d4991265518595d_fecb817a57' tabindex='-1' value=''></div>
+
+    <div class='clear' style='display: flex; align-items: center; justify-content: center'>
+      <button type='submit' class='btn btn-primary' value='Sign Up!' name='subscribe' id='mc-embedded-subscribe'>Sign Up!</button>
+    </div>
+
+  </form>
+</div>
+
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script type='text/javascript'>
+  (function($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0]='EMAIL';
+    ftypes[0]='email';
+    fnames[1]='FNAME';
+    ftypes[1]='text';
+  }(jQuery));
+  var $mcj = jQuery.noConflict(true);
+</script>
+    </div>
+
+    <div class='col-md-4'>
+      <nav class='navbar-light'>
+        <ul class='navbar-nav ml-auto'>
+          <li class='nav-item'>
+            <a class='nav-link' href='/'>Blog</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/about'>About</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/reading-list'>Reading List</a>
+          </li>
+          <li>
+            <a class='nav-link' href='/archive'>Archive</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/subscribe'>Subscribe</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-12'>
+      <center>
+        <p class='blog-subtitle'>Copyright © 2019 Kevin Arifin</p>
+      </center>
+    </div>
+  </div>
+
+</div>

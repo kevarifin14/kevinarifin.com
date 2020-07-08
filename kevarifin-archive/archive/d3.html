@@ -1,0 +1,343 @@
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+  <title>Bar chart with D3.js</title>
+
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'> -->
+  <script src='https://d3js.org/d3.v5.min.js'></script>
+  <!-- <script src='/d3/d3.min.js'></script> -->
+  <!-- Load d3.js and c3.js -->
+  <!-- <script src="/path/to/d3.v5.min.js" charset="utf-8"></script> -->
+  <link href="/assets/c3.min.css" rel="stylesheet">
+  <link rel='stylesheet' href='/css/c3.css'>
+  <script src="/assets/c3.min.js"></script>
+
+</head>
+<body>
+  <div id="chart"></div>
+  <div id="chart2"></div>
+</body>
+</html>
+
+<script>
+
+d3.csv('/data/health.csv').then((data) => {
+  var chart = c3.generate({
+    bindto: '#chart',
+    data: {
+      x: 'date',
+      columns: [
+        ['date'].concat(data.map(d => d.date)),
+        ['weight'].concat(data.map(d => d.weight)),
+        ['bfp'].concat(data.map(d => d.bfp)),
+      ],
+      axes: {
+        weight: 'y',
+        bfp: 'y2',
+      },
+      hide: ['bfp'],
+    },
+    color: {
+      pattern: ['rgb(255, 149, 0)', 'rgb(90, 200, 250)']
+    },
+    axis: {
+      x: {
+        type: 'timeseries',
+        tick: {
+          fit: true,
+          format: '%Y-%m-%d'
+        }
+      },
+      y2: {
+        show: true,
+      }
+    },
+    zoom: {
+      enabled: true,
+    },
+    grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    },
+    // point: {
+      // sensitivity: 1000 // something big enuf to overlap 50% between points
+    // },
+    tooltip: {
+      grouped: false,
+      contents: function (d, defaultTitleFormat, defaultValueFormat, color) {
+        return '<div id="tooltip" class="module-triangle-bottom">' + d[0].value + '</div>'
+      }
+    }
+  });
+
+  var chart = c3.generate({
+    bindto: '#chart2',
+    data: {
+      x: 'date',
+      columns: [
+        ['date'].concat(data.map(d => d.date)),
+        ['weight'].concat(data.map(d => d.weight - d.fat_weight)),
+        ['fat_weight'].concat(data.map(d => d.fat_weight)),
+      ],
+      type: 'bar',
+      groups: [
+          ['weight', 'fat_weight']
+      ]
+    },
+    bar: {
+      width: 'auto'
+    },
+    axis: {
+      x: {
+        type: 'timeseries',
+        tick: {
+          fit: true,
+          format: '%Y-%m-%d'
+        }
+      }
+    },
+    zoom: {
+      enabled: true,
+    },
+    grid: {
+        y: {
+            lines: [{value:0}]
+        }
+    }
+});
+});
+</script>
+
+<!-- <script>
+
+
+  function preprocess(data) {
+    return data.map((d) => {
+      let object = {};
+      object.date = new Date(d.date);
+      object.weight = d.weight;
+      return object;
+    });
+  }
+
+  function createChart(data) {
+    data = preprocess(data);
+    const margin = 80;
+    const width = 1000 - 2 * margin;
+    const height = 600 - 2 * margin;
+
+    const svg = d3.select('svg');
+    const svgContainer = d3.select('#container');
+
+
+    function zoomed() {
+      const transformation = d3.event.transform;
+
+      const rightEdge = Math.abs(transformation.x) / transformation.k + width / transformation.k;
+      const bottomEdge = Math.abs(transformation.y) / transformation.k + height / transformation.k;
+
+      if (rightEdge > width) {
+        transformation.x = -(width * transformation.k - width);
+      }
+
+      if (bottomEdge > height) {
+        transformation.y = -(height * transformation.k - height);
+      }
+
+      rescaledX = transformation.rescaleX(x);
+      rescaledY = transformation.rescaleY(y);
+
+      xAxisElement.call(xAxis.scale(rescaledX));
+      yAxisElement.call(yAxis.scale(rescaledY));
+
+      linesContainer.selectAll('path')
+        .attr('d', regionId => {
+          return d3.line()
+            .defined(d => d.percent !== 0)
+            .x(d => rescaledX(d.date))
+            .y(d => rescaledY(d.percent))(regions[regionId].data);
+        });
+
+      voronoiGroup
+        .attr('transform', transformation);
+    }
+
+    const zoom = d3.zoom()
+      .scaleExtent([1, 10])
+      .translateExtent([[0, 0], [width, height]])
+      // .on('start', () => {
+    //     hoverDot
+    //       .attr('cx', -5)
+    //       .attr('cy', 0);
+    //   })
+      .on('zoom', zoomed);
+      // });
+
+    const chart = svg.append('g')
+      .attr('transform', `translate(${margin}, ${margin})`)
+      // .call(zoom)
+
+
+
+    const xDomain = [data[0].date, data[data.length - 1].date];
+    const yDomain = d3.extent(data, (d) => d.weight);
+
+    const xScale = d3.scaleTime()
+      .range([0, width])
+      .domain(xDomain);
+
+    const yScale = d3.scaleLinear()
+      .range([height, 0])
+      .domain(yDomain);
+
+    chart.append('g')
+      .attr('transform', `translate(0, ${height})`)
+      .call(d3.axisBottom(xScale));
+
+    chart.append('g')
+      .call(d3.axisLeft(yScale));
+
+    function xGridlines() {
+      return d3.axisBottom(xScale).ticks(5)
+    }
+
+    function yGridlines() {
+        return d3.axisLeft(yScale).ticks(5)
+    }
+
+    let xAxis = xGridlines()
+        .tickSize(-height)
+        .tickFormat('')
+
+    let yAxis = yGridlines()
+        .tickSize(-width)
+        .tickFormat('')
+
+    chart.append('g')
+      .attr('class', 'grid')
+      .attr('transform', 'translate(0,' + height + ')')
+      .call(xAxis);
+
+    chart.append('g')
+      .attr('class', 'grid')
+      .call(yAxis)
+
+    chart.selectAll('.line').data(data.slice(0, -1)).enter()
+      .append('line')
+      .attr('class', 'line')
+      .attr('x1', (d) => xScale(d.date))
+      .attr('y1', (d) => yScale(d.weight))
+      .attr('x2', (d, i) => xScale(data[i+1].date))
+      .attr('y2', (d, i) => yScale(data[i+1].weight));
+
+
+    chart.selectAll('.dots').data(data).enter()
+      .append('circle')
+      .attr('class', 'circle')
+      .attr('r', 3.5)
+      .attr('cx', (d) => xScale(d.date))
+      .attr('cy', (d) => yScale(d.weight))
+
+    let focus = chart.append('g').style('display', 'none');
+    focus.append('line')
+      .attr('id', 'focusLineX')
+      .attr('class', 'focusLine');
+    focus.append('line')
+      .attr('id', 'focusLineY')
+      .attr('class', 'focusLine');
+
+    const bisectDate = d3.bisector(function(d) { return d.date; }).left;
+    const tooltip = chart.append('g');
+
+    chart.append('svg:rect')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('fill', 'none')
+      .attr('pointer-events', 'all')
+      .on('mouseover touchstart', () => focus.style('display', null))
+      .on('mouseout touchend', () => focus.style('display', null))
+      .on('mousemove touchmove', () => {
+        let mouse = d3.mouse(d3.event.currentTarget);
+        let mouseDate = xScale.invert(mouse[0]);
+        let i = bisectDate(data, mouseDate);
+        let d0 = data[i-1]
+        let d1 = data[i]
+
+        let d = mouseDate - d1.date > d1.date - mouseDate ? d1 : d0;
+        let x = xScale(d.date);
+        let y = yScale(d.weight);
+
+        focus.select('#focusLineX')
+          .attr('x1', x).attr('y1', yScale(yDomain[0]))
+          .attr('x2', x).attr('y2', yScale(yDomain[1]));
+        tooltip
+          .attr('transform', `translate(${x},${yScale(yDomain[1])})`)
+          .call(callout, d.weight);
+      });
+
+    // var moved = 0;//record the translate x moved by the g which contains the bars.
+    // var dragStartX = 0;//record teh point from where the drag started
+    // var oldTranslateX = 0;
+
+    // let dragHandler = d3.drag()
+    //   .on('start', () => {
+    //     dragStartX = d3.event.sourceEvent.clientX;
+    //     oldTranslateX = moved;//record the old translate
+    //   })
+    //   .on('drag', () => {
+    //     var x = d3.event.x;
+    //     var y = d3.event.y;
+    //     var dx = x-dragStartX
+    //     x = dx + oldTranslateX; //add teh old translate to the dx to get the resultant translate
+    //     moved = x; //record the translate x given
+    //     //move the bars via translate x
+    //     chart.selectAll('.dots').attr("transform", "translate(" + x + "," + 0 + ")");
+    //     chart.selectAll('.line').attr("transform", "translate(" + x + "," + 0 + ")");
+    //       //move the x axis via translate x
+    //     // d3.select('.x').attr("transform", "translate("+x +" ," + height + ")")
+    //   });
+
+    // chart.call(dragHandler);
+
+    function mousemove() {
+      let mouse = d3.mouse(d3.event.currentTarget);
+      console.log(mouse);
+      let t = d3.event.changedTouches;
+    }
+
+    function callout(g, value) {
+      if (!value) return g.style('display', 'none');
+
+      g.style('display', null).style('pointer-events', 'none').style('font', '10px sans-serif');
+
+      const path = g.selectAll('path')
+        .data([null])
+        .join('path')
+          .attr('fill', 'white')
+          .attr('stroke', 'black');
+
+      const text = g.selectAll('text')
+        .data([null])
+        .join('text')
+        .call(text => text
+          .selectAll('tspan')
+          .data((value + '').split(/\n/))
+          .join('tspan')
+            .attr('x', 0)
+            .attr('y', (d, i) => `${i * 1.1}em`)
+            .style('font-weight', (_, i) => i ? null : 'bold')
+            .text(d => d));
+
+      const {x, y, width: w, height: h} = text.node().getBBox();
+
+      text.attr('transform', `translate(${-w / 2},${y + 5})`);
+      path.attr('d', `M${-w / 2 - 10}, 5H${w / 2 + 10}v${-h - 20}h-${w + 20}z`);
+    }
+  }
+</script> -->

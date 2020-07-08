@@ -1,0 +1,92 @@
+{% include header.html %}
+{% include nav.html %}
+
+</header>
+<body>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-8 centered'>
+
+        <a href='{{ site.posts[0].permalink }}' class='blog-title-link'><h2>{{ site.posts[0].title }}</h2></a>
+        <a href='{{ site.posts[0].permalink }}'>
+          <div class='img-responsive img-container-center img-home' style='background-image: url({{ site.posts[0].image }})'></div>
+        </a>
+        <h6 class='blog-subtitle'>{{ site.posts[0].date | date: "%B %-d, %Y" }}</h6>
+
+
+        {{ site.posts[0].content }}
+
+
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-8 centered'>
+
+        <hr class='home-hr' />
+        <h4>Reading Notes</h4>
+        <div class='container' style='padding: 0'>
+          <div class='row'>
+            {% assign reading_notes = site.reading_notes | sort: 'date' | reverse %}
+            {% for reading_note in reading_notes limit:2 %}
+              <div class='col-md-6'>
+              <a href='{{ reading_note.permalink }}' class='blog-title-link'><h5>{{ reading_note.title }}</h5></a>
+              <a href='{{ reading_note.permalink }}'>
+                <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ reading_note.image }})'></div>
+              </a>
+              <h6 class='blog-subtitle'>{{ reading_note.date | date: "%B %-d, %Y" }}</h6>
+              <p>
+                {{ reading_note.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
+                <b><a href='{{reading_note.permalink}}' class='read-more'>Read more</a></b>
+              </p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-8 centered'>
+        <a style='float: right' href='/reading-list' class="next">Find more of my reading notes &rarr;</a>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-8 centered'>
+
+        <hr class='home-hr' />
+        <h4>Up Next</h4>
+
+        <div class='container' style='padding: 0'>
+          <div class='row'>
+              {% for up_next in site.posts limit:2 offset:1 %}
+              <div class='col-md-6'>
+              <a href='{{ up_next.permalink }}' class='blog-title-link'><h5>{{ up_next.title }}</h5></a>
+              <a href='{{ up_next.permalink }}'>
+                <div class='img-responsive img-container-center img-home-preview' style='background-image: url({{ up_next.image }})'></div>
+              </a>
+              <h6 class='blog-subtitle'>{{ up_next.date | date: "%B %-d, %Y" }}</h6>
+              <p>
+                {{ up_next.excerpt | markdownify | remove: '<p>' | remove: '</p>'}}
+                <b><a href='{{up_next.permalink}}' class='read-more'>Read More</a></b>
+              </p>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='col-md-8 centered'>
+        <a style='float: right' href='/archive' class="next">Check out the rest of my posts &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+{% include footer.html %}
+

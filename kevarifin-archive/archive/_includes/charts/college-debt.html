@@ -1,0 +1,74 @@
+<head>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
+  <title>Bar chart with D3.js</title>
+
+  <script src='https://d3js.org/d3.v5.min.js'></script>
+  <link href="/assets/c3.min.css" rel="stylesheet">
+  <link rel='stylesheet' href='/css/c3.css'>
+  <script src="/assets/c3.min.js"></script>
+
+</head>
+<body>
+  <center>
+    <div id="chart"></div>
+  </center>
+</body>
+
+<script>
+
+d3.csv('/data/health.csv').then((data) => {
+  var chart = c3.generate({
+    data: {
+      columns: [
+        ['Borrowers (in millions)', 8.7,  7.6,  9.3,  9.4,  4.1,  2.4,  1.2,  2.1,  0.7],
+      ],
+      type: 'bar',
+    },
+    axis: {
+      x: {
+        type: 'category',
+        categories: [
+          'Less than 5K',
+          '5K to 10K',
+          '10K to 20K',
+          '20K to 40K',
+          '40K to 60K',
+          '60K to 80K',
+          '80K-100K',
+          '100K to 200K',
+          '200K+',
+        ],
+        label: {
+          text: 'Amount Outstanding ($)',
+          position: 'outer-center',
+        },
+      },
+      y: {
+        label: {
+          text: 'Borrowers (in millions)',
+          position: 'outer-middle',
+        },
+      },
+    },
+    bar: {
+      width: {
+        ratio: 0.5 // this makes bar width 50% of length between ticks
+      },
+    },
+    legend: {
+      show: false,
+    },
+    grid: {
+      x: {
+        show: true
+      },
+      y: {
+        show: true
+      }
+    }
+  });
+});
+
+</script>

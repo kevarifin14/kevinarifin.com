@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Life In Bytes | A Trip to Bali</title>
+</head>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+<meta property="og:title" content="Life in Bytes | A Trip to Bali">
+<meta property="og:description" content="Kevin's blog of personal musings">
+<meta property="og:image" content="/images/banner-logo.png">
+<meta property="og:url" content="https://kevinarifin.com/">
+
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+<link rel='stylesheet' href='/css/style.css'>
+<link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<script src="/assets/popper.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<meta property="og:image" content="/images/rice.jpg">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class='collapse navbar-collapse col-md-12 col-lg-4 order-1' id='navbarNav'>
+  <ul class='navbar-nav ml-auto'>
+    <li class='nav-item'>
+      <a class='nav-link' href='/'>Blog</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/about'>About</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/reading-list'>Reading List</a>
+    </li>
+    <li>
+      <a class='nav-link' href='/archive'>Archive</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/subscribe'>Subscribe</a>
+    </li>
+  </ul>
+</div>
+
+    <div class='d-flex col-md-12 col-lg-8 order-0'>
+      <a href='/' class='w-100'>
+        <img
+          src="../images/favicon.png"
+          class='img-responsive img-container-center'
+          style='max-height: 40px; width: auto; max-width: 100%;'
+        />
+      </a>
+      <span class="w-100"></span>
+      <div class="d-flex order-0">
+        <button class="navbar-toggler" type="button" style='border: none' data-toggle="collapse" data-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
+  </nav>
+<script src="//yihui.name/js/math-code.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<body>
+  <div
+    class='cover-photo'
+    style='
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url(/images/rice.jpg);
+      background-position: center;
+      background-size: cover;'
+  >
+    <div style='text-align: center'>
+      <h1 class='post-title'>A Trip to Bali</h1>
+    </div>
+    <h3 class='post-subtitle'>July 3, 2019</h3>
+  </div>
+  <div class='container' id='blog'>
+    <div class='row'>
+      <div class='col-md-8 centered'>
+        <p><a href="#map"></a></p>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>Life in Bytes | Bali Map</title>
+<link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+
+html, body, #wrapper {
+  width: 100%;
+  height: 600px;
+  padding: 0px;
+  margin: 0px;
+}
+
+#map {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+}
+
+svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+div.tooltip {
+  color: #222;
+  background-color: #fff;
+  padding: .5em;
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 0;
+  opacity: 0.9;
+  position: absolute;
+  font: normal 14px/1.3 Arial;
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+    <div id="map"></div>
+</div>
+
+<script src="//unpkg.com/d3@5.0.0/dist/d3.min.js"></script>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js"></script>
+<script>
+d3.json("test.geojson").then(mapDraw);
+
+
+function mapDraw(geojson){
+  //mapboxgs トークン
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic2hpbWl6dSIsImEiOiJjam95MDBhamYxMjA1M2tyemk2aHMwenp5In0.i2kMIJulhyPLwp3jiLlpsA';
+
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v8',
+    center: [115.1920, -8.623],
+    zoom: 10,
+  });
+
+  map.addControl(new mapboxgl.NavigationControl());
+
+  // svg
+  var container = map.getCanvasContainer()
+  var svg = d3.select(container).append("svg")
+
+  var transform = d3.geoTransform({point: projectPoint});
+  var path = d3.geoPath().projection(transform);
+
+  var minLon = -8.6405 - 1;
+  var maxLon = -8.6405 + 1;
+  var minLat = 115.1920 - 1;
+  var maxLat = 115.1920 + 1;
+  var tooltip = d3.select('body')
+    .append('div')
+    .attr('class', 'hidden tooltip');
+  var featureElement = svg.selectAll("path")
+    .data(geojson.features)
+    .enter()
+    .filter(function(d) {
+     if (d.geometry.type == 'Point') {
+        var coordinates = d.geometry.coordinates;
+        if (!(coordinates[1] < maxLon && coordinates[1] > minLon && coordinates[0] < maxLat && coordinates[0] > minLat)) {
+          return false;
+        }
+      } else {
+        for (var i = 0; i < d.geometry.coordinates.length; i++) {
+          var coordinates = d.geometry.coordinates[i];
+          if (!(coordinates[1] < maxLon && coordinates[1] > minLon && coordinates[0] < maxLat && coordinates[0] > minLat)) {
+            return false;
+          }
+        }
+      }
+      return true
+    })
+    .append("path")
+    .attr("stroke", function(d) {
+      if (d.geometry.type == 'LineString') {
+        if (d.properties.type == 'walking') {
+          return 'rgb(54, 187, 138)';
+        } else if (d.properties.type == 'car') {
+          return 'rgb(231, 72, 56)';
+        } else if (d.properties.type == 'tram') {
+          return 'rgb(169, 143, 53)';
+        }
+      } else {
+        return 'white';
+      }
+    })
+    .attr('stroke-width', 2)
+    .attr('fill', (d) => {
+      return d.geometry.type == 'LineString' ? 'none' : 'rgb(107, 81, 240)';
+    })
+    .on('mouseover', (d) => {
+      if (d.geometry.type == 'Point') {
+        tooltip.classed('hidden', false)
+          .attr('style', 'left:' + (d3.event.pageX + 15) + 'px; top:' + (d3.event.pageY - 35) + 'px')
+          .html(d.properties.name);
+      }
+    })
+    .on('mouseout', (d) => {
+      tooltip.classed('hidden', true);
+    });
+
+    //path
+    function update() {
+      featureElement.attr("d", path);
+    }
+
+  map.on("viewreset", update);
+  map.on("movestart", function(){
+    svg.classed("hidden", true);
+    tooltip.classed('hidden', true);
+  });
+    map.on("rotate", function(){
+    svg.classed("hidden", true);
+    tooltip.classed('hidden', true);
+  });
+    map.on("moveend", function(){
+    update()
+    svg.classed("hidden", false);
+  });
+  update();
+
+
+  function projectPoint(lon, lat) {
+        var point = map.project(new mapboxgl.LngLat(lon, lat));
+    this.stream.point(point.x, point.y);
+  }
+}
+</script>
+</body>
+<!-- [Click here to view a full screen map!](/map){:target='_blank'} -->
+<p><br /></p>
+
+<blockquote>
+  <p>There is nothing like returning to a place that remains unchanged to find the ways in which you yourself have altered.</p>
+
+  <p>-<em>Nelson Mandela</em></p>
+</blockquote>
+
+<p>I heard this Nelson Mandela quotation back in high school and it has stuck with me ever since. Having moved and traveled quite a bit in the past couple years, it is even more resonant as I return to places that were important to me when I was younger, from the Bay Area where I grew up and Indonesia where my family is from.</p>
+
+<p>Going back to Indonesia, even its most touristy destination in Bali, was an unforgettable experience. Having traveled to many countries where I was unable to speak the language, being able to speak Indonesian felt like a superpower.</p>
+
+<p>I was able to connect with the people we met on the trip on a deeper level than on my other trips. From our awesome driver Eka who drove us around Ubud to my favorite hotel attendant Angga, I felt more able to appreciate the culture and the people than any place I’d been before. Language is both a barrier to connection and a beautiful way to connect with people across the world.</p>
+
+<p>During the trip, I tracked our daily movements using an app called <a href="https://www.bigpaua.com/arcapp" target="_blank">Arc</a> so I thought it would be cool to plot the trip and write a couple things about our experience. Find a list of highlights below if you are ever looking for places to check out in Bali!</p>
+
+<hr class="post-hr" />
+
+<h2 id="restaurants">Restaurants</h2>
+
+<p><img src="/images/knuckle.jpg" alt="" class="img-responsive img-container-center" /></p>
+
+<p><strong>Wahaha</strong>: This place was so good we had to eat here twice. We ordered a feast of pork knuckle, pork belly, pork satay, pork fried rice, pork ribs, mango smoothie, and a fresh coconut. Yes, lots of pig.</p>
+
+<p><strong>Bali Nikmat</strong>: We ordered pigeon and a fresh fish and even though there were many small bones, the fish was some of the best I’ve ever had. Eating pigeon was a little weird, but Sarah loved it.</p>
+
+<p><strong>Mozaic</strong>: The super fancy restaurant of the trip. Someone on Reddit said this was the best meal of their life so we had to try it. While I wouldn’t go that far (I still think Wahaha is better), it was a beautiful garden setting with interesting foods like rabbit and rambutan ice cream.</p>
+
+<p><strong>Bebek Tepi Sawah</strong>: This is a favorite from my mom. The duck is really, really good.</p>
+
+<hr class="post-hr" />
+
+<h2 id="places">Places</h2>
+
+<p><img src="/images/rimba.jpg" alt="" class="img-responsive img-container-center" /></p>
+
+<p><strong>Sacred Monkey Forest</strong>: I had a monkey jump on me and try to open my backpack. I had a monkey touch my hand and saw two groups of monkeys fighting over territory. A monkey jumped on top of another swimming monkey and a monkey almost pick-pocketed me. For an immersive experience in the nature of monkeys, this is a great place to visit. Home of the sacred macaque monkeys, they are plentiful and playful and entertained us for several hours as we walked through the forest park.</p>
+
+<p><strong>Tegallalang Rice Terrace</strong>: We made a quick stop before our dinner reservation to the rice terraces and it was definitely worth it. It was beautiful during golden hour and there’s a hiking path that runs through the rice terrace.</p>
+
+<p><strong>Ubud in general</strong>: It’s quite the trek if you’re staying in Seminyak or Nusa Dua, but this was probably our favorite and most eventful day of the trip. A driver for the day costs about $50 and they’ll take you to all the destinations in and around Ubud. We hit Tegenungan waterfall, the monkey forest, Pasar Ubud (the open-air market in Ubud), Babi Guling Ibu Oka, Seniman Coffee, the rice terraces, and Mozaic all in one day. It was tiring yet memorable experience.</p>
+
+<p><strong>Rimba</strong>: We spent two nights at the fanciest hotel I’ve been to in my life. With pristine views of the ocean and forest, a private beach, and a pool that overlooks the ocean, it was a nice little escape from reality. The hotel staff was super friendly and made us feel at home.</p>
+
+
+        <hr class='after-post-hr'/>
+
+        <h3>I'd love to hear from you!</h3>
+        <p>
+        If you'd like to share your thoughts about my post, feel free to email me at <a href='mailto:lifeinbytes@kevinarifin.com'>lifeinbytes@kevinarifin.com</a>
+        or send me a DM on <a href='https://twitter.com/kevarifin' target='_blank'>Twitter</a>. I also send out my Thought Bytes newsletter
+        every Thursday if you want more content like this! You can subscribe <a href='/subscribe'>here.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+<hr style='margin-bottom: 0em'>
+<div style='padding-top: 2em; padding-left: 1em; padding-right: 1em; width: 100%;'>
+  <div class='row'>
+
+    <div class='col-md-8'>
+      <center><h5>Subscribe to my weekly Thought Bytes newsletter!</h5></center>
+      <!-- Begin Mailchimp Signup Form -->
+<!-- <link href='//cdn-images.mailchimp.com/embedcode/classic-10_7.css' rel='stylesheet' type='text/css'> -->
+
+<div id='mc_embed_signup'>
+  <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css"> -->
+  <form
+    action='https://gmail.us20.list-manage.com/subscribe/post?u=a2debc4038d4991265518595d&amp;id=fecb817a57'
+    method='post'
+    id='mc-embedded-subscribe-form'
+    name='mc-embedded-subscribe-form'
+    class='validate'
+    target='_blank'
+  >
+
+    <div id='mc_embed_signup_scroll'></div>
+
+    <div class='row'>
+      <div class='input-group mb-3 col-md-6 centered'>
+        <input type='email' value='' name='EMAIL' class='form-control' id='mce-EMAIL' placeholder='Email'>
+      </div>
+    </div>
+
+    <div id='mce-responses' class='clear'>
+      <div class='response' id='mce-error-response' style='display:none'></div>
+      <div class='response' id='mce-success-response' style='display:none'></div>
+    </div>
+
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style='position: absolute; left: -5000px;' aria-hidden='true'><input type='text' name='b_a2debc4038d4991265518595d_fecb817a57' tabindex='-1' value=''></div>
+
+    <div class='clear' style='display: flex; align-items: center; justify-content: center'>
+      <button type='submit' class='btn btn-primary' value='Sign Up!' name='subscribe' id='mc-embedded-subscribe'>Sign Up!</button>
+    </div>
+
+  </form>
+</div>
+
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script type='text/javascript'>
+  (function($) {
+    window.fnames = new Array();
+    window.ftypes = new Array();
+    fnames[0]='EMAIL';
+    ftypes[0]='email';
+    fnames[1]='FNAME';
+    ftypes[1]='text';
+  }(jQuery));
+  var $mcj = jQuery.noConflict(true);
+</script>
+    </div>
+
+    <div class='col-md-4'>
+      <nav class='navbar-light'>
+        <ul class='navbar-nav ml-auto'>
+          <li class='nav-item'>
+            <a class='nav-link' href='/'>Blog</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/about'>About</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/reading-list'>Reading List</a>
+          </li>
+          <li>
+            <a class='nav-link' href='/archive'>Archive</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='/subscribe'>Subscribe</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-12'>
+      <center>
+        <p class='blog-subtitle'>Copyright © 2019 Kevin Arifin</p>
+      </center>
+    </div>
+  </div>
+
+</div>

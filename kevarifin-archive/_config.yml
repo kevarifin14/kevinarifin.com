@@ -1,0 +1,30 @@
+title: Kevin Arifin
+email: hello@kevinarifin.com
+description: > # this means to ignore newlines until "baseurl:"
+  Kevin Arifin's blog. My collection of articles and weekly newsletters
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build Settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+# Deployment
+host: 0.0.0.0
+port: 5000
+
+# Custom Collections
+collections:
+  thought_bytes:
+    output: true
+  reading_notes:
+    output: true
+
+paginate: 5

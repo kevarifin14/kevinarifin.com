@@ -1,0 +1,26 @@
+{
+  "name": "kevarifin14.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "moment": "^2.27.0",
+    "next": "9.4.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-html-email": "^3.0.0",
+    "react-icons": "^3.10.0"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.2",
+    "remark-highlight.js": "^6.0.0",
+    "remark-html": "^11.0.2",
+    "remark-parse": "^8.0.2",
+    "unified": "^9.0.0",
+    "uuid": "^8.2.0"
+  }
+}

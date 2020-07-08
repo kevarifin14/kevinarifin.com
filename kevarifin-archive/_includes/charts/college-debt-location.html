@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current');
+      google.charts.setOnLoadCallback(drawUSChart);
+
+
+      function drawUSChart() {
+        d3.csv('/data/debt-location.csv').then((data) => {
+          let x = [['State', 'Percentage in debt', 'Borrowers (in millions)']];
+          x = x.concat(data.map((d) => [
+            d.abbrev,
+            parseFloat(d['Borrowers (in thousands)']) * 100000 / parseFloat(d.population),
+            parseFloat(d['Borrowers (in thousands)']) / 1000.0,
+          ]));
+          var data = google.visualization.arrayToDataTable(x);
+
+          console.log(document.getElementById('vis'));
+          var geochart = new google.visualization.GeoChart(document.getElementById('vis'));
+          geochart.draw(data, { region: "US", resolution: "provinces", backgroundColor: 'rgb(247, 247, 247)'});
+        });
+      }
+      $(window).resize(function(){
+        drawUSChart();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="vis" ></div>
+  </body>
+</html>
