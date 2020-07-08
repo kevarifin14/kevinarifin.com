@@ -87,7 +87,7 @@ export default function Newsletter({ newsletter }) {
         {email}
       </Layout>
 
-      <style>{css}</style>
+      <style jsx>{css}</style>
     </>
   )
 }
