@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -13,7 +13,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-html-email": "^3.0.0",
-    "react-icons": "^3.10.0"
+    "react-icons": "^3.10.0",
+    "sass": "^1.26.10"
   },
   "devDependencies": {
     "gray-matter": "^4.0.2",

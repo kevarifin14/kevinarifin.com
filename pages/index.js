@@ -55,7 +55,7 @@ export default function Home({ newsletters }) {
           {message && <p>{message}</p>}
 
           <span style={{ marginTop: '3em' }}>
-            <Link href={`/tb/${newsletters[0].slug}`} style={{ textDecoration: 'underline' }}>
+            <Link href="/tb/[slug]" as={`/tb/${newsletters[0].slug}`}>
               <a>
                 View the latest newsletter &rarr;
               </a>
@@ -80,8 +80,15 @@ export default function Home({ newsletters }) {
           background: transparent;
           border: none;
           border-bottom: 1px solid;
-          border-color: $primary;
           border-radius: 0;
+          margin-right: 0.5em;
+        }
+
+        @media only screen and (max-width: 600px) {
+          input {
+            font-size: 120%;
+            width: 80%;
+          }
         }
 
         input:focus {
@@ -129,7 +136,8 @@ export async function getStaticProps() {
       const { data } = matter(rawContent);
 
       return { ...data, id: uuid() };
-    });
+    })
+    .sort((a, b) => b.slug - a.slug);
 
   return {
     props: { newsletters },

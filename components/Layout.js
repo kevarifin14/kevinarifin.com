@@ -7,7 +7,7 @@ export default function Layout({ children, showLogo, title }) {
     <div className="container">
       <Head>
         <title>{`${title} | Kevin Arifin`}</title>
-        <link rel="icon" href="/blue.svg" />
+        <link rel="icon" href="/favicon.png" />
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
           rel="stylesheet"
@@ -53,6 +53,12 @@ export default function Layout({ children, showLogo, title }) {
 
         * {
           box-sizing: border-box;
+        }
+
+        hr {
+          background-color: #eaeaea;
+          height: 2px;
+          border-width: 0;
         }
       `}</style>
     </div>

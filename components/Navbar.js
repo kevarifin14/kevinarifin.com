@@ -1,54 +1,38 @@
+import { FaBars } from 'react-icons/fa';
+
 import Link from 'next/link';
+import styles from './Navbar.module.scss';
 
 function Navbar({ showLogo }) {
   return (
-    <>
-      <div className="nav">
-        {showLogo
-          ? <Link href="/">
-              <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-                <img src="/blue.svg" height={50} />
-                <h1>Kevin Arifin </h1>
-              </div>
-            </Link>
-          : <span />}
+    <div className={styles.nav}>
+      {/* {showLogo
+        ? <Link href="/">
+            <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+              <img src="/blue.svg" height={50} />
+              <h1 style={{ whiteSpace: 'nowrap' }}>Kevin Arifin </h1>
+            </div>
+          </Link>
+        : <span />}
+ */}
 
-        <span style={{ minHeight: '86px' }}/>
+      <Link href="/">
+        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+          <img src="/blue.svg" height={50} />
+          <h1 style={{ whiteSpace: 'nowrap' }}>Kevin Arifin </h1>
+        </div>
+      </Link>
 
-        <span />
-        <span />
-        <span />
-
-        {/* <span className="nav-child">
-          <Link href="/tb"><a>Newsletters</a></Link>
-        </span>
-
-        <span className="nav-child">
-          <Link href="/tb"><a>Blog</a></Link>
-        </span>
-
-        <span className="nav-child">
-          <Link href="/tb"><a>About</a></Link>
-        </span> */}
-
+      <label for={styles.navToggle} className={styles.burgerMenu}>
+        <FaBars />
+      </label>
+      <input type="checkbox" id={styles.navToggle} />
+      <div className={styles.rightMenu}>
+        <Link href="/blog"><a className={styles.navLink}>Blog</a></Link>
+        <Link href="/tb"><a className={styles.navLink}>Newsletter</a></Link>
       </div>
-      <style jsx>{`
-        .nav {
-          display: grid;
-          grid-template-columns: auto 1fr auto auto auto;
-        }
-        .nav-child {
-          margin: 1em;
-          display: flex;
-          align-items: center;
-        }
-        a {
-          text-decoration: none;
-          color: black;
-          font-size: 125%;
-        }
-      `}</style>
-    </>
+
+    </div>
   );
 }
 

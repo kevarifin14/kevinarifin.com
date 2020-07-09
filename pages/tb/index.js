@@ -1,25 +1,41 @@
 import Link from 'next/link';
 
 import Layout from 'components/Layout';
+import { formatDateString } from 'utils';
 
 export default function Newsletters({ newsletters }) {
   return (
     <>
       <Layout title="Thought Bytes" showLogo>
-        <main>
-          {newsletters.map(({ title, slug }) => (
-            <Link href={`/tb/${slug}`}>{title}</Link>
+        <div className="column">
+          {newsletters.map(({ title, slug, date, excerpt }, i) => (
+
+            <Link href="/tb/[slug]" as={`/tb/${slug}`}>
+              <div style={{ cursor: 'pointer' }}>
+                <h2>
+                  {`${formatDateString(date)} - ${title}`}
+                </h2>
+
+                <p>{excerpt}</p>
+
+                <hr />
+
+              </div>
+            </Link>
           ))}
-        </main>
+
+          <p>
+            Previous newsletters coming soon...
+          </p>
+
+        </div>
       </Layout>
+
       <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        .column {
+          max-width: 750px;
+          margin: 0 auto;
+          padding: 1em;
         }
       `}</style>
     </>
@@ -43,7 +59,8 @@ export async function getStaticProps() {
       const { data } = matter(rawContent);
 
       return { ...data, id: uuid() };
-    });
+    })
+    .sort((a, b) => b.slug - a.slug);
 
   return {
     props: { newsletters },

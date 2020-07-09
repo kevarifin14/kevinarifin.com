@@ -1,93 +1,58 @@
-import { FaTwitter, FaLink } from 'react-icons/fa';
-import { Email, Box, Item, Image, renderEmail } from 'react-html-email'
+import { A, Email, Box, Item, Image } from 'react-html-email'
 
 import Layout from 'components/Layout';
-import { colors } from 'utils';
+import renderEmail from 'react-html-email/lib/renderEmail';
 
 export default function Newsletter({ newsletter }) {
   const { content } = newsletter;
 
   const css = `
-      html, body {
-        font-family: Open Sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-          Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-          sans-serif;
-      }
-
-      .subtitle {
-        margin-block-start: 0;
-        margin-block-end: 0;
-      }
-
-      hr {
-        height: 2px;
-        border-width: 0;
-        background-color: #eaeaea;
-      }
-
-      footer {
-        display: grid;
-        grid-template-columns: 1fr auto auto 1fr;
-        margin: 2em;
-      }
-
-      button {
-        border-radius: 50%;
-        border: none;
-        padding: 10px;
-        margin: 1em;
-        color: white;
-        cursor: pointer;
-      }
-    `.trim()
+    html, body {
+      font-family: Open Sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+        sans-serif;
+    }
+    table {
+      width: 100%;
+      padding: 0 0.5em;
+    }
+    p {
+      line-height: 1.4em;
+    }
+    blockquote {
+      border-left: solid black;
+      padding: 0.01em 0 0.01em 1em;
+      margin: 0;
+    }
+  `;
 
   const email = (
     <Email headCSS={css}>
       <Box>
         <Item>
-            <Image src="/thought_bytes.svg" width="100%" />
+          <Image
+            src={'https://www.kevinarifin.com/thought_bytes.png'}
+            width="100%"
+            style={{ marginBottom: '1em' }}
+          />
         </Item>
 
         <Item>
           <section dangerouslySetInnerHTML={{ __html: content }} />
         </Item>
 
-        <hr />
-
-        <Item>
-          <footer>
-            <span />
-
-            <a href="https://kevinarifin.com">
-              <button>
-                <FaLink />
-              </button>
-            </a>
-
-            <a href="https://twitter.com/kevarifin">
-              <button style={{ backgroundColor: colors.twitterBlue }}>
-                <FaTwitter />
-              </button>
-            </a>
-
-            <span />
-
-          </footer>
-        </Item>
-
       </Box>
     </Email>
   );
 
-  console.log(renderEmail(email));
-
   return (
     <>
       <Layout title={`Thought Bytes #${newsletter.slug}`} showLogo>
-        {email}
+        <div
+          style={{ maxWidth: '600px', margin: 'auto' }}
+          dangerouslySetInnerHTML={{ __html: renderEmail(email) }}
+        />
       </Layout>
-
-      <style jsx>{css}</style>
     </>
   )
 }
@@ -127,7 +92,6 @@ export async function getStaticProps(context) {
 export async function getStaticPaths(context) {
   const fs = require("fs");
 
-  console.log(process.cwd());
   const path = `${process.cwd()}/content/newsletters`;
   const files = fs.readdirSync(path, "utf-8");
 
