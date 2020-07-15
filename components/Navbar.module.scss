@@ -7,7 +7,7 @@
   margin: 1em;
   text-decoration: none;
   color: black;
-  font-size: 125%;
+  font-size: 110%;
 }
 
 .rightMenu {
@@ -40,7 +40,7 @@
 @media only screen and (min-width: 600px) {
   .navLink:hover {
     text-decoration: underline;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 2px;
   }
 }
 

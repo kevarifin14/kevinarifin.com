@@ -1,37 +1,17 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-import Button from 'components/Button';
 import Layout from 'components/Layout';
+import Subscribe from 'components/Subscribe';
 
 export default function Home({ newsletters }) {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState();
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-
-    fetch('/api/subscribe', {
-      body: JSON.stringify({ email }),
-      headers: { 'Content-Type': 'application/json' },
-      method: 'POST'
-    })
-      .then((response) => {
-        if (response.status == 201) {
-          setMessage('Thanks for subscribing!');
-        } else{
-          setMessage(error);
-        }
-        setEmail('');
-      });
-
-  }
-
   return (
     <>
       <Layout title="Home">
         <main>
-          <img src="/blue.svg" height={200} width={200} />
+
+          <img src="/blue.svg" height={150} width={150} />
+
           <h1 className="title">
             Thought Bytes by Kevin Arifin
           </h1>
@@ -40,19 +20,7 @@ export default function Home({ newsletters }) {
             I send out a weekly newsletter on becoming a technical co-founder
           </p>
 
-          <form style={{ display: 'flex' }} onSubmit={handleSubscribe}>
-            <input
-              required={true}
-              type="email"
-              placeholder="Enter your email..."
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-            <Button type="submit">
-              Subscribe
-            </Button>
-          </form>
-          {message && <p>{message}</p>}
+          <Subscribe />
 
           <span style={{ marginTop: '3em' }}>
             <Link href="/tb/[slug]" as={`/tb/${newsletters[0].slug}`}>
@@ -67,7 +35,7 @@ export default function Home({ newsletters }) {
 
       <style jsx>{`
         main {
-          padding: 5rem 0;
+          padding: 0rem 0 5em 0;
           flex: 1;
           display: flex;
           flex-direction: column;
@@ -75,28 +43,13 @@ export default function Home({ newsletters }) {
           align-items: center;
         }
 
-        input {
-          font-size: 150%;
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid;
-          border-radius: 0;
-          margin-right: 0.5em;
-        }
-
-        @media only screen and (max-width: 600px) {
-          input {
-            font-size: 120%;
-            width: 80%;
-          }
-        }
-
-        input:focus {
-          outline: none;
-        }
-
         a {
           color: inherit;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
         }
 
         .title {

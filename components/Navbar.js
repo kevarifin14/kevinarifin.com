@@ -6,22 +6,14 @@ import styles from './Navbar.module.scss';
 function Navbar({ showLogo }) {
   return (
     <div className={styles.nav}>
-      {/* {showLogo
-        ? <Link href="/">
-            <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-              <img src="/blue.svg" height={50} />
-              <h1 style={{ whiteSpace: 'nowrap' }}>Kevin Arifin </h1>
-            </div>
-          </Link>
-        : <span />}
- */}
-
+      <span style={{ opacity: showLogo ? 1 : 0 }}>
       <Link href="/">
         <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-          <img src="/blue.svg" height={50} />
-          <h1 style={{ whiteSpace: 'nowrap' }}>Kevin Arifin </h1>
+          <img src="/blue.svg" height={40} />
+          <h2 style={{ whiteSpace: 'nowrap' }}>Kevin Arifin </h2>
         </div>
       </Link>
+      </span>
 
       <label for={styles.navToggle} className={styles.burgerMenu}>
         <FaBars />

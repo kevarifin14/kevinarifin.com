@@ -14,14 +14,10 @@ export default function Layout({ children, showLogo, title }) {
           rel="stylesheet"
         />
 
-        <meta name="twitter:card" content="https://kevinarifin.com/favicon.png" key="twcard" />
-        <meta name="twitter:creator" content="kevarifin" key="twhandle" />
-
         <meta property="og:url" content="kevinarifin.com" key="ogurl" />
-        <meta property="og:image" content="https://kevinarifin.com/favicon.png" key="ogimage" />
         <meta property="og:site_name" content="Kevin Arifin" key="ogsitename" />
         <meta property="og:title" content={`${title} | Kevin Arifin`} key="ogtitle" />
-        <meta property="og:description" content="Kevin's Personal Website" key="ogdesc" />
+        <meta property="og:description" content="Kevin's personal website" key="ogdesc" />
       </Head>
 
       <Navbar showLogo={showLogo} />

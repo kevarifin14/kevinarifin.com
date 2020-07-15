@@ -15,7 +15,7 @@ function Button({ children, onClick, type }) {
           cursor: pointer;
           padding: 0.5em;
           border-radius: 0;
-          font-size: 125%;
+          font-size: 120%;
           background-color: ${colors.blue};
           color: white;
           border: 0;
