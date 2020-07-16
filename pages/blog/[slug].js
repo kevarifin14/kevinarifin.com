@@ -5,7 +5,7 @@ import matter from "gray-matter";
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
-import { CodeBlock } from 'utils';
+import { CodeBlock, LinkRenderer } from 'utils';
 
 export default function Blog({ content, frontmatter }) {
   // const { content, title } = blog;
@@ -19,7 +19,7 @@ export default function Blog({ content, frontmatter }) {
           <ReactMarkdown
             escapeHtml={false}
             source={content}
-            renderers={{ code: CodeBlock }}
+            renderers={{ code: CodeBlock, link: LinkRenderer }}
           />
         </div>
 

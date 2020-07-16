@@ -15,3 +15,7 @@ export function formatDateString(dateString) {
 export const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
 };
+
+export const LinkRenderer = (props) => {
+  return <a href={props.href} target="_blank">{props.children}</a>
+}

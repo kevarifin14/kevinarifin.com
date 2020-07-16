@@ -71,6 +71,7 @@ export default function Layout({ children, showLogo, title }) {
           padding: 0.2em 0.4em;
           color: #EB5757;
           border-radius:3px;
+          font-size: 110%;
         }
 
         td {
@@ -100,13 +101,13 @@ export default function Layout({ children, showLogo, title }) {
         blockquote {
           border-left: solid black;
           padding: 0.01em 0 0.01em 1em;
-          marginLeft: 0;
+          margin: 0;
         }
 
         .markdown-body summary {
           cursor: pointer;
           outline: none;
-          paddingBottom: 1em;
+          padding: 0.5em 0;
         }
 
       `}</style>
