@@ -161,7 +161,7 @@ export default function Home() {
 
 ![Screen_Shot_2020-07-15_at_12.55.41_AM.png](/blog/next-from-zero-to-production/Screen_Shot_2020-07-15_at_12.55.41_AM.png)
 
-You should now see the change live at `localhost:3000`. Many of the changes you make in a React app will be around modifying the returned HTML. However, instead of templating a static HTML file, React allows you to inject variables in your HTML, allowing you to develop more complex and custom interfaces. We'll stop here for today - you've successfully made your first change to your Next app! Time to move on to deploying your app.
+You should now see the change live at `localhost:3000`. Many of the changes you make in a React app will be around modifying the returned HTML. However, instead of templating a static HTML file, React allows you to inject variables in your HTML, allowing you to develop more complex and custom interfaces. We'll stop here for today - you've successfully made your first change to your Next app! Time to move on to deploying your apps.
 
 ## Deploying to Production
 
