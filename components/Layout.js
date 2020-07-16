@@ -48,8 +48,7 @@ export default function Layout({ children, showLogo, title }) {
       `}</style>
 
       <style jsx global>{`
-        html,
-        body {
+        html, body {
           padding: 0;
           margin: 0;
           font-family: Open Sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -66,6 +65,50 @@ export default function Layout({ children, showLogo, title }) {
           height: 2px;
           border-width: 0;
         }
+
+        code {
+          background: rgb(233, 232, 231);
+          padding: 0.2em 0.4em;
+          color: #EB5757;
+          border-radius:3px;
+        }
+
+        td {
+          border-bottom: 0;
+        }
+
+        .markdown-body {
+          font-family: inherit;
+          margin: auto;
+        }
+
+        .markdown-body h1, .markdown-body h2 {
+          border-bottom: none;
+        }
+
+        .markdown-body img {
+          max-width: 100%;
+        }
+
+        .markdown-body pre {
+          overflow-x: auto;
+          width: 85vw;
+          max-width: 100%;
+          margin: auto;
+        }
+
+        blockquote {
+          border-left: solid black;
+          padding: 0.01em 0 0.01em 1em;
+          marginLeft: 0;
+        }
+
+        .markdown-body summary {
+          cursor: pointer;
+          outline: none;
+          paddingBottom: 1em;
+        }
+
       `}</style>
     </div>
   );

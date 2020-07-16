@@ -1,17 +1,22 @@
-import { Email, Box, Item, Image } from 'react-html-email'
+import { Email, Box, Item, Image, renderEmail } from 'react-html-email'
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import ReactMarkdown from 'react-markdown';
+import { CodeBlock } from 'utils';
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
-import renderEmail from 'react-html-email/lib/renderEmail';
 
-export default function Newsletter({ newsletter }) {
-  const { content } = newsletter;
-
+export default function Newsletter({ content, frontmatter }) {
+  const { slug } = frontmatter;
   const css = `
     html, body {
       font-family: Open Sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
         Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
         sans-serif;
+      // max-width: 600px;
+      // margin: 0 auto;
     }
     table {
       width: 100%;
@@ -19,17 +24,34 @@ export default function Newsletter({ newsletter }) {
     }
     p {
       line-height: 1.4em;
+      font-size: 16px;
     }
     blockquote {
       border-left: solid black;
       padding: 0.01em 0 0.01em 1em;
-      margin: 0;
+      margin-left: 0;
     }
+    img {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      margin-bottom: 1.45rem;
+  }
   `;
 
   const email = (
     <Email headCSS={css}>
       <Box>
+        {/* <Item>
+          <a href={`https://www.kevinarifin.com/tb/${slug}`} style={{ color: 'black', textDecoration: 'none' }}>
+            Open in browser
+          </a>
+        </Item> */}
         <Item>
           <a href="https://www.kevinarifin.com">
             <Image
@@ -41,21 +63,34 @@ export default function Newsletter({ newsletter }) {
         </Item>
 
         <Item>
-          <section dangerouslySetInnerHTML={{ __html: content }} />
+          <div class="markdown-body" style={{ maxWidth: '600px', margin: 'auto' }}>
+            <ReactMarkdown
+              source={content}
+              escapeHtml={false}
+              renderers={{ code: CodeBlock }}
+            />
+         </div>
         </Item>
 
       </Box>
     </Email>
   );
 
+  console.log(renderEmail(email))
+
   return (
     <>
-      <Layout title={`Thought Bytes #${newsletter.slug}`} showLogo>
+      <Layout title={frontmatter.title} showLogo>
         <div
           style={{ maxWidth: '600px', margin: 'auto' }}
           dangerouslySetInnerHTML={{ __html: renderEmail(email) }}
         />
-        <div style={{ width: '100%', paddingTop: '2em', paddingBottom: '3em', paddingLeft: '0.5em', paddingRight: '0.5em', marginTop: '1em', borderTop:  '1px solid #eaeaea;' }}>
+        <div style={{
+          width: '100%',
+          marginTop: '1em',
+          padding: '2em 0.5em',
+          paddingBottom: '3em',
+          borderTop:  '1px solid #eaeaea' }}>
           <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
             <h2>Aspiring to build your own startup?</h2>
             <p>
@@ -70,38 +105,16 @@ export default function Newsletter({ newsletter }) {
   )
 }
 
-export async function getStaticProps(context) {
-  const fs = require("fs");
-  const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
-  const unified = require("unified");
-  const markdown = require("remark-parse");
-  const matter = require("gray-matter");
+export async function getStaticProps({ params: { slug } }) {
+  const markdownWithMetadata = fs
+    .readFileSync(path.join("content/newsletters/", slug + ".md"))
+    .toString();
+  const { data, content } = matter(markdownWithMetadata);
+  const frontmatter = { ...data };
 
-  const slug = context.params.slug; // get slug from params
-  const path = `${process.cwd()}/content/newsletters/${slug}.md`;
-
-  const rawContent = fs.readFileSync(path, { encoding: "utf-8" });
-
-  const { data, content } = matter(rawContent); // pass rawContent to gray-matter to get data and content
-
-  const result = await unified()
-    .use(markdown)
-    .use(highlight) // highlight code block
-    .use(html)
-    .process(content); // pass content to process
-
-  return {
-    props: {
-      newsletter: {
-        ...data,
-        content: result.toString(),
-      }
-    },
-  };
+  return { props: { content, frontmatter } };
 }
 
-// generate HTML paths at build time
 export async function getStaticPaths(context) {
   const fs = require("fs");
 

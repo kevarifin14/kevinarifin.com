@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useState } from 'react';
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
@@ -10,7 +9,7 @@ export default function Home({ newsletters }) {
       <Layout title="Home">
         <main>
 
-          <img src="/blue.svg" height={150} width={150} />
+          <img src="/blue.svg" height={150} width={150} style={{ marginBottom: 0 }} />
 
           <h1 className="title">
             Thought Bytes by Kevin Arifin
@@ -53,18 +52,16 @@ export default function Home({ newsletters }) {
         }
 
         .title {
-          margin: 0;
-          line-height: 1.15;
           font-size: 3rem;
+          margin-block-start: 0;
+          margin-block-end: 0;
         }
 
         .description {
-          line-height: 1.5;
           font-size: 1.25rem;
         }
 
-        .title,
-        .description {
+        .title, .description {
           text-align: center;
         }
       `}</style>
