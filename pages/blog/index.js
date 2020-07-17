@@ -25,7 +25,7 @@ export default function Newsletters({ newsletters }) {
           ))}
 
           <p>
-            Previous newsletters coming soon...
+            Moving previous posts soon...
           </p>
 
         </div>
@@ -60,6 +60,7 @@ export async function getStaticProps() {
 
       return { ...data, id: uuid() };
     })
+    .filter(({ type }) => type != 'draft');
 
   return {
     props: { newsletters },

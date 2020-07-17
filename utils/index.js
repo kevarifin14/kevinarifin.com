@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import moment from 'moment';
 
 export const colors = {
-  blue: 'rgb(106, 152, 220)',
+  blue: 'rgb(95, 144, 213)',
   twitterBlue: 'rgb(0, 172, 238)',
 }
 

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Navbar from './Navbar';
+import { colors } from 'utils';
 
 export default function Layout({ children, showLogo, title }) {
   return (
@@ -71,7 +72,6 @@ export default function Layout({ children, showLogo, title }) {
           padding: 0.2em 0.4em;
           color: #EB5757;
           border-radius:3px;
-          font-size: 110%;
         }
 
         td {
@@ -81,6 +81,11 @@ export default function Layout({ children, showLogo, title }) {
         .markdown-body {
           font-family: inherit;
           margin: auto;
+        }
+
+        p, li, a {
+          font-size: 16px;
+          line-height: 1.5;
         }
 
         .markdown-body h1, .markdown-body h2 {
@@ -108,6 +113,14 @@ export default function Layout({ children, showLogo, title }) {
           cursor: pointer;
           outline: none;
           padding: 0.5em 0;
+        }
+
+        .markdown-body a {
+          color: ${colors.blue};
+        }
+
+        .markdown-body a:visited {
+          color: ${colors.blue};
         }
 
       `}</style>

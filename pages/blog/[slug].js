@@ -8,7 +8,6 @@ import Subscribe from 'components/Subscribe';
 import { CodeBlock, LinkRenderer } from 'utils';
 
 export default function Blog({ content, frontmatter }) {
-  // const { content, title } = blog;
   const { title } = frontmatter;
 
   return (
@@ -16,6 +15,7 @@ export default function Blog({ content, frontmatter }) {
       <Layout title={title} showLogo>
 
         <div className="markdown-body" style={{ maxWidth: '708px' }}>
+          <h1 className="title">{title}</h1>
           <ReactMarkdown
             escapeHtml={false}
             source={content}
@@ -27,13 +27,21 @@ export default function Blog({ content, frontmatter }) {
           <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
             <h2>Aspiring to build your own startup?</h2>
             <p>
-              Subscribe to Thought Bytes to get lessons from my journey building Edith as the
+              Subscribe to Thought Bytes to get lessons from my journey as Edith's
               technical co-founder delivered straight to your inbox every Thursday.
             </p>
           </div>
           <Subscribe />
         </div>
       </Layout>
+
+      <style jsx>{`
+        .title {
+          font-size: 2.5em;
+          margin-block-start: 0;
+          margin-block-end: 0;
+        }
+      `}</style>
     </>
   )
 }

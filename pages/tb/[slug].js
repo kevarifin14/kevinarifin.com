@@ -23,7 +23,7 @@ export default function Newsletter({ content, frontmatter }) {
       padding: 0 0.5em;
     }
     p {
-      line-height: 1.4em;
+      line-height: 1.5;
       font-size: 16px;
     }
     blockquote {
@@ -55,7 +55,7 @@ export default function Newsletter({ content, frontmatter }) {
         <Item>
           <a href="https://www.kevinarifin.com">
             <Image
-              src={'https://www.kevinarifin.com/thought_bytes.png'}
+              src={'https://kevinarifin.com/thought_bytes.png'}
               width="100%"
               style={{ marginBottom: '1em', marginTop: '1em' }}
             />
@@ -76,7 +76,7 @@ export default function Newsletter({ content, frontmatter }) {
     </Email>
   );
 
-  console.log(renderEmail(email))
+  // console.log(renderEmail(email))
 
   return (
     <>
@@ -94,7 +94,7 @@ export default function Newsletter({ content, frontmatter }) {
           <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
             <h2>Aspiring to build your own startup?</h2>
             <p>
-              Subscribe to Thought Bytes to get lessons from my journey building Edith as the
+              Subscribe to Thought Bytes to get lessons from my journey as Edith's
               technical co-founder delivered straight to your inbox every Thursday.
             </p>
           </div>
