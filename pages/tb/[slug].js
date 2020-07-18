@@ -53,7 +53,7 @@ export default function Newsletter({ content, frontmatter }) {
           </a>
         </Item> */}
         <Item>
-          <a href="https://www.kevinarifin.com">
+          <a href="https://kevinarifin.com">
             <Image
               src={'https://kevinarifin.com/thought_bytes.png'}
               width="100%"
