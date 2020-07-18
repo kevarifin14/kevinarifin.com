@@ -15,14 +15,10 @@ export default function Subscribe() {
       method: 'POST'
     })
       .then((response) => {
-        const { error } = response.json();
         if (response.status == 201) {
           setMessage('Thanks for subscribing!');
+          setEmail('');
         }
-        if (error) {
-          setMessage(error);
-        }
-        setEmail('');
       });
   }
 
