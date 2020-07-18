@@ -15,7 +15,7 @@ export default function Subscribe() {
       method: 'POST'
     })
       .then((response) => {
-        const { error } = await response.json();
+        const { error } = response.json();
         if (response.status == 201) {
           setMessage('Thanks for subscribing!');
         }
