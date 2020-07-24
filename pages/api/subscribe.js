@@ -13,7 +13,7 @@ export default async (req, res) => {
 
     const data = {
       email_address: email,
-      status: 'subscribed'
+      status: 'subscribed',
     };
 
     const response = await fetch(
@@ -22,15 +22,15 @@ export default async (req, res) => {
         body: JSON.stringify(data),
         headers: {
           Authorization: `apikey ${API_KEY}`,
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        method: 'POST'
-      }
+        method: 'POST',
+      },
     );
 
     if (response.status >= 400) {
       return res.status(400).json({
-        error: `There was an error subscribing to the newsletter. Shoot me an email at [hello@kevinarifin.com] and I'll add you to the list.`
+        error: 'There was an error subscribing to the newsletter. Shoot me an email at [hello@kevinarifin.com] and I\'ll add you to the list.',
       });
     }
 

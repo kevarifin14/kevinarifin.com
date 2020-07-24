@@ -1,8 +1,8 @@
 ---
 title: Nudge
-permalink: /reading_notes/nudge
-image: /images/books/nudge.jpg
-layout: post
+slug: nudge
+date: '2020-05-08'
+type: reading-notes
 excerpt: How small nudges affect our behavior, both for good and for bad, and how we should be mindful of constructing our environment to nudge us in a positive direction.
 ---
 ## 3 Ideas
@@ -15,7 +15,7 @@ excerpt: How small nudges affect our behavior, both for good and for bad, and ho
 
     One of my favorite choice architecture examples is Chicago's Lake Shore Drive (the big street that runs along the lake). There's one stretch (pretty close to where I live) where the road S-curves, making it dangerous to go down at high speeds. To nudge drivers to go down the road slower, they painted a series of white lines that got progressively closer, giving the illusion that you were driving extremely fast.
 
-    ![](/images/reading_notes/nudge/lsd.jpg){:class='img-responsive img-container-center'}
+    ![](/images/reading_notes/nudge/lsd.jpg)
 
 2. **Automatic vs. reflective: taking time for your reflexive system to make decisions**
 

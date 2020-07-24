@@ -10,7 +10,8 @@ function Button({ children, onClick, type }) {
         {children}
       </button>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         button {
           cursor: pointer;
           padding: 0.5em;
@@ -20,7 +21,8 @@ function Button({ children, onClick, type }) {
           color: white;
           border: 0;
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 }

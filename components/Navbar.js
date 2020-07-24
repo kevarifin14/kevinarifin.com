@@ -7,15 +7,15 @@ function Navbar({ showLogo }) {
   return (
     <div className={styles.nav}>
       <span style={{ opacity: showLogo ? 1 : 0 }}>
-      <Link href="/">
-        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-          <img src="/blue.svg" height={40} style={{ marginBottom: '1em', marginTop: '1em' }} />
-          <h2 style={{ whiteSpace: 'nowrap', marginBottom: '1em', marginTop: '1em' }}>Kevin Arifin </h2>
-        </div>
-      </Link>
+        <Link href="/">
+          <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+            <img src="/blue.svg" height={40} style={{ marginBottom: '1em', marginTop: '1em' }} alt="logo" />
+            <h2 style={{ whiteSpace: 'nowrap', marginBottom: '1em', marginTop: '1em' }}>Kevin Arifin </h2>
+          </div>
+        </Link>
       </span>
 
-      <label for={styles.navToggle} className={styles.burgerMenu}>
+      <label htmlFor={styles.navToggle} className={styles.burgerMenu}>
         <FaBars />
       </label>
       <input type="checkbox" id={styles.navToggle} />

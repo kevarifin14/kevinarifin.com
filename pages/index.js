@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import fs from 'fs';
+import matter from 'gray-matter';
+import { v4 as uuid } from 'uuid';
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
@@ -32,7 +35,8 @@ export default function Home({ newsletters }) {
         </main>
       </Layout>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         main {
           padding: 0rem 0 5em 0;
           flex: 1;
@@ -64,24 +68,21 @@ export default function Home({ newsletters }) {
         .title, .description {
           text-align: center;
         }
-      `}</style>
+      `}
+      </style>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const fs = require("fs");
-  const matter = require("gray-matter");
-  const { v4: uuid } = require("uuid");
-
-  const files = fs.readdirSync(`${process.cwd()}/content/newsletters`, "utf-8");
+  const files = fs.readdirSync(`${process.cwd()}/content/newsletters`, 'utf-8');
 
   const newsletters = files
-    .filter((fn) => fn.endsWith(".md"))
+    .filter((fn) => fn.endsWith('.md'))
     .map((fn) => {
       const path = `${process.cwd()}/content/newsletters/${fn}`;
       const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
+        encoding: 'utf-8',
       });
       const { data } = matter(rawContent);
 
@@ -93,4 +94,3 @@ export async function getStaticProps() {
     props: { newsletters },
   };
 }
-

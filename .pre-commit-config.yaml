@@ -1,0 +1,8 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: eslinter
+        name:  ESLint
+        entry: scripts/run_eslint.sh
+        language: system
+        pass_filenames: false

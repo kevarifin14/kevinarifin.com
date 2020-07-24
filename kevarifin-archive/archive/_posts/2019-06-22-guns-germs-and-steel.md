@@ -39,7 +39,7 @@ The advantages that came from agriculture led to the technological advances that
 
 Both discovering agriculture and building on the civilization that resulted from agriculture depended on the right set of environmental factors. These factors affected the developments of Eurasia, Africa, and the Americas.
 
-![](/images/map-orientation.jpg){:class='img-responsive img-container-center'}
+![](/images/map-orientation.jpg)
 
 In contrast to Eurasia, whose main axis is east to west with moderate terrain barriers, Africa and the Americas face significant terrain barriers like huge mountain ranges and vast desserts and have a north to south main axis. It's not something I ever really thought of, but the effects of the axis orientations of continents had a profound effect on how fast agriculture was able to spread, and thus the advancement of civilization, as we discussed in Big Idea #1.
 

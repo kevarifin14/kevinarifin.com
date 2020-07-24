@@ -12,7 +12,7 @@ export default function Subscribe() {
     fetch('/api/subscribe', {
       body: JSON.stringify({ email }),
       headers: { 'Content-Type': 'application/json' },
-      method: 'POST'
+      method: 'POST',
     })
       .then((response) => {
         if (response.status == 201) {
@@ -20,13 +20,13 @@ export default function Subscribe() {
           setEmail('');
         }
       });
-  }
+  };
 
   return (
     <>
       <form style={{ display: 'flex', justifyContent: 'center' }} onSubmit={handleSubscribe}>
         <input
-          required={true}
+          required
           type="email"
           placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
@@ -41,7 +41,8 @@ export default function Subscribe() {
         {message && <p>{message}</p>}
       </div>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         input:focus {
           outline: none;
         }
@@ -61,7 +62,8 @@ export default function Subscribe() {
             width: 80%;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 }

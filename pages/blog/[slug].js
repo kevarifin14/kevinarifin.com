@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
@@ -23,11 +23,14 @@ export default function Blog({ content, frontmatter }) {
           />
         </div>
 
-        <div style={{ width: '100%', paddingTop: '2em', paddingBottom: '3em', paddingLeft: '0.5em', paddingRight: '0.5em', marginTop: '1em', borderTop:  '1px solid #eaeaea' }}>
+        <div style={{
+          width: '100%', paddingTop: '2em', paddingBottom: '3em', paddingLeft: '0.5em', paddingRight: '0.5em', marginTop: '1em', borderTop: '1px solid #eaeaea',
+        }}
+        >
           <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
             <h2>Aspiring to build your own startup?</h2>
             <p>
-              Subscribe to Thought Bytes to get lessons from my journey as Edith's
+              Subscribe to Thought Bytes to get lessons from my journey as Edith&apos;s
               technical co-founder delivered straight to your inbox every Thursday.
             </p>
           </div>
@@ -35,20 +38,22 @@ export default function Blog({ content, frontmatter }) {
         </div>
       </Layout>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         .title {
           font-size: 2.5em;
           margin-block-start: 0;
           margin-block-end: 0;
         }
-      `}</style>
+      `}
+      </style>
     </>
-  )
+  );
 }
 
 export async function getStaticProps({ params: { slug } }) {
   const markdownWithMetadata = fs
-    .readFileSync(path.join("content/blog/", slug + ".md"))
+    .readFileSync(path.join('content/blog/', `${slug}.md`))
     .toString();
   const { data, content } = matter(markdownWithMetadata);
   const frontmatter = { ...data };
@@ -56,24 +61,20 @@ export async function getStaticProps({ params: { slug } }) {
   return { props: { content, frontmatter } };
 }
 
-export async function getStaticPaths(context) {
-  const fs = require("fs");
-
-  const path = `${process.cwd()}/content/blog`;
-  const files = fs.readdirSync(path, "utf-8");
+export async function getStaticPaths() {
+  const blogPath = `${process.cwd()}/content/blog`;
+  const files = fs.readdirSync(blogPath, 'utf-8');
 
   const markdownFileNames = files
-    .filter((fn) => fn.endsWith(".md"))
-    .map((fn) => fn.replace(".md", ""));
+    .filter((fn) => fn.endsWith('.md'))
+    .map((fn) => fn.replace('.md', ''));
 
   return {
-    paths: markdownFileNames.map((fileName) => {
-      return {
-        params: {
-          slug: fileName,
-        },
-      };
-    }),
+    paths: markdownFileNames.map((fileName) => ({
+      params: {
+        slug: fileName,
+      },
+    })),
     fallback: false,
   };
 }

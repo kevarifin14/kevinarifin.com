@@ -1,8 +1,8 @@
 ---
 title: Digital Minimalism
-permalink: /reading_notes/digital-minimalism
-image: /images/books/digital-minimalism.jpg
-layout: post
+slug: digital-minimalism
+date: '2020-03-12'
+type: reading-notes
 excerpt: How our phones have replaced solitude and true leisure and strategies to counteract that to change our relationship with our phones.
 ---
 ### 3 Ideas

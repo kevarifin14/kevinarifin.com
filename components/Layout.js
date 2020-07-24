@@ -1,7 +1,7 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-import Navbar from './Navbar';
 import { colors } from 'utils';
+import Navbar from './Navbar';
 
 export default function Layout({ children, showLogo, title }) {
   return (
@@ -14,12 +14,15 @@ export default function Layout({ children, showLogo, title }) {
           href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
           rel="stylesheet"
         />
-        <script dangerouslySetInnerHTML={{ __html: `
+        <script dangerouslySetInnerHTML={{
+          __html: `
           !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var t=analytics.methods[e];analytics[t]=analytics.factory(t)}analytics.load=function(e,t){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+e+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=t};analytics.SNIPPET_VERSION="4.1.0";
           analytics.load("RohLHDPf32AKxOig08ifIW5fN1OcB05n");
           analytics.page();
           }}();
-        `}} />
+        `,
+        }}
+        />
 
         <meta property="og:url" content="kevinarifin.com" key="ogurl" />
         <meta property="og:site_name" content="Kevin Arifin" key="ogsitename" />
@@ -35,7 +38,8 @@ export default function Layout({ children, showLogo, title }) {
         <p>Copyright © 2020 Kevin Arifin</p>
       </footer>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -52,9 +56,11 @@ export default function Layout({ children, showLogo, title }) {
           align-items: center;
         }
 
-      `}</style>
+      `}
+      </style>
 
-      <style jsx global>{`
+      <style jsx global>
+        {`
         html, body {
           padding: 0;
           margin: 0;
@@ -94,8 +100,6 @@ export default function Layout({ children, showLogo, title }) {
           line-height: 1.5;
         }
 
-
-
         .markdown-body h1, .markdown-body h2 {
           border-bottom: none;
         }
@@ -131,7 +135,8 @@ export default function Layout({ children, showLogo, title }) {
           color: ${colors.blue};
         }
 
-      `}</style>
+      `}
+      </style>
     </div>
   );
 }

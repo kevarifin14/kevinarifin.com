@@ -11,7 +11,7 @@ But the more interesting unbundling is happening in business. In the past, compa
 
 This deconstruction of the company allows these smaller companies to focus specifically on solving a business problem 10x better than a company's in-house solution. It makes more sense to pay Slack hundreds or thousands of dollars a month to handle internal communication rather than hire your own engineers to build and maintain an internal Slack. That's the foundation of the SaaS business model, and the internet allows these companies providing specific business solutions to capitalize on these verticals at almost zero marginal cost.
 
-![](/images/companybundle.jpg){:class='img-responsive img-container-center'}
+![](/images/companybundle.jpg)
 
 Companies used to have full divisions focused on these internal tasks like communication, video conferencing, email security, or single sign-on, but each of these pieces is now broken up into a full company. This leads to the unbundling and decentralization of the company.
 

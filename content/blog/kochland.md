@@ -1,8 +1,8 @@
 ---
 title: Kochland
-permalink: /reading_notes/kochland
-image: /images/books/kochland.jpg
-layout: post
+slug: kochland
+date: '2020-04-23'
+type: reading-notes
 excerpt: An inside look at one of the most secretive companies in America.
 ---
 ## 3 Ideas

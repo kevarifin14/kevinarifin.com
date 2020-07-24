@@ -1,8 +1,8 @@
 ---
 title: Shoe Dog
-permalink: /reading_notes/shoe-dog
-image: /images/books/shoe-dog.jpg
-layout: post
+slug: shoe-dog
+date: '2020-02-20'
+type: reading-notes
 excerpt: The story of Phil Knight finding his calling selling shoes, never stopping in the face of countless moments of adversity, and building one of the greatest companies ever in Nike.
 ---
 ### 3 Ideas

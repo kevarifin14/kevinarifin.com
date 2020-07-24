@@ -18,14 +18,20 @@
     "react-icons": "^3.10.0",
     "react-markdown": "^4.3.1",
     "react-syntax-highlighter": "^12.2.1",
-    "sass": "^1.26.10"
+    "gray-matter": "^4.0.2",
+    "sass": "^1.26.10",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
-    "gray-matter": "^4.0.2",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^11.0.2",
     "remark-parse": "^8.0.2",
-    "unified": "^9.0.0",
-    "uuid": "^8.2.0"
+    "unified": "^9.0.0"
   }
 }
