@@ -3,7 +3,7 @@ title: On Investing in People
 slug: on-investing-in-people
 date: '2020-03-20'
 type: essay
-excerpt: My thoughts on mentorship and why I'm building Edith.
+excerpt: My thoughts on mentorship, why we need a platform to invest in human potential and how we're building this vision at Edith.
 ---
 Throughout a lot of my life, I always gravitated towards positions of teaching and mentorship.
 

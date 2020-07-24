@@ -7,7 +7,7 @@ import Layout from 'components/Layout';
 import { CodeBlock, LinkRenderer } from 'utils';
 import PostFooter from 'components/PostFooter';
 
-export default function Blog({ content, frontmatter }) {
+export default function Post({ content, frontmatter }) {
   const { title, type, slug } = frontmatter;
 
   return (
