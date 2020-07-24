@@ -9,7 +9,7 @@ import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
 
 export default function Newsletter({ content, frontmatter }) {
-  const { slug } = frontmatter;
+  const { slug, type } = frontmatter;
   const css = `
     html, body {
       font-family: Open Sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -44,22 +44,35 @@ export default function Newsletter({ content, frontmatter }) {
   }
   `;
 
+  const reflect = 'Reflect editions of Thought Bytes feature a deep-dive into lessons from building Edith as the technical co-founder.';
+  const build = 'Build editions of Thought Bytes feature a technical post that will help you build the skills to quickly get a product off the ground and in the hands of customers.';
+  const learn = 'Learn editions of Thought Bytes feature books, articles, podcasts, and ideas that make you a well-rounded founder.'
+
+  let intro;
+  if (type == 'reflect') {
+    intro = reflect;
+  } else if (type == 'build') {
+    intro = build;
+  } else if (type == 'learn') {
+    intro = learn;
+  }
+
   const email = (
     <Email headCSS={css}>
       <Box>
-        {/* <Item>
-          <a href={`https://www.kevinarifin.com/tb/${slug}`} style={{ color: 'black', textDecoration: 'none' }}>
-            Open in browser
-          </a>
-        </Item> */}
+
         <Item>
-          <a href="https://kevinarifin.com">
+          <a href={`https://kevinarifin.com/tb/${slug}`}>
             <Image
               src={'https://kevinarifin.com/thought_bytes.png'}
               width="100%"
               style={{ marginBottom: '1em', marginTop: '1em' }}
             />
           </a>
+        </Item>
+
+        <Item>
+          <i>{intro} You can find all past newsletters <a href="https://kevinarifin.com/tb">here</a>.</i>
         </Item>
 
         <Item>
@@ -75,8 +88,6 @@ export default function Newsletter({ content, frontmatter }) {
       </Box>
     </Email>
   );
-
-  // console.log(renderEmail(email))
 
   return (
     <>
