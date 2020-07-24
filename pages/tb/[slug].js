@@ -2,11 +2,13 @@ import { Email, Box, Item, Image, renderEmail } from 'react-html-email'
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import { CodeBlock } from 'utils';
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
+import { colors } from 'utils';
 
 export default function Newsletter({ content, frontmatter }) {
   const { slug, type } = frontmatter;
@@ -22,7 +24,7 @@ export default function Newsletter({ content, frontmatter }) {
       width: 100%;
       padding: 0 0.5em;
     }
-    p {
+    p, li {
       line-height: 1.5;
       font-size: 16px;
     }
@@ -55,6 +57,8 @@ export default function Newsletter({ content, frontmatter }) {
     intro = build;
   } else if (type == 'learn') {
     intro = learn;
+  } else {
+    intro = 'This is an original edition of Thought Bytes. The first 55 newsletters were the first iteration covering thought-provoking articles, podcasts, and books as well as updates on my journey to start Edith.';
   }
 
   const email = (
@@ -92,26 +96,50 @@ export default function Newsletter({ content, frontmatter }) {
   return (
     <>
       <Layout title={frontmatter.title} showLogo>
+        <div style={{ maxWidth: '600px', margin: 'auto', display: 'flex', flexDirection: 'column' }}>
+
+          <div
+            dangerouslySetInnerHTML={{ __html: renderEmail(email) }}
+          />
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 1em' }}>
+            <Link href={`/tb/${slug - 1}`}><a className="link">&larr; TB #{slug - 1}</a></Link>
+            <Link href={`/tb/${slug + 1}`}><a className="link">TB #{slug + 1} &rarr;</a></Link>
+          </div>
+
+        </div>
+
         <div
-          style={{ maxWidth: '600px', margin: 'auto' }}
-          dangerouslySetInnerHTML={{ __html: renderEmail(email) }}
-        />
-        <div style={{
-          width: '100%',
-          marginTop: '1em',
-          padding: '2em 0.5em',
-          paddingBottom: '3em',
-          borderTop:  '1px solid #eaeaea' }}>
+          style={{
+            width: '100%',
+            marginTop: '1em',
+            padding: '2em 0.5em',
+            paddingBottom: '3em',
+            borderTop:  '1px solid #eaeaea',
+          }}
+        >
           <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
-            <h2>Aspiring to build your own startup?</h2>
+            <h2>Aspiring to build your own startups?</h2>
             <p>
               Subscribe to Thought Bytes to get lessons from my journey as Edith's
               technical co-founder delivered straight to your inbox every Thursday.
             </p>
           </div>
+
           <Subscribe />
         </div>
       </Layout>
+
+      <style jsx>{`
+        .link {
+          color: ${colors.blue};
+          text-decoration: none;
+        }
+
+        .link:visited {
+          color: ${colors.blue};
+        }
+      `}</style>
     </>
   )
 }

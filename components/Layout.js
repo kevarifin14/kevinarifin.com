@@ -94,6 +94,8 @@ export default function Layout({ children, showLogo, title }) {
           line-height: 1.5;
         }
 
+
+
         .markdown-body h1, .markdown-body h2 {
           border-bottom: none;
         }
