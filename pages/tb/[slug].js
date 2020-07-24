@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import { CodeBlock, colors } from 'utils';
 
 import Layout from 'components/Layout';
-import Subscribe from 'components/Subscribe';
+import PostFooter from 'components/PostFooter';
 
 export default function Newsletter({ content, frontmatter }) {
   const { slug, type } = frontmatter;
@@ -31,7 +31,7 @@ export default function Newsletter({ content, frontmatter }) {
     }
     blockquote {
       border-left: solid black;
-      padding: 0.01em 0 0.01em 1em;
+      padding-left: 1em;
       margin-left: 0;
     }
     img {
@@ -43,7 +43,7 @@ export default function Newsletter({ content, frontmatter }) {
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 1.45rem;
+      margin-bottom: 1rem;
   }
   `;
 
@@ -132,25 +132,7 @@ export default function Newsletter({ content, frontmatter }) {
 
         </div>
 
-        <div
-          style={{
-            width: '100%',
-            marginTop: '1em',
-            padding: '2em 0.5em',
-            paddingBottom: '3em',
-            borderTop: '1px solid #eaeaea',
-          }}
-        >
-          <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
-            <h2>Aspiring to build your own startups?</h2>
-            <p>
-              Subscribe to Thought Bytes to get lessons from my journey as Edith&apos;s
-              technical co-founder delivered straight to your inbox every Thursday.
-            </p>
-          </div>
-
-          <Subscribe />
-        </div>
+        <PostFooter />
       </Layout>
 
       <style jsx>

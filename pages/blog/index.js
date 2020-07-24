@@ -2,6 +2,7 @@ import Link from 'next/link';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { v4 as uuid } from 'uuid';
+import moment from 'moment';
 
 import Layout from 'components/Layout';
 import { formatDateString } from 'utils';
@@ -62,7 +63,8 @@ export async function getStaticProps() {
 
       return { ...data, id: uuid() };
     })
-    .filter(({ type }) => type != 'draft');
+    .filter(({ type }) => type != 'draft')
+    .sort(({ date: date1 }, { date: date2 }) => -1 * (moment(date1) - moment(date2)));
 
   return {
     props: { newsletters },

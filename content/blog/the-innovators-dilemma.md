@@ -33,12 +33,10 @@ excerpt: How successful companies fall to startups not because of poor managemen
 2. How oversupply changes the dimensions of value for customers:
 > Performance oversupply triggered a change in the basis of competition. Once the demand for capacity was satiated, other attributes, whose performance had not yet satisfied market demands, came to be more highly valued and to constitute the dimensions along which drive makers sought to differentiate their products. In concept, this meant that the most important attribute measured on the vertical axis of figures such as 8.1 changed, and that new trajectories of product performance, compared to market demands, took shape.
 
-<center>
-    <img src='/images/reading_notes/innovators-dilemma/oversupply.jpg' class="img-responsive img-container-center" style='max-width:400px; margin-top: 5px; margin-bottom: 10px'/>
-</center>
+![](/blog/innovators-dilemma/oversupply.jpg)
 
 ### 1 Takeaway
 
-The most interesting aspect of *The Innovator's Dilemma* is applying the concepts to understand today's state of innovation. It feels like we've hit a crescendo with technological innovation as Apple, Amazon, Google, and Microsoft have cemented themselves as the big companies of the 21st century. Even Ben Thompson [thinks so](https://stratechery.com/2020/the-end-of-the-beginning/){:target='_blank'}.
+The most interesting aspect of *The Innovator's Dilemma* is applying the concepts to understand today's state of innovation. It feels like we've hit a crescendo with technological innovation as Apple, Amazon, Google, and Microsoft have cemented themselves as the big companies of the 21st century. Even Ben Thompson [thinks so](https://stratechery.com/2020/the-end-of-the-beginning/).
 
 But even the best managed companies fall, not because of management, but because of changing value networks. Disruption can happen even though there are huge companies that currently lead an industry. However, disruption requires the right environment, which usually comes from a small companies that can target smaller, unproven markets and slowly move upmarket to disrupt incumbents.

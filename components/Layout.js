@@ -117,7 +117,7 @@ export default function Layout({ children, showLogo, title }) {
 
         blockquote {
           border-left: solid black;
-          padding: 0.01em 0 0.01em 1em;
+          padding-left: 1em;
           margin: 0;
         }
 
@@ -134,7 +134,6 @@ export default function Layout({ children, showLogo, title }) {
         .markdown-body a:visited {
           color: ${colors.blue};
         }
-
       `}
       </style>
     </div>

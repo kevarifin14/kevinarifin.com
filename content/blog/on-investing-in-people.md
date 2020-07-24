@@ -1,8 +1,9 @@
 ---
 title: On Investing in People
-permalink: /on-investing-in-people
-layout: post
-image: /images/chicago.jpeg
+slug: on-investing-in-people
+date: '2020-03-20'
+type: essay
+excerpt: My thoughts on mentorship and why I'm building Edith.
 ---
 Throughout a lot of my life, I always gravitated towards positions of teaching and mentorship.
 
@@ -26,6 +27,6 @@ This world already kind of exists today in the venture capital world, but it’s
 
 When people can invest in other people, startup founder or not, it unlocks a world of mentors that want to share in your success. It takes the happenstance out of finding a mentor, because people are going to want to find the people they believe in and back them.
 
-This is what my co-founder [Nick](https://nickchua.me){:target='_blank'} and I are building at Edith Labs.
+This is what my co-founder [Nick](https://nickchua.me) and I are building at Edith Labs.
 
-You can find our landing page [here](https://edithlabs.com){:target='_blank'}. We have an exciting project going live in the next couple weeks. If my story behind Edith Labs resonates with you and you would like to be a mentor, either financially invested in a student or not, don’t hesitate to reach out at [kevin@edithlabs.com](mailto:kevin@edithlabs.com){:target='_blank'}.
+You can find our landing page [here](https://edithlabs.com). We have an exciting project going live in the next couple weeks. If my story behind Edith Labs resonates with you and you would like to be a mentor, either financially invested in a student or not, don’t hesitate to reach out at [kevin@edithlabs.com](mailto:kevin@edithlabs.com).

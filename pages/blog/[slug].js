@@ -4,18 +4,22 @@ import path from 'path';
 import matter from 'gray-matter';
 
 import Layout from 'components/Layout';
-import Subscribe from 'components/Subscribe';
 import { CodeBlock, LinkRenderer } from 'utils';
+import PostFooter from 'components/PostFooter';
 
 export default function Blog({ content, frontmatter }) {
-  const { title } = frontmatter;
+  const { title, type, slug } = frontmatter;
 
   return (
     <>
       <Layout title={title} showLogo>
 
         <div className="markdown-body" style={{ maxWidth: '708px' }}>
-          <h1 className="title">{title}</h1>
+
+          {type == 'reading-notes'
+            ? <img src={`/books/${slug}.jpg`} />
+            : <h1 className="title">{title}</h1>}
+
           <ReactMarkdown
             escapeHtml={false}
             source={content}
@@ -23,19 +27,8 @@ export default function Blog({ content, frontmatter }) {
           />
         </div>
 
-        <div style={{
-          width: '100%', paddingTop: '2em', paddingBottom: '3em', paddingLeft: '0.5em', paddingRight: '0.5em', marginTop: '1em', borderTop: '1px solid #eaeaea',
-        }}
-        >
-          <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
-            <h2>Aspiring to build your own startup?</h2>
-            <p>
-              Subscribe to Thought Bytes to get lessons from my journey as Edith&apos;s
-              technical co-founder delivered straight to your inbox every Thursday.
-            </p>
-          </div>
-          <Subscribe />
-        </div>
+        <PostFooter />
+
       </Layout>
 
       <style jsx>

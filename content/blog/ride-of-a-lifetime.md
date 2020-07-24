@@ -38,7 +38,7 @@ excerpt: Bob Iger's story of building a career at Disney (and affiliated compani
 
 ### 1 Takeaway
 
-Bog Iger's tenure as CEO of Disney is a case study of the concepts in Clay Christensen's *The Innovator's Dilemma* (I've written notes for the book [here](/reading_notes/the-innovators-dilemma){:target='_blank'}).
+Bog Iger's tenure as CEO of Disney is a case study of the concepts in Clay Christensen's *The Innovator's Dilemma* (I've written notes for the book [here](/blog/the-innovators-dilemma)).
 
 Christensen defines the innovator's dilemma as the tradeoff that successful companies face between optimizing existing processes, management, and value networks for what makes them successful and generate revenue and investing in emerging technologies that either have unproven small markets or would cannibalize their existing business.
 
