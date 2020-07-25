@@ -13,7 +13,7 @@ function BlogFilter({
         {`
         .blog-filter {
           padding: 0.25em 1em;
-          margin: 0 0.5em;
+          margin: 0.2em 0.5em;
           cursor: pointer;
           background-color: ${active == value && colors.blue};
           color: ${active == value ? 'white' : colors.blue};

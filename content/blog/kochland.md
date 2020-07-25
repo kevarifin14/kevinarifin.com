@@ -4,6 +4,7 @@ slug: kochland
 date: '2020-04-23'
 type: reading-notes
 excerpt: An inside look at one of the most secretive companies in America.
+related: newsletters/45,newsletters/50
 ---
 ## 3 Ideas
 

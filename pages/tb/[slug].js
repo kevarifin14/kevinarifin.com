@@ -12,7 +12,9 @@ import Layout from 'components/Layout';
 import PostFooter from 'components/PostFooter';
 
 export default function Newsletter({ content, frontmatter }) {
+  const maxWidth = '600px';
   const { slug, type } = frontmatter;
+
   const css = `
     html, body {
       font-family: Open Sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -105,7 +107,7 @@ export default function Newsletter({ content, frontmatter }) {
     <>
       <Layout title={`Thought Bytes #${slug}`} showLogo>
         <div style={{
-          maxWidth: '600px', margin: 'auto', display: 'flex', flexDirection: 'column',
+          maxWidth, margin: 'auto', display: 'flex', flexDirection: 'column',
         }}
         >
 
@@ -132,7 +134,7 @@ export default function Newsletter({ content, frontmatter }) {
 
         </div>
 
-        <PostFooter />
+        <PostFooter maxWidth={maxWidth} />
       </Layout>
 
       <style jsx>

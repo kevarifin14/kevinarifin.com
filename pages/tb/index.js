@@ -1,10 +1,9 @@
-import Link from 'next/link';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { v4 as uuid } from 'uuid';
 
 import Layout from 'components/Layout';
-import { formatDateString } from 'utils';
+import PostPreview from 'components/PostPreview';
 
 export default function Newsletters({ newsletters }) {
   return (
@@ -12,19 +11,13 @@ export default function Newsletters({ newsletters }) {
       <Layout title="Thought Bytes" showLogo>
         <div className="column">
           {newsletters.map(({ slug, date, excerpt }) => (
-
-            <Link href="/tb/[slug]" as={`/tb/${slug}`}>
-              <div style={{ cursor: 'pointer' }}>
-                <h2>
-                  {`${formatDateString(date)} - Thought Bytes #${slug}`}
-                </h2>
-
-                <p>{excerpt}</p>
-
-                <hr />
-
-              </div>
-            </Link>
+            <PostPreview
+              title={`Thought Bytes #${slug}`}
+              type="tb"
+              date={date}
+              excerpt={excerpt}
+              slug={slug}
+            />
           ))}
 
           <p>

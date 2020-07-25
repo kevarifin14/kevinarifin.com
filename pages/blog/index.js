@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { useState } from 'react';
@@ -6,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 import moment from 'moment';
 
 import Layout from 'components/Layout';
-import { formatDateString } from 'utils';
+import PostPreview from 'components/PostPreview';
 import BlogFilter from 'components/BlogFilter';
 
 export default function Blog({ newsletters }) {
@@ -23,32 +22,28 @@ export default function Blog({ newsletters }) {
     <>
       <Layout title="Blog" showLogo>
         <div className="column">
-          {filters.map(({ label, value }) => (
-            <BlogFilter
-              active={filter}
-              value={value}
-              label={label}
-              onClick={() => setFilter(value)}
-            />
-          ))}
-
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            {filters.map(({ label, value }) => (
+              <BlogFilter
+                active={filter}
+                value={value}
+                label={label}
+                onClick={() => setFilter(value)}
+              />
+            ))}
+          </div>
           {newsletters
             .filter(({ type }) => (filter == 'all' ? true : type == filter))
             .map(({
               title, slug, date, excerpt,
             }) => (
-              <Link href="/blog/[slug]" as={`/blog/${slug}`}>
-                <div style={{ cursor: 'pointer' }}>
-                  <h2>
-                    {`${formatDateString(date)} - ${title}`}
-                  </h2>
-
-                  <p>{excerpt}</p>
-
-                  <hr />
-
-                </div>
-              </Link>
+              <PostPreview
+                title={title}
+                type="blog"
+                date={date}
+                excerpt={excerpt}
+                slug={slug}
+              />
             ))}
 
           <p>

@@ -6,15 +6,17 @@ import matter from 'gray-matter';
 import Layout from 'components/Layout';
 import { CodeBlock, LinkRenderer } from 'utils';
 import PostFooter from 'components/PostFooter';
+import RelatedFooter from 'components/RelatedFooter';
 
-export default function Post({ content, frontmatter }) {
+export default function Post({ content, frontmatter, relatedFrontmatters }) {
+  const maxWidth = '708px';
   const { title, type, slug } = frontmatter;
 
   return (
     <>
       <Layout title={title} showLogo>
 
-        <div className="markdown-body" style={{ maxWidth: '708px' }}>
+        <div className="markdown-body" style={{ maxWidth }}>
 
           {type == 'reading-notes'
             ? <img src={`/books/${slug}.jpg`} />
@@ -27,7 +29,8 @@ export default function Post({ content, frontmatter }) {
           />
         </div>
 
-        <PostFooter />
+        <PostFooter maxWidth={maxWidth} />
+        <RelatedFooter related={relatedFrontmatters} maxWidth={maxWidth} />
 
       </Layout>
 
@@ -51,7 +54,21 @@ export async function getStaticProps({ params: { slug } }) {
   const { data, content } = matter(markdownWithMetadata);
   const frontmatter = { ...data };
 
-  return { props: { content, frontmatter } };
+  const { related } = frontmatter;
+  let relatedFrontmatters = [];
+
+  if (related) {
+    const relatedPaths = related.split(',');
+
+    relatedFrontmatters = relatedPaths.map((relatedPath) => {
+      const { data: relatedFrontmatter } = matter(
+        fs.readFileSync(path.join(`content/${relatedPath}.md`)).toString(),
+      );
+      return relatedFrontmatter;
+    });
+  }
+
+  return { props: { content, frontmatter, relatedFrontmatters } };
 }
 
 export async function getStaticPaths() {

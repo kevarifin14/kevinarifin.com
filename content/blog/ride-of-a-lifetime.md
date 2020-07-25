@@ -4,6 +4,7 @@ slug: ride-of-a-lifetime
 date: '2020-03-06'
 type: reading-notes
 excerpt: Bob Iger's story of building a career at Disney (and affiliated companies) eventually becoming CEO and changing the trajectory of the company in the 21st century.
+related: blog/the-innovators-dilemma,newsletters/44
 ---
 ### 3 Ideas
 

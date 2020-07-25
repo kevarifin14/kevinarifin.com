@@ -1,6 +1,6 @@
 import Subscribe from 'components/Subscribe';
 
-export default function PostFooter() {
+export default function PostFooter({ maxWidth }) {
   return (
     <div
       style={{
@@ -11,7 +11,7 @@ export default function PostFooter() {
         borderTop: '1px solid #eaeaea',
       }}
     >
-      <div style={{ maxWidth: '600px', margin: 'auto', textAlign: 'center' }}>
+      <div style={{ maxWidth, margin: 'auto', textAlign: 'center' }}>
         <h2>Aspiring to build your own startups?</h2>
         <p>
           Subscribe to Thought Bytes to get lessons from my journey as Edith&apos;s
