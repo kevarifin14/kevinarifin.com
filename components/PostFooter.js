@@ -12,7 +12,7 @@ export default function PostFooter({ maxWidth }) {
       }}
     >
       <div style={{ maxWidth, margin: 'auto', textAlign: 'center' }}>
-        <h2>Aspiring to build your own startups?</h2>
+        <h2>Aspiring to build your own startup?</h2>
         <p>
           Subscribe to Thought Bytes to get lessons from my journey as Edith&apos;s
           technical co-founder delivered straight to your inbox every Thursday.
