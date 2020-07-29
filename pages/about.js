@@ -9,7 +9,7 @@ import Subscribe from 'components/Subscribe';
 
 export default function About({ content }) {
   return (
-    <Layout title="About">
+    <Layout title="About" showLogo>
       <div className="markdown-body" style={{ maxWidth: '700px' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <img src="/kevin.jpg" className="circle-img" />
