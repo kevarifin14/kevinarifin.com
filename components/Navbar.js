@@ -22,6 +22,7 @@ function Navbar({ showLogo }) {
       <div className={styles.rightMenu}>
         <Link href="/blog"><a className={styles.navLink}>Blog</a></Link>
         <Link href="/tb"><a className={styles.navLink}>Newsletter</a></Link>
+        <Link href="/about"><a className={styles.navLink}>About</a></Link>
       </div>
 
     </div>

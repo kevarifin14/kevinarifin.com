@@ -27,7 +27,7 @@ export default function Newsletter({ content, frontmatter }) {
       width: 100%;
       padding: 0 0.5em;
     }
-    p, li {
+    p, li, i {
       line-height: 1.5;
       font-size: 16px;
     }
