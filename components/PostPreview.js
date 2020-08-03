@@ -8,9 +8,8 @@ export default function PostPreview({
   return (
     <Link href={`/${type}/[slug]`} as={`/${type}/${slug}`}>
       <div style={{ cursor: 'pointer' }}>
-        <h2>
-          {`${title} - ${formatDateString(date)}`}
-        </h2>
+        <h2 style={{ marginBlockEnd: '0.25em' }}>{title}</h2>
+        <h4 style={{ marginBlockStart: 0 }}>{formatDateString(date)}</h4>
 
         <p>{excerpt}</p>
 

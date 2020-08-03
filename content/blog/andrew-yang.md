@@ -1,9 +1,10 @@
 ---
 title: What the Andrew Yang Campaign Meant To Me
-permalink: /thank-you-andrew-yang
-layout: post
-image: /images/thank-you-andrew-yang/andrew-yang.jpeg
+slug: andrew-yang
+date: '2020-02-11'
+type: essay
 ---
+![](/blog/andrew-yang/andrew-yang.jpeg)
 When I first listened to Andrew Yang on an interview with Sam Harris back in October 2018, I knew he was my candidate. He instantly made me interested in the 2020 Presidential race, but above all, instantly felt like someone who could truly change this country for the better.
 
 The campaign started small. I still remember telling friends about Andrew Yang and getting crickets in response. But slowly he caught on. My brother and I bought “First 500” hats. My friend Wayne became an organizer for Oakland Yang Gang. My girlfriend Sarah donated to his campaign, sent me tweet after tweet about his campaign, and was heartbroken when he dropped out. People were listening.
