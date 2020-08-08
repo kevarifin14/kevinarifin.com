@@ -1,12 +1,10 @@
 import ReactMarkdown from 'react-markdown';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 
 import Layout from 'components/Layout';
-import { CodeBlock, LinkRenderer } from 'utils';
 import PostFooter from 'components/PostFooter';
 import RelatedFooter from 'components/RelatedFooter';
+import { CodeBlock, LinkRenderer } from 'utils';
+import { getContent, listContent } from 'utils/content-manager';
 
 export default function Post({ content, frontmatter, relatedFrontmatters }) {
   const maxWidth = '708px';
@@ -48,23 +46,17 @@ export default function Post({ content, frontmatter, relatedFrontmatters }) {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join('content/blog/', `${slug}.md`))
-    .toString();
-  const { data, content } = matter(markdownWithMetadata);
-  const frontmatter = { ...data };
-
+  const { data: frontmatter, content } = getContent('blog', `${slug}.md`);
   const { related } = frontmatter;
-  let relatedFrontmatters = [];
 
+  let relatedFrontmatters = [];
   if (related) {
     const relatedPaths = related.split(',');
 
     relatedFrontmatters = relatedPaths.map((relatedPath) => {
-      const { data: relatedFrontmatter } = matter(
-        fs.readFileSync(path.join(`content/${relatedPath}.md`)).toString(),
-      );
-      return relatedFrontmatter;
+      const [contentDir, filename] = relatedPath.split('/');
+      const { data: relatedFrontmatter } = getContent(contentDir, `${filename}.md`);
+      return { ...relatedFrontmatter, contentType: contentDir };
     });
   }
 
@@ -72,18 +64,10 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export async function getStaticPaths() {
-  const blogPath = `${process.cwd()}/content/blog`;
-  const files = fs.readdirSync(blogPath, 'utf-8');
-
-  const markdownFileNames = files
-    .filter((fn) => fn.endsWith('.md'))
-    .map((fn) => fn.replace('.md', ''));
-
+  const markdownFilenames = listContent('blog');
   return {
-    paths: markdownFileNames.map((fileName) => ({
-      params: {
-        slug: fileName,
-      },
+    paths: markdownFilenames.map((filename) => ({
+      params: { slug: filename },
     })),
     fallback: false,
   };

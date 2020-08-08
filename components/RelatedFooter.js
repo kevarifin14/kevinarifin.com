@@ -17,11 +17,11 @@ export default function RelatedFooter({ related, maxWidth }) {
           <h1>Related</h1>
 
           {related.map(({
-            title, date, excerpt, slug,
+            title, date, excerpt, slug, contentType,
           }, i) => (
             <PostPreview
               title={title}
-              type="tb"
+              type={contentType == 'newsletters' ? 'tb' : contentType}
               date={date}
               excerpt={excerpt}
               slug={slug}

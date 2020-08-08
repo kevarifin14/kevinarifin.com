@@ -1,10 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 
 import Layout from 'components/Layout';
 import { CodeBlock, LinkRenderer } from 'utils';
+import { getContent } from 'utils/content-manager';
 import Subscribe from 'components/Subscribe';
 
 export default function About({ content }) {
@@ -47,10 +45,6 @@ export default function About({ content }) {
 }
 
 export async function getStaticProps() {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join('content', 'about.md'))
-    .toString();
-  const { content } = matter(markdownWithMetadata);
-
+  const { content } = getContent('', 'about.md');
   return { props: { content } };
 }

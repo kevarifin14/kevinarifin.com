@@ -1,9 +1,8 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import { v4 as uuid } from 'uuid';
+import moment from 'moment';
 
 import Layout from 'components/Layout';
 import PostPreview from 'components/PostPreview';
+import { listContentMetadata } from 'utils/content-manager';
 
 export default function Newsletters({ newsletters }) {
   return (
@@ -41,22 +40,10 @@ export default function Newsletters({ newsletters }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/newsletters`, 'utf-8');
+  const newsletters = listContentMetadata('newsletters');
+  const newslettersByDate = newsletters.sort(({ date: date1 }, { date: date2 }) => (
+    -1 * (moment(date1) - moment(date2))
+  ));
 
-  const newsletters = files
-    .filter((fn) => fn.endsWith('.md'))
-    .map((fn) => {
-      const path = `${process.cwd()}/content/newsletters/${fn}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: 'utf-8',
-      });
-      const { data } = matter(rawContent);
-
-      return { ...data, id: uuid() };
-    })
-    .sort((a, b) => b.slug - a.slug);
-
-  return {
-    props: { newsletters },
-  };
+  return { props: { newsletters: newslettersByDate } };
 }

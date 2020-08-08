@@ -1,17 +1,15 @@
 import {
   Email, Box, Item, Image, renderEmail,
 } from 'react-html-email';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import { CodeBlock, colors } from 'utils';
 
 import Layout from 'components/Layout';
 import PostFooter from 'components/PostFooter';
+import { CodeBlock, colors } from 'utils';
+import { getContent, listContent } from 'utils/content-manager';
 
-export default function Newsletter({ content, frontmatter }) {
+export default function Newsletter({ content, frontmatter, latestNewsletterSlug }) {
   const maxWidth = '600px';
   const { slug, type } = frontmatter;
 
@@ -116,12 +114,19 @@ export default function Newsletter({ content, frontmatter }) {
           />
 
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 1em' }}>
-            <Link href={`/tb/${slug - 1}`}>
-              <a className="link">
-                &larr; TB #
-                {slug - 1}
-              </a>
-            </Link>
+
+            {slug - 1 > 43
+              ? (
+                <Link href={`/tb/${slug - 1}`}>
+                  <a className="link">
+                    &larr; TB #
+                    {slug - 1}
+                  </a>
+                </Link>
+              ) : <span />}
+
+            {slug + 1 < latestNewsletterSlug
+            && (
             <Link href={`/tb/${slug + 1}`}>
               <a className="link">
                 TB #
@@ -130,6 +135,8 @@ export default function Newsletter({ content, frontmatter }) {
                 &rarr;
               </a>
             </Link>
+            )}
+
           </div>
 
         </div>
@@ -154,29 +161,17 @@ export default function Newsletter({ content, frontmatter }) {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markdownWithMetadata = fs
-    .readFileSync(path.join('content/newsletters/', `${slug}.md`))
-    .toString();
-  const { data, content } = matter(markdownWithMetadata);
-  const frontmatter = { ...data };
+  const { content, data: frontmatter } = getContent('newsletters', `${slug}.md`);
+  const filenames = listContent('newsletters');
+  const latestNewsletterSlug = Math.max(...filenames.map((filename) => parseInt(filename, 10)));
 
-  return { props: { content, frontmatter } };
+  return { props: { content, frontmatter, latestNewsletterSlug } };
 }
 
 export async function getStaticPaths() {
-  const newslettersPath = `${process.cwd()}/content/newsletters`;
-  const files = fs.readdirSync(newslettersPath, 'utf-8');
-
-  const markdownFileNames = files
-    .filter((fn) => fn.endsWith('.md'))
-    .map((fn) => fn.replace('.md', ''));
-
+  const markdownFilenames = listContent('newsletters');
   return {
-    paths: markdownFileNames.map((fileName) => ({
-      params: {
-        slug: fileName,
-      },
-    })),
+    paths: markdownFilenames.map((filename) => ({ params: { slug: filename } })),
     fallback: false,
   };
 }

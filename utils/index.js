@@ -1,6 +1,5 @@
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-
 import moment from 'moment';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 
 export const colors = {
   blue: 'rgb(95, 144, 213)',

@@ -1,14 +1,12 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import moment from 'moment';
+import { useState } from 'react';
 
 import Layout from 'components/Layout';
 import PostPreview from 'components/PostPreview';
 import BlogFilter from 'components/BlogFilter';
+import { listContentMetadata } from 'utils/content-manager';
 
-export default function Blog({ newsletters }) {
+export default function Blog({ posts }) {
   const [filter, setFilter] = useState('all');
 
   const filters = [
@@ -32,7 +30,7 @@ export default function Blog({ newsletters }) {
               />
             ))}
           </div>
-          {newsletters
+          {posts
             .filter(({ type }) => (filter == 'all' ? true : type == filter))
             .map(({
               title, slug, date, excerpt,
@@ -67,23 +65,14 @@ export default function Blog({ newsletters }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/blog`, 'utf-8');
-
-  const newsletters = files
-    .filter((fn) => fn.endsWith('.md'))
-    .map((fn) => {
-      const path = `${process.cwd()}/content/blog/${fn}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: 'utf-8',
-      });
-      const { data } = matter(rawContent);
-
-      return { ...data, id: uuid() };
-    })
+  const posts = listContentMetadata('blog');
+  const postsByDate = posts
     .filter(({ type }) => type != 'draft')
-    .sort(({ date: date1 }, { date: date2 }) => -1 * (moment(date1) - moment(date2)));
+    .sort(({ date: date1 }, { date: date2 }) => (
+      -1 * (moment(date1) - moment(date2))
+    ));
 
   return {
-    props: { newsletters },
+    props: { posts: postsByDate },
   };
 }

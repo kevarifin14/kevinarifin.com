@@ -1,12 +1,10 @@
 import Link from 'next/link';
-import fs from 'fs';
-import matter from 'gray-matter';
-import { v4 as uuid } from 'uuid';
 
 import Layout from 'components/Layout';
 import Subscribe from 'components/Subscribe';
+import { listContent } from 'utils/content-manager';
 
-export default function Home({ newsletters }) {
+export default function Home({ latestNewsletterSlug }) {
   return (
     <>
       <Layout title="Home">
@@ -25,7 +23,7 @@ export default function Home({ newsletters }) {
           <Subscribe />
 
           <span style={{ marginTop: '3em' }}>
-            <Link href="/tb/[slug]" as={`/tb/${newsletters[0].slug}`}>
+            <Link href="/tb/[slug]" as={`/tb/${latestNewsletterSlug}`}>
               <a>
                 View the latest newsletter &rarr;
               </a>
@@ -75,22 +73,8 @@ export default function Home({ newsletters }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/newsletters`, 'utf-8');
+  const filenames = listContent('newsletters');
+  const latestNewsletterSlug = Math.max(...filenames.map((filename) => parseInt(filename, 10)));
 
-  const newsletters = files
-    .filter((fn) => fn.endsWith('.md'))
-    .map((fn) => {
-      const path = `${process.cwd()}/content/newsletters/${fn}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: 'utf-8',
-      });
-      const { data } = matter(rawContent);
-
-      return { ...data, id: uuid() };
-    })
-    .sort((a, b) => b.slug - a.slug);
-
-  return {
-    props: { newsletters },
-  };
+  return { props: { latestNewsletterSlug } };
 }

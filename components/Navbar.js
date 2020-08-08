@@ -1,7 +1,7 @@
 import { FaBars } from 'react-icons/fa';
 
 import Link from 'next/link';
-import styles from './Navbar.module.scss';
+import styles from 'styles/Navbar.module.scss';
 
 function Navbar({ showLogo }) {
   return (
