@@ -3,7 +3,7 @@ import { FaBars } from 'react-icons/fa';
 import Link from 'next/link';
 import styles from 'styles/Navbar.module.scss';
 
-function Navbar({ showLogo }) {
+export default function Navbar({ showLogo }) {
   return (
     <div className={styles.nav}>
       <span style={{ opacity: showLogo ? 1 : 0 }}>
@@ -28,5 +28,3 @@ function Navbar({ showLogo }) {
     </div>
   );
 }
-
-export default Navbar;
