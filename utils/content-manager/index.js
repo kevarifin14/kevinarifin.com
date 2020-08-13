@@ -3,13 +3,13 @@ import matter from 'gray-matter';
 import { v4 as uuid } from 'uuid';
 
 const listMarkdownFiles = (contentDir) => {
-  const files = fs.readdirSync(`content/${contentDir}`);
+  const files = fs.readdirSync(`${process.cwd()}/content/${contentDir}`);
   return files.filter((filename) => filename.endsWith('.md'));
 };
 
 export const getContent = (contentDir, filename) => {
   const markdownWithMetadata = fs
-    .readFileSync(`content/${contentDir}/${filename}`)
+    .readFileSync(`${process.cwd()}/content/${contentDir}/${filename}`)
     .toString();
   return matter(markdownWithMetadata);
 };
