@@ -25,21 +25,21 @@ export default function Subscribe({ className }) {
   return (
     <form
       className={[
-        'grid sm:grid-cols-1fr-auto grid-cols-1 mx-auto',
+        'grid grid-cols-1fr-auto sm:mx-auto',
         className,
       ].join(' ')}
       onSubmit={handleSubscribe}
     >
 
       <input
-        className="outline-none text-xl col-span-1 sm:mr-2 mb-2 sm:mb-0 rounded-none border-b border-solid bg-transparent border-black"
+        className="outline-none sm:text-xl text-md col-span-1 mr-2 rounded-none border-b border-solid bg-transparent border-black"
         required
         type="email"
         placeholder="Enter your email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
-      <Button className="col-span-1 " type="submit">
+      <Button className="col-span-1" type="submit">
         Subscribe
       </Button>
 

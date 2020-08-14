@@ -12,11 +12,11 @@ export default function Home({ latestNewsletterSlug }) {
 
           <img src="/blue.svg" className="h-40 w-40" />
 
-          <h1 className="text-5xl text-center">
+          <h1 className="text-5xl text-center sm:m-0 mx-4">
             Thought Bytes by Kevin Arifin
           </h1>
 
-          <p className="text-xl mb-8 text-center">
+          <p className="text-xl mb-8 text-center sm:mx-0 mx-4">
             I send out a weekly newsletter on becoming a technical co-founder
           </p>
 

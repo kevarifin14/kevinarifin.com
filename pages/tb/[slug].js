@@ -119,7 +119,7 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
                 </Link>
               ) : <span />}
 
-            {slug + 1 < latestNewsletterSlug
+            {slug + 1 <= latestNewsletterSlug
             && (
             <Link href={`/tb/${slug + 1}`}>
               <a>
