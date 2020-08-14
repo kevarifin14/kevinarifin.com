@@ -8,66 +8,31 @@ export default function Home({ latestNewsletterSlug }) {
   return (
     <>
       <Layout title="Home">
-        <main>
+        <div className="pb-20 flex flex-grow flex-col items-center justify-center">
 
-          <img src="/blue.svg" height={150} width={150} style={{ marginBottom: 0 }} />
+          <img src="/blue.svg" className="h-40 w-40" />
 
-          <h1 className="title">
+          <h1 className="text-5xl text-center">
             Thought Bytes by Kevin Arifin
           </h1>
 
-          <p className="description">
+          <p className="text-xl mb-8 text-center">
             I send out a weekly newsletter on becoming a technical co-founder
           </p>
 
           <Subscribe />
 
-          <span style={{ marginTop: '3em' }}>
+          <span className="mt-12">
             <Link href="/tb/[slug]" as={`/tb/${latestNewsletterSlug}`}>
-              <a>
+              <a className="hover:underline text-black no-underline">
                 View the latest newsletter &rarr;
               </a>
             </Link>
           </span>
 
-        </main>
+        </div>
+
       </Layout>
-
-      <style jsx>
-        {`
-        main {
-          padding: 0rem 0 5em 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
-        .title {
-          font-size: 3rem;
-          margin-block-start: 0;
-          margin-block-end: 0;
-        }
-
-        .description {
-          font-size: 1.25rem;
-        }
-
-        .title, .description {
-          text-align: center;
-        }
-      `}
-      </style>
     </>
   );
 }

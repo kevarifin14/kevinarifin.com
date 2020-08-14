@@ -1,28 +1,19 @@
 import React from 'react';
-import { colors } from 'utils';
 
 function BlogFilter({
-  active, value, label, onClick,
+  active, value, label, onClick, className,
 }) {
   return (
-    <>
-      <span className="blog-filter" onClick={onClick}>
-        {label}
-      </span>
-      <style jsx>
-        {`
-        .blog-filter {
-          padding: 0.25em 1em;
-          margin: 0.2em 0.5em;
-          cursor: pointer;
-          background-color: ${active == value && colors.blue};
-          color: ${active == value ? 'white' : colors.blue};
-          border: 1px solid ${colors.blue};
-          border-radius: 5px;
-        }
-      `}
-      </style>
-    </>
+    <span
+      className={[
+        'py-1 px-4 cursor-pointer border border-solid border-blue rounded-md blog-filter',
+        active == value ? 'bg-blue text-white' : 'text-blue',
+        className,
+      ].join(' ')}
+      onClick={onClick}
+    >
+      {label}
+    </span>
   );
 }
 

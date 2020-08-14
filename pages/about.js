@@ -8,9 +8,9 @@ import Subscribe from 'components/Subscribe';
 export default function About({ content }) {
   return (
     <Layout title="About" showLogo>
-      <div className="markdown-body" style={{ maxWidth: '700px', marginBottom: '2.5em' }}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img src="/kevin.jpg" className="circle-img" />
+      <div className="markdown-body max-w-screen-md">
+        <div className="flex justify-center">
+          <img src="/kevin.jpg" className="rounded-full h-48 w-48" />
         </div>
 
         <ReactMarkdown
@@ -19,27 +19,15 @@ export default function About({ content }) {
           renderers={{ code: CodeBlock, link: LinkRenderer }}
         />
 
-        <div style={{
-          display: 'flex', justifyContent: 'center', maxWidth: '400px', textAlign: 'center', margin: 'auto',
-        }}
-        >
+        <div className="flex flex-col justify-center max-w-lg text-center mx-auto mb-8">
           <h3>
             Get my newsletter on becoming a technical co-founder
             <span role="img" aria-label="point-down">👇</span>
           </h3>
+          <Subscribe className="max-w-sm mx-auto" />
         </div>
-        <Subscribe />
 
       </div>
-      <style jsx>
-        {`
-        .circle-img {
-          border-radius: 50%;
-          height: 200px;
-          width: 200px;
-        }
-      `}
-      </style>
     </Layout>
   );
 }

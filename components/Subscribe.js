@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Button from 'components/Button';
 
-export default function Subscribe() {
+export default function Subscribe({ className }) {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState();
 
@@ -23,47 +23,31 @@ export default function Subscribe() {
   };
 
   return (
-    <>
-      <form style={{ display: 'flex', justifyContent: 'center' }} onSubmit={handleSubscribe}>
-        <input
-          required
-          type="email"
-          placeholder="Enter your email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <Button type="submit">
-          Subscribe
-        </Button>
-      </form>
+    <form
+      className={[
+        'grid sm:grid-cols-1fr-auto grid-cols-1 mx-auto',
+        className,
+      ].join(' ')}
+      onSubmit={handleSubscribe}
+    >
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <input
+        className="outline-none text-xl col-span-1 sm:mr-2 mb-2 sm:mb-0 rounded-none border-b border-solid bg-transparent border-black"
+        required
+        type="email"
+        placeholder="Enter your email"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
+      />
+      <Button className="col-span-1 " type="submit">
+        Subscribe
+      </Button>
+
+      <div className="flex flex-center">
         {message && <p>{message}</p>}
       </div>
 
-      <style jsx>
-        {`
-        input:focus {
-          outline: none;
-        }
+    </form>
 
-        input {
-          font-size: 120%;
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid;
-          border-radius: 0;
-          margin-right: 0.5em;
-        }
-
-        @media only screen and (max-width: 600px) {
-          input {
-            font-size: 120%;
-            width: 80%;
-          }
-        }
-      `}
-      </style>
-    </>
   );
 }

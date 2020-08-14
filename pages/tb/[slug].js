@@ -6,12 +6,11 @@ import ReactMarkdown from 'react-markdown';
 
 import Layout from 'components/Layout';
 import PostFooter from 'components/PostFooter';
-import { CodeBlock, colors } from 'utils';
+import { CodeBlock } from 'utils';
 import { getContent, listContent } from 'utils/content-manager';
 
 export default function Newsletter({ content, frontmatter, latestNewsletterSlug }) {
-  const maxWidth = '600px';
-  const { slug, type } = frontmatter;
+  const { title, slug, type } = frontmatter;
 
   const css = `
     html, body {
@@ -63,7 +62,7 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
   }
 
   const email = (
-    <Email headCSS={css}>
+    <Email headCSS={css} title={title}>
       <Box>
 
         <Item>
@@ -88,7 +87,7 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
         </Item>
 
         <Item>
-          <div className="markdown-body" style={{ maxWidth: '600px', margin: 'auto' }}>
+          <div className="markdown-body">
             <ReactMarkdown
               source={content}
               escapeHtml={false}
@@ -104,21 +103,16 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
   return (
     <>
       <Layout title={`Thought Bytes #${slug}`} showLogo>
-        <div style={{
-          maxWidth, margin: 'auto', display: 'flex', flexDirection: 'column',
-        }}
-        >
+        <div className="max-w-screen-sm flex flex-col sm:mx-auto mx-4">
 
-          <div
-            dangerouslySetInnerHTML={{ __html: renderEmail(email) }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: renderEmail(email) }} />
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 1em' }}>
+          <div className="flex justify-between py-4">
 
             {slug - 1 > 43
               ? (
                 <Link href={`/tb/${slug - 1}`}>
-                  <a className="link">
+                  <a>
                     &larr; TB #
                     {slug - 1}
                   </a>
@@ -128,7 +122,7 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
             {slug + 1 < latestNewsletterSlug
             && (
             <Link href={`/tb/${slug + 1}`}>
-              <a className="link">
+              <a>
                 TB #
                 {slug + 1}
                 {' '}
@@ -141,21 +135,8 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
 
         </div>
 
-        <PostFooter maxWidth={maxWidth} />
+        <PostFooter className="max-w-screen-sm" />
       </Layout>
-
-      <style jsx>
-        {`
-        .link {
-          color: ${colors.blue};
-          text-decoration: none;
-        }
-
-        .link:visited {
-          color: ${colors.blue};
-        }
-      `}
-      </style>
     </>
   );
 }

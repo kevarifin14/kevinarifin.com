@@ -1,29 +1,17 @@
-import { colors } from 'utils';
-
-function Button({ children, onClick, type }) {
+function Button({
+  children, onClick, type, className,
+}) {
   return (
-    <>
-      <button
-        type={type}
-        onClick={onClick}
-      >
-        {children}
-      </button>
-
-      <style jsx>
-        {`
-        button {
-          cursor: pointer;
-          padding: 0.5em;
-          border-radius: 0;
-          font-size: 120%;
-          background-color: ${colors.blue};
-          color: white;
-          border: 0;
-        }
-      `}
-      </style>
-    </>
+    <button
+      className={[
+        'cursor-pointer px-4 py-2 rounded text-lg text-gray-100 border-none bg-blue',
+        className,
+      ].join(' ')}
+      type={type}
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
 

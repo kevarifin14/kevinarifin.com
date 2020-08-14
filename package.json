@@ -29,9 +29,11 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
+    "postcss-preset-env": "^6.7.0",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^11.0.2",
     "remark-parse": "^8.0.2",
+    "tailwindcss": "^1.6.2",
     "unified": "^9.0.0"
   }
 }

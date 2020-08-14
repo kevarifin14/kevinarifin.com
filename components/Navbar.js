@@ -9,8 +9,8 @@ export default function Navbar({ showLogo }) {
       <span style={{ opacity: showLogo ? 1 : 0 }}>
         <Link href="/">
           <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-            <img src="/blue.svg" height={40} style={{ marginBottom: '1em', marginTop: '1em' }} alt="logo" />
-            <h2 style={{ whiteSpace: 'nowrap', marginBottom: '1em', marginTop: '1em' }}>Kevin Arifin </h2>
+            <img src="/blue.svg" className="h-12" style={{ marginBottom: '1em', marginTop: '1em' }} alt="logo" />
+            <h2 className="whitespace-no-wrap my-4">Kevin Arifin</h2>
           </div>
         </Link>
       </span>

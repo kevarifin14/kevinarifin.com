@@ -1,19 +1,11 @@
 import PostPreview from './PostPreview';
 
-export default function RelatedFooter({ related, maxWidth }) {
+export default function RelatedFooter({ related, className }) {
   return (
     related.length > 0
       && (
-      <div
-        style={{
-          width: '100%',
-          marginTop: '1em',
-          padding: '2em 0.5em',
-          paddingBottom: '3em',
-          borderTop: '1px solid #eaeaea',
-        }}
-      >
-        <div style={{ maxWidth, margin: 'auto' }}>
+      <div className="w-full mt-4 pt-8 px-2 pb-12 border-solid border-t border-gray-300">
+        <div className={['mx-auto', className].join(' ')}>
           <h1>Related</h1>
 
           {related.map(({

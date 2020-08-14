@@ -19,10 +19,12 @@ export default function Blog({ posts }) {
   return (
     <>
       <Layout title="Blog" showLogo>
-        <div className="column">
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div className="max-w-screen-md mx-auto px-4">
+
+          <div className="flex flex-wrap">
             {filters.map(({ label, value }) => (
               <BlogFilter
+                className="mr-2 my-1 sm:my-0"
                 active={filter}
                 value={value}
                 label={label}
@@ -30,6 +32,7 @@ export default function Blog({ posts }) {
               />
             ))}
           </div>
+
           {posts
             .filter(({ type }) => (filter == 'all' ? true : type == filter))
             .map(({
@@ -44,22 +47,12 @@ export default function Blog({ posts }) {
               />
             ))}
 
-          <p>
+          <p className="my-4">
             Moving previous posts soon...
           </p>
 
         </div>
       </Layout>
-
-      <style jsx>
-        {`
-        .column {
-          max-width: 750px;
-          margin: 0 auto;
-          padding: 1em;
-        }
-      `}
-      </style>
     </>
   );
 }

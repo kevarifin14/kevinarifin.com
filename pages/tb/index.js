@@ -8,7 +8,7 @@ export default function Newsletters({ newsletters }) {
   return (
     <>
       <Layout title="Thought Bytes" showLogo>
-        <div className="column">
+        <div className="max-w-screen-md mx-auto px-4">
           {newsletters.map(({ slug, date, excerpt }) => (
             <PostPreview
               title={`Thought Bytes #${slug}`}
@@ -25,16 +25,6 @@ export default function Newsletters({ newsletters }) {
 
         </div>
       </Layout>
-
-      <style jsx>
-        {`
-        .column {
-          max-width: 750px;
-          margin: 0 auto;
-          padding: 1em;
-        }
-      `}
-      </style>
     </>
   );
 }

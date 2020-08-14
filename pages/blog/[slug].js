@@ -7,41 +7,28 @@ import { CodeBlock, LinkRenderer } from 'utils';
 import { getContent, listContent } from 'utils/content-manager';
 
 export default function Post({ content, frontmatter, relatedFrontmatters }) {
-  const maxWidth = '708px';
   const { title, type, slug } = frontmatter;
 
   return (
-    <>
-      <Layout title={title} showLogo>
+    <Layout title={title} showLogo>
 
-        <div className="markdown-body" style={{ maxWidth }}>
+      <div className="markdown-body max-w-screen-md md:mx-auto mx-4">
 
-          {type == 'reading-notes'
-            ? <img src={`/books/${slug}.jpg`} />
-            : <h1 className="title">{title}</h1>}
+        {type == 'reading-notes'
+          ? <img src={`/books/${slug}.jpg`} />
+          : <h1>{title}</h1>}
 
-          <ReactMarkdown
-            escapeHtml={false}
-            source={content}
-            renderers={{ code: CodeBlock, link: LinkRenderer }}
-          />
-        </div>
+        <ReactMarkdown
+          escapeHtml={false}
+          source={content}
+          renderers={{ code: CodeBlock, link: LinkRenderer }}
+        />
+      </div>
 
-        <PostFooter maxWidth={maxWidth} />
-        <RelatedFooter related={relatedFrontmatters} maxWidth={maxWidth} />
+      <PostFooter className="max-w-screen-md" />
+      <RelatedFooter className="max-w-screen-md" related={relatedFrontmatters} />
 
-      </Layout>
-
-      <style jsx>
-        {`
-        .title {
-          font-size: 2.5em;
-          margin-block-start: 0;
-          margin-block-end: 0;
-        }
-      `}
-      </style>
-    </>
+    </Layout>
   );
 }
 
