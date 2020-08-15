@@ -11,7 +11,7 @@ As a chubby fourth grader, I had the profound realization that I couldn't be ove
 
 Every day, fourth-grade Kevin, I would do 50 push-ups and 100 sit-ups. I would go to my parents' room, turn on the game on that night and do my nightly routine. Those habits compounded. When I learned to do pull-ups, I set up a pull-up bar under my bedroom door and would do 10 pull-ups every time I walked out of my room. I would eventually go to the park and shoot hundreds of shots a day and do dribbling drills around the house as I watched basketball on TV (thank you Mom for letting me wreak havoc).
 
-Just as I discussed in my post [Identity Challenge](https://kevinarifin.com/identity-challenge), I wanted my identity to be a basketball player and I defined a process around this identity. While the outcome fell short of my aspirations, I made the Varsity basketball team against all odds. Even though I was far from the best player, I continued to work hard and I still love playing and watching basketball to this day.
+Just as I discussed in my post [Identity Challenge](/blog/identity-challenge), I wanted my identity to be a basketball player and I defined a process around this identity. While the outcome fell short of my aspirations, I made the Varsity basketball team against all odds. Even though I was far from the best player, I continued to work hard and I still love playing and watching basketball to this day.
 
 Little did I know that fourth grade Kevin was building up the atomic habits James Clear talks about in his book. Another of his powerful insights in the book is the idea of getting 1 percent better every day.
 

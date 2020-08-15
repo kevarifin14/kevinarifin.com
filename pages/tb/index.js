@@ -19,7 +19,7 @@ export default function Newsletters({ newsletters }) {
             />
           ))}
 
-          <p>
+          <p className="my-4">
             Previous newsletters coming soon...
           </p>
 

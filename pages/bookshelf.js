@@ -2,6 +2,17 @@ import Layout from 'components/Layout';
 import BookSpotlight from 'components/BookSpotlight';
 
 export default function Bookshelf() {
+  const inProgress = [
+    {
+      title: 'Winners Take All',
+      author: 'Anand Giridharadas',
+    },
+    {
+      title: 'The Accidental Superpower',
+      author: 'Peter Zeihan',
+    },
+  ];
+
   const books = [
     {
       title: 'Limitless',
@@ -66,12 +77,25 @@ export default function Bookshelf() {
 
   return (
     <Layout title="Bookshelf" showLogo>
-      <div
-        className="mx-8 md:mx-auto mb-8 py-4 max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8"
-        style={{ gridAutoRows: '1fr' }}
-      >
-        {books.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
+      <div className="max-w-screen-xl mx-8 md:mx-auto mb-8 py-4">
+        <h1 className="mb-4">In Progress</h1>
+
+        <div
+          className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"
+          style={{ gridAutoRows: '1fr' }}
+        >
+          {inProgress.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
+        </div>
+
+        <h1 className="mb-4">History</h1>
+        <div
+          className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8"
+          style={{ gridAutoRows: '1fr' }}
+        >
+          {books.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
+        </div>
       </div>
+
     </Layout>
   );
 }

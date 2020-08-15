@@ -109,7 +109,7 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
 
           <div className="flex justify-between py-4">
 
-            {slug - 1 > 43
+            {slug - 1 >= 35
               ? (
                 <Link href={`/tb/${slug - 1}`}>
                   <a>

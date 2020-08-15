@@ -12,7 +12,7 @@ excerpt: A history of Jeff Bezos and the founding of Amazon, the strategic decis
 
     I first came up with this idea when I was thinking about why I listened to a lot of Ringer podcasts and read a lot of Ringer content (for those of you unfamiliar, [The Ringer](https://theringer.com) is a  blog/website that does longer form pieces on sports and media).
 
-    I like to think of Bill Simmons as a professional "sports (and media) fan", and his website [The Ringer](https://theringer.com){:target='_blank'} is a business incarnation of these passions.
+    I like to think of Bill Simmons as a professional "sports (and media) fan", and his website [The Ringer](https://theringer.com) is a business incarnation of these passions.
 
     Reading *The Everything Store*, Amazon feels like a business incarnation of Jeff Bezos. From frugality to obsession with the customer, Bezos's values emanate through the company. There are stories of Bezos taking a ride from a Harvard student to the airport (the student proceeded to get hired by Amazon). Bezos obsesses over a single customer complaint - they shouldn't be talking to Amazon at all if everything went smoothly.
 
