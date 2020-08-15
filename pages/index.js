@@ -8,6 +8,7 @@ import useSal from 'hooks/useSal';
 
 export default function Home({ latestNewsletterSlug }) {
   useSal();
+
   return (
     <>
       <Layout title="Home">

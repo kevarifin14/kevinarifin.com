@@ -19,7 +19,7 @@ export default function Bookshelf() {
     {
       title: 'The Subtle Art of Not Giving a F*ck',
       author: 'Mark Manson',
-      cover: '/books/the-subtle-art-of-not-giving-a-f-cover.jpg',
+      slug: 'the-subtle-art-of-not-giving-a-f',
       readingNotes: true,
     },
     {
@@ -55,7 +55,6 @@ export default function Bookshelf() {
     {
       title: "The Innovator's Dilemma",
       author: 'Clayton M. Christensen',
-      cover: '/books/the-innovators-dilemma-cover.jpg',
       readingNotes: true,
     },
     {

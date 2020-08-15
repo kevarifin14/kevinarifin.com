@@ -6,7 +6,7 @@ import styles from 'styles/BookSpotlight.module.scss';
 import { slideUp } from 'utils/sal-props';
 
 export default function BookSpotlight({
-  title, author, cover, readingNotes, className,
+  title, author, slug, readingNotes, className,
 }) {
   useSal();
 
@@ -21,7 +21,7 @@ export default function BookSpotlight({
       <div
         className="col-span-1"
         style={{
-          backgroundImage: `url(${cover || `/books/${_.kebabCase(title)}-cover.jpg`})`,
+          backgroundImage: `url(${slug ? `/books/${slug}-cover.jpg` : `/books/${_.kebabCase(title)}-cover.jpg`})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
@@ -35,7 +35,7 @@ export default function BookSpotlight({
           <h4>{author}</h4>
         </div>
 
-        {readingNotes && <Link href="/blog/[slug]" as={`/blog/${_.kebabCase(title)}`}>Reading Notes</Link>}
+        {readingNotes && <Link href="/blog/[slug]" as={slug ? `/blog/${slug}` : `/blog/${_.kebabCase(title)}`}>Reading Notes</Link>}
       </div>
     </div>
   );
