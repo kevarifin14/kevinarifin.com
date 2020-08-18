@@ -13,7 +13,7 @@ export default function Blog({ posts }) {
     { label: 'All', value: 'all' },
     { label: 'Essays', value: 'essay' },
     { label: 'Technical', value: 'technical' },
-    { label: 'Reading Notes', value: 'reading-notes' },
+    { label: 'Books', value: 'books' },
   ];
 
   return (

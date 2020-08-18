@@ -2,7 +2,7 @@
 title: Digital Minimalism
 slug: digital-minimalism
 date: '2020-03-12'
-type: reading-notes
+type: books
 excerpt: How our phones have replaced solitude and true leisure and strategies to counteract that to change our relationship with our phones.
 related: newsletters/45
 ---

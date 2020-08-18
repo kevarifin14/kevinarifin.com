@@ -2,7 +2,7 @@
 title: Good to Great
 slug: good-to-great
 date: '2020-03-05'
-type: reading-notes
+type: books
 excerpt: Jim Collins's study of why some companies go from good to great, and some do not, and a framework for understanding the flywheel of greatness.
 related: newsletters/44
 ---

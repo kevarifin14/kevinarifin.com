@@ -6,6 +6,8 @@ export default function Bookshelf() {
     {
       title: 'Winners Take All',
       author: 'Anand Giridharadas',
+      notes: 'https://www.notion.so/kevinarifin/Winners-Take-All-23de06b089d94cb5ad368c3b7c4176f7',
+      recap: true,
     },
     {
       title: 'The Accidental Superpower',
@@ -17,7 +19,7 @@ export default function Bookshelf() {
     {
       title: 'Limitless',
       author: 'Jim Kwik',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Technological Revolutions and Financial Capital',
@@ -31,47 +33,47 @@ export default function Bookshelf() {
       title: 'The Subtle Art of Not Giving a F*ck',
       author: 'Mark Manson',
       slug: 'the-subtle-art-of-not-giving-a-f',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Nudge',
       author: 'Richard H. Thaler',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Kochland',
       author: 'Christopher Leonard',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Digital Minimalism',
       author: 'Cal Newport',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Ride of a Lifetime',
       author: 'Bob Iger',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Good to Great',
       author: 'Jim Collins',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'Shoe Dog',
       author: 'Phil Knight',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: "The Innovator's Dilemma",
       author: 'Clayton M. Christensen',
-      readingNotes: true,
+      recap: true,
     },
     {
       title: 'The Everything Store',
       author: 'Brad Stone',
-      readingNotes: true,
+      recap: true,
     },
   ];
 

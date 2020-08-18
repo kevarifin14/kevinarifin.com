@@ -2,7 +2,7 @@
 title: The Innovator's Dilemma
 slug: the-innovators-dilemma
 date: '2020-02-14'
-type: reading-notes
+type: books
 excerpt: How successful companies fall to startups not because of poor management, but changing value networks and limitations created by existing processes.
 related: blog/ride-of-a-lifetime
 ---

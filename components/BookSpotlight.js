@@ -6,7 +6,7 @@ import styles from 'styles/BookSpotlight.module.scss';
 import { slideUp } from 'utils/sal-props';
 
 export default function BookSpotlight({
-  title, author, slug, readingNotes, className,
+  title, author, slug, recap, notes, className,
 }) {
   useSal();
 
@@ -35,7 +35,26 @@ export default function BookSpotlight({
           <h4>{author}</h4>
         </div>
 
-        {readingNotes && <Link href="/blog/[slug]" as={slug ? `/blog/${slug}` : `/blog/${_.kebabCase(title)}`}>Reading Notes</Link>}
+        <div className="flex flex-row mt-4">
+
+          {notes
+          && (
+          <>
+            <a href={notes} target="_blank" rel="noreferrer">
+              Notes
+            </a>
+            |
+          </>
+          )}
+
+          {recap
+            && (
+            <Link href="/blog/[slug]" as={slug ? `/blog/${slug}` : `/blog/${_.kebabCase(title)}`}>
+              Recap
+            </Link>
+            )}
+
+        </div>
       </div>
     </div>
   );

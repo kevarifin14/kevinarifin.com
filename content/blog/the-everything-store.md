@@ -1,8 +1,8 @@
 ---
 title: The Everything Store
 slug: the-everything-store
-type: reading-notes
 date: '2020-01-16'
+type: books
 excerpt: A history of Jeff Bezos and the founding of Amazon, the strategic decisions that made Amazon the tech giant it is today, and how his obsession with the customer revolutionized 21st century retail.
 ---
 

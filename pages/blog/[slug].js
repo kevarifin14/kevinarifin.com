@@ -14,7 +14,7 @@ export default function Post({ content, frontmatter, relatedFrontmatters }) {
 
       <div className="markdown-body max-w-screen-md md:mx-auto mx-4">
 
-        {type == 'reading-notes'
+        {type == 'books'
           ? <img src={`/books/${slug}.jpg`} />
           : <h1>{title}</h1>}
 
