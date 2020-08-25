@@ -79,11 +79,11 @@ export default function Bookshelf() {
 
   return (
     <Layout title="Bookshelf" showLogo>
-      <div className="max-w-screen-xl mx-8 md:mx-auto mb-8 py-4">
+      <div className="max-w-screen-lg mx-8 lg:mx-auto mb-8 py-4">
         <h1 className="mb-4">In Progress</h1>
 
         <div
-          className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
           style={{ gridAutoRows: '1fr' }}
         >
           {inProgress.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
@@ -91,7 +91,7 @@ export default function Bookshelf() {
 
         <h1 className="mb-4">History</h1>
         <div
-          className="max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
           style={{ gridAutoRows: '1fr' }}
         >
           {books.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
