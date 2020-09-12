@@ -43,9 +43,10 @@ export default function BookSpotlight({
             <a href={notes} target="_blank" rel="noreferrer">
               Notes
             </a>
-            |
           </>
           )}
+
+          {notes && recap && ' | '}
 
           {recap
             && (

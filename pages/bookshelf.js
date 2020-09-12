@@ -4,6 +4,14 @@ import BookSpotlight from 'components/BookSpotlight';
 export default function Bookshelf() {
   const inProgress = [
     {
+      title: 'Joy on Demand',
+      author: 'Chade-Meng Tan',
+      notes: 'https://www.notion.so/kevinarifin/Joy-on-Demand-78a957078a694d1783731812da2ed692',
+    },
+  ];
+
+  const books = [
+    {
       title: 'Winners Take All',
       author: 'Anand Giridharadas',
       notes: 'https://www.notion.so/kevinarifin/Winners-Take-All-23de06b089d94cb5ad368c3b7c4176f7',
@@ -13,9 +21,6 @@ export default function Bookshelf() {
       title: 'The Accidental Superpower',
       author: 'Peter Zeihan',
     },
-  ];
-
-  const books = [
     {
       title: 'Limitless',
       author: 'Jim Kwik',
