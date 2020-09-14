@@ -72,7 +72,38 @@ footer {
     }
 }
 
-
 @import "tailwindcss/components";
+
+.sm {
+    @apply max-w-screen-sm m-4
+  }
+
+
+  .md {
+    @apply max-w-screen-md m-4
+  }
+
+  .lg {
+    @apply max-w-screen-lg m-4
+  }
+
+  @screen sm {
+    .sm {
+      @apply mx-auto;
+    }
+  }
+
+
+  @screen md {
+    .md {
+      @apply mx-auto;
+    }
+  }
+
+  @screen lg {
+    .lg {
+      @apply mx-auto;
+    }
+  }
 
 @import "tailwindcss/utilities";

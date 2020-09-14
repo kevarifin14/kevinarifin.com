@@ -7,6 +7,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         '1fr-auto': '1fr auto',
+        'auto-1fr': 'auto 1fr',
       },
       height: {
         96: '24rem',

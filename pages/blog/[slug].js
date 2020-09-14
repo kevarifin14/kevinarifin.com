@@ -1,33 +1,19 @@
-import ReactMarkdown from 'react-markdown';
-
 import Layout from 'components/Layout';
+import Post from 'components/Post';
+import BookPost from 'components/BookPost';
 import PostFooter from 'components/PostFooter';
 import RelatedFooter from 'components/RelatedFooter';
-import { CodeBlock, LinkRenderer } from 'utils';
 import { getContent, listContent } from 'utils/content-manager';
 
-export default function Post({ content, frontmatter, relatedFrontmatters }) {
+export default function PostPage({ content, frontmatter, relatedFrontmatters }) {
   const { title, type, slug } = frontmatter;
 
   return (
     <Layout title={title} showLogo>
 
-      <div className="markdown-body max-w-screen-md md:mx-auto mx-4">
-
-        {type == 'books'
-          ? (
-            <div className="bg-gradient-to-r from-indigo-200 via-gray-200 to-indigo-200 h-96 p-8">
-              <img src={`/books/${slug}-cover.jpg`} className="object-contain h-full w-full" />
-            </div>
-          )
-          : <h1>{title}</h1>}
-
-        <ReactMarkdown
-          escapeHtml={false}
-          source={content}
-          renderers={{ code: CodeBlock, link: LinkRenderer }}
-        />
-      </div>
+      {type == 'books'
+        ? <BookPost slug={slug} content={content} />
+        : <Post title={title} content={content} />}
 
       <PostFooter className="max-w-screen-md" />
       <RelatedFooter className="max-w-screen-md" related={relatedFrontmatters} />
