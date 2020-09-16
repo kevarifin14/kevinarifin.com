@@ -4,13 +4,18 @@ import BookSpotlight from 'components/BookSpotlight';
 export default function Bookshelf() {
   const inProgress = [
     {
-      title: 'Joy on Demand',
-      author: 'Chade-Meng Tan',
-      notes: 'https://www.notion.so/kevinarifin/Joy-on-Demand-78a957078a694d1783731812da2ed692',
+      title: 'Caste',
+      author: 'Isabel Wilkerson ',
     },
   ];
 
   const books = [
+    {
+      title: 'Joy on Demand',
+      author: 'Chade-Meng Tan',
+      notes: 'https://www.notion.so/kevinarifin/Joy-on-Demand-78a957078a694d1783731812da2ed692',
+      recap: true,
+    },
     {
       title: 'Winners Take All',
       author: 'Anand Giridharadas',

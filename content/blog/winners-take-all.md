@@ -3,7 +3,7 @@ title: Winners Take All
 slug: winners-take-all
 date: '2020-09-12'
 type: books
-excerpt: On the MarketWorld mindset, wealthly elites controlling the narrative around systemic problems, and how we need to change the system to truly solve the issues of inequality that plague society.
+excerpt: On the MarketWorld mindset, wealthy elites controlling the narrative around systemic problems, and how we need to change the system to truly solve the issues of inequality that plague society.
 ---
 ## 3 Ideas
 
