@@ -1,5 +1,5 @@
-import Layout from 'components/Layout';
 import BookSpotlight from 'components/BookSpotlight';
+import Layout from 'components/Layout';
 
 export default function Bookshelf() {
   const inProgress = [

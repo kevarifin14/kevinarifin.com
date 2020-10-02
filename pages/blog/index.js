@@ -1,9 +1,9 @@
 import moment from 'moment';
 import { useState } from 'react';
 
+import BlogFilter from 'components/BlogFilter';
 import Layout from 'components/Layout';
 import PostPreview from 'components/PostPreview';
-import BlogFilter from 'components/BlogFilter';
 import { listContentMetadata } from 'utils/content-manager';
 
 export default function Blog({ posts }) {

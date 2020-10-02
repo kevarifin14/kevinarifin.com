@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
-import Link from 'next/link';
 import styles from 'styles/Navbar.module.scss';
 
 export default function Navbar({ showLogo }) {

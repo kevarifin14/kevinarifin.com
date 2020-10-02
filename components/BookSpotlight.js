@@ -1,6 +1,6 @@
+import _ from 'lodash';
 import Link from 'next/link';
 
-import _ from 'lodash';
 import useSal from 'hooks/useSal';
 import styles from 'styles/BookSpotlight.module.scss';
 import { slideUp } from 'utils/sal-props';

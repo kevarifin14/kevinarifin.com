@@ -1,6 +1,6 @@
+import BookPost from 'components/BookPost';
 import Layout from 'components/Layout';
 import Post from 'components/Post';
-import BookPost from 'components/BookPost';
 import PostFooter from 'components/PostFooter';
 import RelatedFooter from 'components/RelatedFooter';
 import { getContent, listContent } from 'utils/content-manager';

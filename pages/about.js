@@ -1,11 +1,11 @@
 import ReactMarkdown from 'react-markdown';
 
 import Layout from 'components/Layout';
+import Subscribe from 'components/Subscribe';
+import useSal from 'hooks/useSal';
 import { CodeBlock, LinkRenderer } from 'utils';
 import { getContent } from 'utils/content-manager';
-import Subscribe from 'components/Subscribe';
 import { slideUp, fadeIn } from 'utils/sal-props';
-import useSal from 'hooks/useSal';
 
 export default function About({ content }) {
   useSal();
