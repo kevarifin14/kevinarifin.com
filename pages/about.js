@@ -12,7 +12,7 @@ export default function About({ content }) {
 
   return (
     <Layout title="About" showLogo>
-      <div className="max-w-screen-md md:mx-auto mx-4">
+      <div className="sm">
         <div className="flex justify-center" {...slideUp}>
           <img src="/kevin.jpg" className="rounded-full h-48 w-48" />
         </div>
