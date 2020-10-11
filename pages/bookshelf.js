@@ -5,11 +5,22 @@ export default function Bookshelf() {
   const inProgress = [
     {
       title: 'Caste',
-      author: 'Isabel Wilkerson ',
+      author: 'Isabel Wilkerson',
+      notes: 'https://www.notion.so/edithlabs/Caste-a09e5b6688b64ed9a9322da957b8ae5c',
+    },
+    {
+      title: 'The Half Has Never Been Told',
+      author: 'Edward E. Baptist',
     },
   ];
 
   const books = [
+    {
+      title: '12 Years a Slave',
+      author: 'Solomon Northup',
+      notes: 'https://www.notion.so/edithlabs/12-Years-a-Slave-04604b4674974dff8829d92e51b48fbb',
+      recap: true,
+    },
     {
       title: 'Joy on Demand',
       author: 'Chade-Meng Tan',
