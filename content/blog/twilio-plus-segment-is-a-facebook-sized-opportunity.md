@@ -1,7 +1,7 @@
 ---
 title: Twilio + Segment is a Facebook-Sized Opportunity
 type: essay
-slug: twilio-segment-is-a-facebook-sized-opportunity
+slug: twilio-plus-segment-is-a-facebook-sized-opportunity
 date: '2020-10-25'
 excerpt: Why Twilio's acquisition of Segment unlocks some serious potential to disrupt not just change how digital relationships are built, but disrupt the broader digital advertising market.
 ---
