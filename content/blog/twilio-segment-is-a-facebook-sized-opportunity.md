@@ -3,6 +3,7 @@ title: Twilio + Segment is a Facebook-Sized Opportunity
 type: essay
 slug: twilio-segment-is-a-facebook-sized-opportunity
 date: '2020-10-25'
+excerpt: Why Twilio's acquisition of Segment unlocks some serious potential to disrupt not just change how digital relationships are built, but disrupt the broader digital advertising market.
 ---
 In Ben Thompson's [interview with Twilio CEO Jeff Lawson](https://stratechery.com/2020/twilio-acquires-segment-what-is-segment-an-interview-with-twilio-ceo-jeff-lawson/), Lawson discusses the three great eras of software:
 
