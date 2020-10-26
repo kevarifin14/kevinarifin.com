@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@segment/snippet": "^4.13.1",
     "gray-matter": "^4.0.2",
     "install": "^0.13.0",
     "lodash": "^4.17.20",
