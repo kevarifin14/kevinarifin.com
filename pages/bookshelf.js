@@ -6,11 +6,14 @@ export default function Bookshelf() {
     {
       title: 'Caste',
       author: 'Isabel Wilkerson',
-      notes: 'https://www.notion.so/edithlabs/Caste-a09e5b6688b64ed9a9322da957b8ae5c',
     },
     {
       title: 'The Half Has Never Been Told',
       author: 'Edward E. Baptist',
+    },
+    {
+      title: 'Troublemakers',
+      author: 'Leslie Berlin',
     },
   ];
 
