@@ -12,12 +12,20 @@ export default function Bookshelf() {
       author: 'Edward E. Baptist',
     },
     {
-      title: 'Troublemakers',
-      author: 'Leslie Berlin',
+      title: 'Crossing the Chasm',
+      author: 'Geoffrey Moore',
     },
   ];
 
   const books = [
+    {
+      title: 'Brave New World',
+      author: 'Aldous Huxley',
+    },
+    {
+      title: 'Troublemakers',
+      author: 'Leslie Berlin',
+    },
     {
       title: '12 Years a Slave',
       author: 'Solomon Northup',
