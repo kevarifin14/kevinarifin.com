@@ -4,7 +4,7 @@ slug: testing-your-next-api-with-jest
 date: '2020-12-08'
 type: technical
 excerpt: Setting up a test Next server to write Jest tests for your API.
-related: blog/next-from-zero-to-production, blog/getting-started-with-next-jest
+related: blog/next-from-zero-to-production,blog/getting-started-with-next-jest
 ---
 Once you’ve set up [Jest to test your Next project](/blog/getting-started-with-next-jest), you may want to test your API endpoints. Writing tests for Next API endpoints requires some additional setup which I’ll walk through in this post.
 
