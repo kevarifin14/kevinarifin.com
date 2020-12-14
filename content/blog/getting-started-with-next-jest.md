@@ -218,6 +218,24 @@ Add a new test coverage script to run `jest --coverage` flag to your test script
 ...
 ```
 
+To get coverage from files without tests yet, you'll need to add which files you want and don't want to collect coverage from: 
+
+```javascript
+// jest.config.js
+
+module.exports = {
+  ...
+  collectCoverageFrom: [
+    '**/*.js',
+    '!**/.next/**',
+    '!*.js',
+    '!**/coverage/**',
+    '!**/mocks/**',
+  ],
+  ...
+};
+```
+
 Run:
 
 ```bash
