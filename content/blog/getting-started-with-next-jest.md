@@ -123,8 +123,9 @@ If you haven't yet, create a `jest.config.js` at the root of your project. We'll
 module.exports = {
 	...
   moduleNameMapper: {
-    '^pages/(.*)': '<rootDir>/pages/$1',
-    '^utils/(.*)': '<rootDir>/utils/$1',
+    '^components(.*)': '<rootDir>/components$1',
+    '^mocks(.*)': '<rootDir>/mocks$1',
+    '^utils(.*)': '<rootDir>/utils$1',
   }
 	...
 }
