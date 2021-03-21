@@ -4,10 +4,6 @@ import Page from 'components/Page';
 export default function Bookshelf() {
   const inProgress = [
     {
-      title: 'Crossing the Chasm',
-      author: 'Geoffrey Moore',
-    },
-    {
       title: 'TCP/IP Illustrated',
       author: 'Kevin R. Fall & W. Richard Stevens',
     },
@@ -26,6 +22,10 @@ export default function Bookshelf() {
   ];
 
   const books = [
+    {
+      title: 'Crossing the Chasm',
+      author: 'Geoffrey Moore',
+    },
     {
       title: 'Brave New World',
       author: 'Aldous Huxley',
@@ -127,7 +127,7 @@ export default function Bookshelf() {
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16"
           style={{ gridAutoRows: '1fr' }}
         >
-          {inProgress.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
+          {inProgress.map((props) => <BookSpotlight {...props} />)}
         </div>
 
         <h1 className="mb-4">History</h1>
