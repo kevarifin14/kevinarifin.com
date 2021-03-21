@@ -1,8 +1,20 @@
 import BookSpotlight from 'components/BookSpotlight';
-import Layout from 'components/Layout';
+import Page from 'components/Page';
 
 export default function Bookshelf() {
   const inProgress = [
+    {
+      title: 'Crossing the Chasm',
+      author: 'Geoffrey Moore',
+    },
+    {
+      title: 'TCP/IP Illustrated',
+      author: 'Kevin R. Fall & W. Richard Stevens',
+    },
+    {
+      title: 'Return to the Little Kingdom',
+      author: 'Michael Moritz',
+    },
     {
       title: 'Caste',
       author: 'Isabel Wilkerson',
@@ -10,10 +22,6 @@ export default function Bookshelf() {
     {
       title: 'The Half Has Never Been Told',
       author: 'Edward E. Baptist',
-    },
-    {
-      title: 'Crossing the Chasm',
-      author: 'Geoffrey Moore',
     },
   ];
 
@@ -110,26 +118,28 @@ export default function Bookshelf() {
   ];
 
   return (
-    <Layout title="Bookshelf" showLogo>
-      <div className="max-w-screen-lg mx-8 lg:mx-auto mb-8 py-4">
+    <Page title="Bookshelf">
+      <div className="max-w-screen-xl mx-8 xl:mx-auto mb-8 py-4">
+
         <h1 className="mb-4">In Progress</h1>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-16"
           style={{ gridAutoRows: '1fr' }}
         >
           {inProgress.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
         </div>
 
         <h1 className="mb-4">History</h1>
+
         <div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
           style={{ gridAutoRows: '1fr' }}
         >
           {books.map((props) => <BookSpotlight className="col-span-1" {...props} />)}
         </div>
       </div>
 
-    </Layout>
+    </Page>
   );
 }

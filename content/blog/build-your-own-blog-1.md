@@ -4,8 +4,6 @@ slug: build-your-own-blog-1
 date: '2020-08-25'
 type: technical
 excerpt: Part 1 of my two part series on building your own blog. Managing Markdown content and rendering it your blog.
-# related: newsletters/63
-# related: newsletters/62,blog/build-your-own-blog-2,blog/next-from-zero-to-production
 ---
 There are a lot of website building alternatives like Wix, Wordpress, and Webflow that provide a lot of nice tools for content management, message boards, and styling out of the box. However, I've found it valuable to take full ownership of building my own personal website/blog from scratch and it's something I've been tinkering with since my first year of college.
 

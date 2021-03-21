@@ -4,7 +4,7 @@ slug: airtable-as-a-database
 date: '2020-08-06'
 type: technical
 excerpt: Using Airtable as a database to quickly get a prototype off the ground. Not recommended for production-grade applications.
-related: blog/next-from-zero-to-production,newsletters/60
+related: blog/next-from-zero-to-production
 ---
 
 In today's post, I'll show how to use Airtable as an alternative database to quickly get an MVP off the ground. Airtable is basically an excel spreadsheet with an API built on top of it. Compared to more common database solutions like a relational database (Postgres) or a document store (MongoDB), Airtable has a few advantages around building an MVP:

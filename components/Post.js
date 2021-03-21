@@ -4,7 +4,7 @@ import { CodeBlock, LinkRenderer } from 'utils';
 
 export default function Post({ title, content }) {
   return (
-    <div className="markdown-body max-w-screen-md md:mx-auto mx-4">
+    <div className="prose max-w-prose mx-auto prose-indigo py-8">
 
       <h1>{title}</h1>
 

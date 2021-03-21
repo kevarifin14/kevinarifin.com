@@ -9,47 +9,19 @@ html {
 }
 
 h1 {
-    @apply text-3xl;
-}
-
-h2 {
     @apply text-2xl;
 }
 
-h3 {
+h2 {
     @apply text-xl;
 }
 
-h4 {
+h3 {
     @apply text-lg;
 }
 
-p, li, a, i {
-    @apply leading-normal;
-}
-
 a {
-    @apply text-blue underline;
-}
-
-ul {
-    @apply list-disc pl-8;
-}
-
-ol {
-    @apply list-decimal pl-8;
-}
-
-blockquote {
-    @apply border-l-4 border-solid border-black pl-4 m-0 my-2;
-}
-
-code {
-    @apply bg-gray-200 py-1 px-1 text-red-600 rounded-sm;
-}
-
-footer {
-    @apply border-t border-gray-200 border-solid flex w-full h-16 justify-center items-center
+    @apply text-primary underline;
 }
 
 .markdown-body {
@@ -73,37 +45,5 @@ footer {
 }
 
 @import "tailwindcss/components";
-
-.sm {
-    @apply max-w-screen-sm m-4
-  }
-
-
-  .md {
-    @apply max-w-screen-md m-4
-  }
-
-  .lg {
-    @apply max-w-screen-lg m-4
-  }
-
-  @screen sm {
-    .sm {
-      @apply mx-auto;
-    }
-  }
-
-
-  @screen md {
-    .md {
-      @apply mx-auto;
-    }
-  }
-
-  @screen lg {
-    .lg {
-      @apply mx-auto;
-    }
-  }
 
 @import "tailwindcss/utilities";

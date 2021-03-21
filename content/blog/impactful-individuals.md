@@ -3,6 +3,7 @@ title: 'Four Trends of Impactful Individuals'
 date: '2019-06-20'
 slug: 'impactful-individuals'
 layout: post
+type: essay
 ---
 ![](/blog/impactful-individuals/individuals.jpg)
 

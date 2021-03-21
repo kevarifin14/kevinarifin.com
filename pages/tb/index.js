@@ -1,31 +1,20 @@
 import moment from 'moment';
 
-import Layout from 'components/Layout';
-import PostPreview from 'components/PostPreview';
+import NewsletterSection from 'components/NewsletterSection';
+import Page from 'components/Page';
+import PostCard from 'components/PostCard';
 import { listContentMetadata } from 'utils/content-manager';
 
 export default function Newsletters({ newsletters }) {
   return (
-    <>
-      <Layout title="Thought Bytes" showLogo>
-        <div className="max-w-screen-md mx-auto px-4">
-          {newsletters.map(({ slug, date, excerpt }) => (
-            <PostPreview
-              title={`Thought Bytes #${slug}`}
-              type="tb"
-              date={date}
-              excerpt={excerpt}
-              slug={slug}
-            />
-          ))}
+    <Page title="Thought Bytes">
 
-          <p className="my-4">
-            Previous newsletters coming soon...
-          </p>
+      <NewsletterSection className="border-b-2 border-gray-100" />
 
-        </div>
-      </Layout>
-    </>
+      <div className="grid gap-8 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-8 py-8">
+        {newsletters.map((post) => <PostCard post={post} contentType="tb" />)}
+      </div>
+    </Page>
   );
 }
 

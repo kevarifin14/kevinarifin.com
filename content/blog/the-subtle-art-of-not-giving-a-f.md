@@ -4,7 +4,6 @@ slug: the-subtle-art-of-not-giving-a-f
 date: '2020-05-13'
 type: books
 excerpt: A different take on why you shouldn't care about what other people think about and how greatness is a result from not believing you're great and obsessing over improvement to achieve your aspirations.
-related: newsletters/51,newsletters/53
 ---
 ## 3 Ideas
 

@@ -1,22 +1,17 @@
 import _ from 'lodash';
 import Link from 'next/link';
 
-import useSal from 'hooks/useSal';
 import styles from 'styles/BookSpotlight.module.scss';
-import { slideUp } from 'utils/sal-props';
 
 export default function BookSpotlight({
   title, author, slug, recap, notes, className,
 }) {
-  useSal();
-
   return (
     <div
       className={[
-        'grid grid-cols-3 w-full shadow-2xl',
+        'grid grid-cols-3 w-full shadow-lg',
         className,
       ].join(' ')}
-      {...slideUp}
     >
       <div
         className="col-span-1"
@@ -31,8 +26,8 @@ export default function BookSpotlight({
       <div className={styles.stuff}>
 
         <div>
-          <h2>{title}</h2>
-          <h4>{author}</h4>
+          <h3>{title}</h3>
+          <p>{author}</p>
         </div>
 
         <div className="flex flex-row mt-4">

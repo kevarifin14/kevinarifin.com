@@ -1,43 +1,38 @@
 import Link from 'next/link';
 
-import Layout from 'components/Layout';
-import Subscribe from 'components/Subscribe';
-import useSal from 'hooks/useSal';
+import Page from 'components/Page';
+import SubscribeForm from 'components/SubscribeForm';
 import { listContent } from 'utils/content-manager';
-import { fadeIn } from 'utils/sal-props';
 
 export default function Home({ latestNewsletterSlug }) {
-  useSal();
-
   return (
-    <>
-      <Layout title="Home">
-        <div className="pb-20 flex flex-grow flex-col items-center justify-center" {...fadeIn}>
+    <Page title="Home">
 
-          <img src="/blue.svg" className="h-40 w-40" />
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center sm:px-6 space-y-8 py-8 sm:py-16">
 
-          <h1 className="text-5xl text-center sm:m-0 mx-4">
+        <img src="/blue.svg" className="h-40 w-40" />
+
+        <div className="space-y-4">
+          <h1 className="text-4xl sm:text-5xl text-center text-gray-800">
             Thought Bytes by Kevin Arifin
           </h1>
 
-          <p className="text-xl mb-8 text-center sm:mx-0 mx-4">
+          <p className="text-lg sm:text-xl text-center text-gray-600">
             I send out a weekly newsletter on becoming a technical co-founder
           </p>
-
-          <Subscribe />
-
-          <span className="mt-12">
-            <Link href="/tb/[slug]" as={`/tb/${latestNewsletterSlug}`}>
-              <a className="hover:underline text-black no-underline">
-                View the latest newsletter &rarr;
-              </a>
-            </Link>
-          </span>
-
         </div>
 
-      </Layout>
-    </>
+        <SubscribeForm />
+
+        <Link href="/tb/[slug]" as={`/tb/${latestNewsletterSlug}`}>
+          <a className="text-gray-900 no-underline hover:underline">
+            View the latest newsletter &rarr;
+          </a>
+        </Link>
+
+      </div>
+
+    </Page>
   );
 }
 

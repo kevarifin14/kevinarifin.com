@@ -4,7 +4,6 @@ slug: limitless
 date: '2020-08-13'
 type: books
 excerpt: How your limits aren't really limits. Techniques to improve your ability to read, learn, and remember to make you superhuman.
-related: newsletters/61
 ---
 
 # 3 Ideas

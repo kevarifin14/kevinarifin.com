@@ -4,7 +4,6 @@ slug: digital-minimalism
 date: '2020-03-12'
 type: books
 excerpt: How our phones have replaced solitude and true leisure and strategies to counteract that to change our relationship with our phones.
-related: newsletters/45
 ---
 ### 3 Ideas
 

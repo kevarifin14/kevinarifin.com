@@ -1,2 +1,3 @@
 /node_modules/**/*.js
 /kevarifin-archive/**/*.js
+tailwind.config.js

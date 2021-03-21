@@ -4,8 +4,8 @@ slug: kochland
 date: '2020-04-23'
 type: books
 excerpt: An inside look at one of the most secretive companies in America.
-related: newsletters/45,newsletters/50
 ---
+
 ## 3 Ideas
 
 1. **As someone in the tech industry, learning about the oil industry is fascinating**

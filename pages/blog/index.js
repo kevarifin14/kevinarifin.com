@@ -2,8 +2,8 @@ import moment from 'moment';
 import { useState } from 'react';
 
 import BlogFilter from 'components/BlogFilter';
-import Layout from 'components/Layout';
-import PostPreview from 'components/PostPreview';
+import Page from 'components/Page';
+import PostCard from 'components/PostCard';
 import { listContentMetadata } from 'utils/content-manager';
 
 export default function Blog({ posts }) {
@@ -17,43 +17,29 @@ export default function Blog({ posts }) {
   ];
 
   return (
-    <>
-      <Layout title="Blog" showLogo>
-        <div className="max-w-screen-md mx-auto px-4">
+    <Page title="Blog">
+      <div className="py-8">
 
-          <div className="flex flex-wrap">
-            {filters.map(({ label, value }) => (
-              <BlogFilter
-                className="mr-2 my-1 sm:my-0"
-                active={filter}
-                value={value}
-                label={label}
-                onClick={() => setFilter(value)}
-              />
-            ))}
-          </div>
+        <div className="flex flex-wrap pb-8">
+          {filters.map(({ label, value }) => (
+            <BlogFilter
+              className="mr-2 my-1 sm:my-0"
+              active={filter}
+              value={value}
+              label={label}
+              onClick={() => setFilter(value)}
+            />
+          ))}
+        </div>
 
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-x-4 lg:gap-y-8">
           {posts
             .filter(({ type }) => (filter == 'all' ? true : type == filter))
-            .map(({
-              title, slug, date, excerpt,
-            }) => (
-              <PostPreview
-                title={title}
-                type="blog"
-                date={date}
-                excerpt={excerpt}
-                slug={slug}
-              />
-            ))}
-
-          <p className="my-4">
-            Moving previous posts soon...
-          </p>
-
+            .map((post) => <PostCard post={post} contentType="blog" />)}
         </div>
-      </Layout>
-    </>
+
+      </div>
+    </Page>
   );
 }
 

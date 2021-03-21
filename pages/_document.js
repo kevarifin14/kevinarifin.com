@@ -6,7 +6,7 @@ import Document, {
 export default class MyDocument extends Document {
   static renderSnippet() {
     const opts = {
-      apiKey: 'RohLHDPf32AKxOig08ifIW5fN1OcB05n',
+      apiKey: process.env.SEGMENT_API_KEY,
       page: true,
     };
     return snippet.min(opts);

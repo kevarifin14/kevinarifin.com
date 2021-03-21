@@ -1,21 +1,21 @@
+import moment from 'moment';
 import Link from 'next/link';
 
-import { formatDateString } from 'utils';
-
 export default function PostPreview({
-  title, excerpt, slug, date, type, hideHr,
+  title, excerpt, slug, date, contentType,
 }) {
   return (
-    <>
-      <Link href={`/${type}/[slug]`} as={`/${type}/${slug}`}>
-        <div className="cursor-pointer my-4">
-          <h2>{title}</h2>
-          <h4 className="mb-2">{formatDateString(date)}</h4>
+    <Link href={`/${contentType}/[slug]`} as={`/${contentType}/${slug}`}>
+      <div className="cursor-pointer my-8">
 
-          <p>{excerpt}</p>
+        <div className="mb-2">
+          <h1>{title}</h1>
+          <h3>{date && moment(date).format('LL')}</h3>
         </div>
-      </Link>
-      {!hideHr && <hr />}
-    </>
+
+        <p>{excerpt}</p>
+
+      </div>
+    </Link>
   );
 }

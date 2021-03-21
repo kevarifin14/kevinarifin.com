@@ -4,7 +4,6 @@ slug: next-from-zero-to-production
 date: '2020-07-16'
 type: technical
 excerpt: An overview of getting a Next app off the ground. I go over creating a Next app, making a simple change, and then doing a serverless deploy with Vercel.
-related: newsletters/57
 ---
 As a technical co-founder, it's important to quickly get a user interface off the ground. Whether as a quick way to interface with an internal SQL database, build a marketing page for your project, or develop a custom interface for your product, frontend development allows you to get your product in the hands of your customers, technical or non-technical, and start the feedback loop of build, learn, and iterate.
 

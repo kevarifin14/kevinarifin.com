@@ -1,24 +1,26 @@
 import BookPost from 'components/BookPost';
-import Layout from 'components/Layout';
+import NewsletterSection from 'components/NewsletterSection';
+import Page from 'components/Page';
 import Post from 'components/Post';
-import PostFooter from 'components/PostFooter';
-import RelatedFooter from 'components/RelatedFooter';
+import RelatedSection from 'components/RelatedSection';
 import { getContent, listContent } from 'utils/content-manager';
 
-export default function PostPage({ content, frontmatter, relatedFrontmatters }) {
+export default function PostPage({ content, frontmatter, relatedPosts }) {
   const { title, type, slug } = frontmatter;
 
   return (
-    <Layout title={title} showLogo>
+    <Page title={title}>
 
       {type == 'books'
         ? <BookPost slug={slug} content={content} />
         : <Post title={title} content={content} />}
 
-      <PostFooter className="max-w-screen-md" />
-      <RelatedFooter className="max-w-screen-md" related={relatedFrontmatters} />
+      {relatedPosts?.length > 0
+        && <RelatedSection className="border-t-2 border-gray-100" posts={relatedPosts} />}
 
-    </Layout>
+      <NewsletterSection className="border-t-2 border-gray-100" />
+
+    </Page>
   );
 }
 
@@ -26,18 +28,18 @@ export async function getStaticProps({ params: { slug } }) {
   const { data: frontmatter, content } = getContent('blog', `${slug}.md`);
   const { related } = frontmatter;
 
-  let relatedFrontmatters = [];
+  let relatedPosts = [];
   if (related) {
     const relatedPaths = related.split(',');
 
-    relatedFrontmatters = relatedPaths.map((relatedPath) => {
+    relatedPosts = relatedPaths.map((relatedPath) => {
       const [contentDir, filename] = relatedPath.split('/');
       const { data: relatedFrontmatter } = getContent(contentDir, `${filename}.md`);
       return { ...relatedFrontmatter, contentType: contentDir };
     });
   }
 
-  return { props: { content, frontmatter, relatedFrontmatters } };
+  return { props: { content, frontmatter, relatedPosts } };
 }
 
 export async function getStaticPaths() {

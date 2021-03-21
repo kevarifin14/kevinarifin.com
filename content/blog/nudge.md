@@ -4,7 +4,6 @@ slug: nudge
 date: '2020-05-08'
 type: books
 excerpt: How small nudges affect our behavior, both for good and for bad, and how we should be mindful of constructing our environment to nudge us in a positive direction.
-related: newsletters/50,newsletters/52
 ---
 ## 3 Ideas
 

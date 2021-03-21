@@ -4,13 +4,12 @@ import {
 } from 'react-html-email';
 import ReactMarkdown from 'react-markdown';
 
-import Layout from 'components/Layout';
-import PostFooter from 'components/PostFooter';
+import Page from 'components/Page';
 import { CodeBlock } from 'utils';
 import { getContent, listContent } from 'utils/content-manager';
 
 export default function Newsletter({ content, frontmatter, latestNewsletterSlug }) {
-  const { title, slug, type } = frontmatter;
+  const { slug, type, title } = frontmatter;
 
   const css = `
     html, body {
@@ -101,43 +100,52 @@ export default function Newsletter({ content, frontmatter, latestNewsletterSlug 
   );
 
   return (
-    <>
-      <Layout title={`Thought Bytes #${slug}`} showLogo>
-        <div className="max-w-screen-sm flex flex-col sm:mx-auto mx-4">
+    <Page title={`Thought Bytes #${slug}`} showLogo>
 
-          <div dangerouslySetInnerHTML={{ __html: renderEmail(email) }} />
+      <div className="max-w-prose prose flex flex-col mx-auto py-8 prose-blue">
 
-          <div className="flex justify-between py-4">
+        <div className="hidden" dangerouslySetInnerHTML={{ __html: renderEmail(email) }} />
+        <Image
+          src={type == 'original' ? '/thought_bytes_original.png' : 'https://kevinarifin.com/thought_bytes.png'}
+          width="100%"
+          style={{ marginBottom: '1em', marginTop: '1em' }}
+        />
 
-            {slug - 1 >= 35
-              ? (
-                <Link href={`/tb/${slug - 1}`}>
-                  <a>
-                    &larr; TB #
-                    {slug - 1}
-                  </a>
-                </Link>
-              ) : <span />}
+        <ReactMarkdown
+          source={content}
+          escapeHtml={false}
+          renderers={{ code: CodeBlock }}
+        />
 
-            {slug + 1 <= latestNewsletterSlug
-            && (
-            <Link href={`/tb/${slug + 1}`}>
-              <a>
-                TB #
-                {slug + 1}
-                {' '}
-                &rarr;
-              </a>
-            </Link>
-            )}
+        <div className="flex justify-between py-4">
 
-          </div>
+          {slug - 1 >= 35
+            ? (
+              <Link href={`/tb/${slug - 1}`}>
+                <a>
+                  &larr; TB #
+                  {slug - 1}
+                </a>
+              </Link>
+            ) : <span />}
+
+          {slug + 1 <= latestNewsletterSlug
+          && (
+          <Link href={`/tb/${slug + 1}`}>
+            <a>
+              TB #
+              {slug + 1}
+              {' '}
+              &rarr;
+            </a>
+          </Link>
+          )}
 
         </div>
 
-        <PostFooter className="max-w-screen-sm" />
-      </Layout>
-    </>
+      </div>
+
+    </Page>
   );
 }
 
