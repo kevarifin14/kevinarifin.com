@@ -24,26 +24,6 @@ a {
     @apply text-primary underline;
 }
 
-.markdown-body {
-    @apply mx-auto;
-
-    img {
-        @apply max-w-full
-    }
-
-    p, h1, h2, h3, h4, ul, i {
-        @apply my-2;
-    }
-
-    h1, h2, h3, h4 {
-        @apply mt-2 font-bold;
-    }
-
-    pre {
-        @apply mx-auto overflow-x-auto max-w-full;
-    }
-}
-
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";

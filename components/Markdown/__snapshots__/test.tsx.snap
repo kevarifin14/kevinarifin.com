@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Markdown matches snapshot 1`] = `
+<div
+  className="max-w-prose w-full prose mx-auto"
+/>
+`;
