@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="favicon" href="/logo.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
       </Head>
 
       <DefaultSeo
