@@ -1,0 +1,14 @@
+overwrite: true
+documents: "queries/*.graphql"
+schema: https://api.notionql.com/graphql/b32a2734-366c-4800-a21a-7c9ca6241eea
+generates:
+  generated/graphql.tsx:
+    config:
+      dedupeOperationSuffix: true
+      withHooks: true
+      withComponent: false
+      withHOC: false
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"

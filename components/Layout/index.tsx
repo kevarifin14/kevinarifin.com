@@ -22,9 +22,9 @@ export default function Layout({ children }: LandingPageLayoutProps) {
           <title>Kevin Arifin</title>
         </Head>
 
-        <div className="flex flex-col px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col">
 
-          <main className="min-h-screen max-w-7xl w-full mx-auto">
+          <main className="min-h-screen w-screen mx-auto">
             <Navbar />
             {children}
           </main>

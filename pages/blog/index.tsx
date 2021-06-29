@@ -4,6 +4,7 @@ import { useState } from 'react';
 import BlogFilter from 'components/BlogFilter';
 import { getLayout } from 'components/Layout';
 import PostCard from 'components/PostCard';
+import Section from 'components/Section';
 import { listContentMetadata } from 'utils/content-manager';
 
 export default function BlogPage({ posts }) {
@@ -17,7 +18,7 @@ export default function BlogPage({ posts }) {
   ];
 
   return (
-    <div>
+    <Section>
       <div className="py-8">
 
         <div className="flex flex-wrap pb-8">
@@ -38,7 +39,7 @@ export default function BlogPage({ posts }) {
         </div>
 
       </div>
-    </div>
+    </Section>
   );
 }
 
@@ -47,11 +48,7 @@ BlogPage.getLayout = getLayout;
 export async function getStaticProps() {
   const posts = listContentMetadata('blog');
   const postsByDate = posts
-    .filter(({ type }) => type !== 'draft')
-    .sort(({ date: date1 }, { date: date2 }) => (
-      -1 * (moment(date1).unix() - moment(date2).unix())
-    ));
-
+    .filter(({ type }) => type !== 'draft');
   return {
     props: { posts: postsByDate },
   };

@@ -1,53 +1,16 @@
-import Link from 'next/link';
-
 import { getLayout } from 'components/Layout';
-import Markdown from 'components/Markdown';
+import NewsletterSection from 'components/NewsletterSection';
+import PostSection from 'components/PostSection';
 import { getContent, listContent } from 'utils/content-manager';
 
-export default function NewsletterPage({ content, frontmatter, latestNewsletterSlug }) {
-  const { slug, type } = frontmatter;
+export default function NewsletterPage({ content, frontmatter }) {
+  const { slug } = frontmatter;
 
   return (
-    <div>
-
-      <div className="max-w-prose flex flex-col mx-auto py-8 space-y-4">
-
-        <img
-          alt="newsletter-logo"
-          src={type === 'original' ? '/thought_bytes_original.png' : '/thought_bytes.png'}
-        />
-
-        <Markdown source={content} />
-
-        <div className="flex justify-between py-4">
-
-          {slug - 1 >= 35
-            ? (
-              <Link href={`/tb/${slug - 1}`}>
-                <a>
-                  &larr; TB #
-                  {slug - 1}
-                </a>
-              </Link>
-            ) : <span />}
-
-          {slug + 1 <= latestNewsletterSlug
-          && (
-          <Link href={`/tb/${slug + 1}`}>
-            <a>
-              TB #
-              {slug + 1}
-              {' '}
-              &rarr;
-            </a>
-          </Link>
-          )}
-
-        </div>
-
-      </div>
-
-    </div>
+    <main>
+      <PostSection title={`Thought Bytes #${slug}`} content={content} />
+      <NewsletterSection className="border-t-2 border-gray-100" />
+    </main>
   );
 }
 

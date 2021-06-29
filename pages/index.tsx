@@ -1,46 +1,56 @@
 import Link from 'next/link';
 
 import { getLayout } from 'components/Layout';
+import Markdown from 'components/Markdown';
+import Section from 'components/Section';
 import SubscribeForm from 'components/SubscribeForm';
-import { listContent } from 'utils/content-manager';
+import { HomePageDocument } from 'generated/graphql';
+import { listContentMetadata } from 'utils/content-manager';
+import { client } from 'utils/notion';
 
-export default function HomePage({ latestNewsletterSlug }) {
+export default function HomePage({ page, posts, newsletters }) {
   return (
-    <div>
+    <main>
 
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center sm:px-6 space-y-8 py-8 sm:py-16">
-
-        <img alt="logo" src="/blue.svg" className="h-40 w-40" />
-
-        <div className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl text-center text-gray-800">
-            Thought Bytes by Kevin Arifin
-          </h1>
-
-          <p className="text-lg sm:text-xl text-center text-gray-600">
-            I send out a weekly newsletter on becoming a technical co-founder
-          </p>
+      <Section className="grid lg:grid-cols-2 py-16 gap-32">
+        <div>
+          <Markdown source={page.blocks.results.map(({ markdown }) => markdown).join('\n')} />
         </div>
 
-        <SubscribeForm />
+        <div className="space-y-16 w-full mx-auto">
 
-        <Link href="/tb/[slug]" as={`/tb/${latestNewsletterSlug}`}>
-          <a className="text-gray-900 no-underline hover:underline">
-            View the latest newsletter &rarr;
-          </a>
-        </Link>
+          <div className="space-y-8 text-lg">
+            <h3>Read the latest article</h3>
 
-      </div>
+            {posts.slice(0, 3).map(({ title, slug }) => <p><Link href={`/blog/${slug}`}><a>{title}</a></Link></p>)}
+          </div>
 
-    </div>
+          <div className="space-y-8 text-lg">
+            <h3>Check out the latest newsletter</h3>
+
+            {newsletters.slice(0, 3).map(({ title, slug }) => <p><Link href={`/tb/${slug}`}><a>{title}</a></Link></p>)}
+          </div>
+        </div>
+
+      </Section>
+
+      <Section color="bg-gray-100" className="py-16">
+        <div className="max-w-lg bg-white p-12 mx-auto space-y-8">
+          <h3 className="text-center">Get my latest posts straight in your inbox</h3>
+          <SubscribeForm />
+        </div>
+      </Section>
+
+    </main>
   );
 }
 
 HomePage.getLayout = getLayout;
 
 export async function getStaticProps() {
-  const filenames = listContent('newsletters');
-  const latestNewsletterSlug = Math.max(...filenames.map((filename) => parseInt(filename, 10)));
+  const { data } = await client.query({ query: HomePageDocument });
+  const posts = listContentMetadata('blog').filter(({ type }) => type !== 'draft');
+  const newsletters = listContentMetadata('newsletters').filter(({ type }) => type !== 'draft');
 
-  return { props: { latestNewsletterSlug } };
+  return { props: { page: data.pages.results[0], posts, newsletters } };
 }

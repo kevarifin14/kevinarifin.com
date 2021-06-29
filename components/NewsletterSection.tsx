@@ -1,5 +1,6 @@
 import { classNames } from 'utils/tailwind';
 
+import Section from './Section';
 import SubscribeForm from './SubscribeForm';
 
 type NewsletterSectionProps = {
@@ -8,7 +9,7 @@ type NewsletterSectionProps = {
 
 export default function NewsletterSection({ className }: NewsletterSectionProps) {
   return (
-    <section className={classNames('py-16', className)}>
+    <Section className={classNames('py-16', className)} color="bg-gray-100">
 
       <div className="lg:flex lg:items-center">
         <div className="lg:w-0 lg:flex-1 space-y-2">
@@ -25,6 +26,6 @@ export default function NewsletterSection({ className }: NewsletterSectionProps)
         <SubscribeForm />
       </div>
 
-    </section>
+    </Section>
   );
 }

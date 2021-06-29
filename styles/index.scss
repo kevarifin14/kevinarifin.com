@@ -9,19 +9,31 @@ html {
 }
 
 h1 {
-    @apply text-2xl;
+    @apply text-4xl font-extrabold;
 }
 
 h2 {
-    @apply text-xl;
+    @apply text-3xl font-extrabold;
 }
 
 h3 {
-    @apply text-lg;
+    @apply text-2xl font-extrabold;
+}
+
+h4 {
+    @apply text-xl font-extrabold;
+}
+
+p {
+    @apply text-gray-600
 }
 
 a {
-    @apply text-primary underline;
+    @apply text-gray-600 border-b-2 border-primary-200 cursor-pointer no-underline pb-0.5 transition duration-300;
+}
+
+a:hover {
+    @apply bg-opacity-25 bg-primary border-primary;
 }
 
 @import "tailwindcss/components";

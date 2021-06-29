@@ -1,6 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import { v4 as uuid } from 'uuid';
+import moment from 'moment';
 
 export interface IPost {
   slug: string,
@@ -27,10 +27,14 @@ export const getContent = (contentDir: IContentDir, filename: string) => {
 export const listContentMetadata = (contentDir: IContentDir) => {
   const files = listMarkdownFiles(contentDir);
 
-  return files.map((filename) => {
-    const { data } = getContent(contentDir, filename);
-    return data;
-  });
+  return files
+    .map((filename) => {
+      const { data } = getContent(contentDir, filename);
+      return data;
+    })
+    .sort(({ date: date1 }, { date: date2 }) => (
+      -1 * (moment(date1).unix() - moment(date2).unix())
+    ));
 };
 
 export const listContent = (contentDir: IContentDir) => {

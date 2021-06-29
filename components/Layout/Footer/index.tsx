@@ -9,7 +9,7 @@ export default function Footer() {
   ];
 
   return (
-    <div className="border-t-2 border-gray-100 py-8 max-w-7xl w-full mx-auto">
+    <div className="py-8 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex justify-center flex-col items-center space-y-4 md:space-y-0 md:flex-row md:justify-between">
 
         <div className="flex space-x-6 md:order-2">

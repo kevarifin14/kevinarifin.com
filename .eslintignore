@@ -1,3 +1,4 @@
 node_modules/
 kevarifin-archive/
 tailwind.config.js
+generated/

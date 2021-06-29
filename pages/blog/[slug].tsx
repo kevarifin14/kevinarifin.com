@@ -1,22 +1,16 @@
-import BookPost from 'components/BookPost';
 import { getLayout } from 'components/Layout';
 import NewsletterSection from 'components/NewsletterSection';
-import Post from 'components/Post';
+import PostSection from 'components/PostSection';
 import { getContent, listContent } from 'utils/content-manager';
 
-export default function PostPage({ content, frontmatter, relatedPosts }) {
-  const { title, type, slug } = frontmatter;
+export default function PostPage({ content, frontmatter }) {
+  const { title } = frontmatter;
 
   return (
-    <div>
-
-      {type === 'books'
-        ? <BookPost slug={slug} content={content} />
-        : <Post title={title} source={content} />}
-
+    <main>
+      <PostSection title={title} content={content} />
       <NewsletterSection className="border-t-2 border-gray-100" />
-
-    </div>
+    </main>
   );
 }
 

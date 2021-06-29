@@ -1,0 +1,11 @@
+query HomePage {
+  pages(filter: {property: "slug", text: {equals: "/"}}) {
+    results {
+      blocks {
+        results {
+          markdown
+        }
+      }
+    }
+  }
+}

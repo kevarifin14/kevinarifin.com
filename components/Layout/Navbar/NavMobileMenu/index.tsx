@@ -1,6 +1,6 @@
+import NavLink from '../NavLink';
 import NavLogo from '../NavLogo';
 import NavCloseButton from './NavCloseButton';
-import NavMobileLink from './NavMobileLink';
 
 export default function NavMobileMenu({ links, onClick }) {
   return (
@@ -18,9 +18,7 @@ export default function NavMobileMenu({ links, onClick }) {
 
         <div className="mt-6">
           <nav className="grid gap-y-8">
-            {links.map(({ title, href, Icon }) => (
-              <NavMobileLink Icon={Icon} href={href}>{title}</NavMobileLink>
-            ))}
+            {links.map((link) => <NavLink link={link} showIcon />)}
           </nav>
         </div>
 

@@ -11,7 +11,7 @@ export default function Markdown({ source }: MarkdownProps) {
   return (
     <ReactMarkdown
       escapeHtml={false}
-      className="max-w-prose w-full prose mx-auto"
+      className="max-w-screen-md w-full prose mx-auto"
       source={source}
       renderers={{ code: CodeBlock, link: MarkdownLink }}
     />

@@ -4,6 +4,7 @@ import {
   HiBookOpen, HiDocumentText, HiMail, HiUser,
 } from 'react-icons/hi';
 
+import { ILink } from './NavLink';
 import NavLogo from './NavLogo';
 import NavMenu from './NavMenu';
 import NavMobileMenu from './NavMobileMenu';
@@ -12,27 +13,27 @@ import NavMenuButton from './NavOpenButton';
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
 
-  const links = [
+  const links: ILink[] = [
     {
       title: 'Blog',
       href: '/blog',
-      Icon: HiDocumentText,
+      icon: HiDocumentText,
     },
     {
       title: 'Newsletter',
       href: '/tb',
-      Icon: HiMail,
+      icon: HiMail,
     },
     {
       title: 'About',
       href: '/about',
-      Icon: HiUser,
+      icon: HiUser,
     },
   ];
 
   return (
-    <div className="relative max-w-7xl mx-auto w-full">
-      <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:space-x-10">
+    <div className="relative max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center pt-4 md:space-x-10">
 
         <NavLogo />
 
@@ -52,7 +53,7 @@ export default function Navbar() {
         leave="duration-100 ease-in"
         leaveFrom="opacity-100 scale-100"
         leaveTo="opacity-0 scale-95"
-        className="absolute top-0 inset-x-0 py-2 transition transform origin-top-right md:hidden"
+        className="absolute top-0 inset-x-0 py-2 transition transform origin-top-right md:hidden z-50"
       >
         <NavMobileMenu
           links={links}
