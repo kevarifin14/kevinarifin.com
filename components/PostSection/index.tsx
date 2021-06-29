@@ -20,7 +20,7 @@ export default function PostSection({ title, content }: PostSectionProps) {
         <Markdown source={content} />
       </div>
 
-      <div className="flex flex-col justify-between px-16">
+      <div className="flex flex-col justify-between lg:px-16">
 
         <div className="space-y-4">
           <div className="space-y-2">

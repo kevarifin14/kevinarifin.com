@@ -15,7 +15,7 @@ type NavLinkProps = {
 export default function NavLink({ link, showIcon = false }: NavLinkProps) {
   return (
     <Link href={link.href}>
-      <a className="flex items-center space-x-3 text-lg font-medium text-gray-500 hover:text-gray-900 no-underline border-transparent hover:border-b-2 hover:border-primary-200 hover:bg-transparent">
+      <a className="flex items-center space-x-3 text-lg font-medium border-transparent hover:bg-transparent">
         {showIcon && (
           <div>
             <link.icon className="flex-shrink-0 h-6 w-6 text-primary" />

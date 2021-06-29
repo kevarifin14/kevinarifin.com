@@ -12,7 +12,7 @@ export default function NewsletterSection({ className }: NewsletterSectionProps)
     <Section className={classNames('py-16', className)} color="bg-gray-100">
 
       <div className="lg:flex lg:items-center">
-        <div className="lg:w-0 lg:flex-1 space-y-2">
+        <div className="lg:w-0 lg:flex-1 space-y-2 pb-4">
 
           <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
             Thought Bytes

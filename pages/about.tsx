@@ -8,7 +8,7 @@ import { getContent } from 'utils/content-manager';
 export default function AboutPage({ content }) {
   return (
     <div>
-      <div className="py-8 space-y-8">
+      <div className="py-8 space-y-8 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center">
           <img alt="kevin" src="/kevin.jpg" className="rounded-full h-48 w-48" />
         </div>
