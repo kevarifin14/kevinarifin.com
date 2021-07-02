@@ -4,4 +4,6 @@ export const pageview = (url) => {
   });
 };
 
-export default {};
+export const event = ({ action, params }: { action: string, params?: any }) => {
+  window.gtag('event', action, params);
+};

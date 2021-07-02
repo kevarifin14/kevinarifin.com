@@ -88,6 +88,13 @@ export type PaginatedListBlock = {
   results?: Maybe<Array<Maybe<Block>>>;
 };
 
+export type PaginatedListbooks = {
+  __typename?: 'PaginatedListbooks';
+  hasMore?: Maybe<Scalars['Boolean']>;
+  nextCursor?: Maybe<Scalars['String']>;
+  results?: Maybe<Array<Maybe<Books>>>;
+};
+
 export type PaginatedListessays = {
   __typename?: 'PaginatedListessays';
   hasMore?: Maybe<Scalars['Boolean']>;
@@ -109,6 +116,13 @@ export type PaginatedListpage = {
   results?: Maybe<Array<Maybe<Page>>>;
 };
 
+export type PaginatedListposts = {
+  __typename?: 'PaginatedListposts';
+  hasMore?: Maybe<Scalars['Boolean']>;
+  nextCursor?: Maybe<Scalars['String']>;
+  results?: Maybe<Array<Maybe<Posts>>>;
+};
+
 export type PaginatedListstratechery = {
   __typename?: 'PaginatedListstratechery';
   hasMore?: Maybe<Scalars['Boolean']>;
@@ -125,27 +139,20 @@ export type PaginatedListtechnical = {
 
 export type Query = {
   __typename?: 'Query';
-  technical?: Maybe<Technical>;
-  technicals?: Maybe<PaginatedListtechnical>;
   page?: Maybe<Page>;
   pages?: Maybe<PaginatedListpage>;
+  post?: Maybe<Posts>;
+  posts?: Maybe<PaginatedListposts>;
+  book?: Maybe<Books>;
+  books?: Maybe<PaginatedListbooks>;
   stratechery?: Maybe<Stratechery>;
   stratecheries?: Maybe<PaginatedListstratechery>;
+  technical?: Maybe<Technical>;
+  technicals?: Maybe<PaginatedListtechnical>;
   kevins42HabitsToBoostYourProductivity?: Maybe<Kevins42HabitsToBoostYourProductivity>;
   kevins42HabitsToBoostYourProductivities?: Maybe<PaginatedListkevins42HabitsToBoostYourProductivity>;
   essay?: Maybe<Essays>;
   essays?: Maybe<PaginatedListessays>;
-};
-
-
-export type QueryTechnicalArgs = {
-  id?: Maybe<Scalars['ID']>;
-};
-
-
-export type QueryTechnicalsArgs = {
-  filter?: Maybe<FilterInput>;
-  sorts?: Maybe<Array<Maybe<SortInput>>>;
 };
 
 
@@ -160,12 +167,45 @@ export type QueryPagesArgs = {
 };
 
 
+export type QueryPostArgs = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryPostsArgs = {
+  filter?: Maybe<FilterInput>;
+  sorts?: Maybe<Array<Maybe<SortInput>>>;
+};
+
+
+export type QueryBookArgs = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryBooksArgs = {
+  filter?: Maybe<FilterInput>;
+  sorts?: Maybe<Array<Maybe<SortInput>>>;
+};
+
+
 export type QueryStratecheryArgs = {
   id?: Maybe<Scalars['ID']>;
 };
 
 
 export type QueryStratecheriesArgs = {
+  filter?: Maybe<FilterInput>;
+  sorts?: Maybe<Array<Maybe<SortInput>>>;
+};
+
+
+export type QueryTechnicalArgs = {
+  id?: Maybe<Scalars['ID']>;
+};
+
+
+export type QueryTechnicalsArgs = {
   filter?: Maybe<FilterInput>;
   sorts?: Maybe<Array<Maybe<SortInput>>>;
 };
@@ -232,6 +272,17 @@ export type TextFilterInput = {
   is_not_empty?: Maybe<Scalars['Boolean']>;
 };
 
+export type Books = {
+  __typename?: 'books';
+  id?: Maybe<Scalars['ID']>;
+  published?: Maybe<Date>;
+  lastUpdated?: Maybe<Scalars['String']>;
+  completed?: Maybe<Date>;
+  readingList?: Maybe<Scalars['Boolean']>;
+  name?: Maybe<Scalars['String']>;
+  blocks?: Maybe<PaginatedListBlock>;
+};
+
 export type Essays = {
   __typename?: 'essays';
   id?: Maybe<Scalars['ID']>;
@@ -260,6 +311,15 @@ export type Page = {
   blocks?: Maybe<PaginatedListBlock>;
 };
 
+export type Posts = {
+  __typename?: 'posts';
+  id?: Maybe<Scalars['ID']>;
+  slug?: Maybe<Scalars['String']>;
+  date?: Maybe<Date>;
+  name?: Maybe<Scalars['String']>;
+  blocks?: Maybe<PaginatedListBlock>;
+};
+
 export type Stratechery = {
   __typename?: 'stratechery';
   id?: Maybe<Scalars['ID']>;
@@ -281,6 +341,20 @@ export type Technical = {
   blocks?: Maybe<PaginatedListBlock>;
 };
 
+export type PageFieldsFragment = (
+  { __typename?: 'PaginatedListpage' }
+  & { results?: Maybe<Array<Maybe<(
+    { __typename?: 'page' }
+    & { blocks?: Maybe<(
+      { __typename?: 'PaginatedListBlock' }
+      & { results?: Maybe<Array<Maybe<(
+        { __typename?: 'Block' }
+        & Pick<Block, 'markdown'>
+      )>>> }
+    )> }
+  )>>> }
+);
+
 export type HomePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -288,9 +362,66 @@ export type HomePageQuery = (
   { __typename?: 'Query' }
   & { pages?: Maybe<(
     { __typename?: 'PaginatedListpage' }
+    & PageFieldsFragment
+  )> }
+);
+
+export type AboutPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AboutPageQuery = (
+  { __typename?: 'Query' }
+  & { pages?: Maybe<(
+    { __typename?: 'PaginatedListpage' }
+    & PageFieldsFragment
+  )> }
+);
+
+export type NewsletterPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type NewsletterPageQuery = (
+  { __typename?: 'Query' }
+  & { pages?: Maybe<(
+    { __typename?: 'PaginatedListpage' }
+    & PageFieldsFragment
+  )> }
+);
+
+export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PostsQuery = (
+  { __typename?: 'Query' }
+  & { posts?: Maybe<(
+    { __typename?: 'PaginatedListposts' }
     & { results?: Maybe<Array<Maybe<(
-      { __typename?: 'page' }
-      & { blocks?: Maybe<(
+      { __typename?: 'posts' }
+      & Pick<Posts, 'slug' | 'name'>
+      & { date?: Maybe<(
+        { __typename?: 'Date' }
+        & Pick<Date, 'start'>
+      )> }
+    )>>> }
+  )> }
+);
+
+export type PostBySlugQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type PostBySlugQuery = (
+  { __typename?: 'Query' }
+  & { posts?: Maybe<(
+    { __typename?: 'PaginatedListposts' }
+    & { results?: Maybe<Array<Maybe<(
+      { __typename?: 'posts' }
+      & Pick<Posts, 'name' | 'slug' | 'id'>
+      & { date?: Maybe<(
+        { __typename?: 'Date' }
+        & Pick<Date, 'start'>
+      )>, blocks?: Maybe<(
         { __typename?: 'PaginatedListBlock' }
         & { results?: Maybe<Array<Maybe<(
           { __typename?: 'Block' }
@@ -301,20 +432,24 @@ export type HomePageQuery = (
   )> }
 );
 
-
-export const HomePageDocument = gql`
-    query HomePage {
-  pages(filter: {property: "slug", text: {equals: "/"}}) {
-    results {
-      blocks {
-        results {
-          markdown
-        }
+export const PageFieldsFragmentDoc = gql`
+    fragment PageFields on PaginatedListpage {
+  results {
+    blocks {
+      results {
+        markdown
       }
     }
   }
 }
     `;
+export const HomePageDocument = gql`
+    query HomePage {
+  pages(filter: {property: "slug", text: {equals: "/"}}) {
+    ...PageFields
+  }
+}
+    ${PageFieldsFragmentDoc}`;
 
 /**
  * __useHomePageQuery__
@@ -342,3 +477,158 @@ export function useHomePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<H
 export type HomePageQueryHookResult = ReturnType<typeof useHomePageQuery>;
 export type HomePageLazyQueryHookResult = ReturnType<typeof useHomePageLazyQuery>;
 export type HomePageQueryResult = Apollo.QueryResult<HomePageQuery, HomePageQueryVariables>;
+export const AboutPageDocument = gql`
+    query AboutPage {
+  pages(filter: {property: "slug", text: {equals: "about"}}) {
+    ...PageFields
+  }
+}
+    ${PageFieldsFragmentDoc}`;
+
+/**
+ * __useAboutPageQuery__
+ *
+ * To run a query within a React component, call `useAboutPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useAboutPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useAboutPageQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useAboutPageQuery(baseOptions?: Apollo.QueryHookOptions<AboutPageQuery, AboutPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<AboutPageQuery, AboutPageQueryVariables>(AboutPageDocument, options);
+      }
+export function useAboutPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AboutPageQuery, AboutPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<AboutPageQuery, AboutPageQueryVariables>(AboutPageDocument, options);
+        }
+export type AboutPageQueryHookResult = ReturnType<typeof useAboutPageQuery>;
+export type AboutPageLazyQueryHookResult = ReturnType<typeof useAboutPageLazyQuery>;
+export type AboutPageQueryResult = Apollo.QueryResult<AboutPageQuery, AboutPageQueryVariables>;
+export const NewsletterPageDocument = gql`
+    query NewsletterPage {
+  pages(filter: {property: "slug", text: {equals: "newsletter"}}) {
+    ...PageFields
+  }
+}
+    ${PageFieldsFragmentDoc}`;
+
+/**
+ * __useNewsletterPageQuery__
+ *
+ * To run a query within a React component, call `useNewsletterPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useNewsletterPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useNewsletterPageQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useNewsletterPageQuery(baseOptions?: Apollo.QueryHookOptions<NewsletterPageQuery, NewsletterPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<NewsletterPageQuery, NewsletterPageQueryVariables>(NewsletterPageDocument, options);
+      }
+export function useNewsletterPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<NewsletterPageQuery, NewsletterPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<NewsletterPageQuery, NewsletterPageQueryVariables>(NewsletterPageDocument, options);
+        }
+export type NewsletterPageQueryHookResult = ReturnType<typeof useNewsletterPageQuery>;
+export type NewsletterPageLazyQueryHookResult = ReturnType<typeof useNewsletterPageLazyQuery>;
+export type NewsletterPageQueryResult = Apollo.QueryResult<NewsletterPageQuery, NewsletterPageQueryVariables>;
+export const PostsDocument = gql`
+    query Posts {
+  posts {
+    results {
+      date {
+        start
+      }
+      slug
+      name
+    }
+  }
+}
+    `;
+
+/**
+ * __usePostsQuery__
+ *
+ * To run a query within a React component, call `usePostsQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePostsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePostsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePostsQuery(baseOptions?: Apollo.QueryHookOptions<PostsQuery, PostsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PostsQuery, PostsQueryVariables>(PostsDocument, options);
+      }
+export function usePostsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PostsQuery, PostsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PostsQuery, PostsQueryVariables>(PostsDocument, options);
+        }
+export type PostsQueryHookResult = ReturnType<typeof usePostsQuery>;
+export type PostsLazyQueryHookResult = ReturnType<typeof usePostsLazyQuery>;
+export type PostsQueryResult = Apollo.QueryResult<PostsQuery, PostsQueryVariables>;
+export const PostBySlugDocument = gql`
+    query PostBySlug($slug: String!) {
+  posts(filter: {text: {equals: $slug}, property: "Slug"}) {
+    results {
+      name
+      date {
+        start
+      }
+      slug
+      id
+      blocks {
+        results {
+          markdown
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __usePostBySlugQuery__
+ *
+ * To run a query within a React component, call `usePostBySlugQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePostBySlugQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePostBySlugQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function usePostBySlugQuery(baseOptions: Apollo.QueryHookOptions<PostBySlugQuery, PostBySlugQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PostBySlugQuery, PostBySlugQueryVariables>(PostBySlugDocument, options);
+      }
+export function usePostBySlugLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PostBySlugQuery, PostBySlugQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PostBySlugQuery, PostBySlugQueryVariables>(PostBySlugDocument, options);
+        }
+export type PostBySlugQueryHookResult = ReturnType<typeof usePostBySlugQuery>;
+export type PostBySlugLazyQueryHookResult = ReturnType<typeof usePostBySlugLazyQuery>;
+export type PostBySlugQueryResult = Apollo.QueryResult<PostBySlugQuery, PostBySlugQueryVariables>;

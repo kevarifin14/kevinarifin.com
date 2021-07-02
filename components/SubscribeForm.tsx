@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import Button from 'components/Button';
 import Input from 'components/Input';
 import useNotifications from 'hooks/useNotifications';
+import { event } from 'utils/googleAnalytics';
 import { post } from 'utils/http';
 
 type SubscribeFormProps = {
@@ -16,6 +17,8 @@ export default function SubscribeForm({ className }: SubscribeFormProps) {
 
   const handleSubscribe = async ({ email }) => {
     await post('/api/sendgrid/marketing/contacts', { email });
+
+    event({ action: 'subscribe' });
 
     addSuccessNotification({
       title: 'Thanks for subscribing!',

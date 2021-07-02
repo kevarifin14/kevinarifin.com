@@ -1,4 +1,5 @@
 import { Transition } from '@headlessui/react';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import {
   HiBookOpen, HiDocumentText, HiMail, HiUser,
@@ -11,22 +12,26 @@ import NavMobileMenu from './NavMobileMenu';
 import NavMenuButton from './NavOpenButton';
 
 export default function Navbar() {
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
 
   const links: ILink[] = [
     {
       title: 'Blog',
       href: '/blog',
+      active: router.pathname.includes('/blog'),
       icon: HiDocumentText,
     },
     {
       title: 'Newsletter',
-      href: '/tb',
+      href: '/newsletter',
+      active: router.pathname.includes('/newsletter'),
       icon: HiMail,
     },
     {
       title: 'About',
       href: '/about',
+      active: router.pathname.includes('/about'),
       icon: HiUser,
     },
   ];

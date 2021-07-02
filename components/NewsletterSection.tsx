@@ -1,29 +1,29 @@
 import { classNames } from 'utils/tailwind';
 
+import Markdown from './Markdown';
 import Section from './Section';
 import SubscribeForm from './SubscribeForm';
 
 type NewsletterSectionProps = {
+  content: string,
   className?: string
 }
 
-export default function NewsletterSection({ className }: NewsletterSectionProps) {
+export default function NewsletterSection({ className, content }: NewsletterSectionProps) {
   return (
     <Section className={classNames('py-16', className)} color="bg-gray-100">
 
-      <div className="lg:flex lg:items-center">
-        <div className="lg:w-0 lg:flex-1 space-y-2 pb-4">
-
-          <h1 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-            Thought Bytes
-          </h1>
-
-          <h2 className="text-xl text-gray-500 ">
-            Get the newsletter in your inbox every Thursday
-          </h2>
+      <div className="grid lg:grid-cols-2 lg:gap-16">
+        <div className="space-y-2 pb-4">
+          <Markdown>{content}</Markdown>
         </div>
 
-        <SubscribeForm />
+        <div className="mx-auto space-y-8">
+          <div className="bg-white p-16 space-y-8">
+            <h4 className="text-center">Get Personal Growth Hacks in your inbox</h4>
+            <SubscribeForm />
+          </div>
+        </div>
       </div>
 
     </Section>

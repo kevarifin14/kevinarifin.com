@@ -1,19 +1,37 @@
+import moment from 'moment';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
-import CodeBlock from './CodeBlock';
-import MarkdownLink from './MarkdownLink';
+// import CodeBlock from './CodeBlock';
 
 type MarkdownProps = {
-  source: string
+  title?: string,
+  date?: string,
+  children: string
 };
 
-export default function Markdown({ source }: MarkdownProps) {
+export default function Markdown({ title, date, children }: MarkdownProps) {
   return (
-    <ReactMarkdown
-      escapeHtml={false}
-      className="max-w-screen-md w-full prose mx-auto"
-      source={source}
-      renderers={{ code: CodeBlock, link: MarkdownLink }}
-    />
+    <div className="max-w-screen-md w-full mx-auto">
+
+      {(title || date) && (
+        <div className="space-y-4 pb-8">
+          {title && <h1 className="text-5xl">{title}</h1>}
+          {date && <p className="text-sm">{`Kevin Arifin | ${moment(date).format('LL')}`}</p>}
+        </div>
+      )}
+
+      <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
+        className="prose w-full max-w-screen-md"
+        linkTarget="_blank"
+        // components={{
+        //   code: CodeBlock,
+        // }}
+      >
+        {children}
+      </ReactMarkdown>
+
+    </div>
   );
 }

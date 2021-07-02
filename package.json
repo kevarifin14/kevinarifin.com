@@ -36,8 +36,9 @@
     "react-hook-form": "^7.8.4",
     "react-html-email": "^3.0.0",
     "react-icons": "^4.2.0",
-    "react-markdown": "^4.3.1",
+    "react-markdown": "^6.0.2",
     "react-syntax-highlighter": "^12.2.1",
+    "rehype-raw": "^5.1.0",
     "sal.js": "^0.7.7",
     "sass": "^1.26.10",
     "uuid": "^8.3.0"
@@ -49,6 +50,7 @@
     "@graphql-codegen/typescript-react-apollo": "^2.2.7",
     "@types/gtag.js": "0.0.5",
     "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.170",
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.11",
     "@types/react-syntax-highlighter": "^13.5.0",

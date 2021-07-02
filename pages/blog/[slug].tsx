@@ -4,11 +4,11 @@ import PostSection from 'components/PostSection';
 import { getContent, listContent } from 'utils/content-manager';
 
 export default function PostPage({ content, frontmatter }) {
-  const { title } = frontmatter;
+  const { title, date } = frontmatter;
 
   return (
     <main>
-      <PostSection title={title} content={content} />
+      <PostSection title={title} date={date} content={content} />
       <NewsletterSection className="border-t-2 border-gray-100" />
     </main>
   );
