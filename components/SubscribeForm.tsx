@@ -29,7 +29,7 @@ export default function SubscribeForm({ className }: SubscribeFormProps) {
   return (
     <form
       className={[
-        'grid', 'grid-cols-1fr-auto', 'sm:mx-auto', 'gap-2',
+        'grid', 'lg:grid-cols-1fr-auto', 'sm:mx-auto', 'gap-2',
         className,
       ].join(' ')}
       onSubmit={handleSubmit(handleSubscribe)}
