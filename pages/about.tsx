@@ -1,36 +1,34 @@
-import ReactMarkdown from 'react-markdown';
-
 import { getLayout } from 'components/Layout';
 import Markdown from 'components/Markdown';
-import SubscribeForm from 'components/SubscribeForm';
-import { getContent } from 'utils/content-manager';
+import NewsletterSection from 'components/NewsletterSection';
+import Section from 'components/Section';
+import { AboutPageDocument, NewsletterPageDocument } from 'generated/graphql';
+import { client } from 'utils/notion';
 
-export default function AboutPage({ content }) {
+export default function AboutPage({ content, newsletterSectionContent }) {
   return (
-    <div>
-      <div className="py-8 space-y-8 px-4 sm:px-6 lg:px-8">
+    <main>
+      <Section className="py-16">
         <div className="flex justify-center">
           <img alt="kevin" src="/kevin.jpg" className="rounded-full h-48 w-48" />
         </div>
 
-        <Markdown source={content} />
+        <Markdown>{content}</Markdown>
+      </Section>
 
-        <div className="flex flex-col justify-center max-w-lg text-center mx-auto mb-8 space-y-4">
-          <h3>
-            Get my newsletter on becoming a technical co-founder
-            <span role="img" aria-label="point-down">👇</span>
-          </h3>
-          <SubscribeForm className="max-w-sm mx-auto" />
-        </div>
-
-      </div>
-    </div>
+      <NewsletterSection content={newsletterSectionContent} />
+    </main>
   );
 }
 
 AboutPage.getLayout = getLayout;
 
 export async function getStaticProps() {
-  const { content } = getContent('', 'about.md');
-  return { props: { content } };
+  const { data: { pages } } = await client.query({ query: NewsletterPageDocument });
+  const newsletterSectionContent = pages.results[0].blocks.results.map(({ markdown }) => markdown).join('\n');
+
+  const { data } = await client.query({ query: AboutPageDocument });
+  const content = data.pages.results[0].blocks.results.map(({ markdown }) => markdown).join('\n');
+
+  return { props: { content, newsletterSectionContent } };
 }

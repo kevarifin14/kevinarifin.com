@@ -2,20 +2,25 @@ import Link from 'next/link';
 
 import { getLayout } from 'components/Layout';
 import Markdown from 'components/Markdown';
+import NewsletterSection from 'components/NewsletterSection';
 import Section from 'components/Section';
 import SubscribeForm from 'components/SubscribeForm';
-import { HomePageDocument } from 'generated/graphql';
+import { HomePageDocument, NewsletterPageDocument } from 'generated/graphql';
+import { getAllNewsletters } from 'utils';
 import { listContentMetadata } from 'utils/content-manager';
 import { client } from 'utils/notion';
 
-export default function HomePage({ page, posts, newsletters }) {
+export default function HomePage({
+  page, posts, newsletters, newsletterSectionContent,
+}) {
   return (
     <main>
 
       <Section className="grid lg:grid-cols-2 py-16 gap-32">
-        <div>
-          <Markdown source={page.blocks.results.map(({ markdown }) => markdown).join('\n')} />
-        </div>
+
+        <Markdown>
+          {page.blocks.results.map(({ markdown }) => markdown).join('\n')}
+        </Markdown>
 
         <div className="space-y-16 w-full mx-auto">
 
@@ -28,18 +33,13 @@ export default function HomePage({ page, posts, newsletters }) {
           <div className="space-y-8 text-lg">
             <h3>Check out the latest newsletter</h3>
 
-            {newsletters.slice(0, 3).map(({ title, slug }) => <p><Link href={`/tb/${slug}`}><a>{title}</a></Link></p>)}
+            {newsletters.slice(0, 3).map(({ title, slug }) => <p><Link href={`/newsletter/${slug}`}><a>{title}</a></Link></p>)}
           </div>
         </div>
 
       </Section>
 
-      <Section color="bg-gray-100" className="py-16">
-        <div className="max-w-lg bg-white p-12 mx-auto space-y-8">
-          <h3 className="text-center">Get my latest posts straight in your inbox</h3>
-          <SubscribeForm />
-        </div>
-      </Section>
+      <NewsletterSection content={newsletterSectionContent} />
 
     </main>
   );
@@ -48,9 +48,16 @@ export default function HomePage({ page, posts, newsletters }) {
 HomePage.getLayout = getLayout;
 
 export async function getStaticProps() {
+  const { data: { pages } } = await client.query({ query: NewsletterPageDocument });
+  const newsletterSectionContent = pages.results[0].blocks.results.map(({ markdown }) => markdown).join('\n');
+
   const { data } = await client.query({ query: HomePageDocument });
   const posts = listContentMetadata('blog').filter(({ type }) => type !== 'draft');
-  const newsletters = listContentMetadata('newsletters').filter(({ type }) => type !== 'draft');
+  const newsletters = await getAllNewsletters();
 
-  return { props: { page: data.pages.results[0], posts, newsletters } };
+  return {
+    props: {
+      page: data.pages.results[0], posts, newsletters, newsletterSectionContent,
+    },
+  };
 }

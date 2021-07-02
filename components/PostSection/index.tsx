@@ -1,3 +1,4 @@
+import moment from 'moment';
 import Link from 'next/link';
 
 import Markdown from 'components/Markdown';
@@ -5,24 +6,19 @@ import Section from 'components/Section';
 
 type PostSectionProps = {
   title: string,
+  date: string,
   content: string,
 }
 
-export default function PostSection({ title, content }: PostSectionProps) {
+export default function PostSection({ title, date, content }: PostSectionProps) {
   return (
     <Section className="grid lg:grid-cols-auto-1fr gap-16 pb-16 pt-8">
 
-      <div>
-        <div className="prose pb-8">
-          <h1>{title}</h1>
-        </div>
+      <Markdown title={title} date={date}>{content}</Markdown>
 
-        <Markdown source={content} />
-      </div>
+      <div className="flex flex-col justify-between lg:px-8">
 
-      <div className="flex flex-col justify-between lg:px-16">
-
-        <div className="space-y-4">
+        <div className="space-y-8">
           <div className="space-y-2">
             <p className="text-primary text-xs uppercase font-bold">About the author</p>
             <p>

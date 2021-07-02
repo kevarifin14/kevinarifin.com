@@ -5,6 +5,7 @@ export interface ILink {
   href: string,
   title: string,
   icon?: typeof HiMenu,
+  active?: boolean,
 }
 
 type NavLinkProps = {
@@ -15,7 +16,7 @@ type NavLinkProps = {
 export default function NavLink({ link, showIcon = false }: NavLinkProps) {
   return (
     <Link href={link.href}>
-      <a className="flex items-center space-x-3 text-lg font-medium border-transparent hover:bg-transparent">
+      <a className={`flex items-center space-x-3 text-lg font-medium border-transparent hover:bg-transparent ${link.active ? 'border-primary' : ''}`}>
         {showIcon && (
           <div>
             <link.icon className="flex-shrink-0 h-6 w-6 text-primary" />

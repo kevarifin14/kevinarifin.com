@@ -18,6 +18,7 @@ module.exports = {
         },
       },
       gridTemplateColumns: {
+        'auto-auto-1fr': 'auto auto 1fr',
         '1fr-auto': '1fr auto',
         'auto-1fr': 'auto 1fr',
       },
@@ -28,6 +29,9 @@ module.exports = {
               textDecoration: 'none',
               color: '#4B5563',
             },
+            li: {
+              color: '#4B5563',
+            }
           },
         },
       },

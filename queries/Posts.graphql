@@ -1,0 +1,31 @@
+query Posts {
+  posts {
+    results {
+      date {
+        start
+      }
+      slug
+      name
+    }
+  }
+}
+
+query PostBySlug($slug: String!) {
+  posts(filter: {text: {equals: $slug}, property: "Slug"}) {
+    results {
+      name
+      date {
+        start
+      }
+      slug
+      id
+      blocks {
+        results {
+          markdown
+        }
+      }
+    }
+  }
+}
+
+
