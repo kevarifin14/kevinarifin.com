@@ -11,7 +11,7 @@ handler.post(async (req, res, next) => {
   const { sendgridClient } = req;
   const { email } = req.body;
 
-  sendgridClient.request({
+  await sendgridClient.request({
     url: '/v3/marketing/contacts',
     method: 'PUT',
     body: { contacts: [{ email }] },
