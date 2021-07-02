@@ -16,7 +16,7 @@ export default function PostSection({ title, date, content }: PostSectionProps) 
 
       <Markdown title={title} date={date}>{content}</Markdown>
 
-      <div className="flex flex-col justify-between lg:px-8">
+      <div className="flex flex-col justify-between lg:pl-4 xl:pl-8">
 
         <div className="space-y-8">
           <div className="space-y-2">

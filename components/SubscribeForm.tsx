@@ -18,7 +18,7 @@ export default function SubscribeForm({ className }: SubscribeFormProps) {
   const handleSubscribe = async ({ email }) => {
     await post('/api/sendgrid/marketing/contacts', { email });
 
-    event({ action: 'subscribe' });
+    event({ action: 'subscribe', params: { email } });
 
     addSuccessNotification({
       title: 'Thanks for subscribing!',

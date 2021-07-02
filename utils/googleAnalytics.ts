@@ -5,5 +5,5 @@ export const pageview = (url) => {
 };
 
 export const event = ({ action, params }: { action: string, params?: any }) => {
-  window.gtag('event', action, params);
+  window?.gtag('event', action, params);
 };

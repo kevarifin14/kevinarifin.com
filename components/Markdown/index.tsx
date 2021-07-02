@@ -16,7 +16,7 @@ export default function Markdown({ title, date, children }: MarkdownProps) {
 
       {(title || date) && (
         <div className="space-y-4 pb-8">
-          {title && <h1 className="text-5xl">{title}</h1>}
+          {title && <h1 className="text-4xl md:text-5xl">{title}</h1>}
           {date && <p className="text-sm">{`Kevin Arifin | ${moment(date).format('LL')}`}</p>}
         </div>
       )}
