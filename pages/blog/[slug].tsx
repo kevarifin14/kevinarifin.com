@@ -1,54 +1,31 @@
-import { getLayout } from 'components/Layout';
-import NewsletterSection from 'components/NewsletterSection';
-import PostSection from 'components/PostSection';
-import { NewsletterPageDocument } from 'generated/graphql';
-import { getContent, listContent } from 'utils/content-manager';
-import { client } from 'utils/notion';
+import { GetStaticProps, GetStaticPropsContext } from "next";
 
-export default function PostPage({ content, frontmatter, newsletterSectionContent }) {
-  const { title, date } = frontmatter;
+import { getLayout } from "components/Layout";
+import PostPage from "components/PostPage";
 
-  return (
-    <main>
-      <PostSection title={title} date={date} content={content} />
-      <NewsletterSection content={newsletterSectionContent} className="border-t-2 border-gray-100" />
-    </main>
-  );
+import { parseRawPost } from "lib/posts";
+import { getPostData, getPostSlugs } from "lib/posts/server";
+import { IRawPost } from "lib/types";
+
+type PostProps = {
+  rawPost: IRawPost;
+  code: string;
+};
+
+export default function Post({ rawPost, code }: PostProps) {
+  return <PostPage post={parseRawPost(rawPost)} code={code} />;
 }
 
-PostPage.getLayout = getLayout;
-
-export async function getStaticProps({ params: { slug } }) {
-  const { data: { pages } } = await client.query({ query: NewsletterPageDocument });
-  const newsletterSectionContent = pages.results[0].blocks.results.map(({ markdown }) => markdown).join('\n');
-
-  const { data: frontmatter, content } = getContent('blog', `${slug}.md`);
-  const { related } = frontmatter;
-
-  let relatedPosts = [];
-  if (related) {
-    const relatedPaths = related.split(',');
-
-    relatedPosts = relatedPaths.map((relatedPath) => {
-      const [contentDir, filename] = relatedPath.split('/');
-      const { data: relatedFrontmatter } = getContent(contentDir, `${filename}.md`);
-      return { ...relatedFrontmatter, contentType: contentDir };
-    });
-  }
-
-  return {
-    props: {
-      content, frontmatter, relatedPosts, newsletterSectionContent,
-    },
-  };
-}
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: GetStaticPropsContext) => {
+  const postData = await getPostData(params?.slug as string);
+  return { props: { ...postData } };
+};
 
 export async function getStaticPaths() {
-  const markdownFilenames = listContent('blog');
-  return {
-    paths: markdownFilenames.map((filename) => ({
-      params: { slug: filename },
-    })),
-    fallback: false,
-  };
+  const paths = getPostSlugs();
+  return { paths, fallback: false };
 }
+
+Post.getLayout = getLayout;

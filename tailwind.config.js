@@ -1,48 +1,45 @@
+const colors = require("tailwindcss/colors");
+
+const primaryColor = colors.blue;
+const primary = {
+  light: primaryColor[300],
+  DEFAULT: primaryColor[400],
+  dark: primaryColor[500],
+  ...primaryColor,
+};
+
+const lightColor = colors.zinc;
+const light = {
+  light: colors.white,
+  DEFAULT: lightColor[50],
+  dark: lightColor[100],
+  ...lightColor,
+};
+
+const darkColor = colors.zinc;
+const dark = {
+  light: darkColor[700],
+  DEFAULT: darkColor[800],
+  dark: darkColor[900],
+  ...darkColor,
+};
+
 module.exports = {
-  purge: [],
+  darkMode: "class",
+  content: ["./pages/**/*.tsx", "./components/**/*.tsx"],
   theme: {
     extend: {
       colors: {
-        primary: {
-          900: '#407acd',
-          800: '#4f85d1',
-          700: '#5f90d5',
-          600: '#6f9bd9',
-          500: '#7ea6dd',
-          400: '#8eb0e1',
-          300: '#9dbbe5',
-          200: '#adc6e9',
-          100: '#bcd1ed',
-          50: '#ccdbf2',
-          DEFAULT: '#5f90d5',
-        },
-      },
-      gridTemplateColumns: {
-        'auto-auto-1fr': 'auto auto 1fr',
-        '1fr-auto': '1fr auto',
-        'auto-1fr': 'auto 1fr',
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              textDecoration: 'none',
-              color: '#4B5563',
-            },
-            li: {
-              color: '#4B5563',
-            }
-          },
-        },
+        light,
+        dark,
+        primary,
       },
     },
   },
   variants: {
     extend: {
-      borderWidth: ['hover'],
+      typography: ["dark"],
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

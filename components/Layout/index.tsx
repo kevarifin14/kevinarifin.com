@@ -1,41 +1,30 @@
-import Head from 'next/head';
-import { ReactNode } from 'react';
+import Head from "next/head";
+import { ReactElement, ReactNode } from "react";
 
-import NotificationOverlay from 'components/NotificationOverlay';
-import NotificationProvider from 'components/NotificationProvider';
-
-import Footer from './Footer';
-import Navbar from './Navbar';
+import { Footer } from "./Footer";
+import { Navbar } from "./Navbar";
+import { Providers } from "./Providers";
 
 type LandingPageLayoutProps = {
-  children: ReactNode,
+  children: ReactNode;
 };
 
 export default function Layout({ children }: LandingPageLayoutProps) {
   return (
-    <NotificationProvider>
+    <Providers>
+      <Head>
+        <title>Kevin Arifin</title>
+      </Head>
 
-      <NotificationOverlay />
+      <div className="min-h-screen">
+        <Navbar />
 
-      <div>
-        <Head>
-          <title>Kevin Arifin</title>
-        </Head>
-
-        <div className="flex flex-col">
-
-          <main className="min-h-screen w-screen mx-auto">
-            <Navbar />
-            {children}
-          </main>
-
-          <Footer />
-
-        </div>
-
+        {children}
       </div>
-    </NotificationProvider>
+
+      <Footer />
+    </Providers>
   );
 }
 
-export const getLayout = (page) => <Layout>{page}</Layout>;
+export const getLayout = (page: ReactElement) => <Layout>{page}</Layout>;

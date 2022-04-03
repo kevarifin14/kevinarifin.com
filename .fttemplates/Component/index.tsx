@@ -2,7 +2,7 @@ type <FTName>Props = {
 
 };
 
-export default function <FTName>({
+export function <FTName>({
 
 }: <FTName>Props) {
   return (
