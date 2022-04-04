@@ -14,6 +14,7 @@ type TagPageProps = {
 export function TagPage({ posts }: TagPageProps) {
   const router = useRouter();
   const postTag = POST_TAGS.find((p) => p.name === router.query.tag)!;
+  const filteredPosts = posts.filter((post) => post.tags.includes(postTag));
 
   return (
     <div className="prose mx-auto px-4 dark:prose-invert">
@@ -27,10 +28,10 @@ export function TagPage({ posts }: TagPageProps) {
       <PostTagCard postTag={postTag!} />
 
       <div className="flex flex-col divide-y dark:divide-dark-light">
-        {posts.length === 0 ? (
+        {filteredPosts.length === 0 ? (
           <h1 className="py-8 text-center">Coming soon...</h1>
         ) : (
-          posts.map((post) => (
+          filteredPosts.map((post) => (
             <button
               key={post.slug}
               onClick={() => router.push(`/blog/${post.slug}`)}

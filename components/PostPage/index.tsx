@@ -3,8 +3,9 @@ import { useMemo } from "react";
 
 import Breadcrumbs from "components/Breadcrumbs";
 import { PostTagCard } from "components/PostTagCard";
+import { SyntaxHighlighter } from "components/SyntaxHighlighter";
 
-import { IPost, IPostTag } from "lib/types";
+import { IPost } from "lib/types";
 
 type PostPageProps = {
   code: string;
@@ -12,7 +13,7 @@ type PostPageProps = {
 };
 
 export default function PostPage({ code, post }: PostPageProps) {
-  const Content = useMemo(() => getMDXComponent(code), [code]);
+  const Component = useMemo(() => getMDXComponent(code), [code]);
   const primaryPostTag = post.tags[0];
 
   const breadcrumbs = [
@@ -27,7 +28,7 @@ export default function PostPage({ code, post }: PostPageProps) {
   ];
 
   return (
-    <article className="prose mx-auto w-full max-w-prose dark:prose-invert">
+    <article className="prose mx-auto w-full max-w-prose dark:prose-invert px-4">
       <Breadcrumbs breadcrumbs={breadcrumbs} className="pb-4" />
 
       <PostTagCard
@@ -35,7 +36,7 @@ export default function PostPage({ code, post }: PostPageProps) {
         title={post.title}
         description={post.displayDate}
       />
-      <Content />
+      <Component components={{ pre: SyntaxHighlighter }} />
     </article>
   );
 }
