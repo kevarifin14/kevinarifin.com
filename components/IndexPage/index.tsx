@@ -20,7 +20,7 @@ export function IndexPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-8 sm:px-6 lg:px-4">
-      <section className="prose space-y-4 py-16 text-2xl dark:prose-invert md:text-3xl lg:text-4xl">
+      <section className="prose space-y-4 py-16 text-xl sm:text-2xl dark:prose-invert md:text-3xl lg:text-4xl">
         <h1 className="my-0">{title}</h1>
 
         <h1 className="flex flex-col sm:flex-row">
