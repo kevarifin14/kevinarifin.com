@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Typewriter, { Options } from "typewriter-effect";
 
-import { PostTagCard } from "components/PostTagCard";
+import { Button3 } from "components/Button3";
 
 import { POST_TAGS } from "lib/constants";
 
@@ -19,8 +19,8 @@ export function IndexPage() {
   const subtitle = "I write about";
 
   return (
-    <div className="mx-auto max-w-5xl px-4">
-      <div className="prose space-y-4 py-16 text-2xl dark:prose-invert md:text-3xl lg:text-4xl">
+    <div className="mx-auto max-w-5xl px-8 sm:px-6 lg:px-4">
+      <section className="prose space-y-4 py-16 text-2xl dark:prose-invert md:text-3xl lg:text-4xl">
         <h1 className="my-0">{title}</h1>
 
         <h1 className="flex flex-col sm:flex-row">
@@ -42,29 +42,56 @@ export function IndexPage() {
             }}
           />
         </h1>
-      </div>
+      </section>
 
       <div className="grid gap-8 sm:grid-cols-3">
-        <button
+        <Button3
           onClick={() => router.push(`/${POST_TAGS[0].name.toLowerCase()}`)}
           className="-rotate-1 transform sm:-rotate-3"
+          color={POST_TAGS[0].color}
         >
-          <PostTagCard postTag={POST_TAGS[0]} />
-        </button>
+          <div className="prose prose-invert flex flex-col items-start space-y-8 px-6 py-8">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 text-xl">
+              {POST_TAGS[0].emoji}
+            </div>
 
-        <button
+            <div>
+              <h1 className="my-0">{POST_TAGS[0].name}</h1>
+            </div>
+          </div>
+        </Button3>
+
+        <Button3
           onClick={() => router.push(`/${POST_TAGS[1].name.toLowerCase()}`)}
           className="rotate-1 transform sm:translate-y-4"
+          color={POST_TAGS[1].color}
         >
-          <PostTagCard postTag={POST_TAGS[1]} />
-        </button>
+          <div className="prose prose-invert flex flex-col items-start space-y-8 px-6 py-8">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 text-xl">
+              {POST_TAGS[1].emoji}
+            </div>
 
-        <button
+            <div>
+              <h1 className="my-0">{POST_TAGS[1].name}</h1>
+            </div>
+          </div>
+        </Button3>
+
+        <Button3
           onClick={() => router.push(`/${POST_TAGS[2].name.toLowerCase()}`)}
           className="sm:-tranlate-y-2 rotate-1 transform sm:rotate-3"
+          color={POST_TAGS[2].color}
         >
-          <PostTagCard postTag={POST_TAGS[2]} />
-        </button>
+          <div className="prose prose-invert flex flex-col items-start space-y-8 px-6 py-8">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200 text-xl">
+              {POST_TAGS[2].emoji}
+            </div>
+
+            <div>
+              <h1 className="my-0">{POST_TAGS[2].name}</h1>
+            </div>
+          </div>
+        </Button3>
       </div>
     </div>
   );
