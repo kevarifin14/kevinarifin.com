@@ -11,7 +11,7 @@ To add syntax highlighting to your MDX files, you can use `prism-react-renderer`
 yarn add prism-react-renderer
 ```
 
-Now it’s time to walk through the process of setting up a `SyntaxHighlighter` component
+Now it's time to walk through the process of setting up a `SyntaxHighlighter` component
 
 1. The base `SyntaxHighlight` component from the `prism-react-renderer` documentation
 2. Dynamically setting light and dark themes
@@ -140,9 +140,11 @@ export function SyntaxHighlighter({ children }: SyntaxHighlighterProps) {
 # Remove the New Line
 
 ```tsx
-...
-{tokens.slice(0, -1).map((line, i) => (
-...
+// ...
+tokens.slice(0, -1).map((line, i) => (
+  // ...
+)
+// ...
 ```
 
 # Final Component
@@ -200,15 +202,15 @@ export function SyntaxHighlighter({ children }: SyntaxHighlighterProps) {
 ```tsx
 import { SyntaxHighlighter } from 'components/SyntaxHighlighter';
 
-...
+// ...
 
 <Component 
   components={{ 
-		...
+		// ...
 		pre: SyntaxHighlighter,
-		...
+		// ...
 	}}
 />
 
-...
+// ...
 ```

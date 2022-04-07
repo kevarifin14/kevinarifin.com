@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Tailwind CSS & Next JS
 date: "2022-04-07"
-excerpt: Become a CSS expert with utility classes that allow you to 
+excerpt: Become a CSS expert and build custom components for your Next JS project with Tailwind CSS utility classes. 
 slug: getting-started-with-tailwindcss-and-nextjs 
 tags: buidling
 ---
@@ -80,9 +80,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
 # Custom Colors
 
-It's helpful to define `primary`, `dark`, and `light` colors in your Tailwind config to easily set and update a theme across your whole application. 
+It's helpful to define a `primary` color in your Tailwind config to easily set and update a theme across your whole application. 
 
-`primary` defines the main color for your whole application. `dark` and `light` allow you to set a foundation for dark mode and make it seamless to configure. 
+`primary` defines the main color for your whole application.
 
 Here is an example Tailwind Config with custom color configuration.
 
@@ -99,29 +99,11 @@ const primary = {
   ...primaryColor,
 };
 
-const lightColor = colors.zinc;
-const light = {
-  light: colors.white,
-  DEFAULT: lightColor[50],
-  dark: lightColor[100],
-  ...lightColor,
-};
-
-const darkColor = colors.zinc;
-const dark = {
-  light: darkColor[700],
-  DEFAULT: darkColor[800],
-  dark: darkColor[900],
-  ...darkColor,
-};
-
 module.exports = {
-  ...
+  // ...
   theme: {
     extend: {
       colors: {
-        light,
-        dark,
         primary,
       },
     },
@@ -161,7 +143,7 @@ module.exports = {
 
 You'll now be able to apply styles in the `prose` class to all the children in an HTML element. 
 
-```js
+```tsx
 export default function PostPage({ code, post }: PostPageProps) {
   // ...
   return (
