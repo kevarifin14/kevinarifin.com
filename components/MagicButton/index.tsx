@@ -39,12 +39,12 @@ const getButtonColorClassName = (color: ButtonColor) => {
 
 const getPaddingClassName = (size: TailwindSize) => {
   switch (size) {
-    case "lg":
-      return "px-6 py-8";
+    case "2xl":
+      return "px-6 py-8 text-2xl";
 
     case "md":
     default:
-      return "px-4 py-2";
+      return "px-4 py-2 text-base";
   }
 };
 

@@ -53,7 +53,7 @@ export function IndexPage() {
       <div className="grid gap-8 sm:grid-cols-3">
         {POST_TAGS.map((postTag, i) => (
           <MagicButton
-            size="lg"
+            size="2xl"
             key={postTag.name}
             onClick={() => router.push(`/${postTag.name.toLowerCase()}`)}
             className={buttonClassNames[i]}

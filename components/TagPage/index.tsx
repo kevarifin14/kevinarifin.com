@@ -14,7 +14,9 @@ type TagPageProps = {
 export function TagPage({ posts }: TagPageProps) {
   const router = useRouter();
   const postTag = POST_TAGS.find((p) => p.name === router.query.tag)!;
-  const filteredPosts = posts.filter((post) => post.tags.includes(postTag));
+  const filteredPosts = posts
+    .filter((post) => post.tags.includes(postTag))
+    .sort(({ date: d1 }, { date: d2 }) => d2.getTime() - d1.getTime());
 
   return (
     <div className="prose mx-auto px-4 dark:prose-invert">

@@ -1,7 +1,7 @@
 ---
 title: Magical 3D Buttons with Tailwind CSS 
-date: "2022-04-03"
-excerpt: An MDX file template.
+date: "2022-04-06"
+excerpt: Take your Tailwind CSS to the next level and build your own Magical 3D Button component.
 slug: magical-buttons-with-tailwindcss
 tags: buidling
 ---
@@ -154,18 +154,6 @@ export function MagicButton({
     getButtonColorClassName(color);
   const paddingClassName = getPaddingClassName(size);
   ...
-  const buttonClassName = classNames(
-    "relative group hover:brightness-110 not-prose",
-    className
-  );
-
-  const shadowClassName = classNames(
-    "bg-black opacity-25 translate-y-[2px] blur-[4px]",
-    "group-active:translate-y-[1px] group-hover:translate-y-[4px]",
-    sublayerClassName,
-    transitionClassName
-  );
-
   const edgeClassName = classNames(edgeColorClassName, sublayerClassName);
 
   const frontClassName = classNames(
@@ -226,11 +214,11 @@ const getButtonColorClassName = (color: ButtonColor) => {
 const getPaddingClassName = (size: TailwindSize) => {
   switch (size) {
     case "lg":
-      return "px-6 py-8";
+      return "px-5 py-3 text-lg";
 
     case "md":
     default:
-      return "px-4 py-2";
+      return "px-4 py-2 text-base";
   }
 };
 
@@ -285,4 +273,10 @@ export function MagicButton({
   );
 }
 ```
+
+<div className="flex justify-center mx-auto">
+  <MagicButton color="green" size="2xl">
+    That's all Folks!
+  </MagicButton>
+</div>
 
