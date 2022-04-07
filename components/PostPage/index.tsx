@@ -2,6 +2,8 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { useMemo } from "react";
 
 import Breadcrumbs from "components/Breadcrumbs";
+import { MagicButton } from "components/MagicButton";
+import { MvpMagicButton } from "components/MvpMagicButton";
 import { PostTagCard } from "components/PostTagCard";
 import { SyntaxHighlighter } from "components/SyntaxHighlighter";
 
@@ -36,7 +38,13 @@ export default function PostPage({ code, post }: PostPageProps) {
         title={post.title}
         description={post.displayDate}
       />
-      <Component components={{ pre: SyntaxHighlighter }} />
+      <Component
+        components={{
+          pre: SyntaxHighlighter,
+          MagicButton,
+          MvpMagicButton,
+        }}
+      />
     </article>
   );
 }

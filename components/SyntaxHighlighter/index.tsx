@@ -24,7 +24,9 @@ export function SyntaxHighlighter({ children }: SyntaxHighlighterProps) {
     <div className="flex flex-col rounded overflow-hidden border border-light-dark dark:border-dark-light my-4">
       {language && (
         <div className="bg-light-dark dark:bg-dark-light">
-          <p className="my-0 text-right px-2 py-1">{language.toUpperCase()}</p>
+          <p className="my-0 text-right px-2 py-1 text-sm">
+            {language.toUpperCase()}
+          </p>
         </div>
       )}
       <Highlight
