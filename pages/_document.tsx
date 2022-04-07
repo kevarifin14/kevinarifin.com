@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
             )}
         </Head>
 
-        <body className="bg-light dark:bg-dark">
+        <body className="bg-light dark:bg-dark transform transition-colors duration-500">
           <Main />
           <NextScript />
         </body>
