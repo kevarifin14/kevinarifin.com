@@ -1,0 +1,99 @@
+---
+title: Add Mixpanel to Next JS 
+date: "2022-04-25"
+excerpt: 
+slug: add-mixpanel-to-nextjs
+tags: buidling
+---
+In this post, we'll be adding [Mixpanel](https://mixpanel.com) to your Next JS project.
+
+Some prerequisites:
+
+- Next JS project
+- Mixpanel account
+
+# Get Your Mixpanel Token
+
+To find your Mixpanel Token, click the **Gear Icon** > [Your App Name] ****(under **Project Settings**).
+
+Under **Access Keys**, copy your **Project Token**. Set your `NEXT_PUBLIC_MIXPANEL_TOKEN` environment variable to the **Project Token**. 
+
+# Install Dependencies
+
+```bash
+yarn add analytics @analytics/mixpanel
+```
+
+# Create `analytics.ts`
+
+Instantiate your `analytics` instance. You'll need to pass in the `NEXT_PUBLIC_MIXPANEL_TOKEN` we set in our environment variables earlier. 
+
+```tsx
+// lib/analytics.ts
+
+import MixpanelPlugin from "@analytics/mixpanel";
+import Analytics from "analytics";
+
+// https://github.com/DavidWells/analytics/issues/220
+export const analytics = Analytics({
+  plugins: [MixpanelPlugin({ token: process.env.NEXT_PUBLIC_MIXPANEL_TOKEN })],
+});
+```
+
+# Track Page Views
+
+You can now import your `analytics` instance in your code. To automatically track page views, add a callback on the `router` and call `analytics.page()`. By default, the `page` function logs the path of the page. 
+
+Check out the [Analytics Documentation](https://getanalytics.io) if you want to dig into more advanced tracking. 
+
+```tsx
+// pages/_app.tsx
+
+// ...
+import { analytics } from "lib/analytics";
+// ...
+
+function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on("routeChangeComplete", () => analytics.page());
+
+    return () => {
+      router.events.off("routeChangeComplete", () => analytics.page());
+    };
+  }, [router.events]);
+
+  // ...
+}
+
+export default App;
+```
+
+# Only in Production
+
+You can wrap your router event callback in a conditional statement so the callback only runs in production and doesn't mess up your tracking data. 
+
+```tsx
+// pages/_app.tsx
+
+// ...
+
+function App({ Component, pageProps }) {
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      router.events.on("routeChangeComplete", () => analytics.page());
+    }
+
+    return () => {
+      if (process.env.NODE_ENV === "production") {
+        router.events.off("routeChangeComplete", () => analytics.page());
+      }
+    };
+  }, [router.events]);
+
+  // ...
+}
+
+// ...
+```
