@@ -1,9 +1,11 @@
 import { LinkIcon } from "@heroicons/react/solid";
 import _ from "lodash";
 import Link from "next/link";
-import { FC } from "react";
+import { HTMLAttributes, PropsWithChildren } from "react";
 
-export const Heading: FC = (props) => {
+export const Heading = (
+  props: PropsWithChildren<HTMLAttributes<HTMLHeadingElement>>
+) => {
   const name = _.kebabCase(props.children?.toString());
 
   return (

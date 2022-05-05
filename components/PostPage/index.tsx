@@ -7,6 +7,7 @@ import { MagicButton } from "components/MagicButton";
 import { MvpMagicButton } from "components/MvpMagicButton";
 import { PostTagCard } from "components/PostTagCard";
 import { SyntaxHighlighter } from "components/SyntaxHighlighter";
+import { TwitterLink } from "components/TwitterLink";
 
 import { IPost } from "lib/types";
 
@@ -45,6 +46,7 @@ export default function PostPage({ code, post }: PostPageProps) {
           h1: Heading,
           MagicButton,
           MvpMagicButton,
+          TwitterLink,
         }}
       />
     </article>
