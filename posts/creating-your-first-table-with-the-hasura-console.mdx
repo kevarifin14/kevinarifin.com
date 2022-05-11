@@ -3,7 +3,7 @@ title: Creating Your First Table with the Hasura Console
 date: "2022-05-11"
 excerpt: Using the Hasura console to create a table and configure permissions on that table
 slug: creating-your-first-table-with-the-hasura-console
-tags: buidling, web3, startups
+tags: buidling
 ---
 We'll be walking through two basic things you can do with your local Hasura instance. 
 
@@ -12,7 +12,7 @@ We'll be walking through two basic things you can do with your local Hasura inst
 
 # Prerequisites
 
-- [Local Hasura Development](/local-hasura-development)
+- [Local Hasura Development](/posts/local-hasura-development)
 
 # Creating a Table
 
@@ -22,29 +22,32 @@ Head to your local [Hasura console](http://localhost:9695/console/data/default/s
     
     ![create-table.png](/posts/creating-your-first-table-with-the-hasura-console/create-table.png)
     
-2. Let's create a simple table to keep track of wallet public keys. 
-    - **Table Name** — wallets
+2. Let's create a simple table to keep track of user emails. 
+    ![table-columns.png](/posts/creating-your-first-table-with-the-hasura-console/table-columns.png)
+
+    - **Table Name** — users
     - **Columns**
-        - `key` of type **Text**
-        - Hit **Frequently used columns** to add `created_at` and `updated_at` (I prefer camel-cased column names)
+        - `email` of type **Text**
+        - Hit **Frequently used columns** to add `id`, `created_at`, and `updated_at`
+            - `id` of type **UUID**
             - `createdAt` of type **Timestamp**
             - `updatedAt` of type **Timestamp**
     - Hasura automatically adds triggers for `createdAt` and `updatedAt` columns to be set and update automatically
-    - Set the **Primary Key** to `key`
-3. Once you hit **Add Table**, you'll be redirected to the table page. You'll also notice that within your project in `hasura/migrations`, migration files were automatically generated to create the `wallets` table. 
+    - Set the **Primary Key** to `email`
+3. Once you hit **Add Table**, you'll be redirected to the table page. You'll also notice that within your project in `hasura/migrations`, migration files were automatically generated to create the `users` table. 
 
 # Adding Permissions
 
 By default, tables are not publicly accessible. You'll want to configure permissions for public access to your table. 
 
-Head to the **Permissions** tab on the wallets table page. Add a public role so we can configure the **insert** and **select** permissions. 
+Head to the **Permissions** tab on the users table page. Add a public role so we can configure the **insert** and **select** permissions. 
 
 ![permissions-tab.png](/posts/creating-your-first-table-with-the-hasura-console/permissions-tab.png)
 
-Let's make the **insert** permissions and allow public access to insert a wallet with a `key` but not allow it to set `createdAt` or `updatedAt` columns. 
+Let's make the **insert** permissions and allow public access to insert a wallet with a `email` but not allow it to set `id`, `createdAt`, or `updatedAt` columns. 
 
 ![insert-permissions.png](/posts/creating-your-first-table-with-the-hasura-console/insert-permissions.png)
 
-Let's make the **select** permissions and allow public access to accessing all the wallets in the database, but only the `key` column.
+Let's make the **select** permissions and allow public access to accessing all the users in the database, but only the `id` and `email` columns.
 
 ![select-permissions.png](/posts/creating-your-first-table-with-the-hasura-console/select-permissions.png)

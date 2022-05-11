@@ -1,0 +1,88 @@
+---
+title: Set Up GraphQL Code Generator
+date: "2022-05-11"
+excerpt: Automate creating boilerplate code to fetch and manipulate data in your GraphQL-wrapped database.
+slug: set-up-graphql-code-generator
+tags: buidling
+---
+Once you have a GraphQL API on top of a Postgres database, you’ll want to be able to easily access that data in the client.
+
+[GraphQL Code Generator](https://www.graphql-code-generator.com/) automatically generates:
+
+- **Typed Queries, Mutations and, Subscriptions** for Next.js with an Apollo Client
+- **Typed GraphQL resolvers**, for any Node.js server
+
+We’ll be focusing on using GraphQL Code Generator to generate our a lot of boilerplate code to fetch and manipulate data. 
+
+With TypeScript, this also allows you to leverage your Postgres schema as a single-source of truth for object types.
+
+# Prerequisites
+
+- [Local Hasura Setup](/blog/local-hasura-development)
+- [Create a users table](/blog/creating-your-first-table-with-the-hasura-console)
+
+# Install Dependencies
+
+```bash
+yarn add --dev @graphql-codegen/cli
+```
+
+The setup wizard will prompt you with a series of questions to generate the configuration file:
+
+```bash
+yarn graphql-codegen init
+```
+
+- ? **What type of application are you building?**
+    - Application built with React
+- ? **Where is your schema?:** (path or url)
+    - http://localhost:8080/v1/graphql
+- ? **Where are your operations and fragments?:**
+    - queries/*.graphql
+- ? **Pick plugins:**
+    - TypeScript *(required by other typescript plugins)*, TypeScript Operations *(operations and fragments)*, TypeScript React Apollo *(typed components and HOCs)*
+- ? **Where to write the output:**
+    - generated/index.tsx
+- ? **Do you want to generate an introspection file?**
+    - No
+- ? **How to name the config file?** (codegen.yml)
+    - codegen.yml
+- ? **What script in package.json should run the codegen?**
+    - generate
+
+# Create a Query
+
+GraphQL Code Generator generates code from existing GraphQL queries in our repo. Above, we specified a `queries` directory which is where we’ll write our first query to get and insert data into our `users` table.
+
+```bash
+mkdir queries; touch queries/Users.graphql
+```
+
+Here are the queries to get all users and insert a user.
+
+```graphql
+fragment UserFields on users {
+  id
+	email
+}
+
+query Users {
+	users {
+		...UserFields
+	}
+}
+
+mutation AddUser($email: String!) {
+  user: insert_users_one(object: { email: $email }) {
+    ...UserFields
+  }
+}
+```
+
+# Generation Time
+
+```bash
+yarn generate
+```
+
+You should see a newly created `generated/index.tsx`
