@@ -61,7 +61,7 @@ volumes:
 This spins up two Docker containers. 
 
 1. `postgres` — a local Postgres database
-2. `graphql-engine` — a local version of Hasura’s GraphQL Engine that instantly creates a GraphQL API for your Postgres database
+2. `graphql-engine` — a local version of Hasura's GraphQL Engine that instantly creates a GraphQL API for your Postgres database
 
 To spin up the Docker containers, use the following command. 
 
@@ -71,7 +71,7 @@ docker compose up
 
 This will stream the logs into your terminal. If you kill the process, your containers will shut down.
 
-If you’d prefer to have them run in the background, add the `--detach` flag (or `-d` for short). 
+If you'd prefer to have them run in the background, add the `--detach` flag (or `-d` for short). 
 
 ```bash
 docker compose up -d
@@ -83,9 +83,9 @@ You can check on the status of your containers and should see output similar to 
 docker ps
 ```
 
-![Screen Shot 2022-05-11 at 11.07.58 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/415649f8-6c46-4219-8608-82f4d4f6e33f/Screen_Shot_2022-05-11_at_11.07.58_AM.png)
+![docker-ps.png](/posts/local-hasura-development/docker-ps.png)
 
-You can shut down the containers when you’re done with development. 
+You can shut down the containers when you're done with development. 
 
 ```bash
 docker compose down
@@ -93,7 +93,7 @@ docker compose down
 
 # Managing Your Hasura Project
 
-Now that you have a local instance of Hasura, you’ll want to manage schema migrations and metadata. 
+Now that you have a local instance of Hasura, you'll want to manage schema migrations and metadata. 
 
 ```bash
 hasura init
@@ -109,7 +109,7 @@ This will create a `hasura` directory in the project root:
 
 To access your database and make changes to the schema, you can spin up a Hasura console. 
 
-Let’s add a new script:
+Let's add a new script:
 
 ```json
 "scripts": {
@@ -125,8 +125,8 @@ And spin up the console:
 yarn db-console
 ```
 
-You can now go to `[http://localhost:9695](http://localhost:9695)` and you’ll see the Hasura UI for making changes to your database. 
+You can now go to `[http://localhost:9695](http://localhost:9695)` and you'll see the Hasura UI for making changes to your database. 
 
-![Screen Shot 2022-05-11 at 10.16.36 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c8b6ae4e-3564-4fe6-bdb8-5335110fc8f2/Screen_Shot_2022-05-11_at_10.16.36_AM.png)
+![hasura-console.png](/posts/local-hasura-development/hasura-console.png)
 
 Any changes you make like creating a table or modifying columns will be automatically added as migrations in your project.

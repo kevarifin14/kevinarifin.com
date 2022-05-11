@@ -20,7 +20,7 @@ Head to your local [Hasura console](http://localhost:9695/console/data/default/s
 
 1. Hit **Create Table.** 
     
-    ![Screen Shot 2022-05-11 at 11.56.18 AM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3ef02714-079e-4296-9415-02d7f299b91e/Screen_Shot_2022-05-11_at_11.56.18_AM.png)
+    ![create-table.png](/posts/creating-your-first-table-with-the-hasura-console/create-table.png)
     
 2. Let's create a simple table to keep track of wallet public keys. 
     - **Table Name** — wallets
@@ -39,10 +39,12 @@ By default, tables are not publicly accessible. You'll want to configure permiss
 
 Head to the **Permissions** tab on the wallets table page. Add a public role so we can configure the **insert** and **select** permissions. 
 
-![Screen Shot 2022-05-11 at 12.03.02 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7fb2f10e-5956-4cbf-84b6-d35a55be6b33/Screen_Shot_2022-05-11_at_12.03.02_PM.png)
+![permissions-tab.png](/posts/creating-your-first-table-with-the-hasura-console/permissions-tab.png)
 
 Let's make the **insert** permissions and allow public access to insert a wallet with a `key` but not allow it to set `createdAt` or `updatedAt` columns. 
 
-![Screen Shot 2022-05-11 at 12.04.22 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf44eeff-185e-4319-a568-e438cd8486c2/Screen_Shot_2022-05-11_at_12.04.22_PM.png)
+![insert-permissions.png](/posts/creating-your-first-table-with-the-hasura-console/insert-permissions.png)
 
 Let's make the **select** permissions and allow public access to accessing all the wallets in the database, but only the `key` column.
+
+![select-permissions.png](/posts/creating-your-first-table-with-the-hasura-console/select-permissions.png)
