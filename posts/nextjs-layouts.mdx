@@ -3,7 +3,7 @@ title: Next.js Layouts
 date: "2022-05-11"
 excerpt: Persistent layouts for your Next.js pages. 
 slug: nextjs-layouts
-tags: buidling, web3, startups
+tags: buidling
 ---
 When building an application, there might be certain components that you want to persist across different pages. For example, you might have the same `Navbar` component on all your pages. 
 
@@ -11,7 +11,7 @@ We’ll walk through setting up a shared `Layout` component across different pag
 
 # Prerequisites
 
-- Absolute Imports
+- [Absolute Imports](/blog/absolute-imports-with-nextjs)
 
 # Wrap the App
 
@@ -88,3 +88,45 @@ Index.getLayout = getLayout;
 We set the `getLayout` on the `Index` component to the same `getLayout` on the `Layout` component we just created. 
 
 We also extract elements in the page file into an `IndexPage` component. While this may seem like overkill, this allows us to easily extract subcomponents into the `IndexPage` directory (since any additional files in the `pages` directory would be additional routes).
+
+# Providers in the Layout
+
+```tsx
+// components/Layout/Providers/index.tsx
+
+import { ReactNode } from "react";
+
+type ProvidersProps = {
+  children: ReactNode;
+};
+
+export function Providers({ children }: ProvidersProps) {
+  return (
+    <>
+      {children}
+    </>
+  );
+}
+```
+
+```tsx
+// components/Layout/index.tsx
+
+import { ReactElement, ReactNode } from "react";
+
+type LayoutProps = {
+  children: ReactNode;
+};
+
+export function Layout({ children }: LayoutProps) {
+  return (
+		<Providers>
+	    <main>
+	      {children}
+	    </main>
+		</Providers>
+  );
+}
+
+export const getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+```
