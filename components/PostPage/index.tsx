@@ -40,6 +40,7 @@ export default function PostPage({ code, post }: PostPageProps) {
         title={post.title}
         description={post.displayDate}
       />
+
       <Component
         components={{
           pre: SyntaxHighlighter,

@@ -1,3 +1,5 @@
+import { Header } from "components/Header";
+
 import { classNames } from "lib/tailwind";
 import { IPost } from "lib/types";
 
@@ -14,10 +16,8 @@ export default function PostCard({ post, className }: PostCardProps) {
 
   return (
     <div className={postCardClassName}>
-      <div>
-        <h2 className="my-0">{post.title}</h2>
-        <p className="my-0 text-sm">{post.displayDate}</p>
-      </div>
+      <Header size="xl" title={post.title} description={post.displayDate} />
+
       <p className="my-0">{post.excerpt}</p>
     </div>
   );
