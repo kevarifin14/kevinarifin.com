@@ -1,0 +1,22 @@
+fragment UserFields on users {
+  id
+	email
+}
+
+query Users {
+	users {
+		...UserFields
+	}
+}
+
+mutation AddUser($email: String!) {
+  user: insert_users_one(object: { email: $email }) {
+    ...UserFields
+  }
+}
+
+mutation UpsertUser($email: String!) {
+  user: insert_users_one(object: { email: $email } ) {
+    ...UserFields
+  }
+}

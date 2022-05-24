@@ -1,0 +1,24 @@
+table:
+  schema: public
+  name: users
+insert_permissions:
+  - role: public
+    permission:
+      check: {}
+      columns:
+        - email
+        - id
+      backend_only: false
+select_permissions:
+  - role: public
+    permission:
+      columns:
+        - email
+        - id
+      filter: {}
+update_permissions:
+  - role: public
+    permission:
+      columns: []
+      filter: {}
+      check: null
