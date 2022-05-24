@@ -1,0 +1,57 @@
+---
+title: Managing Environment Variables in Next.js
+date: "2022-05-11"
+excerpt: A quick how-to on managing Environment Variables across different environments
+slug: managing-environment-variables-in-nextjs
+tags: buidling
+---
+Next.js has built-in support for Environment Variables. You can check out the [full documentation](https://nextjs.org/docs/basic-features/environment-variables) for an in-depth walkthrough.
+
+Environment Variables should be broken down by the environment (`development` or `production`) and whether or not they should be tracked by version control (`local`).
+
+- Defaults — loaded regardless of the development environment
+    - `.env` — for general environment variables
+    - `.env.local` — for secrets that should not be version controlled
+- Development — `NODE_ENV=development`  (when running a Next.js instance with `next dev`)
+    - `.env.development` — for `development` environment variables
+    - `.env.development.local` — for `development` environment secrets that should not be version controlled
+- Production — `NODE_ENV=production`  (when running a Next.js instance with `next start`)
+    - `.env.production` — for `production` environment variables
+    - `.env.production.local` — for `production` environment secrets that should not be version controlled
+
+# Loading Environment Variables
+
+When loading Environment Variables, local and environment-specific environments are loaded first. 
+
+1. `.env.(production | development).local`
+2. `.env.local`
+3. `.env.(production | development)`
+4. `.env`
+
+# Storing Environment Variables
+
+In total, you could have up to 9 files storing your Environment Variables.
+
+1. `.env`
+2. `.env.development`
+3. `.env.production`
+4. `.env.local`
+5. `.env.local.example`
+6. `.env.development.local`
+7. `.env.development.local.example`
+8. `.env.production.local`
+9. `.env.production.local.example`
+
+# Accessing Environment Variables
+
+Environment Variables are only accessible in Node.js environments. This means you can only access Environment Variables in Next.js data fetching methods and API routes. 
+
+If you want to expose an Environment Variable in the console, you need to append `NEXT_PUBLIC_` to the Environment Variable. 
+
+For example, you might want an Environment Variable setting the root URL of your project and have that accessible in the client. 
+
+```
+NEXT_PUBLIC_URL=http://localhost:3000
+```
+
+Note — you probably don’t want to expose secrets and API keys in the browser.

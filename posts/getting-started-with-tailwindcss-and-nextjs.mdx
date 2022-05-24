@@ -1,0 +1,155 @@
+---
+title: Getting Started with Tailwind CSS & Next JS
+date: "2022-04-07"
+excerpt: Become a CSS expert and build custom components for your Next JS project with Tailwind CSS utility classes. 
+slug: getting-started-with-tailwindcss-and-nextjs 
+tags: buidling
+---
+Tailwind CSS is my go-to solution to building custom UI fast. It's made me a CSS expert without having to learn CSS while still getting the custom feel you don't get out-of-the-box with component libraries like [Ant Design](https://ant.design) or CSS frameworks like [Bootstrap](https://getbootstrap.com/docs/3.4/css/) without having to learn CSS like with [styled components](https://styled-components.com). 
+
+Tailwind CSS maps utility classes to CSS snippets. For example, `p-4` would apply `padding: 1rem;` to the HTML element. 
+
+There are two key advantages to using Tailwind CSS. 
+
+1. Abstracting away CSS to modular classes allows you to consistently apply CSS.
+1. Keeping styling and position logic inline with the component you are working with. 
+
+Let's learn how to get Tailwind CSS setup with your Next JS project.
+
+# Installation
+
+The [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs) walks through the installation steps.
+
+First install the dependencies:
+
+```bash
+yarn add --dev tailwindcss postcss autoprefixer
+```
+
+And run the setup script: 
+
+```
+npx tailwindcss init -p
+```
+
+This will add a `tailwind.config.js` and `postcss.config.js` to the root directory of your Next project. 
+
+Add the paths to all of your template files in your `tailwind.config.js` file. These are the paths that Tailwind goes through to find class names to generate CSS for. 
+
+```js
+// tailwind.config.js
+
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+Add the Tailwind directives to insert the styles into your CSS. 
+
+```css
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+If you want more details on Tailwind directives, check out the [Tailwind docs](https://tailwindcss.com/docs/functions-and-directives#directives).
+
+Make sure you've imported the globals in your `pages/_app.tsx`. 
+
+```ts
+// pages/_app.tsx
+
+import { NextPage } from "next";
+import type { AppProps } from "next/app";
+import { ReactElement, ReactNode } from "react";
+import "styles/globals.css";
+...
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  ...
+}
+```
+
+# Custom Colors
+
+It's helpful to define a `primary` color in your Tailwind config to easily set and update a theme across your whole application. 
+
+`primary` defines the main color for your whole application.
+
+Here is an example Tailwind Config with custom color configuration.
+
+```js
+// tailwind.config.js
+
+const colors = require("tailwindcss/colors");
+
+const primaryColor = colors.blue;
+const primary = {
+  light: primaryColor[300],
+  DEFAULT: primaryColor[400],
+  dark: primaryColor[500],
+  ...primaryColor,
+};
+
+module.exports = {
+  // ...
+  theme: {
+    extend: {
+      colors: {
+        primary,
+      },
+    },
+  },
+  ...
+};
+```
+
+- `DEFAULT` allows you to use `bg-primary` instead of `bg-primary-400`. 
+- `light` and `dark` variants allow you to easily get tints (for `hover` or `active` feedback) like doing `hover:bg-primary-dark` when a button component is hovered over. 
+
+# Typography
+
+You can add typographic defaults with the Tailwind CSS Typography plugin, which helps you standardize things like font size, text color, and spacing. 
+
+First, install the plugin:
+
+```bash
+yarn add --dev @tailwindcss/typography
+```
+
+And then add it to your `tailwind.config.js`:
+
+```js
+// tailwind.config.js
+
+module.exports = {
+  theme: {
+    // ...
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    // ...
+  ],
+}
+```
+
+You'll now be able to apply styles in the `prose` class to all the children in an HTML element. 
+
+```tsx
+export default function PostPage({ code, post }: PostPageProps) {
+  // ...
+  return (
+    <article className="prose mx-auto w-full max-w-prose px-4">
+      {/* ... */}
+    </article>
+  );
+}
+```

@@ -1,0 +1,132 @@
+---
+title: Next.js Layouts
+date: "2022-05-11"
+excerpt: Persistent layouts for your Next.js pages. 
+slug: nextjs-layouts
+tags: buidling
+---
+When building an application, there might be certain components that you want to persist across different pages. For example, you might have the same `Navbar` component on all your pages. 
+
+We’ll walk through setting up a shared `Layout` component across different pages. 
+
+# Prerequisites
+
+- [Absolute Imports](/blog/absolute-imports-with-nextjs)
+
+# Wrap the App
+
+Next.js uses the `App` component in `pages/_app.tsx` to render pages. We’ll be wrapping the pages in a `Layout` component so we have persistent layout between pages. 
+
+```tsx
+import { NextPage } from "next";
+import type { AppProps } from "next/app";
+import { ReactElement, ReactNode } from "react";
+import "styles/globals.css";
+
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
+}
+```
+
+The `Component` prop is the active `page` whenever you navigate between routes defined in your `pages` directory. We add a `getLayout` prop on the `Component` which is the function that wraps the page in persisted layout elements. 
+
+# Simple Layout Component
+
+Let’s create a barebones `Layout` component.
+
+```tsx
+// components/Layout/index.tsx
+
+import { ReactElement, ReactNode } from "react";
+
+type LayoutProps = {
+  children: ReactNode;
+};
+
+export function Layout({ children }: LayoutProps) {
+  return (
+    <main>
+      {children}
+    </main>
+  );
+}
+
+export const getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+```
+
+For now, we don’t do anything interesting with the `Layout` component — just wrapping the page in a `main` HTML element. 
+
+Note, we also expose a `getLayout` function that takes the page to be rendered and wraps it in our `Layout` component.
+
+# Update the Home Page
+
+Let’s now configure the index route to be wrapped in the `Layout` component. 
+
+```tsx
+// pages/index.tsx
+
+import { IndexPage } from "components/IndexPage";
+import { getLayout } from "components/Layout";
+
+export default function Index() {
+  return <IndexPage />;
+}
+
+Index.getLayout = getLayout;
+```
+
+We set the `getLayout` on the `Index` component to the same `getLayout` on the `Layout` component we just created. 
+
+We also extract elements in the page file into an `IndexPage` component. While this may seem like overkill, this allows us to easily extract subcomponents into the `IndexPage` directory (since any additional files in the `pages` directory would be additional routes).
+
+# Providers in the Layout
+
+```tsx
+// components/Layout/Providers/index.tsx
+
+import { ReactNode } from "react";
+
+type ProvidersProps = {
+  children: ReactNode;
+};
+
+export function Providers({ children }: ProvidersProps) {
+  return (
+    <>
+      {children}
+    </>
+  );
+}
+```
+
+```tsx
+// components/Layout/index.tsx
+
+import { ReactElement, ReactNode } from "react";
+
+type LayoutProps = {
+  children: ReactNode;
+};
+
+export function Layout({ children }: LayoutProps) {
+  return (
+		<Providers>
+	    <main>
+	      {children}
+	    </main>
+		</Providers>
+  );
+}
+
+export const getLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+```

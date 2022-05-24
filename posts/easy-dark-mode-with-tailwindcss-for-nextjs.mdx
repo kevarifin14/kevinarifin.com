@@ -1,0 +1,200 @@
+---
+title: Easy Dark Mode with Tailwind CSS for Next JS
+date: "2022-04-07"
+excerpt: Adding dark mode to your project should be easy. Learn how to add and customize the theme of your Next JS. 
+slug: easy-dark-mode-with-tailwindcss-for-nextjs
+tags: buidling
+---
+Dark mode is cool and basically a website must-have for modern websites. With Tailwind CSS, it doesn't have to be a hard thing to add to your project.
+
+# Prerequisites
+
+If you haven't set up Tailwind CSS, we'll be building off of the Tailwind setup I talked about [here](/getting-started-with-tailwindcss-and-nextjs).
+
+We'll also need to install `next-themes`, a package that abstracts theme management for your project and allows you to modify the theme with React hooks. 
+
+```bash
+yarn add next-themes
+```
+
+# Provide the Theme 
+
+Wherever you define your providers, wrap your components into the `ThemeProvider` that gives you access to a hook that allows you to access and modify the theme with a React hook. 
+
+```ts
+import { ThemeProvider } from "next-themes";
+
+// ...
+
+export function Providers({ children }: ProvidersProps) {
+  return (
+    <ThemeProvider attribute="class">
+      {children}
+    </ThemeProvider>
+  );
+}
+
+```
+
+# Enable Tailwind's Dark Mode  
+
+To enable dark mode with Tailwind, you'll need to add `darkMode: "class"` to your config.
+
+```js
+// tailwind.config.js
+
+module.exports = {
+  darkMode: "class",
+  // ...
+};
+```
+
+This allows you to use the `dark:{class}` pseudo-element to apply dark mode whenever the class `dark` is present earlier in the HTML tree. We use `next-themes` to add and remove the `dark` class to the parent `<html>` tag. 
+
+# Dark & Lighbt
+
+To easily maintain the theme of your project, add two custom colors to your `tailwind.config.js`. This allows you to easily maintain light and 
+
+```js
+// tailwind.config.js
+
+const colors = require("tailwindcss/colors");
+
+const lightColor = colors.zinc;
+const light = {
+  light: colors.white,
+  DEFAULT: lightColor[50],
+  dark: lightColor[100],
+  ...lightColor,
+};
+
+const darkColor = colors.zinc;
+const dark = {
+  light: darkColor[700],
+  DEFAULT: darkColor[800],
+  dark: darkColor[900],
+  ...darkColor,
+};
+
+module.exports = {
+  // ...
+  theme: {
+    extend: {
+      colors: {
+        // ...
+        light,
+        dark,
+      },
+    },
+  },
+  // ...
+};
+```
+
+# Background
+
+You can now wrap your application in a dark and light background. In a custom `pages/_document.tsx`, you can apply these classes with a nice little transition to the `body` element. 
+
+```tsx
+// pages/_document.tsx
+
+// ...
+
+export default class MyDocument extends Document {
+  render() {
+    return (
+      <Html>
+        {/* ... */}
+        <body className="bg-light dark:bg-dark transition-colors duration-500">
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+```
+
+# A Note on Typography
+
+If you setup Tailwind's Typopgraphy plugin, you can add the `dark` pseudo-element to dynamically adjust the style of typography elements based on your theme. 
+
+```js
+// tailwind.config.js
+
+module.exports = {
+  darkMode: "class",
+  // ...
+  variants: {
+    extend: {
+      typography: ["dark"],
+    },
+  },
+  // ...
+};
+
+```
+
+Now within your components, you can add `dark:prose-invert` to make your content adjust to the darker background. 
+
+```tsx
+export default function PostPage({ code, post }: PostPageProps) {
+  // ...
+  return (
+    <article className="prose dark:prose-invert mx-auto w-full max-w-prose px-4">
+      {/* ... */}
+    </article>
+  );
+}
+```
+
+# gm
+
+Let's create a button that allows us to toggle the theme. You'll need to add an icon package for this component. 
+
+```
+yarn add @heroicons/react
+```
+
+Here's the code for a button component that toggles the theme:
+
+```tsx
+import { MoonIcon, SunIcon } from "@heroicons/react/solid";
+import { useTheme } from "next-themes";
+
+import { classNames } from "lib/tailwind";
+
+type GmButtonProps = {
+  className?: string;
+};
+
+export function GmButton({ className }: GmButtonProps) {
+  const { theme, setTheme } = useTheme();
+
+  const lightOptions = {
+    icon: MoonIcon,
+    text: "gn",
+    onClick: () => setTheme("dark"),
+  };
+
+  const darkOptions = {
+    icon: SunIcon,
+    text: "gm",
+    onClick: () => setTheme("light"),
+  };
+
+  let options = theme === "light" ? lightOptions : darkOptions;
+
+  const gmButtonClassName = classNames(
+    "flex items-center justify-center space-x-1 prose dark:prose-invert hover:text-primary",
+    className
+  );
+
+  return (
+    <button onClick={options.onClick} className={gmButtonClassName}>
+      <options.icon className="h-6 w-6" />
+      <p className="my-0">{options.text}</p>
+    </button>
+  );
+}
+```
