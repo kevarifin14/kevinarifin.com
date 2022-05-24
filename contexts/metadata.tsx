@@ -7,8 +7,8 @@ export type MetadataContextProps = {
 };
 
 const defaultMetadataContext = {
-  name: "Buidling Blocks",
-  description: "Buidl faster with Buidling Blocks",
+  name: "Kevin Arifin",
+  description: "Kevin's Home on the Internet",
   url: process.env.NEXT_PUBLIC_URL!,
 };
 
