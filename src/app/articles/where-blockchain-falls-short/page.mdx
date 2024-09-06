@@ -1,0 +1,96 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Kevin Arifin',
+  date: '2024-09-06',
+  title: 'Where Blockchain Falls Short',
+  description:
+    'I explore the gap between the promises and reality of blockchain technologies like NFTs, DeFi, and meme coins. Despite the hype, many have fallen short due to user onboarding challenges, a scarcity mindset, and the dominance of trusted third parties.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+In no other industry has the disconnect between analysis and actual product been larger than blockchain.
+
+NFTs were supposed to change the world
+
+- Artists could sell their art directly to their fans
+- They'd be membership passes to access exclusive communities
+- House deeds on-chain would transform real estate and luxury goods as NFTs would turn your Gucci bag from a dust collector to collateral
+
+DeFi was the future of finance with 20% APYs on dollar-equivalents and astronomical APYs on more experimental ideas like OHM
+
+- Instead they became playgrounds for airdrop farmers or unsustainable Ponzi schemes that left a lot of people holding the bag
+
+Meme coins were touted as the future of marketing
+
+- Every celebrity would launch their own coin
+- They were predicting the outcome of the election with Tremp vs. Boden
+- People wrote Twitter threads on how to make money trading meme coins that reacted to the Presidential debate
+- But instead they just became a mechanism for hackers to efficiently extract capital by hacking prominent social media profiles
+
+Payments was another consumer Trojan horse
+
+- But when a group of crypto founders goes out to dinner, they still split the bill with Venmo
+- And your local coffeeshop already has a Square terminal that not only handles payments but all the accounting that comes with it.
+- Merchants can already receive payments with a tap (Apple Pay is such a seamless experience) and consumers don't have to have a crypto wallet set up
+
+As builders continue to build and reinvent the same wheels and add layers upon layers of abstraction in the hope that the next innovation would make crypto “easy” enough to use for the average consumer and every VC wrote thought pieces on how NFTs and meme coins would change the world, the only real use case was number go up.
+
+NFTs said they wanted community. Meme coins said they wanted utility. But all they wanted number go up.
+
+That's why NFTs tout community and meme coins preach utility. The only way number goes up is money goes in, and the easiest way to sell that is “community” (social pressure to buy) and “utility” (a rational reason to buy).
+
+When things are bad in a bear market, getting the existing people to buy in crypto is hard. People don't believe the number will go up so they don't buy. That's why things like wallet abstraction, gasless transactions, and cheaper on-ramps were front and center during the last bear market. If existing users can't help the number go up, let's make it easier to bring in new users and new dollars onto the blockchain.
+
+Now that crypto has generally recovered, those things don't matter anymore. When people believe the number will go up, they'll jump through any hoop to get their money onto the blockchain.
+
+1. KYC with Coinbase
+2. Wait a few days to initiate an ACH bank transfer or pay the fees to get the money instantly
+3. Buy some SOL (and pay some fees to Coinbase) and then you still might have to maybe wait a few days until you can move the SOL to a wallet
+4. In the meanwhile, download a browser extension like Phantom that's supposed to securely hold your hard-earned money
+5. To even create the wallet, you have to do the annoying puzzle to prove you saved your seed phrase
+6. Pay again to move your SOL from Coinbase to your Phantom wallet
+
+### Now you can play!
+
+Regardless of how many hoops a consumer will jump through to enter the front door of blockchain, it is the direct opposite of how people experience technology today.
+
+### Instead of buy now, payer later, it's pay now, buy later.
+
+While the barriers to create, share, and exchange have gone down on the Internet, blockchain is a world of scarcity. Part of it is inherent to what blockchain is — a mechanism for digital scarcity.
+
+Because entering the front door is difficult, just the fact you are a blockchain user is a scarce resource. Everyone is competing for not just your attention, but your magic internet money.
+
+Again, number goes up for anything — high APYs, NFT floor prices, meme coins and even stocks in the real world — because user attention and money is going in.
+
+There's no better way to capture attention than free / more money. That's why people jump through all the hoops in the first place.
+
+This competition creates a mindset of scarcity — fighting over the same users' magical internet monies and trying to hire the same 75 devs — that runs rampant across the industry.
+
+- At the front door, it's Bitcoin vs. Ethereum vs. Solana. Blockchains have almost cult-like followings that is laughable when you compare them to Postgres and MongoDB.
+- NFT communities and DAOs are more about exclusion than community — you're one of the 10k people that shelled out thousands for an NFT in this collection or you're a voter for this DAO because you bought a bag of tokens.
+- Airdrop farmers pour money into yet another lending protocols but then get mad when their free token allocation isn't worth what they thought it would be.
+
+Scarcity mindset is antithetical to the core principle of the blockchain — trustless coordination between third parties. No one wants to coordinate when you're competing for the same resource.
+
+A lot of people forget that blockchain, especially the ones that people typically think about (e.g. Bitcoin, Ethereum, Solana) is a public ledger. Everything you do — every purchase, every trade, every NFT or meme coin you ever owned — is all on there. Public, transparent access to verifiable data is the means of coordination between third parties.
+
+But when the third parties can't, won't, and don't trust one another, one begs the question — why blockchain?
+
+At the same time, everyone has discounted how valuable trusted third parties are in the real world, especially the ones whose moral alignment is neutral good.
+
+- People store their lives on Google Drive or iCloud.
+- All their money sits in banks backed by the federal government.
+- We hate Facebook but still use Instagram and WhatsApp to keep in touch with friends, sometimes forgetting they're all owned by the same company.
+- We call an Uber to the airport, stay at an Airbnb because they're a “super host”, and order food from a local restaurant on DoorDash that a random person brings to your door.
+- We pay for it all with our Chase Sapphire Reserve credit card (which we often forget is a small loan) without worrying about losing a cent, because if a merchant does us wrong, we can just initiate a chargeback.
+
+Trusted third parties work because they're all working together behind the scenes to make our lives easy. Yes, they may take 0.15% there and a service fee there, but we get our 5% cash back on travel and don't bat an eye.
+
+If blockchain is going to be the future, trustless third parties need to start working together, not competing for the same magical internet money that somehow made it onto the blockchain.
