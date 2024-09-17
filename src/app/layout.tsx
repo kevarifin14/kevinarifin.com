@@ -8,7 +8,7 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s - Kevin Arifin',
-    default: 'Kevin Arifin - Software designer, founder, and amateur astronaut',
+    default: 'Kevin Arifin - Builder',
   },
   description:
     "I'm Kevin Arifin, a software developer and entrepreneur based in San Francisco. I'm the technical co-founder at Underdog Protocol, where we simplify blockchain development with tools that empower developers to build on the blockchain effortlessly.",
