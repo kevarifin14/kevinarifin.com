@@ -1,7 +1,7 @@
 ---
 title: "On the Acquisition of Antifragility"
 date: "2026-01-18"
-description: "A steady wage is comfortable — but it carries little information. Reflections on trading startup volatility for stability, and how that increased antifragility."
+description: "A steady wage is comfortable, but it carries little information. Reflections on trading startup volatility for stability and how that increased antifragility."
 ---
 
 A steady wage is comfortable, but it carries little information. No matter what you do this week, the paycheck is the same.
