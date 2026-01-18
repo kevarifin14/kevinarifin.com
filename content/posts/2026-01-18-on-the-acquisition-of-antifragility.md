@@ -4,19 +4,13 @@ date: "2026-01-18"
 description: "A steady wage is comfortable, but it carries little information. Reflections on trading startup volatility for stability and how that increased antifragility."
 ---
 
-A steady wage is comfortable, but it carries little information. No matter what you do this week, the paycheck is the same.
+A steady wage is comfortable but carries little information. No matter what you do in a week, the paycheck is the same.
 
-Working for yourself is different. 
+Whether you're a barber, Uber driver or startup founder, working for yourself is different. 
 
-A barber. 
+On a good day, you take home more money. On a bad day, you take home less. Reality speaks directly through outcomes.
 
-An Uber driver. 
-
-A startup founder. 
-
-A good day — you take home more money. A bad day — you take home less. Reality speaks directly through outcomes.
-
-When MoonPay acquired Griffain, I traded the life of a barber — volatile and information-rich — for a steady wage: low volatility and low information. At first glance, this looks like a move toward fragility, but it wasn't. On net, it increased the antifragility of my life.
+When MoonPay acquired Griffain, I traded the life of a barber — volatile and information-rich — for a steady wage: low volatility but low information. At first glance, this looks like a move toward fragility. On net, it increased the antifragility of my life.
 
 ## Survival
 
@@ -36,7 +30,7 @@ Space to connect patterns.
 
 Space to metabolize what I learned.
 
-The tradeoff was obvious — less ongoing information for more clarity.
+And mentally reset.
 
 ## Optionality
 
