@@ -6,11 +6,14 @@ import { userRetrieveSchema } from "@/tools/user/retrieve/schema";
 import { Button } from "../ui/button";
 import { Spinner } from "../ui/spinner";
 import { LogOut } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 export function LogoutButton() {
   const authLogoutMutation = useToolMutation(authLogoutSchema, {
     invalidateQueries: [userRetrieveSchema],
+    onSuccess: () => {
+      // Force a complete page refresh to clear all state
+      window.location.href = '/';
+    },
   });
 
   return (
