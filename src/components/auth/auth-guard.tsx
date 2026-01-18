@@ -23,11 +23,11 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
   // Show auth forms if not authenticated
   if (!userRetrieveQuery.data) {
     return (
-      <div className="flex min-h-screen items-center justify-center p-4">
+      <div className="h-screen w-full max-w-md mx-auto flex items-center justify-center p-4">
         {email ? (
-          <VerifyForm params={{ email, token: "" }} />
+          <VerifyForm params={{ email, token: "" }} className="w-full" />
         ) : (
-          <LoginForm params={{ email: "" }} onSuccess={(data) => setEmail(data.email)} />
+          <LoginForm params={{ email: "" }} className="w-full" onSuccess={(data) => setEmail(data.email)} />
         )}
       </div>
     );

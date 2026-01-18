@@ -6,8 +6,10 @@ import { ToolInput } from "@/tools/shared";
 import { Form, FormControl, FormItem, FormLabel, FormField } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+import { Spinner } from "../ui/spinner";
 
-export function LoginForm({ params, onSuccess }: ToolMutationProps<typeof authLoginSchema>) {
+export function LoginForm({ params, className, onSuccess }: ToolMutationProps<typeof authLoginSchema>) {
   const form = useForm<ToolInput<typeof authLoginSchema>>({
     resolver: zodResolver(authLoginSchema.input),
     defaultValues: params
@@ -23,7 +25,7 @@ export function LoginForm({ params, onSuccess }: ToolMutationProps<typeof authLo
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
         <FormField
           control={form.control}
           name="email"
@@ -36,7 +38,7 @@ export function LoginForm({ params, onSuccess }: ToolMutationProps<typeof authLo
             </FormItem>
           )}
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit" className="w-full" disabled={authLoginMutation.isPending}>{authLoginMutation.isPending ? <Spinner /> : "Login"}</Button>
       </form>
     </Form>
   );
