@@ -1,0 +1,195 @@
+---
+alwaysApply: true
+---
+- A **tool** is the basic unit of server functionality.
+- Each tool has:
+  - `schema.ts` – Zod input/output + metadata.
+  - `tool.ts` – server-only implementation using the schema (creates a Tool object).
+  - `tool.test.ts` – tests that call the tool directly.
+- Tools are reusable from:
+  - API routes (tRPC, REST, etc.).
+  - MCP servers.
+  - React components / server actions.
+
+### Directory Layout
+
+Under `src/tools`:
+
+```text
+src/
+  tools/
+    {category}/
+      {action}/
+        schema.ts       # Tool schema (defineToolSchema)
+        tool.ts         # Tool implementation (createTool)
+        tool.test.ts    # Tests
+    tools.ts            # Central tool registry (re-exports all tools)
+    schemas.ts          # Optional registry of schemas (schema.name -> schema)
+    shared.ts           # All tool definitions: ToolSchema, defineToolSchema, createTool, ToolHandler, Tool types
+```
+
+### Core Definitions (`shared.ts`)
+
+All tool-related types and functions are defined in `src/tools/shared.ts`:
+- `ToolSchema<TInput, TOutput>` – Type for tool schemas
+- `defineToolSchema()` – Function to create a tool schema
+- `createTool()` – Function to create a tool (schema + handler) with validation
+- `ToolHandler<TSchema>` – Type for handler functions
+- `Tool<TSchema>` – Type for the complete tool object (schema + handler)
+
+### Schema Conventions
+
+- Use `defineToolSchema` from `@/tools/shared`:
+
+```ts
+import { z } from "zod";
+import { defineToolSchema } from "@/tools/shared";
+
+export const logsChatListSchema = defineToolSchema({
+  name: "logs_chat_list",
+  description: "List available JSONL chat log files.",
+  input: z.object({}),
+  output: z.object({
+    items: z.array(z.object({ id: z.string(), /* ... */ })),
+  }),
+});
+```
+
+- **Naming:**
+  - File path: `src/tools/{category}/{action}/schema.ts`.
+  - Variable name: `{category}{Action}Schema` (camelCase + `Schema` suffix).
+    - Example: `logs/chat/list` → `logsChatListSchema`.
+  - `name` (string): snake_case matching the path.
+    - Example: `logs_chat_list` for `logs/chat/list`.
+
+- **Schema Reusability:**
+  - Reuse schemas when possible: Use `.pick()` to create input schemas from output schemas instead of duplicating field definitions.
+  - Prefer defining a base schema in `models.ts` and reusing it for both input and output.
+
+```ts
+// models.ts - Base schema
+export const locationPointSchema = z.object({
+  id: z.string(),
+  latitude: z.number().min(-90).max(90),
+  // ... other fields
+});
+
+// schema.ts - Reuse for input
+input: locationPointSchema.pick({
+  latitude: true,
+  longitude: true,
+  // ... only input fields
+})
+```
+
+- **Nullable vs Optional Fields:**
+  - **Required fields**: Do NOT use `.nullable()` - they must be provided.
+  - **Optional fields**: Use `.nullable()` (not `.optional()`) for OpenAI function calling compatibility.
+  - Never use `.optional()` - use `.nullable()` instead for fields that may not be present.
+
+```ts
+// ✅ Correct
+latitude: z.number().min(-90).max(90), // Required
+altitude: z.number().nullable(), // Optional, can be null
+
+// ❌ Wrong
+latitude: z.number().nullable(), // Should not be nullable if required
+altitude: z.number().optional(), // Use nullable instead
+```
+
+- **Constraints and Validation:**
+  - Use `.min()` and `.max()` for numeric constraints instead of describing ranges in text.
+  - OpenAI function calling supports `minimum` and `maximum` properties in JSON Schema, which Zod's `.min()` and `.max()` translate to.
+
+```ts
+// ✅ Correct
+latitude: z.number().min(-90).max(90).describe("Latitude coordinate in decimal degrees")
+
+// ❌ Avoid
+latitude: z.number().describe("Latitude coordinate. Range: -90 to 90")
+```
+
+- **Schema Descriptions:**
+  - Follow OpenAI function calling best practices for descriptions:
+    - Be clear and detailed about what each field represents
+    - Specify expected formats (e.g., "ISO 8601 formatted timestamp")
+    - Explain what null values mean for nullable fields
+    - Include units and typical values where helpful
+    - Describe constraints and valid ranges in the description text (in addition to min/max)
+
+```ts
+course: z.number().min(-1).max(360).nullable().describe(
+  "Direction of travel in degrees relative to true north (0 = north, 90 = east, 180 = south, 270 = west). Value of -1 indicates invalid or unavailable course data."
+)
+```
+
+- **Strict Mode:**
+  - Do NOT use `.strict()` by default - it's not needed for most cases.
+  - Only add `.strict()` if you specifically need to reject extra properties.
+
+```ts
+// ✅ Default (no strict)
+input: locationPointSchema.pick({ ... })
+
+// Only use if needed
+input: locationPointSchema.pick({ ... }).strict()
+```
+
+### Tool Conventions
+
+- Use `createTool` from `@/tools/shared`:
+
+```ts
+import { logsChatListSchema } from "./schema";
+import { createTool } from "@/tools/shared";
+
+export const logsChatList = createTool(
+  logsChatListSchema,
+  async (params, context) => {
+    // Implementation
+    return { items: [] };
+  },
+);
+```
+
+- Tool handler shape:
+  - Receives `params` typed from `schema.input`.
+  - Optional `context` object for auth / environment.
+  - Returns a value validated against `schema.output`.
+- The `createTool` function returns a `Tool` object with:
+  - `schema` – The tool schema
+  - `handler` – The validated handler function
+
+### Registration
+
+- `src/tools/tools.ts`:
+  - Re-export all tools using `export ... from` syntax.
+  - Consumers should import the **tool object** directly from this file.
+  - **Organization:**
+    - Export tools grouped by domain/resource/action
+    - Groups sorted alphabetically by domain, then resource, then action
+    - Within each group, exports follow: create, get, update, delete order
+
+```ts
+// Re-export all tools
+export { logsChatList } from "./logs/chat/list/tool";
+```
+
+- `src/tools/schemas.ts` (optional):
+
+```ts
+import { logsChatListSchema } from "./logs/chat/list/schema";
+
+export const TOOLS = {
+  [logsChatListSchema.name]: logsChatListSchema,
+} as const;
+```
+### Usage Guidelines
+
+- Prefer **schema-based imports**, not raw string tool names:
+  - In React / server code, import `logsChatList` or `logsChatListSchema` directly.
+  - Import tools from `@/tools/tools` for the tool object, or from individual tool files for schemas.
+- Keep tools:
+  - **Small and composable**.
+  - **Side-effect–clear** (document external effects in `description`).
+
