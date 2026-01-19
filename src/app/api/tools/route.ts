@@ -87,6 +87,7 @@ export async function POST(req: NextRequest) {
         id: drizzleUser.id,
         firstName: drizzleUser.firstName,
         lastName: drizzleUser.lastName,
+        verified: drizzleUser.verified,
       };
     }
 

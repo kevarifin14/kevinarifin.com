@@ -5,6 +5,7 @@ import { userRetrieveSchema } from "@/tools/user/retrieve/schema";
 import { useState } from "react";
 import { LoginForm } from "./login-form";
 import { VerifyForm } from "./verify-form";
+import { VerifiedUserEmpty } from "@/components/user/verified-user-empty";
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
   const userRetrieveQuery = useToolQuery(userRetrieveSchema, {});
@@ -20,7 +21,6 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
     );
   }
 
-  // Show auth forms if not authenticated
   if (!userRetrieveQuery.data) {
     return (
       <div className="h-screen w-full max-w-md mx-auto flex items-center justify-center p-4">
@@ -31,6 +31,10 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
         )}
       </div>
     );
+  }
+
+  if (!userRetrieveQuery.data.verified) {
+    return <VerifiedUserEmpty />;
   }
 
   // User is authenticated, show children
