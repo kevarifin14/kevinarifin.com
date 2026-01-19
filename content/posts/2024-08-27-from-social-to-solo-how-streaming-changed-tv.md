@@ -1,10 +1,11 @@
 ---
 title: "From Social to Solo: How Streaming Changed TV"
 date: "2024-08-27"
-description: "Linear television wasn't just nostalgic—it was designed for social connection. Reflections on how streaming video on demand turned TV from a shared experience into a solitary one."
+description: "Linear television wasn't just nostalgic — it was designed for social connection. Reflections on how streaming video on demand turned TV from a shared experience into a solitary one."
 ---
 
 Older people reminisce about the good old days of linear television. Those good old days were my childhood. During family dinners, the TV would cycle in the background through news, Jeopardy, and Wheel of Fortune. There'd be long commercial breaks and you didn't really have a choice of what to watch except by flipping through channels to find something you wanted. 
+
 
 Then comes along Netflix and streaming video on demand (SVOD). Everyone views SVOD as an objectively better user experience. Watch what you want when you want. Even from a business perspective, the big cable businesses gave up their cable bundle monopoly for streaming multiples. 
 
