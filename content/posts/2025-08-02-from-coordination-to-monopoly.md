@@ -1,6 +1,6 @@
 ---
 title: "From Coordination to Monopoly"
-date: "2024-08-02"
+date: "2025-08-02"
 description: "How shutting down the South Improvement Company deal in the 1870s, meant to prevent a monopoly, actually created one. And what it means for tech regulation today."
 ---
 
