@@ -1,3 +1,0 @@
-{
-  "installCommand": "npm run preinstall && npm ci"
-}
