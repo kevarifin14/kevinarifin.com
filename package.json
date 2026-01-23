@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "if [ -n \"$GITHUB_TOKEN\" ]; then git config --global url.\"https://${GITHUB_TOKEN}@github.com/\".insteadOf \"https://github.com/\" || true; fi",
+    "preinstall": "if [ -n \"$GITHUB_TOKEN\" ]; then git config --global url.\"https://\".insteadOf \"ssh://git@\" && git config --global url.\"https://github.com/\".insteadOf \"git@github.com:\" && sed -i.bak \"s|TOKEN_PLACEHOLDER|$GITHUB_TOKEN|g\" package.json package-lock.json 2>/dev/null || true; fi",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -45,7 +45,7 @@
     "@supabase/supabase-js": "^2.90.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tanstack/react-query": "^5.90.19",
-    "@winstain/toolkit": "git+https://github.com/kevarifin14/toolkit.git",
+    "@winstain/toolkit": "git+https://kevarifin14:TOKEN_PLACEHOLDER@github.com/kevarifin14/toolkit.git",
     "axios": "^1.13.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
