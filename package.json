@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "if [ -n \"$GITHUB_TOKEN\" ]; then git config --global url.\"https://\".insteadOf \"ssh://git@\" && git config --global url.\"https://github.com/\".insteadOf \"git@github.com:\" && sed -i.bak \"s|TOKEN_PLACEHOLDER|$GITHUB_TOKEN|g\" package.json package-lock.json 2>/dev/null || true; fi",
+    "preinstall": "if [ -n \"$GITHUB_TOKEN\" ]; then sed -i.bak \"s|TOKEN_PLACEHOLDER|$GITHUB_TOKEN|g\" package.json package-lock.json 2>/dev/null || true; fi",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
