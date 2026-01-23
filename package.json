@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "mkdir -p ~/.ssh && echo \"$SSH_PRIVATE_KEY\" > ~/.ssh/vercel_toolkit && chmod 600 ~/.ssh/vercel_toolkit && ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null && echo -e \"Host github.com\\n  IdentityFile ~/.ssh/vercel_toolkit\\n  IdentitiesOnly yes\" >> ~/.ssh/config || true",
+    "preinstall": "if [ -n \"$GITHUB_TOKEN\" ]; then git config --global url.\"https://${GITHUB_TOKEN}@github.com/\".insteadOf \"https://github.com/\" || true; fi",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -45,7 +45,7 @@
     "@supabase/supabase-js": "^2.90.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tanstack/react-query": "^5.90.19",
-    "@winstain/toolkit": "github:kevarifin14/toolkit",
+    "@winstain/toolkit": "git+https://github.com/kevarifin14/toolkit.git",
     "axios": "^1.13.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
