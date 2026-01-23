@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { ToolInput, ToolSchema, ToolOutput } from "./shared";
+import { ToolSchema, ToolInput, ToolOutput, parseToolOutput } from "@winstain/toolkit/core";
 
 export type ToolProps<TSchema extends ToolSchema = ToolSchema> = {
   params: ToolInput<TSchema>;
@@ -33,7 +33,7 @@ export async function callTool<TSchema extends ToolSchema = ToolSchema>(
       params,
     });
 
-    return schema.output.parse(response.data);
+    return parseToolOutput(response.data, schema.output);
   } catch (error) {
     if (axios.isAxiosError(error)) {
       if (error.response?.data?.error) {

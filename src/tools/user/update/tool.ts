@@ -1,11 +1,11 @@
+import { toolkit } from "@/tools/server";
 import { userUpdateSchema } from "./schema";
-import { createTool } from "@/tools/shared";
 import { requireUser } from "@/tools/shared";
 import { db } from "@/lib/db";
 import { users } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 
-export const userUpdate = createTool(
+export const userUpdate = toolkit.createTool(
   userUpdateSchema,
   async (params, context) => {
     const user = requireUser(context);

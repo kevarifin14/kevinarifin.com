@@ -1,9 +1,9 @@
-import { createTool } from "@/tools/shared";
+import { toolkit } from "@/tools/server";
 import { authRefreshSchema } from "./schema";
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { clientEnv } from "@/lib/env/client";
 
-export const authRefresh = createTool(authRefreshSchema, async (params) => {
+export const authRefresh = toolkit.createTool(authRefreshSchema, async (params) => {
   // Create a Supabase client for token refresh
   const supabase = createSupabaseClient(
     clientEnv.SUPABASE_URL,

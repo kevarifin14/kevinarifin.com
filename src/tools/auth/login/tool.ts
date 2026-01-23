@@ -1,8 +1,8 @@
-import { createTool } from "@/tools/shared";
+import { toolkit } from "@/tools/server";
 import { authLoginSchema } from "./schema";
 import { createClient } from "../server";
 
-export const authLogin = createTool(authLoginSchema, async (params) => {
+export const authLogin = toolkit.createTool(authLoginSchema, async (params) => {
   const supabase = await createClient();
 
   await supabase.auth.signInWithOtp({

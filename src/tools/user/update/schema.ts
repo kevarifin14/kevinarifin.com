@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { defineToolSchema } from "@/tools/shared";
+import { defineToolSchema } from "@winstain/toolkit/core";
 import { userSchema } from "../models";
 
 export const userUpdateSchema = defineToolSchema({

@@ -2,12 +2,12 @@ import { ToolMutationProps, useToolMutation } from "@/tools/client";
 import { authLoginSchema } from "@/tools/auth/login/schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ToolInput } from "@/tools/shared";
 import { Form, FormControl, FormItem, FormLabel, FormField } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Spinner } from "../ui/spinner";
+import { ToolInput } from "@winstain/toolkit/core";
 
 export function LoginForm({ params, className, onSuccess }: ToolMutationProps<typeof authLoginSchema>) {
   const form = useForm<ToolInput<typeof authLoginSchema>>({

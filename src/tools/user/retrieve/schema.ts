@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { defineToolSchema } from "@/tools/shared";
+import { defineToolSchema } from "@winstain/toolkit/core";
 import { userSchema } from "../models";
 
 export const userRetrieveSchema = defineToolSchema({
@@ -7,6 +7,5 @@ export const userRetrieveSchema = defineToolSchema({
   description: "Retrieve the current authenticated user's profile information including their group.",
   input: z.object({}),
   output: userSchema,
-  readOnly: true,
 });
 

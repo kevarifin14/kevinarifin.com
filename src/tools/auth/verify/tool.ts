@@ -1,8 +1,8 @@
-import { createTool } from "@/tools/shared";
+import { toolkit } from "@/tools/server";
 import { authVerifySchema } from "./schema";
 import { createClient } from "../server";
 
-export const authVerify = createTool(authVerifySchema, async (params) => {
+export const authVerify = toolkit.createTool(authVerifySchema, async (params) => {
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.verifyOtp({

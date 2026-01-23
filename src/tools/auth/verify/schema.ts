@@ -1,4 +1,4 @@
-import { defineToolSchema } from "@/tools/shared";
+import { defineToolSchema } from "@winstain/toolkit/core";
 import z from "zod";
 
 export const authVerifySchema = defineToolSchema({

@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import * as tools from "@/tools/tools";
 import { getCurrentUser, getOrCreateUser } from "@/tools/auth/server";
+import { parseToolInput } from "@winstain/toolkit/core";
+import * as tools from "@/tools/tools";
 
 export async function POST(req: NextRequest) {
   try {
@@ -60,13 +61,13 @@ export async function POST(req: NextRequest) {
     // Validate params against tool's input schema
     let validatedInput;
     try {
-      validatedInput = tool.schema.input.parse(params);
+      validatedInput = parseToolInput(tool.schema, params);
     } catch (error) {
       if (error instanceof z.ZodError) {
         return NextResponse.json(
           {
             error: "Validation error",
-            details: error.errors,
+            details: error.message,
             statusCode: 400,
           },
           { status: 400 }
@@ -78,7 +79,7 @@ export async function POST(req: NextRequest) {
     // Get the current authenticated user (if any)
     const supabaseUser = await getCurrentUser(req);
     let user = null;
-    
+
     if (supabaseUser) {
       // Convert Supabase user to Drizzle user (get or create)
       const drizzleUser = await getOrCreateUser(supabaseUser);
@@ -94,18 +95,19 @@ export async function POST(req: NextRequest) {
     // Execute tool handler with context
     // Tools handle their own authentication - they throw errors if auth is required
     try {
-      const result = await tool.handler(validatedInput, { user });
-      
+      // Type assertion is safe here because we validated the input against the tool's schema
+      const result = await (tool as any).execute(validatedInput, { user });
+
       return NextResponse.json(result);
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "Failed to execute tool";
       const errorStack = error instanceof Error ? error.stack : undefined;
-      
+
       // Check if it's an authentication error
-      const isAuthError = errorMessage.includes("Unauthorized") || 
-                         errorMessage.includes("Authentication required");
-      
+      const isAuthError = errorMessage.includes("Unauthorized") ||
+        errorMessage.includes("Authentication required");
+
       console.log(`[API] Tool "${toolName}" error:`, error);
       return NextResponse.json(
         {

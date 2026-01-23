@@ -1,7 +1,6 @@
 import { ToolMutationProps, useToolMutation } from "@/tools/client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ToolInput } from "@/tools/shared";
 import { Form } from "../ui/form";
 import { Button } from "../ui/button";
 import { authVerifySchema } from "@/tools/auth/verify/schema";
@@ -9,6 +8,7 @@ import { TokenFormField } from "./token-form-field";
 import { userRetrieveSchema } from "@/tools/user/retrieve/schema";
 import { cn } from "@/lib/utils";
 import { Spinner } from "../ui/spinner";
+import { ToolInput } from "@winstain/toolkit/core";
 
 export function VerifyForm({ params, className, onSuccess }: ToolMutationProps<typeof authVerifySchema>) {
   const form = useForm<ToolInput<typeof authVerifySchema>>({
@@ -22,7 +22,6 @@ export function VerifyForm({ params, className, onSuccess }: ToolMutationProps<t
   });
 
   const handleSubmit = form.handleSubmit((data) => {
-    console.log(data);
     verifyMutation.mutate(data);
   });
 
