@@ -33,7 +33,7 @@ export async function callTool<TSchema extends ToolSchema = ToolSchema>(
       params,
     });
 
-    return parseToolOutput(response.data, schema.output);
+    return parseToolOutput(schema, response.data);
   } catch (error) {
     if (axios.isAxiosError(error)) {
       if (error.response?.data?.error) {
@@ -79,12 +79,14 @@ export const useToolMutation = <TSchema extends ToolSchema>(
   return useMutation<ToolOutput<TSchema>, Error, ToolInput<TSchema>>({
     mutationFn: (params: ToolInput<TSchema>) => callTool(schema, params),
     onSuccess: (data) => {
+      console.log("onSuccess", data);
       if (options?.invalidateQueries) {
         options.invalidateQueries.forEach((query) => {
           queryClient.invalidateQueries({ queryKey: [query.name] });
         });
       }
 
+      console.log("onSuccess", data);
       options?.onSuccess?.(data);
     },
     onError: (error) => {

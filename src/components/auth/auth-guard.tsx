@@ -6,17 +6,17 @@ import { useState } from "react";
 import { LoginForm } from "./login-form";
 import { VerifyForm } from "./verify-form";
 import { VerifiedUserEmpty } from "@/components/user/verified-user-empty";
+import { Spinner } from "../ui/spinner";
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
   const userRetrieveQuery = useToolQuery(userRetrieveSchema, {});
 
   const [email, setEmail] = useState<string | null>(null);
 
-  // Show loading state while checking auth
   if (userRetrieveQuery.isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
-        <div className="text-muted-foreground">Loading...</div>
+        <Spinner />
       </div>
     );
   }

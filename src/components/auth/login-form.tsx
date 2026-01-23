@@ -15,17 +15,15 @@ export function LoginForm({ params, className, onSuccess }: ToolMutationProps<ty
     defaultValues: params
   });
 
-  const authLoginMutation = useToolMutation(authLoginSchema, {
-    onSuccess,
-  });
+  const authLoginMutation = useToolMutation(authLoginSchema, { onSuccess });
 
-  const onSubmit = (data: ToolInput<typeof authLoginSchema>) => {
+  const handleSubmit = form.handleSubmit((data) => {
     authLoginMutation.mutate(data);
-  };
+  });
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
+      <form onSubmit={handleSubmit} className={cn("space-y-4", className)}>
         <FormField
           control={form.control}
           name="email"
@@ -38,7 +36,14 @@ export function LoginForm({ params, className, onSuccess }: ToolMutationProps<ty
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={authLoginMutation.isPending}>{authLoginMutation.isPending ? <Spinner /> : "Login"}</Button>
+
+        <Button
+          type="submit"
+          className="w-full"
+          disabled={authLoginMutation.isPending}
+        >
+          {authLoginMutation.isPending ? <Spinner /> : "Login"}
+        </Button>
       </form>
     </Form>
   );

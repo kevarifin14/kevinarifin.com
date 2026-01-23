@@ -1,89 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { createToolRouter } from "@winstain/toolkit/server/router";
+import { tools } from "@/tools/tools";
 import { getCurrentUser, getOrCreateUser } from "@/tools/auth/server";
-import { parseToolInput } from "@winstain/toolkit/core";
-import * as tools from "@/tools/tools";
+import { User } from "@/tools/user/models";
+
+// Request envelope validation
+const BodySchema = z.object({
+  method: z.string(),
+  params: z.unknown(), // tool-specific validation happens inside router via zod
+});
+
+const router = createToolRouter(tools);
 
 export async function POST(req: NextRequest) {
   try {
-    let body;
+    let json: unknown;
     try {
-      body = await req.json();
-    } catch (error) {
+      json = await req.json();
+    } catch {
       return NextResponse.json(
         { error: "Invalid JSON in request body", statusCode: 400 },
         { status: 400 }
       );
     }
 
-    // Extract tool name and params from request body
-    if (!body || typeof body !== "object") {
+    const parsed = BodySchema.safeParse(json);
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "Invalid request body", statusCode: 400 },
+        { error: "Invalid request body", details: parsed.error.message, statusCode: 400 },
         { status: 400 }
       );
     }
 
-    if (!body.method || typeof body.method !== "string") {
-      return NextResponse.json(
-        { error: "Missing or invalid 'method' field in request body", statusCode: 400 },
-        { status: 400 }
-      );
-    }
+    const { method, params } = parsed.data;
 
-    if (!body.params || typeof body.params !== "object") {
-      return NextResponse.json(
-        { error: "Missing or invalid 'params' field in request body", statusCode: 400 },
-        { status: 400 }
-      );
-    }
-
-    const toolName = body.method;
-    const params = body.params;
-
-    // Find the tool by matching schema.name
-    let tool = null;
-    for (const toolKey in tools) {
-      const candidateTool = (tools as any)[toolKey];
-      if (candidateTool?.schema?.name === toolName) {
-        tool = candidateTool;
-        break;
-      }
-    }
-
-    if (!tool) {
-      return NextResponse.json(
-        { error: `Tool "${toolName}" not found`, statusCode: 404 },
-        { status: 404 }
-      );
-    }
-
-    // Validate params against tool's input schema
-    let validatedInput;
-    try {
-      validatedInput = parseToolInput(tool.schema, params);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        return NextResponse.json(
-          {
-            error: "Validation error",
-            details: error.message,
-            statusCode: 400,
-          },
-          { status: 400 }
-        );
-      }
-      throw error;
-    }
-
-    // Get the current authenticated user (if any)
     const supabaseUser = await getCurrentUser(req);
-    let user = null;
+    let user: any = null;
 
     if (supabaseUser) {
-      // Convert Supabase user to Drizzle user (get or create)
       const drizzleUser = await getOrCreateUser(supabaseUser);
-      // Map to the User type expected by tools
       user = {
         id: drizzleUser.id,
         firstName: drizzleUser.firstName,
@@ -92,38 +48,24 @@ export async function POST(req: NextRequest) {
       };
     }
 
-    // Execute tool handler with context
-    // Tools handle their own authentication - they throw errors if auth is required
-    try {
-      // Type assertion is safe here because we validated the input against the tool's schema
-      const result = await (tool as any).execute(validatedInput, { user });
+    const ctx = { user };
 
-      return NextResponse.json(result);
-    } catch (error) {
-      const errorMessage =
-        error instanceof Error ? error.message : "Failed to execute tool";
-      const errorStack = error instanceof Error ? error.stack : undefined;
+    const result = await router.execute(method as any, params, ctx);
 
-      // Check if it's an authentication error
-      const isAuthError = errorMessage.includes("Unauthorized") ||
-        errorMessage.includes("Authentication required");
-
-      console.log(`[API] Tool "${toolName}" error:`, error);
-      return NextResponse.json(
-        {
-          error: errorMessage,
-          stack: process.env.NODE_ENV === "development" ? errorStack : undefined,
-          statusCode: isAuthError ? 401 : 500
-        },
-        { status: isAuthError ? 401 : 500 }
-      );
-    }
+    return NextResponse.json(result);
   } catch (error) {
-    const errorMessage =
-      error instanceof Error ? error.message : "Internal server error";
+    const message = error instanceof Error ? error.message : "Internal server error";
+
+    // Map common cases
+    const isNotFound = message.startsWith("Unknown tool:");
+    const isAuthError =
+      message.includes("Unauthorized") || message.includes("Authentication required");
+
+    const status = isNotFound ? 404 : isAuthError ? 401 : 500;
+
     return NextResponse.json(
-      { error: errorMessage, statusCode: 500 },
-      { status: 500 }
+      { error: message, statusCode: status },
+      { status }
     );
   }
 }
