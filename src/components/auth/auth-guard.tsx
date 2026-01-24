@@ -1,7 +1,6 @@
 "use client";
 
 import { useToolQuery } from "@/tools/client";
-import { userRetrieveSchema } from "@/tools/user/retrieve/schema";
 import { useState } from "react";
 import { LoginForm } from "./login-form";
 import { VerifyForm } from "./verify-form";
@@ -9,7 +8,7 @@ import { VerifiedUserEmpty } from "@/components/user/verified-user-empty";
 import { Spinner } from "../ui/spinner";
 
 export function AuthGuard({ children }: { children: React.ReactNode }) {
-  const userRetrieveQuery = useToolQuery(userRetrieveSchema, {});
+  const userRetrieveQuery = useToolQuery("user_retrieve", {});
 
   const [email, setEmail] = useState<string | null>(null);
 

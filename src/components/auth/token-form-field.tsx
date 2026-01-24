@@ -1,11 +1,6 @@
 import { FormControl, FormField, FormItem, FormLabel } from "../ui/form";
 import { UseFormReturn } from "react-hook-form";
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSlot,
-  InputOTPSeparator,
-} from "../ui/input-otp";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "../ui/input-otp";
 
 export function TokenFormField({ form }: { form: UseFormReturn<any> }) {
   return (

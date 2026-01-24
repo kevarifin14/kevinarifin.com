@@ -9,13 +9,13 @@ import { cn } from "@/lib/utils";
 import { Spinner } from "../ui/spinner";
 import { ToolInput } from "@winstain/toolkit/core";
 
-export function LoginForm({ params, className, onSuccess }: ToolMutationProps<typeof authLoginSchema>) {
+export function LoginForm({ params, className, onSuccess }: ToolMutationProps<"auth_login">) {
   const form = useForm<ToolInput<typeof authLoginSchema>>({
     resolver: zodResolver(authLoginSchema.input),
     defaultValues: params
   });
 
-  const authLoginMutation = useToolMutation(authLoginSchema, { onSuccess });
+  const authLoginMutation = useToolMutation("auth_login", { onSuccess });
 
   const handleSubmit = form.handleSubmit((data) => {
     authLoginMutation.mutate(data);
