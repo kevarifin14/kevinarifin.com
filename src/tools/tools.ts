@@ -8,15 +8,16 @@ import { authRefresh } from "./auth/refresh/tool";
 import { authVerify } from "./auth/verify/tool";
 import { userRetrieve } from "./user/retrieve/tool";
 import { userUpdate } from "./user/update/tool";
+import { toolkit } from "./server";
 
-export const tools = {
+export const tools = toolkit.createTools(
   authLogin,
   authLogout,
   authRefresh,
   authVerify,
   userRetrieve,
-  userUpdate,
-} as const;
+  userUpdate
+);
 
 export type Tools = typeof tools;
 export type ToolKey = keyof Tools & string;
