@@ -1,6 +1,6 @@
 ---
 title: "The Conservation of Work"
-date: "2026-01-17"
+date: "2026-01-24"
 description: "Work becomes capital when it persists; the economy turns labor today into capital tomorrow."
 ---
 At the foundation of the economy is work: human effort that creates value. Everything else — goods, services, wealth, growth — ultimately traces back to work being done by someone at some point in time.
