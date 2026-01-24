@@ -1,71 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { createToolRouter } from "@winstain/toolkit/server/router";
+import { createToolRouter, isToolError } from "@winstain/toolkit/server";
 import { tools } from "@/tools/tools";
 import { getCurrentUser, getOrCreateUser } from "@/tools/auth/server";
-import { User } from "@/tools/user/models";
 
-// Request envelope validation
 const BodySchema = z.object({
   method: z.string(),
-  params: z.unknown(), // tool-specific validation happens inside router via zod
+  params: z.unknown(),
 });
 
 const router = createToolRouter(tools);
 
 export async function POST(req: NextRequest) {
   try {
-    let json: unknown;
-    try {
-      json = await req.json();
-    } catch {
-      return NextResponse.json(
-        { error: "Invalid JSON in request body", statusCode: 400 },
-        { status: 400 }
-      );
-    }
+    const json: unknown = await req.json();
 
-    const parsed = BodySchema.safeParse(json);
-    if (!parsed.success) {
-      return NextResponse.json(
-        { error: "Invalid request body", details: parsed.error.message, statusCode: 400 },
-        { status: 400 }
-      );
-    }
-
-    const { method, params } = parsed.data;
+    const { method, params } = BodySchema.parse(json);
 
     const supabaseUser = await getCurrentUser(req);
-    let user: any = null;
+    const user = supabaseUser ? await getOrCreateUser(supabaseUser) : null;
 
-    if (supabaseUser) {
-      const drizzleUser = await getOrCreateUser(supabaseUser);
-      user = {
-        id: drizzleUser.id,
-        firstName: drizzleUser.firstName,
-        lastName: drizzleUser.lastName,
-        verified: drizzleUser.verified,
-      };
-    }
+    const ctx = {
+      user: user
+        ? {
+          id: user.id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          verified: user.verified,
+        }
+        : null,
+    };
 
-    const ctx = { user };
-
-    const result = await router.execute(method as any, params, ctx);
+    const result = await router.execute(method as any, params as any, ctx);
 
     return NextResponse.json(result);
-  } catch (error) {
-    const message = error instanceof Error ? error.message : "Internal server error";
+  } catch (err) {
+    if (isToolError(err)) {
+      return NextResponse.json(err.toPayload(), { status: err.status });
+    }
 
-    // Map common cases
-    const isNotFound = message.startsWith("Unknown tool:");
-    const isAuthError =
-      message.includes("Unauthorized") || message.includes("Authentication required");
-
-    const status = isNotFound ? 404 : isAuthError ? 401 : 500;
-
-    return NextResponse.json(
-      { error: message, statusCode: status },
-      { status }
-    );
+    const message = err instanceof Error ? err.message : "Internal server error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
