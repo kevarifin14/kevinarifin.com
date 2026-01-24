@@ -36,7 +36,6 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
     return <VerifiedUserEmpty />;
   }
 
-  // User is authenticated, show children
   return <>{children}</>;
 }
 
